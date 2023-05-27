@@ -10,26 +10,41 @@
 	padding: 0 20px;
 }
 
+.background-div {
+	position: relative;
+	background-image: url("./imgs/sekiro.jpg");
+}
+
 /* Stile per la navbar a sinistra */
 .navbar {
-	background-color: #333;
-	color: #fff;
-	width: 120px;
-	height: calc(100vh - 50px);
-	/* Altezza totale meno altezza della barra in alto */
-	padding: 20px;
-	display: flex;
+    background-color: #333;
+    color: #fff;
+    width: 60px; /* Imposta la larghezza desiderata */
+    max-height: calc(100vh - 50px); /* Utilizza max-height invece di height */
+    padding: 100px 20px;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 50px;
 }
+
+.navbar ul {
+	padding: 5px 0px;
+	list-style-type: none;
+}
+
+.navbar ul li {
+	margin: 0px 10px 30px;
+}
+
 
 /* Stile per l'immagine delle nuove uscite/promozioni */
 .image-slider {
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
     width: 50px; /* Larghezza desiderata dell'image slider */
-    height: 100vh; /* Altezza totale dello schermo */
+    height: 180px; /* Altezza totale dello schermo */
     background-color: #f1f1f1; /* Colore di sfondo dell'image slider */
     display: flex;
     flex-direction: column;
@@ -37,11 +52,16 @@
     align-items: center;
     z-index: 999; /* Assicurati che l'image slider sia posizionato sopra gli altri elementi */
     overflow: auto; /* Aggiungi uno scroll se l'image-slider supera l'altezza dello schermo */
+	border-radius: 50px;
 }
 .slider-controls {
-    margin-top: 20px;
+    margin: 10px;
 }
 
 .slider-dot {
-    /* Stile dei puntini di navigazione */
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 8px 8px;
 }
