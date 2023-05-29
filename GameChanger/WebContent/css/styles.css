@@ -1,43 +1,57 @@
+body {
+	background: rgb(54,20,57);
+background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+}
+
 .top-bar {
 	position: relative;
 	z-index: 9999;
-	background-color: rgba(0, 0, 0, 0.7);
+	background: rgb(102,0,0);
+background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba(3,3,64,1) 80%, rgba(102,0,0,1) 100%);
 	color: #fff;
-	height: 50px;
+	height: 70px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 20px;
 }
 
+.sticky-navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
 .background-div {
 	display: flex;
 	position: relative;
 	align-items: center;
-	justify-content: space-between;
-	padding: 10vw 0;
+	justify-content: flex-end;
+	padding: 20vw 0;
 	/* Utilizza vw per impostare il padding in base alla larghezza dello schermo */
 	background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 80%,
-		rgba(255, 255, 255, 1) 95%, white),
-		linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, white),
-		url("../imgs/sekiro.jpg");
+		rgba(91, 91, 91, 1) 95%, #4a494a),
+		linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, #5b5b5b),
+		url("../imgs/homepage/carousel/fallout.jpg");
 	background-color: #cccccc;
 	background-size: cover;
-	/* Utilizza vw per impostare la larghezza in base alla larghezza dello schermo */
-	height: 80vh;
-	/* Utilizza vh per impostare l'altezza in base all'altezza dello schermo */
-	margin: auto; /* Centra il div orizzontalmente sulla pagina */
+	background-position: right top;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Stile per la navbar a sinistra */
 .navbar {
+	position: fixed !important;
+	z-index: 9999;
+	top: 200px;
 	margin-left: 10px;
 	background-color: #333;
 	color: #fff;
 	width: 60px; /* Imposta la larghezza desiderata */
 	max-height: calc(100vh - 50px);
 	/* Utilizza max-height invece di height */
-	padding: 100px 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -54,12 +68,12 @@
 	margin: 0px 10px 30px;
 }
 
-/* Stile per l'immagine delle nuove uscite/promozioni */
 .image-slider {
-	position: relative;
-	margin-right: 10px;
-	width: 25px; /* Larghezza desiderata dell'image slider */
-	height: 180px; /* Altezza totale dello schermo */
+	position: absolute;
+    top: 50%;
+    right: 0;
+     transform: translateY(-50%);
+    margin-right: 10px;
 	background-color: rgba(0, 0, 0, 0.3);
 	/* Colore di sfondo dell'image slider */
 	display: flex;
@@ -84,3 +98,29 @@
 	border-radius: 50%;
 	margin: 20px 0px;
 }
+
+
+.border-img {
+	--g: 4px;  
+  --b: 12px;   
+  --c: #65000B; 
+
+  padding: calc(var(--g) + var(--b));
+  --_c: #0000 0 25%, var(--c) 0 50%;
+  --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+  --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+  background:
+    var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+    var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+  background-size: 200% var(--b),var(--b) 200%;
+  cursor: pointer;
+  transition: .3s;
+  position: relative;
+}
+
+.border-img:hover {
+  --_p: 75%;
+  filter: grayscale(100%);
+}
+
+
