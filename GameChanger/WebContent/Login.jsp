@@ -21,7 +21,7 @@
 		 <label>Username</label>
 	</div> 
 	<div class="txt_field">
-	<input type="password" name="login_password"required>
+	<input type="password" name="login-password"required>
 	<span></span>
 	<label>Password</label>
 	</div>

@@ -48,7 +48,7 @@
 						alt="prima_offerta">
 					<div class="overlay">
 						<div class="content">
-							<h1>Da che parte sarai?</h1>
+							<h1>Che che che parte sarai?</h1>
 								<button class="button1">
 									Scopri
 									<div class="arrow-wrapper">

@@ -12,15 +12,15 @@ public class UserDao {
 	private PreparedStatement pst;
 	private ResultSet rs;
 	
-	public UserDao() {
-		super();
+	public UserDao(Connection con) {
+		this.con = con;
 	}
 	
 	public User userLogin(String email, String password) {
 		User user = null;
 		
 		try {
-			query = "select * from users where email=? and password=?";
+			query = "select * from account where username=? and password=?";
 			
 			pst = this.con.prepareStatement(query);
 			pst.setString(1, email);

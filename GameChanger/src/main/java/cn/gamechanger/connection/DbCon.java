@@ -9,7 +9,7 @@ public class DbCon {
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		if (connection==null) {
-			Class.forName("com.mysql.ci.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gameandgo","root","password");
 			System.out.print("Connected");
 		}

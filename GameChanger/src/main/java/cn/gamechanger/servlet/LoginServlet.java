@@ -2,12 +2,16 @@ package cn.gamechanger.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cn.gamechanger.model.User;
+import cn.gamechanger.model.dao.UserDao;
 
 import cn.gamechanger.connection.DbCon;
 
@@ -25,12 +29,21 @@ public class LoginServlet extends HttpServlet {
 			String email = request.getParameter("login-username");
 			String password = request.getParameter("login-password");
 			
-			UserDao udao = new UserDao(DbCon.getConnection());
+			try {
+				UserDao udao = new UserDao(DbCon.getConnection());
+				User user = udao.userLogin(email, password);
+				
+				if(user != null) {
+					out.print("user login");
+				}else {
+					out.print("user login failed");
+				}
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
 			
 			
 			out.print(email+password);
-		} catch (Exception e) {
-			// TODO: handle exception
 		}
 	}
 
