@@ -20,7 +20,7 @@ public class UserDao {
 		User user = null;
 		
 		try {
-			query = "select * from account where username=? and password=?";
+			query = "select * from utente where username=? and password=?";
 			
 			pst = this.con.prepareStatement(query);
 			pst.setString(1, email);
@@ -30,13 +30,15 @@ public class UserDao {
 			if(rs.next()){
 				user = new User();
 				user.setUsername(rs.getString("username"));
-				user.setEmail(rs.getString("email"));
+				user.setEmailPers(rs.getString("email_pers"));
+				user.setEmailPaypal(rs.getString("email_paypal"));
+				user.setNumTel(rs.getInt(0));
+				user.setIndirizzo(rs.getString("indirizzo"));
 				user.setPassword(rs.getString("password"));
 				user.setNome(rs.getString("nome"));
 				user.setCognome(rs.getString("cognome"));
 				user.setDataNascita(rs.getString("data_nascita"));
 				user.setCodFiscale(rs.getString("codfiscale"));
-				user.setNumProdAcquist(rs.getString("num_prodotti_acq"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Pagina Registrazione</title>
-<link rel="stylesheet" href="Register.css">
+<link rel="stylesheet" href="css/register.css">
 </head>
 <body>
 	<div class="center">
@@ -43,6 +43,12 @@
 							<div class="signup_link">
 								Già iscritto? <a href="#">Accedi</a>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</form>
+	</div>
+	<%@include file="includes/footer.jsp"%>
 </body>
 </html>

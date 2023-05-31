@@ -3,5 +3,7 @@
   <display-name>GameChanger</display-name>
   <welcome-file-list>
     <welcome-file>homepage.jsp</welcome-file>
+    <welcome-file>Login.jsp</welcome-file>
+    <welcome-file>Register.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

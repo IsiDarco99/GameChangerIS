@@ -2,27 +2,31 @@ package cn.gamechanger.model;
 
 public class User {
 	private String username;
-	private String email;
+	private String emailPers;
+	private String emailPaypal;
+	private int numTel;
+	private String indirizzo;
 	private String password;
 	private String nome;
 	private String cognome;
 	private String dataNascita;
 	private String codFiscale;
-	private String numProdAcquist;
 	
 	public User() {
 	}
 
-	public User(String username, String email, String password, String nome, String cognome, String dataNascita,
-			String codFiscale, String numProdAcquist) {
+	public User(String username, String emailPers, String emailPaypal, int numTel, String indirizzo, String password,
+			String nome, String cognome, String dataNascita, String codFiscale) {
 		this.username = username;
-		this.email = email;
+		this.emailPers = emailPers;
+		this.emailPaypal = emailPaypal;
+		this.numTel = numTel;
+		this.indirizzo = indirizzo;
 		this.password = password;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.dataNascita = dataNascita;
 		this.codFiscale = codFiscale;
-		this.numProdAcquist = numProdAcquist;
 	}
 
 	public String getUsername() {
@@ -33,12 +37,36 @@ public class User {
 		this.username = username;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailPers() {
+		return emailPers;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailPers(String emailPers) {
+		this.emailPers = emailPers;
+	}
+
+	public String getEmailPaypal() {
+		return emailPaypal;
+	}
+
+	public void setEmailPaypal(String emailPaypal) {
+		this.emailPaypal = emailPaypal;
+	}
+
+	public int getNumTel() {
+		return numTel;
+	}
+
+	public void setNumTel(int numTel) {
+		this.numTel = numTel;
+	}
+
+	public String getIndirizzo() {
+		return indirizzo;
+	}
+
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
 	}
 
 	public String getPassword() {
@@ -81,20 +109,14 @@ public class User {
 		this.codFiscale = codFiscale;
 	}
 
-	public String getNumProdAcquist() {
-		return numProdAcquist;
-	}
-
-	public void setNumProdAcquist(String numProdAcquist) {
-		this.numProdAcquist = numProdAcquist;
-	}
-
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", email=" + email + ", password=" + password + ", nome=" + nome
-				+ ", cognome=" + cognome + ", dataNascita=" + dataNascita + ", codFiscale=" + codFiscale
-				+ ", numProdAcquist=" + numProdAcquist + "]";
+		return "User [username=" + username + ", emailPers=" + emailPers + ", emailPaypal=" + emailPaypal + ", numTel="
+				+ numTel + ", indirizzo=" + indirizzo + ", password=" + password + ", nome=" + nome + ", cognome="
+				+ cognome + ", dataNascita=" + dataNascita + ", codFiscale=" + codFiscale + "]";
 	}
+
+	
 	
 	
 	
