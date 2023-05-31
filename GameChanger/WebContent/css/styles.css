@@ -32,7 +32,7 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
 	background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 80%,
 		rgba(91, 91, 91, 1) 95%, #4a494a),
 		linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, #5b5b5b),
-		url("../imgs/homepage/carousel/fallout.jpg");
+		url("../imgs/homepage/carousel/sekiro.jpg");
 	background-color: #cccccc;
 	background-size: cover;
 	background-position: right top;
@@ -122,5 +122,4 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
   --_p: 75%;
   filter: grayscale(100%);
 }
-
 
