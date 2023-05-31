@@ -140,9 +140,6 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
 	position: relative;
 }
 
-<<<<<<< HEAD
-=======
-
 .overlay{
 	position: absolute;
 	top:0;
@@ -235,4 +232,4 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
 .button1:hover .arrow:before {
   right: 0;
 }
->>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
+
