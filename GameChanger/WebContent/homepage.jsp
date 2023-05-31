@@ -51,27 +51,47 @@
 
 	<div class="container" style="margin-top: 100px;">
 		<div class="row justify-content-center">
-			<div class="col-3 carta">
-				<img class="border-img"
-					src="imgs/homepage/prima_vetrina/fallout.jpg" alt="prima_offerta"
-					height="500px">
-				<div class="overlay">
-					<h1>Compra subito</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Duis molestie in ipsum sit amet accumsan. Curabitur consequat
-						sollicitudin dapibus. Proin sit amet sagittis augue.</p>
+			<div class="col-3">
+				<div class="border-img">
+					<img class="card-img" src="imgs/homepage/prima_vetrina/fallout.jpg"
+						alt="prima_offerta">
+					<div class="overlay">
+						<div class="content">
+							<h1>Da che parte sarai?</h1>
+								<button class="button1">
+									Scopri
+									<div class="arrow-wrapper">
+										<div class="arrow"></div>
+									</div>
+								</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-1"></div>
 			<div class="col-3">
-				<img class="border-img" src="imgs/homepage/prima_vetrina/rdr2.jpg"
-					alt="seconda_offerta" height="500px">
+				<div class="border-img">
+					<img class="card-img" src="imgs/homepage/prima_vetrina/rdr2.jpg"
+						alt="prima_offerta">
+					<div class="overlay">
+						<div class="content">
+							<h1>Compra subito</h1>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="col-1"></div>
 			<div class="col-3">
-				<img class="border-img"
-					src="imgs/homepage/prima_vetrina/outer_worlds.jpg"
-					alt="terza_offerta" height="500px">
+				<div class="border-img">
+					<img class="card-img"
+						src="imgs/homepage/prima_vetrina/outer_worlds.jpg"
+						alt="prima_offerta">
+					<div class="overlay">
+						<div class="content">
+							<h1>Compra subito</h1>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

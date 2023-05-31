@@ -1,6 +1,16 @@
+@font-face{
+	font-family: candy;
+	src:url(../fonts/Candy.otf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
 	background: rgb(54,20,57);
-background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .top-bar {
@@ -35,7 +45,6 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
 		url("../imgs/homepage/carousel/sekiro.jpg");
 	background-color: #cccccc;
 	background-size: cover;
-	background-position: right top;
 	margin: auto;
 	max-width: 100%;
 	height: auto;
@@ -74,7 +83,7 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
     right: 0;
      transform: translateY(-50%);
     margin-right: 10px;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.8);
 	/* Colore di sfondo dell'image slider */
 	display: flex;
 	flex-direction: column;
@@ -118,8 +127,112 @@ background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba
   position: relative;
 }
 
+
 .border-img:hover {
   --_p: 75%;
-  filter: grayscale(100%);
 }
 
+.border-img:hover img{
+  filter: grayscale(70%);
+}
+
+.card-img {
+	position: relative;
+}
+
+<<<<<<< HEAD
+=======
+
+.overlay{
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	opacity:0;
+	transition: opacity 0.4s ease-in-out;
+	cursor: pointer;
+}
+
+.content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+
+.content h1{
+	color: yellow;
+	font-family: candy;
+	font-size: 100px;
+	text-align: center;
+	line-height: 0.7;
+}
+
+.border-img:hover .overlay{
+	opacity: 0.8;
+}
+
+/*BOTTONE PRIME 3 COLONNE*/
+
+.button1 {
+  --primary-color: black;
+  --secondary-color: white;
+  --hover-color: white;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.button1 .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button1 .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.button1 .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.button1:hover {
+  background-color: var(--hover-color);
+}
+
+.button1:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.button1:hover .arrow:before {
+  right: 0;
+}
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
