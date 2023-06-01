@@ -9,20 +9,8 @@
 </head>
 <body>
 	<%@include file="includes/topbar.jsp" %>
-	<div class="navbar">
-		<ul>
-			<li><a href="#"><img src="imgs/search.png" alt="search"
-					height="40"></a></li>
-			<li><a href="#"><img src="imgs/computer.png" alt="computer"
-					height="40"></a></li>
-			<li><a href="#"><img src="imgs/console.png" alt="console"
-					height="40"></a></li>
-			<li><a href="#"><img src="imgs/videogame.png"
-					alt="videogame" height="40"></a></li>
-			<li style="margin: 0px 10px 0px;"><a href="#"><img
-					src="imgs/gadget.png" alt="gadget" height="40"></a></li>
-		</ul>
-	</div>
+	<%@include file="includes/navbar.jsp" %>
+	
 	<div class="background-div">
 
 		<div class="image-slider">
