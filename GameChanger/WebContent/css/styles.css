@@ -16,8 +16,6 @@ body {
 .top-bar {
 	position: relative;
 	z-index: 9999;
-	background: rgb(102,0,0);
-background: linear-gradient(159deg, rgba(102,0,0,1) 0%, rgba(3,3,64,1) 20%, rgba(3,3,64,1) 80%, rgba(102,0,0,1) 100%);
 	color: #fff;
 	height: 70px;
 	display: flex;

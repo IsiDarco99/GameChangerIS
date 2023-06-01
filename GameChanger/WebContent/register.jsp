@@ -6,8 +6,11 @@
 <%@include file="includes/head.jsp"%>
 <title>Pagina Registrazione</title>
 <link rel="stylesheet" href="css/register.css">
+<link rel="stylesheet" href="css/topbar.css">
 </head>
 <body>
+<%@include file="includes/topbar.jsp"%>
+<div class="cont">
 	<div class="center">
 		<h1>Registrati</h1>
 		<form method="post">
@@ -50,6 +53,7 @@
 				</div>
 			</div>
 		</form>
+	</div>
 	</div>
 	<%@include file="includes/footer.jsp"%>
 </body>
