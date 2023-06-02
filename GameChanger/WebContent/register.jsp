@@ -3,14 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
-<title>Pagina Registrazione</title>
 <link rel="stylesheet" href="css/register.css">
-<!-- css topbar -->
 <link rel="stylesheet" href="css/topbar.css">
 </head>
 <body>
-<!-- include topbar -->
 <%@include file="includes/topbar.jsp"%>
 <div class="cont">
 	<div class="center">
