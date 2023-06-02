@@ -1,6 +1,6 @@
 @font-face{
-	font-family: candy;
-	src:url(../fonts/Candy.otf);
+	font-family: crotah;
+	src:url(../fonts/Crotah.ttf);
 }
 
 * {
@@ -98,7 +98,7 @@ body {
 }
 
 .border-img:hover img{
-  filter: grayscale(70%);
+  filter: grayscale(100%);
 }
 
 .card-img {
@@ -121,80 +121,76 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	
 }
 
 .content h1{
 	color: yellow;
-	font-family: candy;
-	font-size: 100px;
+	font-family: crotah;
+	font-size: 50px;
 	text-align: center;
-	line-height: 0.7;
+	line-height: 1.3;
+	text-transform: uppercase;
 }
 
 .border-img:hover .overlay{
 	opacity: 0.8;
 }
 
-/*BOTTONE PRIME 3 COLONNE*/
-
-.button1 {
-  --primary-color: black;
-  --secondary-color: white;
-  --hover-color: white;
-  --arrow-width: 10px;
-  --arrow-stroke: 2px;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 20px;
-  color: var(--secondary-color);
-  padding: 1em 1.8em;
-  background: var(--primary-color);
-  display: flex;
-  transition: 0.2s background;
-  align-items: center;
-  gap: 0.6em;
-  font-weight: bold;
-}
-
-.button1 .arrow-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button1 .arrow {
-  margin-top: 1px;
-  width: var(--arrow-width);
-  background: var(--primary-color);
-  height: var(--arrow-stroke);
-  position: relative;
-  transition: 0.2s;
-}
-
-.button1 .arrow::before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  border: solid var(--secondary-color);
-  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+.neon {
   display: inline-block;
-  top: -3px;
-  right: 3px;
-  transition: 0.2s;
-  padding: 3px;
-  transform: rotate(-45deg);
+  padding-top: 50px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de,
+    0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
 }
 
-.button1:hover {
-  background-color: var(--hover-color);
+
+
+.neon h1 {
+	font-size: 5rem;
 }
 
-.button1:hover .arrow {
-  background: var(--secondary-color);
+.neon p {
+	font-size: 20px;
 }
 
-.button1:hover .arrow:before {
-  right: 0;
+.neon .B {
+  animation: flicker 3s infinite;
 }
 
+.neon .S {
+  animation: flicker 1s infinite;
+}
+
+.neon .L {
+  animation: flicker 4s infinite;
+}
+
+.neon .R {
+  animation: flicker 5s infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de,
+      0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  71%,
+  100% {
+    text-shadow: none;
+  }
+}

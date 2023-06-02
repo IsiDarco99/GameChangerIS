@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 <body>
-	<%@include file="includes/topbar.jsp" %>
-	<%@include file="includes/navbar.jsp" %>
-	
+	<%@include file="includes/topbar.jsp"%>
+	<%@include file="includes/navbar.jsp"%>
+
 	<div class="background-div">
 
 		<div class="image-slider">
@@ -28,8 +28,16 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="container" style="margin-top: 100px;">
+	<div class="d-flex justify-content-center neon">
+		<p>da un'occhiata ai nostri</p>
+	</div>
+	<div class="d-flex justify-content-center neon" style="padding: 0 0 50px 0;">
+		<h1 style="padding: 0;">
+			<span class="B">B</span>est<span class="S">s</span>e<span class="L">l</span>le<span
+				class="R">r</span>
+		</h1>
+	</div>
+	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-3">
 				<div class="border-img">
@@ -37,13 +45,7 @@
 						alt="prima_offerta">
 					<div class="overlay">
 						<div class="content">
-							<h1>Che che che parte sarai?</h1>
-								<button class="button1">
-									Scopri
-									<div class="arrow-wrapper">
-										<div class="arrow"></div>
-									</div>
-								</button>
+							<h1>Scoprilo subito</h1>
 						</div>
 					</div>
 				</div>
@@ -55,7 +57,7 @@
 						alt="prima_offerta">
 					<div class="overlay">
 						<div class="content">
-							<h1>Compra subito</h1>
+							<h1>Scoprilo subito</h1>
 						</div>
 					</div>
 				</div>
@@ -68,7 +70,7 @@
 						alt="prima_offerta">
 					<div class="overlay">
 						<div class="content">
-							<h1>Compra subito</h1>
+							<h1>Scoprilo subito</h1>
 						</div>
 					</div>
 				</div>
