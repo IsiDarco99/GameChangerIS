@@ -19,10 +19,12 @@ import cn.gamechanger.connection.DbCon;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.sendRedirect("login.jsp");
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()){
@@ -30,20 +32,25 @@ public class LoginServlet extends HttpServlet {
 			String password = request.getParameter("login-password");
 			
 			try {
-				UserDao udao = new UserDao(DbCon.getConnection());
-				User user = udao.userLogin(email, password);
-				
-				if(user != null) {
-					out.print("user login");
-				}else {
-					out.print("user login failed");
-				}
-			} catch (ClassNotFoundException | SQLException e) {
-				e.printStackTrace();
+			    // Codice che potrebbe generare un'eccezione specifica
+			    UserDao udao = new UserDao(DbCon.getConnection());
+			    User user = udao.userLogin(email, password);
+			    
+			    if (user != null) {
+			        out.print("user login");
+			    } else {
+			        out.print("user login failed");
+			    }
+			} catch (ClassNotFoundException cnfe) {
+			    cnfe.printStackTrace();
+			} catch (SQLException sqle) {
+			    sqle.printStackTrace();
 			}
 			
 			
 			out.print(email+password);
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

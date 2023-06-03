@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="IT">
 <head>
 <title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
@@ -39,6 +39,7 @@
 	</div>
 	<!--informazioni di spedizione-->
 	<fieldset>
+		<legend>Billing info</legend>
 		<div class="row">
 			<div class="col-75">
 				<div class="container">
