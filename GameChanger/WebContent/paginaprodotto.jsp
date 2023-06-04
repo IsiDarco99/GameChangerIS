@@ -70,7 +70,7 @@
     </div>
 
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%@ include file="includes/footer.jsp" %>
 <script>
 $(document).ready(function() {
     var containerCarosello = $('.container-carosello');
@@ -108,6 +108,6 @@ $(document).ready(function() {
 });
 </script>
 
-<%@ include file="includes/footer.jsp" %>
+
 </body>
 </html>
