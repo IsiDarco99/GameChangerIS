@@ -21,8 +21,13 @@ public class LoginServlet extends HttpServlet {
     
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("login.jsp");
-	}
+		  try {
+		    response.sendRedirect("login.jsp");
+		  } catch (IOException e) {
+			  e.printStackTrace();
+		  }
+		}
+
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

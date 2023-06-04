@@ -1,16 +1,16 @@
 package cn.gamechanger.model.dao;
 
+import java.util.logging.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.User;
 
 public class UserDao {
 	private Connection con;
-	private String query;
-	private PreparedStatement pst;
-	private ResultSet rs;
+	private static final Logger logger = Logger.getLogger(DbCon.class.getName());
 	
 	public UserDao(Connection con) {
 		this.con = con;
@@ -20,19 +20,19 @@ public class UserDao {
 		User user = null;
 		
 		try {
-			query = "select * from utente where username=? and password=?";
+			String query = "select * from utente where username=? and password=?";
 			
-			pst = this.con.prepareStatement(query);
+			PreparedStatement pst = this.con.prepareStatement(query);
 			pst.setString(1, email);
 			pst.setString(2, password);
-			rs = pst.executeQuery();
+			ResultSet rs = pst.executeQuery();
 			
 			if(rs.next()){
 				user = new User();
 				user.setUsername(rs.getString("username"));
 				user.setEmailPers(rs.getString("email_pers"));
 				user.setEmailPaypal(rs.getString("email_paypal"));
-				user.setNumTel(rs.getInt(0));
+				user.setNumTel(rs.getInt(1));
 				user.setIndirizzo(rs.getString("indirizzo"));
 				user.setPassword(rs.getString("password"));
 				user.setNome(rs.getString("nome"));
@@ -42,7 +42,7 @@ public class UserDao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.print(e.getMessage());
+			logger.info(e.getMessage());
 		}
 		
 		return user;

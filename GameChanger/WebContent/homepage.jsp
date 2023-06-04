@@ -79,7 +79,6 @@
 	</div>
 
 	<p style="padding: 400px">Padding</p>
-	<img src="imgs/homepage/carousel/sekiro.jpg" class="img-fluid">
 	<p style="padding: 400px">Padding</p>
 	<p style="padding: 400px">Padding</p>
 

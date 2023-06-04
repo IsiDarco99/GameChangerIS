@@ -42,7 +42,7 @@
 
 	<!--payment-->
 	<fieldset>
-
+		<legend>Payment</legend>
 		<div class="col-75">
 			<div class="container">
 				<div class="col-50">
