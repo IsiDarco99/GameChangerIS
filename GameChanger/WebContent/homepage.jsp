@@ -78,23 +78,25 @@
 			</div>
 		</div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<div class="nuove-usc-testo">
+		<div class="title-wrapper">
+			<h1 class="sweet-title">
+				<span data-text="Nuove">Nuove</span> <span data-text="Uscite">Uscite</span>
+			</h1>
+			<span class="top-title">Scopri le nostre</span>
+		</div>
+	</div>
 	<div class="container">
-	<div class="arrow_prev"><img src="imgs/generale/arrow.png" alt="Freccia giù" height="25"></div>
+		<div class="arrow_prev">
+			<a><img src="imgs/generale/arrow.png" alt="Freccia giù"
+				height="25"></a>
+		</div>
 		<div class="row nuove-uscite">
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/brawhalla.jpg"
-						alt="Brawhalla">
+					<a href="#"><img
+						src="imgs/homepage/secondo-carosello/brawhalla.jpg"
+						alt="Brawhalla"></a>
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -126,11 +128,37 @@
 						alt="Rocket League">
 				</div>
 			</div>
-			
+
 		</div>
-		
-			<div class="arrow_next"><img src="imgs/generale/arrow.png" alt="Freccia giù" height="25"></div>
+
+		<div class="arrow_next">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
 	</div>
+	<div class="container" style="margin-top: 100px;">
+		<div class="row">
+			<div class="col-5 video-info">
+				<span class="head">IN ARRIVO</span>
+				<p>Neva segue la storia di Alba, una giovane donna legata a un
+					curioso cucciolo di lupo, a seguito di un incontro traumatico con
+					le forze oscure. Insieme intraprendono un pericoloso viaggio
+					attraverso un mondo un tempo meraviglioso, ma che ora cade
+					lentamente a pezzi. Nel tempo, il loro rapporto si evolve man mano
+					che imparano a collaborare, aiutandosi l'un l'altra per superare
+					coraggiosamente situazioni sempre più pericolose. Il lupo passerà
+					dall'essere un cucciolo ribelle a un adulto imponente in cerca
+					della sua identità, mettendo alla prova l'affetto di Alba e il loro
+					impegno reciproco.</p>
+			</div>
+			<div class="col-7 video-container">
+				<iframe width="560" height="315"
+					src="https://www.youtube.com/embed/q7qpQuCNgQo"
+					title="YouTube video player"></iframe>
+			</div>
+
+		</div>
+	</div>
+
 	<p style="padding: 400px">Padding</p>
 	<p style="padding: 400px">Padding</p>
 
@@ -139,13 +167,14 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('.nuove-uscite').slick({
+				dots : true,
 				infinite : true,
 				slidesToShow : 3,
 				slidesToScroll : 1,
-				autoplay: true,
-				autoplaySpeed: 1700,
-				prevArrow: '.arrow_prev',
-				nextArrow: '.arrow_next'
+				autoplay : true,
+				autoplaySpeed : 2000,
+				prevArrow : '.arrow_prev',
+				nextArrow : '.arrow_next'
 			});
 		});
 	</script>
