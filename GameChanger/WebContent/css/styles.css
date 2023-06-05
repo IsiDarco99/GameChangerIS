@@ -7,9 +7,14 @@
   box-sizing: border-box;
 }
 
-.container{
+.container, .container-home{
 	position: relative;
 }
+
+.container-home .row {
+	margin: 0;
+}
+
 body {
 	background: rgb(54,20,57);
 	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
@@ -21,59 +26,26 @@ body {
     position: sticky;
     top: 0;
 }
-
-.background-div {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: flex-end;
-	padding: 20vw 0;
-	background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 80%,
-		rgba(53,19,57, 0.5) 95%, #351439),
-		linear-gradient(to right, rgba(0, 0, 0, 0) 80%,
-		rgba(53,19,57, 0.5) 95%, #351439),
-		linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%,
-		rgba(3,3,64, 0.5) 95%, #030340),
-		linear-gradient(to top, rgba(0, 0, 0, 0) 80%,
-		rgba(3,3,64, 0.5) 95%, #030340),
-		url("../imgs/homepage/primo-carosello/sekiro.jpg");
-	background-color: #cccccc;
-	background-size: cover;
-	margin: auto;
-	max-width: 100%;
-	height: auto;
+.carosello-home {
+  position: relative;
+  width: 100%;
 }
 
-
-.image-slider {
-	position: absolute;
-    top: 50%;
-    right: 0;
-     transform: translateY(-50%);
-    margin-right: 10px;
-	background-color: rgba(0, 0, 0, 0.8);
-	/* Colore di sfondo dell'image slider */
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 999;
-	/* Assicurati che l'image slider sia posizionato sopra gli altri elementi */
-	overflow: auto;
-	/* Aggiungi uno scroll se l'image-slider supera l'altezza dello schermo */
-	border-radius: 50px;
+.carosello-home img {
+  width: 100%;
+  height: 90vh;
 }
 
-.slider-controls {
-	margin: 0px;
-}
-
-.slider-dot {
-	width: 10px;
-	height: 10px;
-	background-color: #ccc;
-	border-radius: 50%;
-	margin: 20px 0px;
+.carosello-home .gradient:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background:linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%,
+		rgba(3,3,64, 0.3) 95%, #030340);
 }
 
 
@@ -218,14 +190,27 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 999;
 }
 
-.arrow_prev {
+.container-home .arrow_prev {
+  left: 35%;
+  top: 90%;
+  transform: rotate(90deg);
+}
+
+.container-home .arrow_next {
+  right: 35%;
+  top: 90%;
+  transform: rotate(270deg);
+}
+
+.container .arrow_prev {
   left: -20px;
   transform: rotate(90deg);
 }
 
-.arrow_next {
+.container .arrow_next {
   right: 0px;
   transform: rotate(270deg);
 }

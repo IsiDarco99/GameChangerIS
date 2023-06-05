@@ -11,23 +11,31 @@
 	<%@include file="includes/topbar.jsp"%>
 	<%@include file="includes/navbar.jsp"%>
 
-	<div class="background-div">
+	<div class="container-home">
+		<div class="arrow_prev">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		<div class="arrow_next">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		
+		<div class="row carosello-home">
+			<div class="gradient">
+			<div class="col-md-12">
+				<img src="imgs/homepage/primo-carosello/sekiro.jpg" alt="Brawhalla">
+			</div>
+			</div>
+			<div class="gradient">
+			<div class="col-md-12">
+				<img src="imgs/homepage/primo-carosello/fallout.jpg" alt="Computer">
+			</div>
+			</div>
 
-		<div class="image-slider">
-			<div class="slider-controls">
-				<img src="imgs/generale/arrow.png" alt="Freccia su" height="15"
-					style="transform: rotate(180deg)">
-			</div>
-			<div class="slider-dots">
-				<div class="slider-dot"></div>
-				<div class="slider-dot"></div>
-				<div class="slider-dot"></div>
-			</div>
-			<div class="slider-controls">
-				<img src="imgs/generale/arrow.png" alt="Freccia giù" height="15">
-			</div>
+			
 		</div>
 	</div>
+
+
 	<div class="d-flex justify-content-center neon">
 		<p>da un'occhiata ai nostri</p>
 	</div>
@@ -88,8 +96,7 @@
 	</div>
 	<div class="container">
 		<div class="arrow_prev">
-			<a><img src="imgs/generale/arrow.png" alt="Freccia giù"
-				height="25"></a>
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="row nuove-uscite">
 			<div class="col-md-12">
@@ -173,6 +180,20 @@
 				slidesToScroll : 1,
 				autoplay : true,
 				autoplaySpeed : 2000,
+				prevArrow : '.arrow_prev',
+				nextArrow : '.arrow_next'
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.carosello-home').slick({
+				dots : true,
+				infinite : true,
+				slidesToShow : 1,
+				slidesToScroll : 1,
+				autoplay : true,
+				autoplaySpeed : 5000,
 				prevArrow : '.arrow_prev',
 				nextArrow : '.arrow_next'
 			});
