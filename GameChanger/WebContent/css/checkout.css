@@ -177,7 +177,6 @@ b, strong {
   color: #ffffffb5;
   max-width: 800px; /* Imposta il valore desiderato per la larghezza massima */
   padding: 5px 20px 15px 20px;
-  border-radius: 3px;
   box-shadow: 0 5px 25px rgb(5, 5, 5);
   background-color: #394759;
   border-radius: 10px;
@@ -187,7 +186,6 @@ b, strong {
 	
 	padding: 5px 20px 15px 20px;
 	/*border: 1px solid #49F2E1;*/
-	border-radius: 3px;
 	box-shadow: 0 5px 25px rgb(5, 5, 5);
 	background-color: #394759;
 	border-radius: 10px;
