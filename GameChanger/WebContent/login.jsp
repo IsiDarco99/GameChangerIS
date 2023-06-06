@@ -6,12 +6,11 @@
 <title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
 <link rel="stylesheet" href="css/login.css" type="text/css">
+<link rel="stylesheet" href="css/topbar.css">
 </head>
 <body>
-	<div class="logo">
-		<img src="imgs/logo.png" alt="Logo" height="90">
-	</div>
-
+	<%@include file="includes/topbar.jsp"%>
+	<div class="container">
 	<div class="center">
 		<h1>Login</h1>
 		<form action="user-login" method="post">
@@ -30,6 +29,8 @@
 			</div>
 		</form>
 	</div>
+	</div>
+	
 	<%@include file="includes/footer.jsp"%>
 </body>
 </html>
