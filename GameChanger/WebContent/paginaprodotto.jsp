@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="IT">
 <head>
-<meta charset="ISO-8859-1">
 <title>GameChanger</title>
 <%@ include file="includes/head.jsp" %>
 <link rel="stylesheet" href="css/paginaprodotto.css" type="text/css">

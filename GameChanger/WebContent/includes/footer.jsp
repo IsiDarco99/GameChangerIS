@@ -229,7 +229,7 @@ section {
 		<div>
 			<i class="fa fa-envelope"></i>
 			<p>
-				<a href="mailto:support@company.com">support@company.com</a>
+				<a href="mailto:support@company.com">gamechanger@company.com</a>
 			</p>
 		</div>
 

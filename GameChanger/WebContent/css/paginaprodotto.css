@@ -6,10 +6,11 @@ body {
 p {
 	margin: 0;
 	}
-	.col-5 {
+.informazioni {
+	padding:20px;
 	background-color: white;
 	border-radius: 30px;
-	}
+}
 .container {
 	padding-left: 50px;
 	padding-top: 50px;
@@ -242,6 +243,7 @@ button:hover::after {
 	font-size: 25px;
 	margin-bottom: 10px;
 }
+
 .descrizone-prodotto {
 	margin: 0 8px;
     padding: 0 0 60px 0;
