@@ -5,7 +5,7 @@
 <head> 
 <meta charset="ISO-8859-1">
 <title>bill </title>
-
+<script src="check.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,200&display=swap" rel="stylesheet">
@@ -76,8 +76,8 @@
               <label>
                 <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
               </label>
-              <input type="submit" id="submitBtn" value="Continue to checkout" class="btn">
-            </form>
+             <input type="submit" id="submitBtn" value="Continue to checkout" class="btn" onclick="redirectToCheckout2()">
+            </form> 
           </div>
         </div>
        </div>
@@ -92,8 +92,11 @@
     
       
   </div>
-</div>
-
+<script>
+  document.getElementById("submitBtn").addEventListener("click", function() {
+    window.location.href = "Checkout2.jsp";
+  });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
