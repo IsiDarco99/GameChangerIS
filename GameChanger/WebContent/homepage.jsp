@@ -167,9 +167,6 @@
 		</div>
 	</div>
 
-	<p style="padding: 400px">Padding</p>
-	<p style="padding: 400px">Padding</p>
-
 	<%@include file="includes/footer.jsp"%>
 
 	<script type="text/javascript">
