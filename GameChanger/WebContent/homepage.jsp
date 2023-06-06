@@ -12,10 +12,10 @@
 	<%@include file="includes/navbar.jsp"%>
 
 	<div class="container-home">
-		<div class="arrow_prev">
+		<div class="arrow_prev1">
 			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
-		<div class="arrow_next">
+		<div class="arrow_next1">
 			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		
@@ -95,7 +95,10 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="arrow_prev">
+		<div class="arrow_prev2">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		<div class="arrow_next2">
 			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="row nuove-uscite">
@@ -138,11 +141,9 @@
 
 		</div>
 
-		<div class="arrow_next">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
-		</div>
+		
 	</div>
-	<div class="container" style="margin-top: 100px;">
+	<div class="container box" style="margin-top: 100px;">
 		<div class="row">
 			<div class="col-5 video-info">
 				<span class="head">IN ARRIVO</span>
@@ -180,8 +181,8 @@
 				slidesToScroll : 1,
 				autoplay : true,
 				autoplaySpeed : 2000,
-				prevArrow : '.arrow_prev',
-				nextArrow : '.arrow_next'
+				prevArrow : '.arrow_prev2',
+				nextArrow : '.arrow_next2'
 			});
 		});
 	</script>
@@ -194,8 +195,8 @@
 				slidesToScroll : 1,
 				autoplay : true,
 				autoplaySpeed : 5000,
-				prevArrow : '.arrow_prev',
-				nextArrow : '.arrow_next'
+				prevArrow : '.arrow_prev1',
+				nextArrow : '.arrow_next1'
 			});
 		});
 	</script>
