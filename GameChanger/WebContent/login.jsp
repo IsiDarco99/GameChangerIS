@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/topbar.css">
 </head>
 <body>
+<!-- commento -->
 	<%@include file="includes/topbar.jsp"%>
 	<div class="container">
 	<div class="center">

@@ -7,9 +7,16 @@ p {
 	margin: 0;
 	}
 	.col-5 {
-	background-color: white;
+	background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
 	border-radius: 30px;
+	 box-shadow: 10px 10px black;
+	 margin-bottom: 20px;
 	}
+	.informazioni p {
+	color: #cccccc;
+	
+	}
+	
 .container {
 	padding-left: 50px;
 	padding-top: 50px;
@@ -114,7 +121,7 @@ p {
 
 button {
   position: relative;
-  margin: 0;
+  margin-left: 30px;
   padding: 0.8em 1em;
   outline: none;
   text-decoration: none;
@@ -201,7 +208,7 @@ button:hover::after {
     vertical-align: middle;
 }
 .prezzo p {
-	
+	margin-top: 35px;
 	text-align: left;
     font-size: 16px;
     
@@ -241,6 +248,7 @@ button:hover::after {
 .informazioni p {
 	font-size: 25px;
 	margin-bottom: 10px;
+	margin-left: 30px;
 }
 .descrizone-prodotto {
 	margin: 0 8px;
@@ -271,7 +279,7 @@ button:hover::after {
 	padding: 0 30px;
     text-decoration: none;
     font-weight: normal;
-    color: white !important;
+    color:#C0C0C0 !important;
 }
 .descrizione-2 {
 	overflow: hidden;
@@ -288,11 +296,12 @@ button:hover::after {
 .testo p {
 	text-align: justify;
     line-height: 20px;
-    color: white;
+    color: #C0C0C0;;
 }
 .content2 {
 	margin: 20px;
 }
 .scritta-prodotti h3{
 	color: white;
+	margin-top: 17px;
 }

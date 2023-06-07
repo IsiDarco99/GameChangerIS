@@ -6,6 +6,7 @@
 <title>GameChanger</title>
 <%@ include file="includes/head.jsp" %>
 <link rel="stylesheet" href="css/paginaprodotto.css" type="text/css">
+<script src="JS/paginaprodotto.js"></script>
 </head>
 <body>
 <%@ include file="includes/topbar.jsp" %>
@@ -59,6 +60,7 @@ spedizione </label>
 </p>
 <p>
 <label> Genere</label>
+
 <span>Action</span>
 </p>
 <p>
