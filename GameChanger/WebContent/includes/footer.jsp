@@ -1,17 +1,7 @@
 <style>
-section {
-  width: 100%;
-  display: inline-block;
-  background: #333;
-  height: 50vh;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
-}
 
 .footer-distributed{
-  background: #666;
+  background: #42115E;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
@@ -43,7 +33,7 @@ section {
 }
 
 .footer-distributed h3 span{
-  color:  #d40ddb;
+  color:  #8c031c;
 }
 
 /* Footer links */
@@ -63,7 +53,7 @@ section {
 }
 
 .footer-distributed .footer-company-name{
-  color:  #222;
+  color:  #92999f;
   font-size: 14px;
   font-weight: normal;
   margin: 0;

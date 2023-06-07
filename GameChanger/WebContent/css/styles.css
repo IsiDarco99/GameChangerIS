@@ -17,7 +17,7 @@
 
 body {
 	background: rgb(54,20,57);
-	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	background: linear-gradient(90deg, #160E6B 0%, #42115E 25%, #42115E 75%, #160E6B 100%);
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -332,12 +332,12 @@ overflow:hidden;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;
   text-shadow: 
-						8px 8px #ff1f8f;
+						8px 8px #8c031c;
 }
 
 .box {
 	padding: 20px;
-	border: solid #4b115e 5px;
+	border: solid #8c031c 5px;
 	border-radius: 20px;
 }
 
