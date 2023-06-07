@@ -6,27 +6,16 @@ body {
 p {
 	margin: 0;
 	}
-<<<<<<< HEAD
-	.col-5 {
-	background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
-=======
 .informazioni {
 	padding:20px;
-	background-color: white;
->>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep.git
 	border-radius: 30px;
-<<<<<<< HEAD
+	background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
 	 box-shadow: 10px 10px black;
 	 margin-bottom: 20px;
 	}
-	.informazioni p {
-	color: #cccccc;
-	
+.informazioni p {
+	color: #cccccc;	
 	}
-	
-=======
-}
->>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep.git
 .container {
 	padding-left: 50px;
 	padding-top: 50px;

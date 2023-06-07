@@ -73,6 +73,7 @@ spedizione </label>
 <button class="carrello">
     <span> Aggiungi al carrello</span>
 </button>
+
 </div>
 </div>
 
