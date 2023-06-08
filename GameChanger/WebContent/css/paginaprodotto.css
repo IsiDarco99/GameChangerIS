@@ -201,17 +201,16 @@ button:hover::before {
 button:hover::after {
   transform: translate(50%, 0) scale(1.1);
 }
+.quantity {
+  display: flex;
+  align-items: center;
+}
 
-.prezzo {
-	display: inline-block;
-    vertical-align: middle;
+button {
+  padding: 5px 10px;
+  margin: 0 5px;
 }
-.prezzo p {
-	margin-top: 35px;
-	text-align: left;
-    font-size: 16px;
-    
-}
+
 .numero{ 
 	text-decoration: none;
 }
@@ -222,6 +221,13 @@ button:hover::after {
 }
 .carrello {
 	margin-top : 20px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 50px;
+}
+.bottoni {
+	display: flex;
+	justify-content: center;
 }
 .descrizione {
 	display: inline-block;
@@ -236,6 +242,9 @@ button:hover::after {
 }
 .desrizione em {
 	font-size: normal;
+}
+.scritta-spedizione label  {
+	line-height: 30px;
 }
 .dettagli {
 	margin-top: 20px;
@@ -302,6 +311,19 @@ button:hover::after {
 	margin: 20px;
 }
 .scritta-prodotti h3{
-	color: white;
+	color: #C0C0C0 !important;
 	margin-top: 17px;
+}
+#quantity {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50px;
+    height: 43px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+}
+.numero p {
+	font-size: 30px !important;
 }

@@ -5,7 +5,7 @@
 <title>GameChanger</title>
 <%@ include file="includes/head.jsp" %>
 <link rel="stylesheet" href="css/paginaprodotto.css" type="text/css">
-<script src="JS/paginaprodotto.js"></script>
+<script src="js/paginaprodotto.js"> </script>
 </head>
 <body>
 <%@ include file="includes/topbar.jsp" %>
@@ -41,20 +41,12 @@
 <div class="col-1"></div>
 <div class="col-5">
 <div class="informazioni">
-<div class="prezzo">
-<p> Prezzo </p>
-</div>
-<div class="numero">
-<p> 20.99$ </p>
-</div>
 
 <div class="descrizione">
 <p>
-<label class="dettagli"> Dettagli 
-
-spedizione </label>
+<label class="dettagli"> PEGI </label>
 <span> 
-<em> Spedizione gratuita </em>
+<em> 12+ </em>
 </span>
 </p>
 <p>
@@ -66,14 +58,28 @@ spedizione </label>
 <label> Rilascio</label>
 <span> 27/03/2020</span>
 </p>
+<div class="scritta-spedizione">>
 <p>
-<label> PEGI</label>
-<span> 12+</span>
-</p>
-<button class="carrello">
-    <span> Aggiungi al carrello</span>
-</button>
+<label>  Dettagli 
 
+spedizione</label>
+<span> Spedizione gratuita</span>
+</p>
+</div>
+<div class="prezzo">
+<div class="numero">
+<p> 20.99$ </p>
+</div>
+<div class="bottoni" >
+<button class="carrello">
+    <span> Aggiungi al <br> carrello</span>
+</button>
+<div class="quantity">
+  <input type="text" name="quantity" id="quantity" value="1">
+  <button onclick="decreaseQuantity()">-</button>
+  <button onclick="increaseQuantity()">+</button>
+</div>
+</div>
 </div>
 </div>
 
@@ -167,6 +173,7 @@ Scegli tra alcuni dei tuoi personaggi preferiti e affronta un gran numero di nem
 
 
 </div>
+</div>
 <%@ include file="includes/footer.jsp" %>
 <script type="text/javascript">
 		$(document).ready(function() {
@@ -195,5 +202,7 @@ Scegli tra alcuni dei tuoi personaggi preferiti e affronta un gran numero di nem
 			});
 		});
 	</script>
+	
+	
 </body>
 </html>
