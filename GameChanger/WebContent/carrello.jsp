@@ -22,7 +22,7 @@
 <div class="carrello">
 
 
-<!-- CARRELLO VUOTO
+
 <div class="immagine-carrello">
 <img src="imgs/carrello/carrellovuoto1.png" alt="Carrello vuoto">
 
@@ -33,10 +33,10 @@
         </span>
         </h1>
 </div>
- -->
  
  
  
+ <!-- PRODOTTO 
  <div class="immagine">
  <img src="imgs/carrello/carrellovuoto1.png" alt="Carrello vuoto">
  </div>
@@ -52,6 +52,7 @@
  </div>
 </div>
 
+-->
 
 
 
@@ -59,8 +60,7 @@
 
 
 
-
-
+</div>
 </div>
 <%@ include file="includes/footer.jsp" %>
 </body>

@@ -116,9 +116,4 @@ public class User {
 				+ cognome + ", dataNascita=" + dataNascita + ", codFiscale=" + codFiscale + "]";
 	}
 
-	
-	
-	
-	
-	
 }
