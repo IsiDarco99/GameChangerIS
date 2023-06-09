@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 public class CookieEncryptionUtil {
-	private static final String SECRET_KEY = "M8ittLYnDdfpo#A4jS12w4G5!@z12345"; // Esempio di chiave segreta con 32 byte
+	private static final String SECRET_KEY = "AhuYTbKjoPlIUtREbNmKJdSeWQUkLpOi"; // Esempio di chiave segreta con 32 byte
 
     public static String encryptCookie(String value) {
         try {

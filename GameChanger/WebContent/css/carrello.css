@@ -1,8 +1,19 @@
 body {
 	background: rgb(54,20,57);
-	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	background: linear-gradient(90deg, #160E6B 0%, #42115E 25%, #42115E 75%, #160E6B 100%);
 	font-family: Arial, Helvetica, sans-serif;
-	
+}
+.nome-prodotto {
+	color: white;
+}
+.container-prodotto {
+	 border-bottom: solid 1px #d8d8d8;
+	 padding: 20px 0;
+}
+.container-totale {
+	display: flex;
+    justify-content: flex-end;
+    padding-right: 68px;
 }
 .scritta-principale  {
 	overflow: auto;
@@ -21,7 +32,7 @@ body {
 	padding: 20px;
     border-radius: 30px;
     background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
-    box-shadow: 10px 10px black;
+    box-shadow: 0 5px 25px rgb(5, 5, 5);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -35,6 +46,8 @@ body {
 .quantity {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
+  margin-top: 150px;
  
 }
 #quantity {
@@ -144,4 +157,9 @@ button:hover::before {
 
 button:hover::after {
   transform: translate(50%, 0) scale(1.1);
+}
+.prezzo {
+	display: flex;
+    align-items: flex-end;
+    color: white;
 }

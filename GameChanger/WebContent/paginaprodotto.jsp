@@ -29,7 +29,7 @@
 <div class="arrow_prev"><img src="imgs/generale/arrow.png" alt="Freccia giù" height="25"></div>
 <div class="arrow_next"><img src="imgs/generale/arrow.png" alt="Freccia giù" height="25"></div>
 <div class="carosello">
-<img src="imgs/paginaprodotto/Onepiece.jpg"
+<img src="imgs/paginaprodotto/Onepiece.png"
 						alt="Brawhalla">
 						
 <img src="imgs/homepage/secondo-carosello/computer.jpg"

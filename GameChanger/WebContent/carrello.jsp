@@ -22,7 +22,7 @@
 <div class="carrello">
 
 
-<!-- CARRELLO VUOTO
+<!--  
 <div class="immagine-carrello">
 <img src="imgs/carrello/carrellovuoto1.png" alt="Carrello vuoto">
 
@@ -33,17 +33,17 @@
         </span>
         </h1>
 </div>
+ 
  -->
- 
- 
  <div class="container-prodotto">
  
+  
  <div class="immagine">
- <img src="imgs/carrello/carrellovuoto1.png" alt="Carrello vuoto">
+ <img src="imgs/paginaprodotto/Onepiece.png" alt="Carrello vuoto">
  </div>
  <div class="nome-prodotto">
  <h1>
-        <span> Nome prodotto generico 
+        <span> One Piece Pirate Warriors 4 
         </span>
         </h1>
         <div class="quantity">
@@ -54,9 +54,22 @@
  </div>
  
  <div class="prezzo">
- <p> 20.99$ </p>
+ 
+ <p> <strong>Prezzo</strong><br>20.99$ </p>
  </div>
 </div>
+<div class="container-totale">
+ 
+  
+ 
+ <div class="prezzo">
+ 
+ <p> <strong>Totale</strong><br>20.99$ </p>
+ </div>
+</div>
+
+</div>
+
 </div>
 
 
@@ -68,6 +81,7 @@
 
 
 </div>
+
 <%@ include file="includes/footer.jsp" %>
 </body>
 </html>
