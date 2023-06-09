@@ -36,6 +36,7 @@
  -->
  
  
+ <div class="container-prodotto">
  
  <div class="immagine">
  <img src="imgs/carrello/carrellovuoto1.png" alt="Carrello vuoto">
@@ -45,13 +46,18 @@
         <span> Nome prodotto generico 
         </span>
         </h1>
+        <div class="quantity">
+ <input type="text" name="quantity" id="quantity" value="1">
+  <button onclick="decreaseQuantity()">-</button>
+  <button onclick="increaseQuantity()">+</button>
  </div>
- <div class="quantita">
  </div>
+ 
  <div class="prezzo">
+ <p> 20.99$ </p>
  </div>
 </div>
-
+</div>
 
 
 
