@@ -8,16 +8,33 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 20px;
+	justify-content: space-between;
+}
+
+.icons img {
+	padding-right: 30px;
 }
 </style>
 
 <div class="top-bar">
 	<div class="logo">
-		<img src="imgs/generale/logo.png" alt="Logo" height="90">
+		<a href="homepage.jsp"><img src="imgs/generale/logo.png" alt="Home" height="90"></a>
 	</div>
-	<div>
-		<img style="padding: 0 20px 0 0" src="imgs/generale/account.png" alt="Account"
-			height="40"> <img style="padding-right: 10px"
-			src="imgs/generale/settings.png" alt="Impostazioni" height="40">
+	<div class="icons">
+		<a href="login.jsp"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
+		<a href="carrello.jsp"><img src="imgs/generale/carrello.jpg" alt="Carrello" height="40"></a>
+		<a href="#" onclick="logout()"><img src="imgs/generale/logout.png" alt="Logout" height="40"></a>
 	</div>
 </div>
+
+
+<script>
+  function logout() {
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'user-logout';
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+</script>

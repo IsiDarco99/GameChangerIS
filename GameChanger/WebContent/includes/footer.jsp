@@ -196,7 +196,7 @@
 		</h3>
 
 		<p class="footer-links">
-			<a href="#" class="link-1">Home</a> <a href="#">About</a> <a href="#">FAQ</a> <a href="#">Contact</a>
+			<a href="homepage.jsp" class="link-1">Home</a> <a href="faq.jsp">FAQ</a> <a href="#">Privacy</a> <a href="#">Terms & Conditions</a>
 		</p>
 
 		<p class="footer-company-name">GameChanger © 2023</p>
