@@ -51,7 +51,7 @@
 	<div class="col-10">
 	<div class="prodotti">
 	<div class="scritta">
-	<p> <strong> Risulati</strong></p>
+	<p> <strong> Risultati</strong></p>
 	</div>
 	
 	<div class="container-prodotti">
