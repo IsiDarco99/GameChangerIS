@@ -38,7 +38,7 @@ body {
 	display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-right: 0 50px;
+    padding: 0 50px;
 }
 .container-prodotti p{
 	color: white;
@@ -47,4 +47,16 @@ body {
 	text-align: center;
 	font-size: 20px;
     padding-top: 10px;
+}
+
+.prodotto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.prodotto img {
+	width: 250px;
+	height: auto;
 }

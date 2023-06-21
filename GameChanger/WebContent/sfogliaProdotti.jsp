@@ -1,5 +1,13 @@
+<%@page import="cn.gamechanger.connection.DbCon"%>
+<%@page import="cn.gamechanger.model.dao.ProdottoDao"%>
+<%@page import="cn.gamechanger.model.*"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%
+	ProdottoDao pd = new ProdottoDao(DbCon.getConnection());
+	List<Prodotto> prodotti = pd.getAllProdotto();
+%>
 <!DOCTYPE html>
 <html lang="IT">
 <head>
@@ -203,77 +211,27 @@
 					<div class="prodotti">
 						<div class="scritta">
 							<p>
-								<strong> Risulati</strong>
+								<strong> Risultati</strong>
 							</p>
 						</div>
 
 						<div class="container-prodotti">
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
+						<% 
+							if(!prodotti.isEmpty()){
+								for(Prodotto p:prodotti){%>
+									<div class="prodotto">
+									<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+									<div class="informazioni-prodotto">
+										<p>
+											<strong><%= p.getNome() %></strong>
+										<p><%= p.getPrezzo() %> &#x20AC</p>
+									</div>
 								</div>
-							</div>
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
-								</div>
-							</div>
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
-								</div>
-							</div>
-
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
-
-								</div>
-							</div>
-
-
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
-								</div>
-							</div>
-
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
-
-								</div>
-							</div>
-
-
-							<div class="prodotto">
-								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
-								<div class="informazioni-prodotto">
-									<p>
-										<strong>Nome Prodotto</strong>
-									<p>20.99$</p>
-								</div>
-							</div>
-
-							</div>
+								<%}
+							}
+						%>
+							
+							
 						</div>
 					</div>
 				</div>
