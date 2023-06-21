@@ -36,9 +36,9 @@ body {
 }
 .container-prodotti {
 	display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
-    padding-right: 100px;
+    padding-right: 0 50px;
 }
 .container-prodotti p{
 	color: white;

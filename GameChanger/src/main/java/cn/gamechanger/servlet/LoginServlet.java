@@ -15,7 +15,6 @@ import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.UserDao;
 
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.cookie.CookieEncryptionUtil;
 
 @WebServlet("/user-login")
 public class LoginServlet extends HttpServlet {
@@ -33,45 +32,45 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		try (PrintWriter out = response.getWriter()) {
-			String email = request.getParameter("login-username");
-			String password = request.getParameter("login-password");
+	        throws ServletException, IOException {
+	    response.setContentType("text/html;charset=UTF-8");
+	    try (PrintWriter out = response.getWriter()) {
+	        String email = request.getParameter("login-username");
+	        String password = request.getParameter("login-password");
 
-			try {
-				UserDao udao = new UserDao(DbCon.getConnection());
-				User user = udao.userLogin(email, password);
+	        try {
+	            UserDao udao = new UserDao(DbCon.getConnection());
+	            User user = udao.userLogin(email, password);
 
-				if (user != null) {
-					// Creazione del cookie di sessione per l'utente
-					String encryptedValue = CookieEncryptionUtil.encryptCookie(user.getUsername());
-					Cookie sessionCookie = new Cookie("userSession", encryptedValue);
-					sessionCookie.setMaxAge(60 * 30);
-					response.addCookie(sessionCookie);
+	            if (user != null) {
+	                // Creazione del cookie di sessione per l'utente
+	                Cookie sessionCookie = new Cookie("userSession", user.getUsername());
+	                sessionCookie.setMaxAge(60 * 60 * 24);
+	                response.addCookie(sessionCookie);
 
-					out.print("user login");
-				} else {
-					out.print("user login failed");
-				}
+	                out.print("user login");
+	            } else {
+	                out.print("user login failed");
+	            }
 
-				Cookie[] cookies = request.getCookies();
-				if (cookies != null) {
-					for (Cookie cookie : cookies) {
-						System.out.println("Cookie Name: " + cookie.getName());
-						System.out.println("Cookie Value: " + CookieEncryptionUtil.decryptCookie(cookie.getValue()));
-					}
-				}
-			} catch (ClassNotFoundException cnfe) {
-				cnfe.printStackTrace();
-			} catch (SQLException sqle) {
-				sqle.printStackTrace();
-			}
+	            Cookie[] cookies = request.getCookies();
+	            if (cookies != null) {
+	                for (Cookie cookie : cookies) {
+	                    System.out.println("Cookie Name: " + cookie.getName());
+	                    System.out.println("Cookie Value: " + cookie.getValue());
+	                }
+	            }
+	        } catch (ClassNotFoundException cnfe) {
+	            cnfe.printStackTrace();
+	        } catch (SQLException sqle) {
+	            sqle.printStackTrace();
+	        }
 
-			out.print(email + password);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	        out.print(email + password);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 }

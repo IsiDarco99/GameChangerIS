@@ -19,6 +19,7 @@
 		<div></div>
 	</div>
 	<div class="container">
+<<<<<<< HEAD
 	<div class ="container-generale">
 	<div class="row">
 	<div class="col-2">
@@ -166,6 +167,119 @@
 	
 	</div>
 	</div>
+=======
+		<div class="container-generale">
+			<div class="row">
+				<div class="col-2">
+
+					<div class="categoria">
+						<p>
+							<strong> Categoria</strong>
+						</p>
+
+						<div class="filtri">
+							<p>Videogiochi</p>
+							<p>Accessori</p>
+							<p>Computer</p>
+							<p>Console</p>
+
+						</div>
+
+						<div class="prezzo">
+							<p>
+								<strong> Prezzo</strong>
+							</p>
+							<div class="filtri-2">
+								<p>Fino a 20 EUR</p>
+								<p>Da 20 a 50 EUR</p>
+								<p>Da 50 a 100 EUR</p>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="col-10">
+					<div class="prodotti">
+						<div class="scritta">
+							<p>
+								<strong> Risulati</strong>
+							</p>
+						</div>
+
+						<div class="container-prodotti">
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+								</div>
+							</div>
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+								</div>
+							</div>
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+								</div>
+							</div>
+
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+
+								</div>
+							</div>
+
+
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+								</div>
+							</div>
+
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+
+								</div>
+							</div>
+
+
+							<div class="prodotto">
+								<img src="imgs/paginaprodotto/Onepiece.png" alt="Brawhalla">
+								<div class="informazioni-prodotto">
+									<p>
+										<strong>Nome Prodotto</strong>
+									<p>20.99$</p>
+								</div>
+							</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep.git
 	</div>
 	<%@include file="includes/footer.jsp"%>
 </body>
