@@ -1,17 +1,19 @@
 package cn.gamechanger.model;
 
+import java.sql.Date;
+
 public class Prodotto {
     private int codice;
     private float prezzo;
     private String nome;
     private String marca;
     private String descrizione;
-    private String dataUscita;
+    private Date dataUscita;
 
     public Prodotto() {
     }
 
-    public Prodotto(int codice, float prezzo, String nome, String marca, String descrizione, String dataUscita) {
+    public Prodotto(int codice, float prezzo, String nome, String marca, String descrizione, Date dataUscita) {
         this.codice = codice;
         this.prezzo = prezzo;
         this.nome = nome;
@@ -60,12 +62,12 @@ public class Prodotto {
         this.descrizione = descrizione;
     }
 
-    public String getDataUscita() {
+    public Date getDataUscita() {
         return dataUscita;
     }
 
-    public void setDataUscita(String dataUscita) {
-        this.dataUscita = dataUscita;
+    public void setDataUscita(Date date) {
+        this.dataUscita = date;
     }
 
     @Override
