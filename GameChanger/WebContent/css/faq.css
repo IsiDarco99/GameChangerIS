@@ -1,0 +1,43 @@
+body {
+	background: rgb(54,20,57);
+	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+	margin-top: 100px;
+}
+.scritta {
+	border-bottom: solid 1px #d8d8d8;
+	color: white;
+}
+.container-faq {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.domanda {
+  background: whitesmoke; /* colore di sfondo */
+  color: blueviolet; /* colore del titolo */
+  border: 5px solid grey; /* colore del bordo */
+  /* list-style: none; */ /* Nascondi il triangolino a sx */
+  border-radius: 5px; /* Bordo arrotondato */
+  font-weight: 700;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.7s ease-in-out; /* Durata Animazione */
+}
+.container-faq details {
+	margin: 10px;
+}
+.domanda:hover {padding-left: 25px;} /* Animaz. al passaggio mouse */
+ 
+.domanda details[open] > summary:before {transform: rotate(90deg);} /* Ruota il triangolo all'apertura */
+ 
+.domanda-testo {
+  background: whitesmoke; /* sfondo del testo faq*/
+  color: blue; /* colore del testo faq */
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: justify;
+}

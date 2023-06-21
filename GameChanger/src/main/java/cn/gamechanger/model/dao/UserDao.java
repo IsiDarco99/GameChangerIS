@@ -32,7 +32,7 @@ public class UserDao {
 				user.setUsername(rs.getString("username"));
 				user.setEmailPers(rs.getString("email_pers"));
 				user.setEmailPaypal(rs.getString("email_paypal"));
-				user.setNumTel(rs.getInt(1));
+				user.setNumTel(rs.getInt(4));
 				user.setIndirizzo(rs.getString("indirizzo"));
 				user.setPassword(rs.getString("password"));
 				user.setNome(rs.getString("nome"));
@@ -47,4 +47,27 @@ public class UserDao {
 		
 		return user;
 	}
+	
+	public boolean registerUser(User user) {
+	    try {
+	        String query = "INSERT INTO utente (username, email_pers, password, nome, cognome, data_nascita) VALUES (?, ?, ?, ?, ?, ?)";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, user.getUsername());
+	        pst.setString(2, user.getEmailPers());
+	        pst.setString(3, user.getPassword());
+	        pst.setString(4, user.getNome());
+	        pst.setString(5, user.getCognome());
+	        pst.setString(6, user.getDataNascita());
+
+	        int rowsAffected = pst.executeUpdate();
+
+	        return rowsAffected > 0;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	        return false;
+	    }
+	}
+
 }

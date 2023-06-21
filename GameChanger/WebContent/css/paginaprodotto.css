@@ -1,5 +1,20 @@
+body {
+	background: rgb(54,20,57);
+	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	font-family: Arial, Helvetica, sans-serif;
+}
 p {
 	margin: 0;
+	}
+.informazioni {
+	padding:20px;
+	border-radius: 30px;
+	background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
+	 box-shadow: 10px 10px black;
+	 margin-bottom: 20px;
+	}
+.informazioni p {
+	color: #cccccc;	
 	}
 .container {
 	padding-left: 50px;
@@ -38,13 +53,12 @@ p {
     padding: 5px 15px;
 	position: relative;
 	padding-left: 100px;
-	
-	
 }
 .nome-prodotto h1 {
 	font-weight: bold;
     font-size: 2.5em;
     margin: 0 auto;
+    color: white;
 }
 .nome-prodotto p {
 	font-size: 13px;
@@ -104,7 +118,7 @@ p {
 
 button {
   position: relative;
-  margin: 0;
+  margin-left: 30px;
   padding: 0.8em 1em;
   outline: none;
   text-decoration: none;
@@ -185,20 +199,18 @@ button:hover::before {
 button:hover::after {
   transform: translate(50%, 0) scale(1.1);
 }
+.quantity {
+  display: flex;
+  align-items: center;
+}
 
-.prezzo {
-	display: inline-block;
-    vertical-align: middle;
+button {
+  padding: 5px 10px;
+  margin: 0 5px;
 }
-.prezzo p {
-	
-	text-align: left;
-    font-size: 16px;
-    
-}
+
 .numero{ 
 	text-decoration: none;
-    color: black;
 }
 .numero p {
 	font-size: 30px;
@@ -207,11 +219,19 @@ button:hover::after {
 }
 .carrello {
 	margin-top : 20px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 50px;
+}
+.bottoni {
+	display: flex;
+	justify-content: center;
 }
 .descrizione {
 	display: inline-block;
     font-size: 12px;
     line-height: 18px;
+    
 }
 .descrizione label {
 	display: inline-block;
@@ -220,6 +240,9 @@ button:hover::after {
 }
 .desrizione em {
 	font-size: normal;
+}
+.scritta-spedizione label  {
+	line-height: 30px;
 }
 .dettagli {
 	margin-top: 20px;
@@ -231,7 +254,9 @@ button:hover::after {
 .informazioni p {
 	font-size: 25px;
 	margin-bottom: 10px;
+	margin-left: 30px;
 }
+
 .descrizone-prodotto {
 	margin: 0 8px;
     padding: 0 0 60px 0;
@@ -261,6 +286,7 @@ button:hover::after {
 	padding: 0 30px;
     text-decoration: none;
     font-weight: normal;
+    color:#C0C0C0 !important;
 }
 .descrizione-2 {
 	overflow: hidden;
@@ -277,7 +303,25 @@ button:hover::after {
 .testo p {
 	text-align: justify;
     line-height: 20px;
+    color: #C0C0C0;;
 }
 .content2 {
 	margin: 20px;
+}
+.scritta-prodotti h3{
+	color: #C0C0C0 !important;
+	margin-top: 17px;
+}
+#quantity {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50px;
+    height: 43px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+}
+.numero p {
+	font-size: 30px !important;
 }

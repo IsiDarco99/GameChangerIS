@@ -1,8 +1,11 @@
 <style>
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
 
 .footer-distributed{
-  background: #666;
+  background: #42115E;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
@@ -34,7 +37,7 @@
 }
 
 .footer-distributed h3 span{
-  color:  #d40ddb;
+  color:  #8c031c;
 }
 
 /* Footer links */
@@ -54,7 +57,7 @@
 }
 
 .footer-distributed .footer-company-name{
-  color:  #222;
+  color:  #92999f;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -197,7 +200,7 @@
 		</h3>
 
 		<p class="footer-links">
-			<a href="#" class="link-1">Home</a> <a href="#">About</a> <a href="#">FAQ</a> <a href="#">Contact</a>
+			<a href="homepage.jsp" class="link-1">Home</a> <a href="faq.jsp">FAQ</a> <a href="#">Privacy</a> <a href="#">Terms & Conditions</a>
 		</p>
 
 		<p class="footer-company-name">GameChanger � 2023</p>
@@ -220,7 +223,7 @@
 		<div>
 			<i class="fa fa-envelope"></i>
 			<p>
-				<a href="mailto:support@company.com">support@company.com</a>
+				<a href="mailto:support@company.com">gamechanger@company.com</a>
 			</p>
 		</div>
 

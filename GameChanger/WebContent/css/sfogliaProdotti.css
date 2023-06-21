@@ -1,0 +1,62 @@
+body {
+	background: rgb(54,20,57);
+	background: linear-gradient(90deg, #160E6B 0%, #42115E 25%, #42115E 75%, #160E6B 100%);
+	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+.prodotti{ 
+	border-left: solid 1px #d8d8d8;
+	}
+.titolo {
+	color: white;
+	border-bottom: 1px white solid;
+}
+.col-10 {
+	padding-top: 25px;
+}
+.categoria {
+	margin-top: 20px;
+	font-size: 19px;
+	margin-left: 10px;
+}
+.categoria p {
+	color: white;
+}
+.filtri {
+	font-size: 14px;
+}
+.filtri-2 {
+	font-size: 15px;
+}
+.scritta {
+	color: white;
+	font-size: 20px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.container-prodotti {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+.container-prodotti p{
+	color: white;
+}
+.informazioni-prodotto {
+	text-align: center;
+	font-size: 20px;
+    padding-top: 10px;
+}
+
+.prodotto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.prodotto img {
+	width: 250px;
+	height: auto;
+}

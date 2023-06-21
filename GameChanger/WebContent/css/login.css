@@ -1,21 +1,19 @@
-body{ 
-	margin: 0;
-	padding: 0;
-	background: linear-gradient(120deg,#2980b9, #8e44ad); 
-	height: 100vh;
-	overflow: hidden;
-	
+body {
+	background: rgb(54,20,57);
+	background: linear-gradient(90deg, #160E6B 0%, #42115E 25%, #42115E 75%, #160E6B 100%);
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+.container {
+	display: flex;
+	justify-content: center;
+}
 .center{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	position: relative;
 	width: 400px;
 	background: white;
 	border-radius: 10px;
-	
+	margin: 100px 0;
 }
 .center h1{
 	text-align: center;
