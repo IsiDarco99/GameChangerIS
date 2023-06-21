@@ -1,0 +1,8 @@
+autoEnabled=true
+bindingSuggestionsDisabled=false
+eclipse.preferences.version=1
+fileExclusions=FILE\:WebContent/css/slick/slick.js\r\nFILE\:WebContent/css/slick/slick-theme.css
+idePrefixKey=
+projectKey=IsiDarco99_GameChangerRep
+serverId=SonarCloud/gamechanger
+sqPrefixKey=

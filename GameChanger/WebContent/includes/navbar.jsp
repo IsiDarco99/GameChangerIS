@@ -28,15 +28,15 @@
 
 <div class="navbar">
 	<ul>
-		<li><a href="#"><img src="imgs/search.png" alt="search"
+		<li><a href="#"><img src="imgs/generale/search.png" alt="search"
 				height="40"></a></li>
-		<li><a href="#"><img src="imgs/computer.png" alt="computer"
+		<li><a href="#"><img src="imgs/generale/computer.png" alt="computer"
 				height="40"></a></li>
-		<li><a href="#"><img src="imgs/console.png" alt="console"
+		<li><a href="#"><img src="imgs/generale/console.png" alt="console"
 				height="40"></a></li>
-		<li><a href="#"><img src="imgs/videogame.png" alt="videogame"
+		<li><a href="#"><img src="imgs/generale/videogame.png" alt="videogame"
 				height="40"></a></li>
 		<li style="margin: 0px 10px 0px;"><a href="#"><img
-				src="imgs/gadget.png" alt="gadget" height="40"></a></li>
+				src="imgs/generale/gadget.png" alt="gadget" height="40"></a></li>
 	</ul>
 </div>

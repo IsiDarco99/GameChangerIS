@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="IT">
 <head>
+<title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
-<title>Pagina Registrazione</title>
 <link rel="stylesheet" href="css/register.css">
-<!-- css topbar -->
 <link rel="stylesheet" href="css/topbar.css">
 </head>
 <body>
-<!-- include topbar -->
 <%@include file="includes/topbar.jsp"%>
 <div class="cont">
 	<div class="center">
