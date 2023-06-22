@@ -1,3 +1,6 @@
+
+
+
 @charset "ISO-8859-1";
 *{
 	margin: 0;
@@ -182,6 +185,7 @@ b, strong {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
 .container-P{
 	
 	padding: 5px 20px 15px 20px;
@@ -232,6 +236,12 @@ label {
 span.price {
   float: right;
   color: grey;
+}
+/* pagina 3 checkout*/
+.order-md-1{
+	background-color: #394759;
+	box-shadow: 0 5px 25px rgb(5, 5, 5);
+
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
