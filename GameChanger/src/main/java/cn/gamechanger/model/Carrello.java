@@ -48,6 +48,12 @@ public class Carrello {
 	public void setQuantitàProdotto(int quantitàProdotto) {
 		this.quantitàProdotto = quantitàProdotto;
 	}
+
+	@Override
+	public String toString() {
+		return "Carrello [idCarrello=" + idCarrello + ", username=" + username + ", idProdotto=" + idProdotto
+				+ ", quantitàProdotto=" + quantitàProdotto + "]";
+	}
 	
 	
 }

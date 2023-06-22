@@ -1,4 +1,99 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@page import="cn.gamechanger.connection.DbCon"%>
+<%@page import="cn.gamechanger.model.dao.*"%>
+<%@page import="cn.gamechanger.model.*"%>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+
+<%
+int codice = Integer.parseInt(request.getParameter("codice"));
+VideogameDao vd = new VideogameDao(DbCon.getConnection());
+Videogame videogame = vd.getVideogameByCodice(codice);
+
+ComputerDao cpd = new ComputerDao(DbCon.getConnection());
+Computer computer = cpd.getComputerByCodice(codice);
+
+ConsoleDao csd = new ConsoleDao(DbCon.getConnection());
+Console console = csd.getConsoleByCodice(codice);
+
+AccessorioDao ad = new AccessorioDao(DbCon.getConnection());
+Accessorio accessorio = ad.getAccessorioByCodice(codice);
+
+String categoria = null;
+
+if (videogame != null) {
+    categoria = "videogame";
+} else if (computer != null) {
+    categoria = "computer";
+} else if (console != null) {
+	categoria = "console";
+} else if (accessorio != null){
+	categoria = "accessorio";
+}
+
+String nome = "";
+String marca = "";
+String sviluppatore = "";
+String pegi = "";
+String genere = "";
+float prezzo = 0;
+String descrizione = "";
+Date dataUscita = null;
+String dataUscitaString = "";
+String casa = "";
+String ufficio = "";
+String gaming = "";
+String tipo = "";
+int generazione = 0;
+
+if (categoria != null) {
+    if (categoria.equals("videogame")) {
+        nome = videogame.getNome();
+        marca = videogame.getMarca();
+        sviluppatore = videogame.getSviluppatore();
+        pegi = videogame.getPegi();
+        genere = videogame.getGenere();
+        dataUscita = videogame.getDataUscita();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dataUscitaString = dateFormat.format(dataUscita);
+        prezzo = videogame.getPrezzo();
+        descrizione = videogame.getDescrizione();
+    } else if (categoria.equals("computer")) {
+        nome = computer.getNome();
+        marca = computer.getMarca();
+        dataUscita = computer.getDataUscita();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dataUscitaString = dateFormat.format(dataUscita);
+        prezzo = computer.getPrezzo();
+        descrizione = computer.getDescrizione();
+        casa = computer.getCasa();
+        ufficio = computer.getUfficio();
+        gaming = computer.getGaming();
+    } else if (categoria.equals("accessorio")) {
+        nome = accessorio.getNome();
+        marca = accessorio.getMarca();
+        dataUscita = accessorio.getDataUscita();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dataUscitaString = dateFormat.format(dataUscita);
+        prezzo = accessorio.getPrezzo();
+        descrizione = accessorio.getDescrizione();
+        tipo = accessorio.getTipo();
+    } else if (categoria.equals("console")) {
+        nome = console.getNome();
+        marca = console.getMarca();
+        dataUscita = console.getDataUscita();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dataUscitaString = dateFormat.format(dataUscita);
+        prezzo = console.getPrezzo();
+        descrizione = console.getDescrizione();
+        generazione = console.getGenerazione();
+    }
+}
+%>
+
+
+
 <!DOCTYPE html>
 <html lang="IT">
 <head>
@@ -6,19 +101,20 @@
 <%@ include file="includes/head.jsp" %>
 <link rel="stylesheet" href="css/paginaprodotto.css" type="text/css">
 <script src="js/paginaprodotto.js"> </script>
+<script src="js/carrello.js"></script>
 </head>
 <body>
 <%@ include file="includes/topbar.jsp" %>
 <%@ include file="includes/navbar.jsp" %>
  <div class="nome-prodotto">
         <h1>
-        <span> One Piece Pirate Warriors 4
+        <span> <%= nome %>
         </span>
         </h1>
         <p>
         by
-        <strong>Bandai Namco Corporation</strong>
-            <span>PS4</span>
+        <strong><%= marca  %></strong>
+            <span><%= (categoria == "videogame") ? sviluppatore : "" %></span>
          </p>
         </div>
 
@@ -29,11 +125,14 @@
 <div class="arrow_prev"><img src="imgs/generale/arrow.png" alt="Freccia giù" height="25"></div>
 <div class="arrow_next"><img src="imgs/generale/arrow.png" alt="Freccia giù" height="25"></div>
 <div class="carosello">
-<img src="imgs/paginaprodotto/Onepiece.png"
-						alt="Brawhalla">
+<img src="imgs/prodotti/<%= nome %> 1.jpg"
+						alt="<%= nome %>">
 						
-<img src="imgs/homepage/secondo-carosello/computer.jpg"
-						alt="Computer">
+<img src="imgs/prodotti/<%= nome %> 2.jpg"
+						alt="<%= nome %>">
+						
+<img src="imgs/prodotti/<%= nome %> 3.jpg"
+						alt="<%= nome %>">
 </div>
 
 </div>
@@ -46,33 +145,33 @@
 <p>
 <label class="dettagli"> PEGI </label>
 <span> 
-<em> 12+ </em>
+<em> <%= (categoria == "videogame") ? pegi : "" %> </em>
 </span>
 </p>
 <p>
 <label> Genere</label>
 
-<span>Action</span>
+<span><%= (categoria == "videogame") ? genere : "" %></span>
 </p>
 <p>
 <label> Rilascio</label>
-<span> 27/03/2020</span>
+<span> <%= dataUscitaString %></span>
 </p>
 <div class="scritta-spedizione">>
 <p>
-<label>  Dettagli 
-
-spedizione</label>
+<label>  Dettagli spedizione</label>
 <span> Spedizione gratuita</span>
 </p>
 </div>
 <div class="prezzo">
 <div class="numero">
-<p> 20.99$ </p>
+<p> <p> <%= prezzo%> &#x20AC</p>
+
 </div>
+<form action="aggiungi-prodotto" method="post">
 <div class="bottoni" >
 <button class="carrello">
-    <span> Aggiungi al <br> carrello</span>
+    <span>Aggiungi al <br> carrello</span>
 </button>
 <div class="quantity">
   <input type="text" name="quantity" id="quantity" value="1">
@@ -80,6 +179,8 @@ spedizione</label>
   <button onclick="increaseQuantity()">+</button>
 </div>
 </div>
+</form>
+
 </div>
 </div>
 
@@ -93,9 +194,7 @@ spedizione</label>
 </h2>
 <div class="descrizione-2">
 <div class="testo">
-<p>I pirati sono tornati e portano con sé una storia più esplosiva, più ambienti di gioco, e attacchi ancora più pazzeschi in ONE PIECE: PIRATE WARRIOS 4. Segui Rufy e i pirati di Cappello di paglia sin dall'inizio, nel loro viaggio attraverso una moltitudine di isole per trovare il famoso tesoro: lo One Piece. Gioca su alcune delle isole e degli ambienti più straordinari della storia di ONE PIECE e sfida nemici memorabili.
-Scegli tra alcuni dei tuoi personaggi preferiti e affronta un gran numero di nemici ripercorrendo i momenti iconici dell'anime di One Piece. Sviluppato dai maestri del genere d'azione musou, KOEI TECMO GAMES, ONE PIECE Pirate Warriors 4 unisce l'emozione di spazzare via orde di nemici con le divertenti ed energetiche personalità della serie One Piece. Salpa per una nuova avventura piratesca 
-</p>
+<p><%= descrizione %></p>
 
 
 </div>
