@@ -20,6 +20,12 @@ p {
 	padding-left: 50px;
 	padding-top: 50px;
 }
+
+.carosello img {
+	object-fit: contain;
+	
+}
+
 .container-consigliati {
 	position: relative;
 }
