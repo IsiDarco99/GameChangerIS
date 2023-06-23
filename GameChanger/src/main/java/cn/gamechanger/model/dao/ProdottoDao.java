@@ -48,4 +48,29 @@ public class ProdottoDao {
 		return prodotti;
 	}
 	
+	public Prodotto getProdottoByCodice(int codice) {
+	    Prodotto prodotto = null;
+	    
+	    try {
+	        String query = "SELECT * FROM prodotto WHERE codice = ?";
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setInt(1, codice);
+	        ResultSet rs = pst.executeQuery();
+	        if (rs.next()) {
+	            prodotto = new Prodotto();
+	            prodotto.setCodice(rs.getInt("codice"));
+	            prodotto.setNome(rs.getString("nome"));
+	            prodotto.setPrezzo(rs.getFloat("prezzo"));
+	            prodotto.setMarca(rs.getString("marca"));
+	            prodotto.setDescrizione(rs.getString("descrizione"));
+	            prodotto.setDataUscita(rs.getDate("data_usc"));
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return prodotto;
+	}
+
+
 }

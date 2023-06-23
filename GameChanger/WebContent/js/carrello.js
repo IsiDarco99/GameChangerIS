@@ -13,3 +13,4 @@ function increaseQuantity() {
 
   quantityInput.value = quantity + 1;
 }
+
