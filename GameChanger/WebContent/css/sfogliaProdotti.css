@@ -64,3 +64,10 @@ body {
 	height: auto;
 	border-radius: 20px;
 }
+
+.prod-img {
+	transition: transform .2s;
+}
+.prod-img:hover {
+	transform: scale(1.06);
+}

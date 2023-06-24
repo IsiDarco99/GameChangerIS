@@ -37,6 +37,7 @@
 						</p>
 
 						<div class="filtri">
+							<p>Tutti i prodotti</p>
 							<p>Videogiochi</p>
 							<p>Accessori</p>
 							<p>Computer</p>
@@ -72,7 +73,7 @@
 								for(Prodotto p:prodotti){%>
 									<div class="prodotto">
 									<a href="paginaprodotto.jsp?codice=<%= p.getCodice() %>">
-									<img src="imgs/prodotti/<%= p.getNome() %> 1.jpg" alt="<%= p.getNome() %>">
+									<img class="prod-img" src="imgs/prodotti/<%= p.getNome() %> 1.jpg" alt="<%= p.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">
 										<p>

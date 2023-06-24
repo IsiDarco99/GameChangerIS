@@ -113,8 +113,8 @@ if (categoria != null) {
         </h1>
         <p>
         by
-        <strong><%= marca  %></strong>
-            <span><%= (categoria == "videogame") ? sviluppatore : "" %></span>
+        <strong><%= (categoria == "videogame") ? sviluppatore : marca %></strong>
+            <span></span>
          </p>
         </div>
 
@@ -142,17 +142,55 @@ if (categoria != null) {
 <div class="informazioni">
 
 <div class="descrizione">
+<% if(categoria == "videogame"){ %>
 <p>
 <label class="dettagli"> PEGI </label>
 <span> 
-<em> <%= (categoria == "videogame") ? pegi : "" %> </em>
+<em> <%= pegi %> </em>
 </span>
 </p>
 <p>
 <label> Genere</label>
-
-<span><%= (categoria == "videogame") ? genere : "" %></span>
+<span><%= genere %></span>
 </p>
+<%} else if(categoria == "accessorio"){ %>
+<p>
+<label class="dettagli"> Tipo accessorio </label>
+<span> 
+<em> <%= tipo %> </em>
+</span>
+</p>
+<%} else if(categoria == "computer"){ %>
+<p>
+<label class="dettagli"> Adatto a: </label>
+<span> 
+<em> <% if (casa.equals("y") && ufficio.equals("y") && gaming.equals("y")){ %>
+		casa, ufficio e gaming
+		<%} else if (casa.equals("y") && ufficio.equals("y") && gaming.equals("n")){ %>
+		casa e ufficio
+		<%} else if (casa.equals("y") && ufficio.equals("n") && gaming.equals("y")){ %>
+		casa e gaming
+		<%} else if (casa.equals("y") && ufficio.equals("n") && gaming.equals("n")){ %>
+		casa
+		<%} else if (casa.equals("n") && ufficio.equals("y") && gaming.equals("y")){ %>
+		ufficio e gaming
+		<%} else if (casa.equals("n") && ufficio.equals("y") && gaming.equals("n")){ %>
+		ufficio
+		<%} else { %>
+		gaming
+		<% } %>
+ </em>
+</span>
+</p>
+<%} else if(categoria == "console"){ %>
+<p>
+<label class="dettagli"> Gen </label>
+<span> 
+<em> <%= generazione %>a generazione </em>
+</span>
+</p>
+<% } %>
+
 <p>
 <label> Rilascio</label>
 <span> <%= dataUscitaString %></span>
@@ -165,7 +203,7 @@ if (categoria != null) {
 </div>
 <div class="prezzo">
 <div class="numero">
-<p> <p> <%= prezzo%> &#x20AC</p>
+<p> <%= prezzo%> &#x20AC</p>
 
 </div>
 <form action="aggiungi-prodotto" method="post">
