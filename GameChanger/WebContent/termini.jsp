@@ -13,11 +13,11 @@
 <div class="container">
 
 <div class="scritta">
-<h1> Privacy</h1>
+<h1> Termini e condizioni</h1>
 </div>
 <div class="container-faq">
 <details>
-<summary class="domanda">privacy</summary>
+<summary class="domanda">Termini e condizioni</summary>
 <div class="domanda-testo">
 Fusce nec ultricies metus. Curabitur ut aliquet leo, eget dignissim justo. Vestibulum pretium, nisi vitae blandit ornare, neque orci tristique eros, in posuere dui odio vitae erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam turpis mi, facilisis eu venenatis quis, molestie sed nulla. Vestibulum mattis vitae orci vel pulvinar. Vivamus enim est, feugiat eu ornare eget, elementum vel sem. Nullam viverra mi eget nisl laoreet, sit amet malesuada nisl faucibus. Curabitur lacinia dolor neque, eu sollicitudin nisi rutrum id.
 

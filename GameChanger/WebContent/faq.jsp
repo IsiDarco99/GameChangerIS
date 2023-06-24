@@ -4,7 +4,7 @@
 <html>
 <head><title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
-<link rel="stylesheet" href="css/faq.css" type="text/css">
+<link rel="stylesheet" href="css/paginformative.css" type="text/css">
 </head>
 <body>
 <%@include file="includes/topbar.jsp"%>

@@ -53,10 +53,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 300px;
 }
 
 .prodotto img {
 	width: 250px;
+	max-height: 280px;
+	min-height: 170px;
 	height: auto;
+	border-radius: 20px;
+}
+
+.prod-img {
+	transition: transform .2s;
+}
+.prod-img:hover {
+	transform: scale(1.06);
 }

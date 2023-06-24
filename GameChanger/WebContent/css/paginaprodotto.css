@@ -20,6 +20,11 @@ p {
 	padding-left: 50px;
 	padding-top: 50px;
 }
+
+.carosello img {
+	object-fit: contain;
+}
+
 .container-consigliati {
 	position: relative;
 }
@@ -339,6 +344,7 @@ button {
 }
 .numero p {
 	font-size: 30px !important;
+<<<<<<< HEAD
 } 
 
 @media (max-width: 900px) {
@@ -351,3 +357,6 @@ button {
   width: 100%;
   height: 30vh;
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep.git
