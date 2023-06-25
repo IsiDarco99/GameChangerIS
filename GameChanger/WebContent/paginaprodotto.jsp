@@ -141,7 +141,6 @@ if (categoria != null) {
 <div class="col-5">
 <div class="informazioni">
 
-<div class="descrizione">
 <% if(categoria == "videogame"){ %>
 <p>
 <label class="dettagli"> PEGI </label>
@@ -195,7 +194,7 @@ if (categoria != null) {
 <label> Rilascio</label>
 <span> <%= dataUscitaString %></span>
 </p>
-<div class="scritta-spedizione">>
+<div class="scritta-spedizione">
 <p>
 <label>  Dettagli spedizione</label>
 <span> Spedizione gratuita</span>
@@ -212,8 +211,8 @@ if (categoria != null) {
     <span>Aggiungi al <br> carrello</span>
 </button>
 <div class="quantity">
-  <input type="text" name="quantity" id="quantity" value="1">
   <button onclick="decreaseQuantity()">-</button>
+  <input type="text" name="quantity" id="quantity" value="1">
   <button onclick="increaseQuantity()">+</button>
 </div>
 </div>
@@ -222,7 +221,6 @@ if (categoria != null) {
 </div>
 </div>
 
-</div>
 
 
 </div>

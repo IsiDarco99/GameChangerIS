@@ -4,7 +4,8 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-	margin-top: 100px;
+	min-height: 71.6vh;
+	
 }
 .scritta {
 	border-bottom: solid 1px #d8d8d8;
