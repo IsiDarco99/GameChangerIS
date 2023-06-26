@@ -164,19 +164,19 @@ if (categoria != null) {
 <label class="dettagli"> Adatto a: </label>
 <span> 
 <em> <% if (casa.equals("y") && ufficio.equals("y") && gaming.equals("y")){ %>
-		casa, ufficio e gaming
+		Casa, ufficio e gaming
 		<%} else if (casa.equals("y") && ufficio.equals("y") && gaming.equals("n")){ %>
-		casa e ufficio
+		Casa e ufficio
 		<%} else if (casa.equals("y") && ufficio.equals("n") && gaming.equals("y")){ %>
-		casa e gaming
+		Casa e gaming
 		<%} else if (casa.equals("y") && ufficio.equals("n") && gaming.equals("n")){ %>
-		casa
+		Casa
 		<%} else if (casa.equals("n") && ufficio.equals("y") && gaming.equals("y")){ %>
-		ufficio e gaming
+		Ufficio e gaming
 		<%} else if (casa.equals("n") && ufficio.equals("y") && gaming.equals("n")){ %>
-		ufficio
+		Ufficio
 		<%} else { %>
-		gaming
+		Gaming
 		<% } %>
  </em>
 </span>
@@ -205,18 +205,20 @@ if (categoria != null) {
 <p> <%= prezzo%> &#x20AC</p>
 
 </div>
-<form action="aggiungi-prodotto" method="post">
+
 <div class="bottoni" >
+<form action="aggiungi-prodotto" method="post">
 <button class="carrello">
     <span>Aggiungi al <br> carrello</span>
 </button>
+</form>
 <div class="quantity">
   <button onclick="decreaseQuantity()">-</button>
   <input type="text" name="quantity" id="quantity" value="1">
   <button onclick="increaseQuantity()">+</button>
 </div>
 </div>
-</form>
+
 
 </div>
 </div>

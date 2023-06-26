@@ -1,28 +1,33 @@
 package cn.gamechanger.model;
 
 public class Carrello {
-	private int idCarrello;
+	private int id_carrello;
 	private String username;
 	private int idProdotto;
 	private int quantitàProdotto;
-	
+	private String nomeProdotto;
+    private float prezzo;
+    
 	public Carrello() {
 	}
 
-	public Carrello(int idCarrello, String username, int idProdotto, int quantitàProdotto) {
+	public Carrello(int id_carrello, String username, int idProdotto, int quantitàProdotto, String nomeProdotto,
+			float prezzo) {
 		super();
-		this.idCarrello = idCarrello;
+		this.id_carrello = id_carrello;
 		this.username = username;
 		this.idProdotto = idProdotto;
 		this.quantitàProdotto = quantitàProdotto;
+		this.nomeProdotto = nomeProdotto;
+		this.prezzo = prezzo;
 	}
 
-	public int getIdCarrello() {
-		return idCarrello;
+	public int getId_carrello() {
+		return id_carrello;
 	}
 
-	public void setIdCarrello(int idCarrello) {
-		this.idCarrello = idCarrello;
+	public void setId_carrello(int id_carrello) {
+		this.id_carrello = id_carrello;
 	}
 
 	public String getUsername() {
@@ -49,10 +54,27 @@ public class Carrello {
 		this.quantitàProdotto = quantitàProdotto;
 	}
 
+	public String getNomeProdotto() {
+		return nomeProdotto;
+	}
+
+	public void setNomeProdotto(String nomeProdotto) {
+		this.nomeProdotto = nomeProdotto;
+	}
+
+	public float getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(float prezzo) {
+		this.prezzo = prezzo;
+	}
+
 	@Override
 	public String toString() {
-		return "Carrello [idCarrello=" + idCarrello + ", username=" + username + ", idProdotto=" + idProdotto
-				+ ", quantitàProdotto=" + quantitàProdotto + "]";
+		return "Carrello [id_carrello=" + id_carrello + ", username=" + username + ", idProdotto=" + idProdotto
+				+ ", quantitàProdotto=" + quantitàProdotto + ", nomeProdotto=" + nomeProdotto + ", prezzo=" + prezzo
+				+ "]";
 	}
 	
 	

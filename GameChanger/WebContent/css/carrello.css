@@ -50,6 +50,10 @@ body {
   margin-top: 150px;
  
 }
+
+.quantity strong {
+	font-size: 1 rem;
+}
 #quantity {
 	display: flex;
     flex-direction: row;
