@@ -35,8 +35,8 @@
 					</div>
 					<div class="data">
 						<div class="txt_field">
-							<input type="text" name="dataNascita" required> <span></span> <label>Data
-								di nascita</label>
+						<p>Data di nascita</p>
+							<input type="date" name="dataNascita" required> <span></span> <label></label>
 						</div>
 						<div class="email">
 							<div class="txt_field">
@@ -55,6 +55,14 @@
 		</form>
 	</div>
 	</div>
+	
+	
 	<%@include file="includes/footer.jsp"%>
+	
+	
+	
+	
+
+	
 </body>
 </html>

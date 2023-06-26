@@ -131,3 +131,6 @@ input[type="submit"]:hover {
 	font-family: Arial, sans-serif;
 	user-select: none;
 }
+p {
+	color: yellow;
+}
