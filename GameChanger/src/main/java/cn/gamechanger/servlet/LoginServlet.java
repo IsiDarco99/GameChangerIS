@@ -46,10 +46,12 @@ public class LoginServlet extends HttpServlet {
                     // Creazione della sessione per l'utente
                     HttpSession session = request.getSession();
                     session.setAttribute("userSession", user.getUsername());
-
-                    out.print("user login");
+                    response.sendRedirect("homepage.jsp");
+                    
                 } else {
-                    out.print("user login failed");
+                    request.setAttribute("loginError", "Credenziali errate o account insesistente.");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                    return;
                 }
 
                 // Recupero dei dati dalla sessione
@@ -68,5 +70,6 @@ public class LoginServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return;
     }
 }

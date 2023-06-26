@@ -46,7 +46,7 @@
 								<span class="checkmark"></span> <span class="text">Privacy</span>
 							</label> <input type="submit" value="Registrati">
 							<div class="signup_link">
-								Gi√† iscritto? <a href="#">Accedi</a>
+								Gi‡† iscritto? <a href="login.jsp">Accedi</a>
 							</div>
 						</div>
 					</div>

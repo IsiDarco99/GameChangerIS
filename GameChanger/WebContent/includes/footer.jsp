@@ -195,10 +195,10 @@
 		</h3>
 
 		<p class="footer-links">
-			<a href="homepage.jsp" class="link-1">Home</a> <a href="faq.jsp">FAQ</a> <a href="#">Privacy</a> <a href="#">Terms & Conditions</a>
+			<a href="homepage.jsp" class="link-1">Home</a> <a href="faq.jsp">FAQ</a> <a href="privacy.jsp">Privacy</a> <a href="termini.jsp">Terms & Conditions</a>
 		</p>
 
-		<p class="footer-company-name">GameChanger ï¿½ 2023</p>
+		<p class="footer-company-name">GameChanger 	&reg; 2023</p>
 	</div>
 
 	<div class="footer-center">
@@ -227,7 +227,7 @@
 	<div class="footer-right">
 
 		<p class="footer-company-about">
-			<span>Il nostro obiettivo</span> La nostra missione ï¿½ offrire un'esperienza di
+			<span>Il nostro obiettivo</span> La nostra missione è offrire un'esperienza di
 			acquisto semplice, sicura e divertente, con spedizioni veloci e un
 			servizio clienti dedicato. Sfogliate il nostro catalogo, scoprite
 			nuovi mondi virtuali e preparatevi ad avventure straordinarie.

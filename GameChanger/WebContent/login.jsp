@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<script>
+    <% String loginError = (String) request.getAttribute("loginError");
+       if (loginError != null) { %>
+    window.addEventListener('DOMContentLoaded', function() {
+        var errorMessage = '<%= loginError %>';
+        if (errorMessage !== '') {
+            alert(errorMessage);
+        }
+    });
+    <% } %>
+</script>
+
+
+
 <!DOCTYPE html>
 <html lang="IT">
 <head>
@@ -25,11 +39,12 @@
 			<div class="pass">Password Dimenticata?</div>
 			<input type="submit" value="Login">
 			<div class="signup_link">
-				Non iscritto? <a href="#">Iscriviti</a>
+				Non iscritto? <a href="register.jsp">Iscriviti</a>
 			</div>
 		</form>
 	</div>
 	</div>
+
 	
 	<%@include file="includes/footer.jsp"%>
 </body>
