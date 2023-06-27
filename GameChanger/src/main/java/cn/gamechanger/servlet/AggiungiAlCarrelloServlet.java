@@ -6,7 +6,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.CarrelloDao;
+import cn.gamechanger.model.dao.UserDao;
 
 @WebServlet("/aggiungi-prodotto")
 public class AggiungiAlCarrelloServlet extends HttpServlet {
@@ -16,20 +21,25 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        carrelloDao = new CarrelloDao();
+        carrelloDao = new CarrelloDao(null);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
+    	String username = (String) request.getSession().getAttribute("userSession");
         int codiceProdotto = Integer.parseInt(request.getParameter("codice"));
         int quantita = Integer.parseInt(request.getParameter("quantity"));
+        try {
+        	CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
+        	cdao.aggiungiProdottoAlCarrello(username, codiceProdotto, quantita);
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+        
 
-        carrelloDao.aggiungiProdottoAlCarrello(username, codiceProdotto, quantita);
+        String redirectURL = "/GameChanger/carrello.jsp";
 
-        String message = "Prodotto aggiunto al carrello!";
-        String redirectURL = "/pagina_prodotto?id=" + codiceProdotto + "&message=" + message;
         response.sendRedirect(redirectURL);
     }
 }

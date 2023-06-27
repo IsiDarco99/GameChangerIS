@@ -7,7 +7,6 @@
 <%
 HttpSession httpSession = request.getSession();
 String username = (String) httpSession.getAttribute("userSession");
-System.out.println(username);
 CarrelloDao cd = new CarrelloDao(DbCon.getConnection());
 List<Carrello> prodotti = cd.getCarrelloByUsername(username);
 float prezzoTot;
@@ -19,9 +18,7 @@ prezzoTot = 0;
 <title>GameChanger</title>
 <%@ include file="includes/head.jsp"%>
 <link rel="stylesheet" href="css/carrello.css" type="text/css">
-<script src="js/carrello.js">
-	
-</script>
+<script src="js/carrello.js"></script>
 </head>
 <body>
 	<%@ include file="includes/topbar.jsp"%>
@@ -46,62 +43,66 @@ prezzoTot = 0;
 			<div class="scritta-carrello">
 				<h1>
 					<span> Il tuo carrello è vuoto<br>Da un'occhiata ai
-						nostri prodotti
+						nostri <a href="sfogliaProdotti.jsp">prodotti</a>
 					</span>
 				</h1>
 			</div>
+		</div>
+	</div>
+	<%
+	} else {
+	for (Carrello p : prodotti) {
+		prezzoTot += (p.getPrezzo() * p.getQuantitàProdotto());
+	%>
+
+
+
+	<!-- INIZIO PRODOTTO -->
+
+	<div class="container-prodotto">
+		<div class="immagine">
+			<a href="paginaprodotto.jsp?codice=<%=p.getIdProdotto()%>"> <img
+				class="prod-img" src="imgs/prodotti/<%=p.getNomeProdotto()%> 1.jpg"
+				alt="<%=p.getNomeProdotto()%>">
+			</a>
+		</div>
+		<div class="nome-prodotto">
+			<h1>
+				<span> <%=p.getNomeProdotto()%>
+				</span>
+			</h1>
+			<div class="quantity">
+				<strong>Quantità: </strong><span> <%=p.getQuantitàProdotto()%>
+				</span>
 			</div>
-			</div>
-			<%
-			} else {
-			for (Carrello p : prodotti) {
-				prezzoTot += p.getPrezzo();
-			%>
+		</div>
 
-
-
-			<!-- INIZIO PRODOTTO -->
-
-			<div class="container-prodotto">
-				<div class="immagine">
-					<a href="paginaprodotto.jsp?codice=<%=p.getIdProdotto()%>"> <img
-						class="prod-img" src="imgs/prodotti/<%=p.getNomeProdotto()%> 1.jpg"
-						alt="<%=p.getNomeProdotto()%>">
-					</a>
-				</div>
-				<div class="nome-prodotto">
-					<h1>
-						<span> <%=p.getNomeProdotto()%> </span>
-					</h1>
-					<div class="quantity">
-						<strong>Quantità: </strong><span> <%=p.getQuantitàProdotto()%> </span>
-					</div>
-				</div>
-
-				<div class="prezzo">
-					<p>
-						<strong>Prezzo</strong><br><%= p.getPrezzo() %> &#x20AC
-					</p>
-				</div>
-			</div>
-			<%
+		<div class="prezzo">
+			<p>
+				<strong>Prezzo</strong><br><%=p.getPrezzo() * p.getQuantitàProdotto()%>
+				&#x20AC
+			</p>
+		</div>
+	</div>
+	<%
 	}
 	}
 	%>
-			<!-- FINE PRODOTTO -->
+	<!-- FINE PRODOTTO -->
 
-			<!-- TOTALE -->
-			<div class="container-totale">
-				<div class="prezzo">
-					<p>
-						<strong>Totale</strong><br><%= prezzoTot%> &#x20AC
-					</p>
-				</div>
-			</div>
+	<!-- TOTALE -->
+	<div class="container-totale">
+		<div class="prezzo">
+			<p>
+				<strong>Totale</strong><br><%=prezzoTot%>
+				&#x20AC
+			</p>
 		</div>
 	</div>
+	</div>
+	</div>
 
-	
+
 	<%@ include file="includes/footer.jsp"%>
 </body>
 </html>

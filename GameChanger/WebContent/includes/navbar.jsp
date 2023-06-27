@@ -30,7 +30,7 @@
 	<ul>
 		<li><a href="#"><img src="imgs/generale/search.png" alt="search"
 				height="40"></a></li>
-		<li><a href="#"><img src="imgs/generale/computer.png" alt="computer"
+		<li><a href="sfogliaProdotti.jsp"><img src="imgs/generale/computer.png" alt="computer"
 				height="40"></a></li>
 		<li><a href="#"><img src="imgs/generale/console.png" alt="console"
 				height="40"></a></li>
