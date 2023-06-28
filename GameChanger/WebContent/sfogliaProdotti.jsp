@@ -1,3 +1,4 @@
+<%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
 <%@page import="cn.gamechanger.connection.DbCon"%>
 <%@page import="cn.gamechanger.model.dao.*"%>
 <%@page import="cn.gamechanger.model.*"%>
@@ -6,6 +7,25 @@
 	pageEncoding="ISO-8859-1"%>
 <%
 	String categoria = request.getParameter("categoria");
+	if (categoria == null) {
+		categoria = "allProdotti";
+  }
+	String prezzoMinParam = request.getParameter("min");
+	String prezzoMaxParam = request.getParameter("max");
+	
+	int prezzoMinimo = 0;
+	int prezzoMassimo = 9999;
+
+	if (prezzoMinParam != null && !prezzoMinParam.isEmpty()) {
+	  prezzoMinimo = Integer.parseInt(prezzoMinParam);
+	}
+
+	if (prezzoMaxParam != null && !prezzoMaxParam.isEmpty()) {
+	  prezzoMassimo = Integer.parseInt(prezzoMaxParam);
+	}
+	
+	System.out.println(prezzoMinimo + " " + prezzoMassimo);
+	//RICERCA PRODOTTI PER CATEGORIA
 	VideogameDao vd = new VideogameDao(DbCon.getConnection());
 	List<Videogame> videogame = vd.getAllVideogame();
 	
@@ -20,6 +40,10 @@
 	
 	ProdottoDao pd = new ProdottoDao(DbCon.getConnection());
 	List<Prodotto> prodotti = pd.getAllProdotto();
+	
+	//RICERCA PRODOTTI PER PREZZO
+	ProdottoDao pdp = new ProdottoDao(DbCon.getConnection());
+	List<Prodotto> prodottiPrez = pd.getProdottiByPrezzo(prezzoMinimo, prezzoMassimo);
 %>
 <!DOCTYPE html>
 <html lang="IT">
@@ -74,12 +98,16 @@
 								<strong> Prezzo</strong>
 							</p>
 							<div class="filtri-2">
+							<form action="sfogliaProdotti.jsp?categoria=<%= categoria %>" method="get">
+							<input type="hidden" name="categoria" value="<%= categoria %>">
 								<p>Da </p>
-								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="quantity" id="quantity" placeholder="0">
+								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="min" id="prezzoMin" placeholder="0">
 								<p> a </p>
-								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="quantity" id="quantity" placeholder="0">
+								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="max" id="prezzoMax" placeholder="0">
+								<input type="submit" value="Invia" />
+							</form>
 							</div>
-
+							
 						</div>
 					</div>
 

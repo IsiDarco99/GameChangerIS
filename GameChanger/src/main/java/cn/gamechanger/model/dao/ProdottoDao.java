@@ -72,28 +72,31 @@ public class ProdottoDao {
 	    return prodotto;
 	}
 	
-	public Prodotto getProdottoByPrezzo(int min, int max) {
-	    Prodotto prodotto = null;
-	    
+	public List<Prodotto> getProdottiByPrezzo(float prezzoMinimo, float prezzoMassimo) {
+	    List<Prodotto> prodotti = new ArrayList<>();
+
 	    try {
-	        String query = "SELECT * FROM prodotto WHERE codice = ?";
+	        String query = "SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?";
 	        PreparedStatement pst = this.con.prepareStatement(query);
-	        pst.setInt(1, codice);
+	        pst.setFloat(1, prezzoMinimo);
+	        pst.setFloat(2, prezzoMassimo);
 	        ResultSet rs = pst.executeQuery();
-	        if (rs.next()) {
-	            prodotto = new Prodotto();
-	            prodotto.setCodice(rs.getInt("codice"));
-	            prodotto.setNome(rs.getString("nome"));
-	            prodotto.setPrezzo(rs.getFloat("prezzo"));
-	            prodotto.setMarca(rs.getString("marca"));
-	            prodotto.setDescrizione(rs.getString("descrizione"));
-	            prodotto.setDataUscita(rs.getDate("data_usc"));
+	        while (rs.next()) {
+	            Prodotto row = new Prodotto();
+	            row.setCodice(rs.getInt("codice"));
+	            row.setNome(rs.getString("nome"));
+	            row.setPrezzo(rs.getFloat("prezzo"));
+	            row.setMarca(rs.getString("marca"));
+	            row.setDescrizione(rs.getString("descrizione"));
+	            row.setDataUscita(rs.getDate("data_usc"));
+
+	            prodotti.add(row);
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
-	    
-	    return prodotto;
+
+	    return prodotti;
 	}
 
 

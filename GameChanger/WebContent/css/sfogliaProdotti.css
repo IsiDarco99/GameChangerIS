@@ -35,7 +35,14 @@ a {
 	display: flex;
 }
 
-#quantity {
+#prezzoMin {
+	width: 40px;
+    height: 30px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+#prezzoMax {
 	width: 40px;
     height: 30px;
     text-align: center;
