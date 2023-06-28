@@ -101,28 +101,9 @@ if (categoria != null) {
 <title>GameChanger</title>
 <%@ include file="includes/head.jsp"%>
 <link rel="stylesheet" href="css/paginaprodotto.css" type="text/css">
-<script src="js/paginaprodotto.js"></script>
-<script src="js/carrello.js"></script>
+
 
 <script>
-
-function decreaseQuantity() {
-	  var quantityInput = document.getElementById("quantity");
-	  var quantity = parseInt(quantityInput.value);
-
-	  if (quantity > 1) {
-	    quantityInput.value = quantity - 1;
-	  }
-	}
-
-	function increaseQuantity() {
-	  var quantityInput = document.getElementById("quantity");
-	  var quantity = parseInt(quantityInput.value);
-
-	  if (quantity < 99) {
-	    quantityInput.value = quantity + 1;
-	  }
-	}
 
 	function validateInput(event) {
 	  var input = event.target;
@@ -365,34 +346,7 @@ function decreaseQuantity() {
 		</div>
 	</div>
 	<%@ include file="includes/footer.jsp"%>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.carosello').slick({
-				dots : true,
-				infinite : true,
-				speed : 500,
-				fade : true,
-				cssEase : 'linear',
-				prevArrow : '.arrow_prev',
-				nextArrow : '.arrow_next'
-			});
-		});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.nuove-uscite').slick({
-				dots : true,
-				infinite : true,
-				slidesToShow : 3,
-				slidesToScroll : 1,
-				autoplay : true,
-				autoplaySpeed : 2000,
-				prevArrow : '.arrow_prev2',
-				nextArrow : '.arrow_next2'
-			});
-		});
-	</script>
-
-
+	<script src="js/paginaprodotto.js" type="text/javascript"></script>
+	<script src="js/carrello.js" type="text/javascript"></script>
 </body>
 </html>
