@@ -131,3 +131,52 @@ input[type="submit"]:hover {
 	font-family: Arial, sans-serif;
 	user-select: none;
 }
+
+.txt_field-2 {
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin: 30px 0;
+}
+
+.txt_field-2 input {
+	width: 100%;
+	padding: 0 5px;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+.txt_field-2 label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	font-size: 16px;
+	pointer-events: none;
+	transition: .2s;
+}
+
+.txt_field-2 span::before {
+	content: '';
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background: #2691d9;
+	transition: .5s;
+}
+
+.txt_field-2  input:focus ~ label, .txt_field-2 input:valid ~ label {
+	top: -5px;
+	color: #2691d9;
+}
+
+.txt_field-2 input:focus ~ span::before, .txt_field-2 input:valid ~ span::before
+	{
+	width: 100%;
+}
+	

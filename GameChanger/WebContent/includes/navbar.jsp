@@ -165,6 +165,7 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!--                                        -->
 <div class="navbar" id="123">
 	<ul>
+<<<<<<< HEAD
 		<li><a href="#" class="ricerca"><img src="imgs/generale/search.png" alt="search"
 				height="40"></a>
 				<!--             tasto ricerca                -->
@@ -174,6 +175,11 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 			</div><!--              ---------                 -->
 		</li>
 		<li><a href="#"><img src="imgs/generale/computer.png" alt="computer"
+=======
+		<li><a href="#"><img src="imgs/generale/search.png" alt="search"
+				height="40"></a></li>
+		<li><a href="sfogliaProdotti.jsp?categoria=allProdotti"><img src="imgs/generale/computer.png" alt="computer"
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
 				height="40"></a></li>
 		<li><a href="#"><img src="imgs/generale/console.png" alt="console"
 				height="40"></a></li>

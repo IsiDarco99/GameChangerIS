@@ -38,7 +38,8 @@ public class RegisterServlet extends HttpServlet {
 	        String nome = request.getParameter("nome");
 	        String cognome = request.getParameter("cognome");
 	        String dataNascita = request.getParameter("dataNascita");
-
+	        
+	       
 	        User user = new User(username, emailPers, "", 0, "", password, nome, cognome, dataNascita, ""); // Crea un oggetto User con i valori inseriti
 
 	        try {
@@ -46,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
 	            boolean registrationSuccess = udao.registerUser(user);
 
 	            if (registrationSuccess) {
-	                out.print("Registrazione avvenuta con successo");
+	            	response.sendRedirect("login.jsp");
 	            } else {
 	                out.print("Errore durante la registrazione");
 	            }
