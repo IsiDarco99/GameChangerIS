@@ -47,8 +47,6 @@ prezzoTot = 0;
 					</span>
 				</h1>
 			</div>
-		</div>
-	</div>
 	<%
 	} else {
 	for (Carrello p : prodotti) {
@@ -72,7 +70,9 @@ prezzoTot = 0;
 				</span>
 			</h1>
 			<div class="quantity">
-				<strong>Quantità: </strong><span> <%=p.getQuantitàProdotto()%>
+				<strong>Quantità: </strong><span> 
+				<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="2" name="quantity" id="quantity" value="<%=p.getQuantitàProdotto()%>">
+				
 				</span>
 			</div>
 		</div>
@@ -83,14 +83,20 @@ prezzoTot = 0;
 				&#x20AC
 			</p>
 		</div>
+		<button class="carrello">
+									<span>X
+									</span>
+								</button>
 	</div>
+	
 	<%
 	}
 	}
 	%>
-	<!-- FINE PRODOTTO -->
-
-	<!-- TOTALE -->
+	<%
+	if (!prodotti.isEmpty()) {
+	
+	%>
 	<div class="container-totale">
 		<div class="prezzo">
 			<p>
@@ -98,9 +104,20 @@ prezzoTot = 0;
 				&#x20AC
 			</p>
 		</div>
+		<button class="acquista">
+									<span>Acquista
+									</span>
+								</button>
+	</div>
+	<%
+	}
+	%>
+	<!-- FINE PRODOTTO -->
+
+	
 	</div>
 	</div>
-	</div>
+	
 
 
 	<%@ include file="includes/footer.jsp"%>

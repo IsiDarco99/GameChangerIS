@@ -5,15 +5,18 @@ body {
 }
 .nome-prodotto {
 	color: white;
+	width: 30%;
 }
 .container-prodotto {
 	 border-bottom: solid 1px #d8d8d8;
 	 padding: 20px 0;
 }
 .container-totale {
-	display: flex;
-    justify-content: flex-end;
+    display: flex;
     padding-right: 68px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 .scritta-principale  {
 	overflow: auto;
@@ -52,21 +55,24 @@ body {
 }
 
 .quantity strong {
-	font-size: 1 rem;
+	font-size: 20px;
+}
+.quantity span {
+	font-size: 20px;
 }
 #quantity {
 	display: flex;
     flex-direction: row;
     align-items: center;
-    width: 50px;
-    height: 43px;
+    width: 47px;
+    height: 37px;
     font-size: 20px;
     text-align: center;
     margin-left: 10px;
 }
 .immagine{
 	height: 225px;
-    width: 218px;
+    width: 45%;
     display: flex;
     justify-content: center;
 }
@@ -75,7 +81,8 @@ body {
 	
 }
 .prezzo {
-	font-size: 30px
+	font-size: 30px;
+	width: 20%;
 }
 button {
   padding: 5px 10px !important;
@@ -167,3 +174,11 @@ button:hover::after {
     align-items: flex-end;
     color: white;
 }
+button.carrello{
+	height: 34px;
+	width: 3%;
+}
+button.acquista{
+	margin-right: 11% !important;
+}
+
