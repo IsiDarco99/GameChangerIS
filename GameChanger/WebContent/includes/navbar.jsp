@@ -1,3 +1,8 @@
+<head>
+  <script type="text/javascript" src="
+	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/navbar.js"></script>
+</head>
 <style>
 .navbar {
 	position: fixed !important;
@@ -9,7 +14,7 @@
 	width: 60px; /* Imposta la larghezza desiderata */
 	max-height: calc(100vh - 50px);
 	/* Utilizza max-height invece di height */
-	display: flex; /*deve essere flex*/
+	display: none; /*deve essere flex*/
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: column;
@@ -67,22 +72,82 @@
     outline: none;
     cursor: pointer;
   }
+/*------    openbar nuova aggiunta     --------*/
+@keyframes animazioneAltezza {
+  from {
+    height: 60px;
+  }
+  to {
+    height: 364px;
+  }
+}
+@keyframes animazioneRitorno {
+  from {
+    height: 364px;
+  }
+  to {
+    height: 60px;
+  }
+}
+
 .OpenNavbar{
 	background-color: #D80B15;
 	position: fixed !important;
-    z-index: 9999;
-    top: 80px;
-    margin-left: 10px;
-    background-color: #333;
-    color: #fff;
-    width: 60px;
-    max-height: calc(100vh - 50px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    border-radius: 50px;
+  z-index: 9999;
+  top: 80px;
+  margin-left: 10px;
+  background-color: #333;
+  color: #fff;
+  width: 60px;
+  /*max-height: calc(100vh - 50px);*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50px;
+  height: 60px;
+  transition-duration: 500ms;
+  min-height: 40px;
 }
+
+.OpenNavbar.active {
+  animation-name: animazioneAltezza;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  display: flex;
+  min-height: 40px;
+}
+.OpenNavbar.active.chiusura{
+  animation-name: animazioneRitorno;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  display: flex;
+  height: 40px;
+}
+/* cambio per l'animazione
+.OpenNavbar{
+	background-color: #D80B15;
+	position: fixed !important;
+  z-index: 9999;
+  top: 80px;
+  margin-left: 10px;
+  background-color: #333;
+  color: #fff;
+  width: 60px;
+  <---max-height: calc(100vh - 50px);--->
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50px;
+  height: 50px;
+  transition-duration: 500ms;
+}
+
+.OpenNavbar.active{
+  height: 364px;
+}
+*/
 .vetrina{
 	border-radius: 50px;
 	background-color: pink;
@@ -93,13 +158,12 @@
 
 <script type="text/javascript" src="
 http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<!--- bottone per l'apparizione della navbar--><!--
-<div class="OpenNavbar">
-	<button type="button" id="vetrina" >
-		</button>
-</div>	-->
+<!--- bottone per l'apparizione della navbar-->
+<div class="OpenNavbar" id="OpN">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATdJREFUSEvtVokNwjAMvG7ABjACGwCTwCbAJjAJsAEjwAZsALLkqyzqNg5ElM9SJESdnH0+x6nQk1U94eJtgUcAZIntg+xM1e8EQJZrqYxXAJa6M+VLgKv+WAOQ/Z8FbKlm9BsAsqwtAMgSo99TVNvDuyjMLkmqbjbjnUaxbcl4rt9npcUVFHXtVkxcLwFmzwrVwzsKRUSklcFY+lmSs+lj9nYdfFuNKSSbJX2tkPjd0tq11wX2hFQKuCE4m7GXSSngBjM5wLni8vzrkvyBOYkOypNtp1yqbTtNdHOS6q7WiQbgtdhDwKl7nQF5w6TxX5u4vIy/D9gOc96t3oAXSi8AjsrtGMDAFN57MPDurx8RUfrkXHsHi+oZnBxK1Ypf6MyQk2bTG7AdbV1Uh57BORlH+zfk93vAN52uYh+h4fb9AAAAAElFTkSuQmCC" height="" />
+</div>	
 <!--                                        -->
-<div class="navbar">
+<div class="navbar" id="123">
 	<ul>
 		<li><a href="#" class="ricerca"><img src="imgs/generale/search.png" alt="search"
 				height="40"></a>
@@ -119,3 +183,4 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 				src="imgs/generale/gadget.png" alt="gadget" height="40"></a></li>
 	</ul>
 </div>
+

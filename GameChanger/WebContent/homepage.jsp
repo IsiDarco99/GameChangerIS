@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html lang="IT">
 <head>
-
-	<!-- aggiungo codice javascript per controllare funzionamento navbar!-->
+  <script type="text/javascript" src="
+	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<!-- aggiungo codice javascript per controllare funzionamento navbar!
 	<script type="text/javascript" src="
 	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/jsx" src="js/navbar.js"></script>
+	<script type="text/javascript" src="js/navbar.js"></script>-->
 
 <!--                          -------								 -->
 	<title>GameChanger</title>
