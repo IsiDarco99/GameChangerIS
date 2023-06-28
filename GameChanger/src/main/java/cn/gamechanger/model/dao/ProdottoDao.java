@@ -71,7 +71,7 @@ public class ProdottoDao {
 	    
 	    return prodotto;
 	}
-	
+	/*
 	public Prodotto getProdottoByPrezzo(int min, int max) {
 	    Prodotto prodotto = null;
 	    
@@ -94,7 +94,7 @@ public class ProdottoDao {
 	    }
 	    
 	    return prodotto;
-	}
+	}*/
 
 
 }
