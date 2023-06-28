@@ -126,7 +126,7 @@
                 </div> -->
               </div>
             </div>
-
+            <hr class="mb-3" style="border: 2px ; border-radius: 3px ;">
             <div class="mb-3">
               <h3 style="text-align: center;"> Pagamento </h3>
               <div class="PagCarta"> 
@@ -140,17 +140,9 @@
                 </div>
                 <h6> email: giorgio.marcello@gmail.com</h6>
               </div>
-              <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
+              
             </div>
 
-            <div class="mb-3">
-              <label for="address2">Payment <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
 
             <hr class="mb-4">
             <div class="prezzoFinale"> 

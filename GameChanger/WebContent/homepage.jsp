@@ -3,20 +3,30 @@
 <!DOCTYPE html>
 <html lang="IT">
 <head>
-<title>GameChanger</title>
-<%@include file="includes/head.jsp"%>
-<link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script type="text/javascript" src="
+	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<!-- aggiungo codice javascript per controllare funzionamento navbar!
+	<script type="text/javascript" src="
+	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/navbar.js"></script>-->
+
+<!--                          -------								 -->
+	<title>GameChanger</title>
+	<%@include file="includes/head.jsp"%>
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+
 </head>
 <body>
 	<%@include file="includes/topbar.jsp"%>
 	<%@include file="includes/navbar.jsp"%>
 
+
 	<div class="container-home">
 		<div class="arrow_prev1">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next1">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		
 		<div class="row carosello-home">
@@ -96,10 +106,10 @@
 	</div>
 	<div class="container">
 		<div class="arrow_prev2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="row nuove-uscite">
 			<div class="col-md-12">
@@ -153,9 +163,9 @@
 					attraverso un mondo un tempo meraviglioso, ma che ora cade
 					lentamente a pezzi. Nel tempo, il loro rapporto si evolve man mano
 					che imparano a collaborare, aiutandosi l'un l'altra per superare
-					coraggiosamente situazioni sempre più pericolose. Il lupo passerà
+					coraggiosamente situazioni sempre piï¿½ pericolose. Il lupo passerï¿½
 					dall'essere un cucciolo ribelle a un adulto imponente in cerca
-					della sua identità, mettendo alla prova l'affetto di Alba e il loro
+					della sua identitï¿½, mettendo alla prova l'affetto di Alba e il loro
 					impegno reciproco.</p>
 			</div>
 			<div class="col-7 video-container">

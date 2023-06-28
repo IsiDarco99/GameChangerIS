@@ -71,10 +71,17 @@ public class ProdottoDao {
 	    
 	    return prodotto;
 	}
+<<<<<<< HEAD
 	
 	public List<Prodotto> getProdottiByPrezzo(float prezzoMinimo, float prezzoMassimo) {
 	    List<Prodotto> prodotti = new ArrayList<>();
 
+=======
+	/*
+	public Prodotto getProdottoByPrezzo(int min, int max) {
+	    Prodotto prodotto = null;
+	    
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
 	    try {
 	        String query = "SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?";
 	        PreparedStatement pst = this.con.prepareStatement(query);
@@ -95,9 +102,15 @@ public class ProdottoDao {
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
+<<<<<<< HEAD
 
 	    return prodotti;
 	}
+=======
+	    
+	    return prodotto;
+	}*/
+>>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
 
 
 }

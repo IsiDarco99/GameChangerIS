@@ -253,3 +253,6 @@ span.price {
     margin-bottom: 20px;
   }
 }
+.md-3{
+	word-wrap:break-word;
+}
