@@ -71,46 +71,5 @@ public class ProdottoDao {
 	    
 	    return prodotto;
 	}
-<<<<<<< HEAD
-	
-	public List<Prodotto> getProdottiByPrezzo(float prezzoMinimo, float prezzoMassimo) {
-	    List<Prodotto> prodotti = new ArrayList<>();
-
-=======
-	/*
-	public Prodotto getProdottoByPrezzo(int min, int max) {
-	    Prodotto prodotto = null;
-	    
->>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
-	    try {
-	        String query = "SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?";
-	        PreparedStatement pst = this.con.prepareStatement(query);
-	        pst.setFloat(1, prezzoMinimo);
-	        pst.setFloat(2, prezzoMassimo);
-	        ResultSet rs = pst.executeQuery();
-	        while (rs.next()) {
-	            Prodotto row = new Prodotto();
-	            row.setCodice(rs.getInt("codice"));
-	            row.setNome(rs.getString("nome"));
-	            row.setPrezzo(rs.getFloat("prezzo"));
-	            row.setMarca(rs.getString("marca"));
-	            row.setDescrizione(rs.getString("descrizione"));
-	            row.setDataUscita(rs.getDate("data_usc"));
-
-	            prodotti.add(row);
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-<<<<<<< HEAD
-
-	    return prodotti;
-	}
-=======
-	    
-	    return prodotto;
-	}*/
->>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
-
 
 }
