@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.Accessorio;
+import cn.gamechanger.model.Prodotto;
 
 public class AccessorioDao {
 	private Connection con;
@@ -66,6 +67,32 @@ public class AccessorioDao {
 		}
 		
 		return accessorio;
+	}
+	
+	public Accessorio getAccessorioByPrezzo(int min, int max) {
+	    Accessorio accessorio = null;
+	    
+	    try {
+	        String query = "SELECT * FROM prodotto JOIN accessorio ON prodotto.codice = accessorio.codice WHERE prezzo >= ? AND prezzo <= ?";
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setInt(1, min);
+	        pst.setInt(2, max);
+	        ResultSet rs = pst.executeQuery();
+	        if (rs.next()) {
+	        	accessorio = new Accessorio();
+				accessorio.setCodice(rs.getInt("codice"));
+				accessorio.setNome(rs.getString("nome"));
+				accessorio.setPrezzo(rs.getFloat("prezzo"));
+				accessorio.setMarca(rs.getString("marca"));
+				accessorio.setDescrizione(rs.getString("descrizione"));
+				accessorio.setDataUscita(rs.getDate("data_usc"));
+				accessorio.setTipo(rs.getString("tipo"));
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return accessorio;
 	}
 	
 }

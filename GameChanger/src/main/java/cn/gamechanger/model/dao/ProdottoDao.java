@@ -71,5 +71,32 @@ public class ProdottoDao {
 	    
 	    return prodotto;
 	}
+	
+	public List<Prodotto> getProdottoByPrezzo(int min, int max) {
+		ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
+	    
+	    try {
+	        String query = "SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?";
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setInt(1, min);
+	        pst.setInt(2, max);
+	        ResultSet rs = pst.executeQuery();
+	        while (rs.next()) {
+				Prodotto row = new Prodotto();
+				row.setCodice(rs.getInt("codice"));
+				row.setNome(rs.getString("nome"));
+				row.setPrezzo(rs.getFloat("prezzo"));
+				row.setMarca(rs.getString("marca"));
+				row.setDescrizione(rs.getString("descrizione"));
+				row.setDataUscita(rs.getDate("data_usc"));
+				
+				prodotti.add(row);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return prodotti;
+	}
 
 }

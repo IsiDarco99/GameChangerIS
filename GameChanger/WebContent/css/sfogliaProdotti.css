@@ -35,6 +35,13 @@ a {
 	display: flex;
 }
 
+.filtri-2 form{
+	font-size: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+
 #prezzoMin {
 	width: 40px;
     height: 30px;
