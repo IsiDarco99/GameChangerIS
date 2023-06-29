@@ -79,7 +79,7 @@ prezzoTot = 0;
 
 		<div class="prezzo">
 			<p>
-				<strong>Prezzo</strong><br><%=p.getPrezzo() * p.getQuantitàProdotto()%>
+				<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitàProdotto())%>
 				&#x20AC
 			</p>
 		</div>
@@ -100,7 +100,7 @@ prezzoTot = 0;
 	<div class="container-totale">
 		<div class="prezzo">
 			<p>
-				<strong>Totale</strong><br><%=prezzoTot%>
+				<strong>Totale</strong><br><%=String.format("%.2f", prezzoTot)%>
 				&#x20AC
 			</p>
 		</div>

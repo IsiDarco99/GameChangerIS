@@ -40,10 +40,6 @@
 	
 	ProdottoDao pd = new ProdottoDao(DbCon.getConnection());
 	List<Prodotto> prodotti = pd.getAllProdotto();
-	
-	//RICERCA PRODOTTI PER PREZZO
-	ProdottoDao pdp = new ProdottoDao(DbCon.getConnection());
-	List<Prodotto> prodottiPrez = pd.getProdottiByPrezzo(prezzoMinimo, prezzoMassimo);
 %>
 <!DOCTYPE html>
 <html lang="IT">

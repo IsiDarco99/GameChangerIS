@@ -78,6 +78,8 @@ body {
 }
 .immagine img {
 	height: 218px;
+	max-width: 100%;
+	
 	
 }
 .prezzo {
@@ -182,3 +184,16 @@ button.acquista{
 	margin-right: 11% !important;
 }
 
+@media (max-width: 768px) {
+.immagine img {
+	max-width: 200px;
+	max-height: 170px;
+}
+}
+
+@media (max-width: 480px) {
+.immagine img{
+	max-width: 170px;
+	max-height: 145px;
+}
+}
