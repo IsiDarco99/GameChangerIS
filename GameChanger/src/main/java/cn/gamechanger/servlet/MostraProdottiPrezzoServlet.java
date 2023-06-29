@@ -36,31 +36,31 @@ public class MostraProdottiPrezzoServlet extends HttpServlet {
 
     	    if(categoria.equals("allProdotti")) {
             	ProdottoDao pd = new ProdottoDao(DbCon.getConnection());
-                Prodotto prodotti = pd.getProdottoByPrezzo(min, max);
+                List<Prodotto> prodotti = (List<Prodotto>) pd.getProdottoByPrezzo(min, max);
                 String redirectURL = "/sfogliaProdotti.jsp?categoria=" + categoria;
                 request.setAttribute("prodotti", prodotti);
                 request.getRequestDispatcher(redirectURL).forward(request, response);
             } else if (categoria.equals("videogiochi")) {
             	VideogameDao vd = new VideogameDao(DbCon.getConnection());
-            	Videogame prodotti = vd.getVideogameByPrezzo(min, max);
+            	List<Videogame> prodotti = vd.getAllVideogame();
             	String redirectURL = "/sfogliaProdotti.jsp?categoria=" + categoria;
                 request.setAttribute("prodotti", prodotti);
                 request.getRequestDispatcher(redirectURL).forward(request, response);
             } else if (categoria.equals("computer")) {
             	ComputerDao cpd = new ComputerDao(DbCon.getConnection());
-            	Computer prodotti = cpd.getComputerByPrezzo(min, max);
+            	List<Computer> prodotti = cpd.getAllComputer();
             	String redirectURL = "/sfogliaProdotti.jsp?categoria=" + categoria;
                 request.setAttribute("prodotti", prodotti);
                 request.getRequestDispatcher(redirectURL).forward(request, response);
             } else if (categoria.equals("accessori")) {
             	AccessorioDao ad = new AccessorioDao(DbCon.getConnection());
-            	Accessorio prodotti = ad.getAccessorioByPrezzo(min, max);
+            	List<Accessorio> prodotti = ad.getAllAccessori();
             	String redirectURL = "/sfogliaProdotti.jsp?categoria=" + categoria;
                 request.setAttribute("prodotti", prodotti);
                 request.getRequestDispatcher(redirectURL).forward(request, response);
             } else if (categoria.equals("console")) {
             	ConsoleDao csd = new ConsoleDao(DbCon.getConnection());
-            	Prodotto prodotti = csd.getConsoleByPrezzo(min, max);
+            	List<Console> prodotti = csd.getAllConsole();
             	String redirectURL = "/sfogliaProdotti.jsp?categoria=" + categoria;
                 request.setAttribute("prodotti", prodotti);
                 request.getRequestDispatcher(redirectURL).forward(request, response);

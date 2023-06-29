@@ -12,7 +12,6 @@
 		categoria = "allProdotti";
   }
 	List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodotti");
-	
 %>
 <!DOCTYPE html>
 <html lang="IT">
