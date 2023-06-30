@@ -24,7 +24,7 @@
 		<% if (session.getAttribute("userSession") == null) { %>
 			<a href="login.jsp"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
 		<% } else { %>
-			<a href="profilo.jsp"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
+			<a href="${pageContext.request.contextPath}/dati-profilo"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
 			<a href="carrello.jsp"><img src="imgs/generale/carrello.jpg" alt="Carrello" height="40"></a>
 			<a href="#" onclick="logout()"><img src="imgs/generale/logout.png" alt="Logout" height="40"></a>
 		<% } %>

@@ -11,8 +11,11 @@
 <%@include file="includes/topbar.jsp"%>
 
 <div class="container">
-<div class="center>">
-<h1>Cose</h1>
+<div class="blocco">
+<h2><strong>Modifica Username</strong></h2>
+<p>Vecchio Username </p>
+<p>Nuovo Username </p>
+<button>Salva modifiche</button>
 
 
 

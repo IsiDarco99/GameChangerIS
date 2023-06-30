@@ -180,6 +180,7 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 				height="40"></a></li>
 		<li style="margin: 0px 10px 0px;"><a href="#"><img
 				src="imgs/generale/gadget.png" alt="gadget" height="40"></a></li>
+		
 	</ul>
 </div>
 
