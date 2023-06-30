@@ -25,7 +25,7 @@ public class profiloservlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             UserDao userDao = new UserDao(DbCon.getConnection());
-            String username = (String) request.getSession().getAttribute("username");
+            String username = (String) request.getSession().getAttribute("userSession");
             User user = userDao.getUserProfile(username);
             request.setAttribute("user", user);
             request.getRequestDispatcher("profilo.jsp").forward(request, response);

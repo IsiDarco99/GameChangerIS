@@ -71,30 +71,33 @@ public class UserDao {
 	}
 	
 	public User getUserProfile(String username) {
-		User user = null;
+User user = null;
 		
 		try {
-			String query = "SELECT * FROM utente WHERE username=?";
+			String query = "select * from utente where username=?";
 			
 			PreparedStatement pst = this.con.prepareStatement(query);
 			pst.setString(1, username);
 			ResultSet rs = pst.executeQuery();
 			
-			if (rs.next()) {
-				user= new User();
+			if(rs.next()){
+				user = new User();
+				user.setUsername(rs.getString("username"));
+				user.setEmailPers(rs.getString("email_pers"));
+				user.setEmailPaypal(rs.getString("email_paypal"));
+				user.setNumTel(rs.getInt(4));
+				user.setIndirizzo(rs.getString("indirizzo"));
+				user.setPassword(rs.getString("password"));
 				user.setNome(rs.getString("nome"));
 				user.setCognome(rs.getString("cognome"));
 				user.setDataNascita(rs.getString("data_nascita"));
 				user.setCodFiscale(rs.getString("codfiscale"));
-				user.setIndirizzo(rs.getString("indirizzo"));
-				user.setNumTel(rs.getInt("4"));
-				user.setEmailPers(rs.getString("email_pers"));
-				user.setEmailPaypal(rs.getString("email_paypal"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.info(e.getMessage());
 		}
+		
 		return user;
 	}
 }
