@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.model.Computer;
 import cn.gamechanger.model.Console;
 
 public class ConsoleDao {
@@ -66,6 +67,32 @@ public class ConsoleDao {
 		}
 		
 		return console;
+	}
+	
+	public Console getConsoleByPrezzo(int min, int max) {
+	    Console console = null;
+	    
+	    try {
+	        String query = "SELECT * FROM prodotto JOIN console ON prodotto.codice = console.codice WHERE prezzo >= ? AND prezzo <= ?";
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setInt(1, min);
+	        pst.setInt(2, max);
+	        ResultSet rs = pst.executeQuery();
+	        if (rs.next()) {
+	        	console = new Console();
+				console.setCodice(rs.getInt("codice"));
+				console.setNome(rs.getString("nome"));
+				console.setPrezzo(rs.getFloat("prezzo"));
+				console.setMarca(rs.getString("marca"));
+				console.setDescrizione(rs.getString("descrizione"));
+				console.setDataUscita(rs.getDate("data_usc"));
+				console.setGenerazione(rs.getInt(8));
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return console;
 	}
 	
 }

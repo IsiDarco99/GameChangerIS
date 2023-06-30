@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.model.Accessorio;
 import cn.gamechanger.model.Computer;
 
 public class ComputerDao {
@@ -70,6 +71,34 @@ public class ComputerDao {
 		}
 		
 		return computer;
+	}
+	
+	public Computer getComputerByPrezzo(int min, int max) {
+	    Computer computer = null;
+	    
+	    try {
+	        String query = "SELECT * FROM prodotto JOIN computer ON prodotto.codice = computer.codice WHERE prezzo >= ? AND prezzo <= ?";
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setInt(1, min);
+	        pst.setInt(2, max);
+	        ResultSet rs = pst.executeQuery();
+	        if (rs.next()) {
+	        	computer = new Computer();
+				computer.setCodice(rs.getInt("codice"));
+				computer.setNome(rs.getString("nome"));
+				computer.setPrezzo(rs.getFloat("prezzo"));
+				computer.setMarca(rs.getString("marca"));
+				computer.setDescrizione(rs.getString("descrizione"));
+				computer.setDataUscita(rs.getDate("data_usc"));
+				computer.setCasa(rs.getString("casa"));
+				computer.setUfficio(rs.getString("ufficio"));
+				computer.setGaming(rs.getString("gaming"));
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return computer;
 	}
 	
 }

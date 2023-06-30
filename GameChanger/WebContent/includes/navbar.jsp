@@ -172,7 +172,8 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 			   <input type="text" placeholder=""/>
 			   <input type="button" value="Search"/>
 			</div><!--              ---------                 -->
-		<li><a href="sfogliaProdotti.jsp?categoria=allProdotti"><img src="imgs/generale/computer.png" alt="computer"
+		<li><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">
+<img src="imgs/generale/computer.png" alt="computer"
 				height="40"></a></li>
 		<li><a href="#"><img src="imgs/generale/console.png" alt="console"
 				height="40"></a></li>
