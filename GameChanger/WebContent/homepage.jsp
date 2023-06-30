@@ -163,9 +163,9 @@
 					attraverso un mondo un tempo meraviglioso, ma che ora cade
 					lentamente a pezzi. Nel tempo, il loro rapporto si evolve man mano
 					che imparano a collaborare, aiutandosi l'un l'altra per superare
-					coraggiosamente situazioni sempre piï¿½ pericolose. Il lupo passerï¿½
+					coraggiosamente situazioni sempre piï¿½ pericolose. Il lupo passerà
 					dall'essere un cucciolo ribelle a un adulto imponente in cerca
-					della sua identitï¿½, mettendo alla prova l'affetto di Alba e il loro
+					della sua identità, mettendo alla prova l'affetto di Alba e il loro
 					impegno reciproco.</p>
 			</div>
 			<div class="col-7 video-container">

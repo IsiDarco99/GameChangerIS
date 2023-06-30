@@ -54,11 +54,11 @@
 						</p>
 
 						<div class="filtri">
-							<p><a href="sfogliaProdotti.jsp?categoria=allProdotti">Tutti i prodotti</a></p>
-							<p><a href="sfogliaProdotti.jsp?categoria=videogiochi">Videogiochi</a></p>
-							<p><a href="sfogliaProdotti.jsp?categoria=accessori">Accessori</a></p>
-							<p><a href="sfogliaProdotti.jsp?categoria=computer">Computer</a></p>
-							<p><a href="sfogliaProdotti.jsp?categoria=console">Console</a></p>
+							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">Tutti i prodotti</a></p>
+							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=videogiochi">Videogiochi</a></p>
+							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=accessori">Accessori</a></p>
+							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=computer">Computer</a></p>
+							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=console">Console</a></p>
 						</div>
 
 						<div class="prezzo">
@@ -97,7 +97,6 @@
 								for(Prodotto p:prodotti){%>
 									<div class="prodotto">
 									<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=<%= p.getCodice() %>">
-									
 									<img class="prod-img" src="imgs/prodotti/<%= p.getNome() %> 1.jpg" alt="<%= p.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">

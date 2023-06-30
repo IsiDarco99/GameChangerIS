@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.Computer;
 import cn.gamechanger.model.Console;
+import cn.gamechanger.model.Prodotto;
 
 public class ConsoleDao {
 	private Connection con;
@@ -69,8 +70,8 @@ public class ConsoleDao {
 		return console;
 	}
 	
-	public Console getConsoleByPrezzo(int min, int max) {
-	    Console console = null;
+	public List<Console> getConsoleByPrezzo(int min, int max) {
+		List<Console> console = new ArrayList<Console>();
 	    
 	    try {
 	        String query = "SELECT * FROM prodotto JOIN console ON prodotto.codice = console.codice WHERE prezzo >= ? AND prezzo <= ?";
@@ -78,15 +79,17 @@ public class ConsoleDao {
 	        pst.setInt(1, min);
 	        pst.setInt(2, max);
 	        ResultSet rs = pst.executeQuery();
-	        if (rs.next()) {
-	        	console = new Console();
-				console.setCodice(rs.getInt("codice"));
-				console.setNome(rs.getString("nome"));
-				console.setPrezzo(rs.getFloat("prezzo"));
-				console.setMarca(rs.getString("marca"));
-				console.setDescrizione(rs.getString("descrizione"));
-				console.setDataUscita(rs.getDate("data_usc"));
-				console.setGenerazione(rs.getInt(8));
+	        while (rs.next()) {
+	        	Console row = new Console();
+				row.setCodice(rs.getInt("codice"));
+				row.setNome(rs.getString("nome"));
+				row.setPrezzo(rs.getFloat("prezzo"));
+				row.setMarca(rs.getString("marca"));
+				row.setDescrizione(rs.getString("descrizione"));
+				row.setDataUscita(rs.getDate("data_usc"));
+				row.setGenerazione(rs.getInt(8));
+				
+				console.add(row);
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();

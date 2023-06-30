@@ -73,7 +73,7 @@ public class ProdottoDao {
 	}
 	
 	public List<Prodotto> getProdottoByPrezzo(int min, int max) {
-		ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
+		List<Prodotto> prodotti = new ArrayList<Prodotto>();
 	    
 	    try {
 	        String query = "SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?";

@@ -28,18 +28,22 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	String username = (String) request.getSession().getAttribute("userSession");
+    	System.out.println(username);
         int codiceProdotto = Integer.parseInt(request.getParameter("codice"));
         int quantita = Integer.parseInt(request.getParameter("quantity"));
-        try {
-        	CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
-        	cdao.aggiungiProdottoAlCarrello(username, codiceProdotto, quantita);
-		} catch (Exception e) {
-			e.getStackTrace();
-		}
-        
-
-        String redirectURL = "/GameChanger/carrello.jsp";
-
-        response.sendRedirect(redirectURL);
+        if (username == null) {
+        	String redirectURL = "/GameChanger/login.jsp";
+            response.sendRedirect(redirectURL);
+        } else {
+        	try {
+            	CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
+            	cdao.aggiungiProdottoAlCarrello(username, codiceProdotto, quantita);
+    		} catch (Exception e) {
+    			e.getStackTrace();
+    		}
+        	
+        	String redirectURL = "/GameChanger/carrello.jsp";
+            response.sendRedirect(redirectURL);
+        }
     }
 }

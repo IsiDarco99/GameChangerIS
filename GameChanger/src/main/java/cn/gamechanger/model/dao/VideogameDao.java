@@ -73,8 +73,8 @@ public class VideogameDao {
 		return videogame;
 	}
 	
-	public Videogame getVideogameByPrezzo(int min, int max) {
-	    Videogame videogame = null;
+	public List<Videogame> getVideogameByPrezzo(int min, int max) {
+	    List<Videogame> videogame = new ArrayList<Videogame>();
 	    
 	    try {
 	        String query = "SELECT * FROM prodotto JOIN videogame ON prodotto.codice = videogame.codice WHERE prezzo >= ? AND prezzo <= ?";
@@ -82,17 +82,19 @@ public class VideogameDao {
 	        pst.setInt(1, min);
 	        pst.setInt(2, max);
 	        ResultSet rs = pst.executeQuery();
-	        if (rs.next()) {
-	        	videogame = new Videogame();
-				videogame.setCodice(rs.getInt("codice"));
-				videogame.setNome(rs.getString("nome"));
-				videogame.setPrezzo(rs.getFloat("prezzo"));
-				videogame.setMarca(rs.getString("marca"));
-				videogame.setDescrizione(rs.getString("descrizione"));
-				videogame.setDataUscita(rs.getDate("data_usc"));
-				videogame.setPegi(rs.getString("pegi"));
-				videogame.setSviluppatore(rs.getString("sviluppatore"));
-				videogame.setGenere(rs.getString("genere"));
+	        while (rs.next()) {
+	        	Videogame row = new Videogame();
+	        	row.setCodice(rs.getInt("codice"));
+	        	row.setNome(rs.getString("nome"));
+	        	row.setPrezzo(rs.getFloat("prezzo"));
+	        	row.setMarca(rs.getString("marca"));
+	        	row.setDescrizione(rs.getString("descrizione"));
+	        	row.setDataUscita(rs.getDate("data_usc"));
+	        	row.setPegi(rs.getString("pegi"));
+	        	row.setSviluppatore(rs.getString("sviluppatore"));
+	        	row.setGenere(rs.getString("genere"));
+	        	
+	        	videogame.add(row);
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();

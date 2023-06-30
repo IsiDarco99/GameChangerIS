@@ -69,30 +69,31 @@ public class AccessorioDao {
 		return accessorio;
 	}
 	
-	public Accessorio getAccessorioByPrezzo(int min, int max) {
-	    Accessorio accessorio = null;
-	    
+	public List<Accessorio> getAccessorioByPrezzo(int min, int max) {
+	    List<Accessorio> accessori = new ArrayList<Accessorio>();    
 	    try {
 	        String query = "SELECT * FROM prodotto JOIN accessorio ON prodotto.codice = accessorio.codice WHERE prezzo >= ? AND prezzo <= ?";
 	        PreparedStatement pst = this.con.prepareStatement(query);
 	        pst.setInt(1, min);
 	        pst.setInt(2, max);
 	        ResultSet rs = pst.executeQuery();
-	        if (rs.next()) {
-	        	accessorio = new Accessorio();
-				accessorio.setCodice(rs.getInt("codice"));
-				accessorio.setNome(rs.getString("nome"));
-				accessorio.setPrezzo(rs.getFloat("prezzo"));
-				accessorio.setMarca(rs.getString("marca"));
-				accessorio.setDescrizione(rs.getString("descrizione"));
-				accessorio.setDataUscita(rs.getDate("data_usc"));
-				accessorio.setTipo(rs.getString("tipo"));
+	        while (rs.next()) {
+	        	Accessorio row = new Accessorio();
+	        	row.setCodice(rs.getInt("codice"));
+	        	row.setNome(rs.getString("nome"));
+	        	row.setPrezzo(rs.getFloat("prezzo"));
+	        	row.setMarca(rs.getString("marca"));
+	        	row.setDescrizione(rs.getString("descrizione"));
+	        	row.setDataUscita(rs.getDate("data_usc"));
+	        	row.setTipo(rs.getString("tipo"));
+	        	
+	        	accessori.add(row);
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
 	    
-	    return accessorio;
+	    return accessori;
 	}
 	
 }
