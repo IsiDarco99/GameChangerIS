@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
+    <%@page import="cn.gamechanger.connection.DbCon"%>
+    <%@page import="cn.gamechanger.model.dao.*"%>
+    <%@page import="cn.gamechanger.model.*"%>
+    <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
+    
+    <% User user = (User) request.getAttribute("user"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +28,8 @@
 						alt="Brawhalla">
 
 </div>
-<p class="username"> <strong>Supercazzola</strong></p>
+
+<p class="username"> <strong><%= user.getUsername() %></strong></p>
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
@@ -40,11 +48,11 @@
 <div class="scritta">
 <h5><strong>Informazioni di base</strong></h5>
 </div>
-<p>Nome:</p>
-<p>Cognome:</p>
-<p>Data di nascita:</p>
-<p>Codice fiscale:</p>
-<p>Indirizzo di spedizione:</p>
+<p>Nome: ${user.nome} </p>
+<p>Cognome: ${user.cognome}</p>
+<p>Data di nascita: ${user.dataNascita}</p>
+<p>Codice fiscale: ${user.codFiscale}</p>
+<p>Indirizzo di spedizione: ${user.indirizzo}</p>
 <a href="#">Prodotti acquistati</a>
 
 
@@ -56,8 +64,9 @@
 <div class="scritta">
 <h5><strong>Informazioni di contatto</strong></h5>
 </div>
-<p>Cellulare:</p>
-<p>E-mail:</p>
+<p>Cellulare: ${user.numTel}</p>
+<p>E-mail: ${user.emailPers}</p>
+<p>E-mail Paypal: ${user.emailPaypal}</p>
 
 
 </div>
