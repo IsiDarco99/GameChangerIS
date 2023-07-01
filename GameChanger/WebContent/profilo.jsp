@@ -53,7 +53,7 @@
 <p>Data di nascita: ${user.dataNascita}</p>
 <p>Codice fiscale: ${user.codFiscale}</p>
 <p>Indirizzo di spedizione: ${user.indirizzo}</p>
-<a href="#">Prodotti acquistati</a>
+<a href="prodottiacquistati.jsp">Prodotti acquistati</a>
 
 
 
