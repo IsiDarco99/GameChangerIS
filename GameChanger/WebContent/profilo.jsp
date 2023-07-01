@@ -25,7 +25,7 @@
 <div class="col-3">
 <div class="immagine-profilo"> 
 <img src="imgs/generale/account.png"
-						alt="Brawhalla">
+						alt="Profilo">
 
 </div>
 
@@ -33,13 +33,13 @@
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
-<a href="#"> Username<br></a>
-<a href="#"> Password<br></a>
-<a href="#"> Immagine Profilo<br></a>
-<a href="#"> E-mail<br></a>
-<a href="#"> E-mail Paypal<br></a>
-<a href="#"> Num. Cellulare<br></a>
-<a href="#"> Indirizzo di spedizione<br></a>
+<a href="modifica.jsp?modifica=username"> Username<br></a>
+<a href="modifica.jsp?modifica=password"> Password<br></a>
+<a href="modifica.jsp?modifica=immagine"> Immagine Profilo<br></a>
+<a href="modifica.jsp?modifica=mail"> E-mail<br></a>
+<a href="modifica.jsp?modifica=paypal"> E-mail Paypal<br></a>
+<a href="modifica.jsp?modifica=numero"> Num. Cellulare<br></a>
+<a href="modifica.jsp?modifica=indirizzo"> Indirizzo di spedizione<br></a>
 </div>
 </div>
 
