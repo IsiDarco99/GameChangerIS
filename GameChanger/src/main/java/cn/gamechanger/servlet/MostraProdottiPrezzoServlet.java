@@ -10,16 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.Accessorio;
-import cn.gamechanger.model.Computer;
-import cn.gamechanger.model.Console;
-import cn.gamechanger.model.Prodotto;
-import cn.gamechanger.model.Videogame;
-import cn.gamechanger.model.dao.AccessorioDao;
-import cn.gamechanger.model.dao.ComputerDao;
-import cn.gamechanger.model.dao.ConsoleDao;
-import cn.gamechanger.model.dao.ProdottoDao;
-import cn.gamechanger.model.dao.VideogameDao;
+import cn.gamechanger.model.*;
+import cn.gamechanger.model.dao.*;
 
 @WebServlet("/filtra-prezzo")
 public class MostraProdottiPrezzoServlet extends HttpServlet {

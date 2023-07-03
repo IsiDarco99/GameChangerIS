@@ -60,7 +60,7 @@ body {
 .quantity span {
 	font-size: 20px;
 }
-#quantity {
+.quantity-input {
 	display: flex;
     flex-direction: row;
     align-items: center;
@@ -79,8 +79,7 @@ body {
 .immagine img {
 	height: 218px;
 	max-width: 100%;
-	
-	
+	border-radius: 20px;
 }
 .prezzo {
 	font-size: 30px;
@@ -114,6 +113,7 @@ button {
 button:hover {
   animation: sh0 0.5s ease-in-out both;
 }
+
 
 @keyframes sh0 {
   0% {
@@ -178,7 +178,7 @@ button:hover::after {
 }
 button.carrello{
 	height: 34px;
-	width: 3%;
+	width: 80%;
 }
 button.acquista{
 	margin-right: 11% !important;

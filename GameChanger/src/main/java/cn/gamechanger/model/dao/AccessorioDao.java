@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.Accessorio;
-import cn.gamechanger.model.Prodotto;
 
 public class AccessorioDao {
 	private Connection con;

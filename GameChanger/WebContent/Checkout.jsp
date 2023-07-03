@@ -29,11 +29,11 @@
         <ul class="step-wizard-list">
           <li class="step-wizard-item current-item ">
             <span class="progress-count">1</span>
-            <span class="progress-label">Billing Info</span>
+            <span class="progress-label">Informazioni di spedizione</span>
           </li>
           <li class="step-wizard-item ">
             <span class="progress-count">2</span>
-            <span class="progress-label">Pay</span>
+            <span class="progress-label">Pagamento</span>
           </li>
         
           <li class="step-wizard-item ">
@@ -43,7 +43,7 @@
     
           <li class="step-wizard-item">
             <span class="progress-count">4</span>
-            <span class="progress-label">Finish</span>
+            <span class="progress-label">Ordine confermato</span>
           </li>
         </ul>
         </section>
@@ -58,29 +58,29 @@
             <form action="/action_page.php">
               <div class="row">
                 <div class="col-50">
-                  <h3><b> Address</b></h3>
-                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <h3><b> Indirizzo</b></h3>
+                  <label for="fname"><i class="fa fa-user"></i> Nome Completo</label>
                   <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
                   <label for="email"><i class="fa fa-envelope"></i> Email</label>
                   <input type="text" id="email" name="email" placeholder="john@example.com">
-                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Indirizzo</label>
                   <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <label for="city"><i class="fa fa-institution"></i> Città</label>
                   <input type="text" id="city" name="city" placeholder="New York">
                   <div class="row">
                     <div class="col-50">
-                      <label for="state">State</label>
+                      <label for="state">Stato</label>
                       <input type="text" id="state" name="state" placeholder="NY">
                     </div>
                     <div class="col-50">
-                      <label for="zip">Zip</label>
+                      <label for="zip">Codice Postale</label>
                       <input type="text" id="zip" name="zip" placeholder="10001">
                     </div>
                   </div>
                 </div>
               </div>
               <label>
-                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                <input type="checkbox" checked="checked" name="sameadr"> Salva informazioni per i prossimi acquisti
               </label>
              <input type="submit" id="submitBtn" value="Continue to checkout" class="btn" onclick="redirectToCheckout2()">
             </form> 

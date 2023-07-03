@@ -40,7 +40,7 @@ public class RegisterServlet extends HttpServlet {
 	        String dataNascita = request.getParameter("dataNascita");
 	        
 	       
-	        User user = new User(username, emailPers, "", 0, "", password, nome, cognome, dataNascita, ""); // Crea un oggetto User con i valori inseriti
+	        User user = new User(username, emailPers, "", 0, "", "", "", 0, password, nome, cognome, dataNascita, ""); // Crea un oggetto User con i valori inseriti
 
 	        try {
 	            UserDao udao = new UserDao(DbCon.getConnection());

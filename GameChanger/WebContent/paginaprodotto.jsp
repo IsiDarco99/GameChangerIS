@@ -24,6 +24,7 @@ if (categoria.equals("videogame")){
 } else if (categoria.equals("console")){
 	cs = (Console) request.getAttribute("prodotto");
 } 
+System.out.println(categoria);
 %>
 
 <!DOCTYPE html>
@@ -511,7 +512,7 @@ if (categoria.equals("videogame")){
 	</span>
 </h1>
 <p>
-	by <strong><%=a.getMarca()%></strong>
+	by <strong><%=cs.getMarca()%></strong>
 	<span></span>
 </p>
 </div>

@@ -13,8 +13,8 @@ import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.CarrelloDao;
 import cn.gamechanger.model.dao.UserDao;
 
-@WebServlet("/aggiungi-prodotto")
-public class AggiungiAlCarrelloServlet extends HttpServlet {
+@WebServlet("/modifica-quantita")
+public class ModificaQuantitàCarrelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CarrelloDao carrelloDao;
 
@@ -36,7 +36,7 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
         } else {
         	try {
             	CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
-            	cdao.aggiungiProdottoAlCarrello(username, codiceProdotto, quantita);
+            	cdao.cambiaQuantitaProdotto(username, codiceProdotto, quantita);
     		} catch (Exception e) {
     			e.getStackTrace();
     		}

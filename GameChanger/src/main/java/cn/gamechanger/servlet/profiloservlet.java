@@ -29,10 +29,9 @@ public class profiloservlet extends HttpServlet {
             User user = userDao.getUserProfile(username);
             request.setAttribute("user", user);
             request.getRequestDispatcher("profilo.jsp").forward(request, response);
-            return; // Termina l'esecuzione del metodo dopo il forward
+            return;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-            // Puoi gestire l'eccezione in modo appropriato qui
         }
         
         String redirectURL = "/GameChanger/profilo.jsp";
