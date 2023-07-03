@@ -106,5 +106,25 @@ User user = null;
 		
 		return user;
 	}
+	
+	public void updateUser(User user) {
+	    try {
+	        String query = "UPDATE utente SET indirizzo = ?, citta = ?, stato = ?, cod_postale = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, user.getIndirizzo());
+	        pst.setString(2, user.getCitta());
+	        pst.setString(3, user.getStato());
+	        pst.setInt(4, user.getCod_postale());
+	        pst.setString(5, user.getUsername());
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
 }
     

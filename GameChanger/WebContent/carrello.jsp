@@ -44,7 +44,7 @@ prezzoTot = 0;
 			<div class="scritta-carrello">
 				<h1>
 					<span> Il tuo carrello è vuoto<br>Da un'occhiata ai
-						nostri <a href="sfogliaProdotti.jsp?categoria=allProdotti">prodotti</a>
+						nostri <a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">prodotti</a>
 					</span>
 				</h1>
 			</div>
