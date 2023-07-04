@@ -125,6 +125,22 @@ User user = null;
 	        logger.info(e.getMessage());
 	    }
 	}
+	
+	public void updateUserPayPal(User user) {
+	    try {
+	        String query = "UPDATE utente SET email_paypal = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, user.getEmailPaypal());
+	        pst.setString(2, user.getUsername());
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
 
 }
     

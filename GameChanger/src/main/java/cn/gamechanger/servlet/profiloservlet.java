@@ -23,7 +23,12 @@ public class profiloservlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
+        
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    	try {
             UserDao userDao = new UserDao(DbCon.getConnection());
             String username = (String) request.getSession().getAttribute("userSession");
             User user = userDao.getUserProfile(username);
@@ -36,10 +41,5 @@ public class profiloservlet extends HttpServlet {
         
         String redirectURL = "/GameChanger/profilo.jsp";
         response.sendRedirect(redirectURL);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
     }
 }

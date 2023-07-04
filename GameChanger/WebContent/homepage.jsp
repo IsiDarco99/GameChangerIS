@@ -23,10 +23,10 @@
 
 	<div class="container-home">
 		<div class="arrow_prev1">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="arrow_next1">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		
 		<div class="row carosello-home">

@@ -56,7 +56,7 @@
 		<legend>Pagamento</legend>
 		<div class="col-75">
 			<div class="container">
-			<form>
+			<form action="/GameChanger/checkout-3" method="post">
 				<div class="col-50">
 					<h3>
 						<b>Pagamento</b>
@@ -67,7 +67,7 @@
 					</div>
 					<label for="cname">E -mail PayPal</label> 
 					<input type="text"
-						id="cname" name="cardname" value="${user.emailPaypal}">
+						id="cname" name="emailPayPal" value="${user.emailPaypal}">
 				</div>
 				<label>
                 <input type="checkbox" checked="checked" name="salva-dati"> Salva e-mail PayPal per i prossimi acquisti

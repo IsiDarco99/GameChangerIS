@@ -55,10 +55,6 @@
 <p>Indirizzo di spedizione: ${user.stato}, ${user.citta}, ${user.indirizzo}, ${user.cod_postale}</p>
 <a href="prodottiacquistati.jsp">Prodotti acquistati</a>
 
-
-
-
-
 </div>
 <div class="container-1">
 <div class="scritta">
@@ -68,42 +64,10 @@
 <p>E-mail: ${user.emailPers}</p>
 <p>E-mail Paypal: ${user.emailPaypal}</p>
 
-
-</div>
-
-
-
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
+</div>
 <%@include file="includes/footer.jsp"%>
 </body>
 </html>

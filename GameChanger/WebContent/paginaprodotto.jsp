@@ -24,7 +24,6 @@ if (categoria.equals("videogame")){
 } else if (categoria.equals("console")){
 	cs = (Console) request.getAttribute("prodotto");
 } 
-System.out.println(categoria);
 %>
 
 <!DOCTYPE html>

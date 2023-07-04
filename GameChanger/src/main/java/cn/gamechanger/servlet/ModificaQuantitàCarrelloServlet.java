@@ -1,6 +1,8 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.model.Carrello;
 import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.CarrelloDao;
 import cn.gamechanger.model.dao.UserDao;
@@ -37,12 +40,16 @@ public class ModificaQuantitàCarrelloServlet extends HttpServlet {
         	try {
             	CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
             	cdao.cambiaQuantitaProdotto(username, codiceProdotto, quantita);
+            	CarrelloDao cd = new CarrelloDao(DbCon.getConnection());
+    			List<Carrello> prodotti = cd.getCarrelloByUsername(username);
+    			String redirectURL = "/carrello.jsp";
+                request.setAttribute("prodotti", prodotti);
+                request.getRequestDispatcher(redirectURL).forward(request, response);
     		} catch (Exception e) {
     			e.getStackTrace();
     		}
         	
-        	String redirectURL = "/GameChanger/carrello.jsp";
-            response.sendRedirect(redirectURL);
+
         }
     }
 }

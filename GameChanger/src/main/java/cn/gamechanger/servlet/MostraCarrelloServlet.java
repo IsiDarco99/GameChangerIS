@@ -1,6 +1,7 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -14,34 +15,30 @@ import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.Carrello;
 import cn.gamechanger.model.dao.CarrelloDao;
 
-@WebServlet("/rimuovi-prodotto")
-public class RimuoviDalCarrelloServlet extends HttpServlet {
+@WebServlet("/mostra-carrello")
+public class MostraCarrelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CarrelloDao carrelloDao;
-
-	@Override
-	public void init() throws ServletException {
-		super.init();
-		carrelloDao = new CarrelloDao(null);
+       
+    public MostraCarrelloServlet() {
+        super();
+    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String username = (String) request.getSession().getAttribute("userSession");
-		int codiceProdotto = Integer.parseInt(request.getParameter("codice"));
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession httpSession = request.getSession();
+		String username = (String) httpSession.getAttribute("userSession");
 		try {
-			CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
-			cdao.rimuoviProdottoDalCarrello(username, codiceProdotto);
 			CarrelloDao cd = new CarrelloDao(DbCon.getConnection());
 			List<Carrello> prodotti = cd.getCarrelloByUsername(username);
 			String redirectURL = "/carrello.jsp";
             request.setAttribute("prodotti", prodotti);
             request.getRequestDispatcher(redirectURL).forward(request, response);
-		} catch (Exception e) {
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
+
 }

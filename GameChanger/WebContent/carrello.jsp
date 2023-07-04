@@ -4,11 +4,9 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet" %>
 <%
-HttpSession httpSession = request.getSession();
-String username = (String) httpSession.getAttribute("userSession");
-CarrelloDao cd = new CarrelloDao(DbCon.getConnection());
-List<Carrello> prodotti = cd.getCarrelloByUsername(username);
+List<Carrello> prodotti = (List<Carrello>) request.getAttribute("prodotti");
 float prezzoTot;
 prezzoTot = 0;
 %>

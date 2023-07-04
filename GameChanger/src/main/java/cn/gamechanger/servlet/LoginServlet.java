@@ -54,12 +54,6 @@ public class LoginServlet extends HttpServlet {
                     return;
                 }
 
-                // Recupero dei dati dalla sessione
-                HttpSession session = request.getSession(false);
-                if (session != null) {
-                    String sessionValue = (String) session.getAttribute("userSession");
-                    System.out.println("Session Value: " + sessionValue);
-                }
             } catch (ClassNotFoundException cnfe) {
                 cnfe.printStackTrace();
             } catch (SQLException sqle) {
