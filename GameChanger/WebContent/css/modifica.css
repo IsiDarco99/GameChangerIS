@@ -114,3 +114,14 @@ button:hover::before {
 button:hover::after {
   transform: translate(50%, 0) scale(1.1);
 }
+img.pagamento{
+	width: 27%;
+	
+}
+a.homepage {
+	font-size: 160%;
+	color: white;
+}
+a.homepage:hover {
+	color: blue;
+}
