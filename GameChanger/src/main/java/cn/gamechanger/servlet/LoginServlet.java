@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 
 import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.UserDao;
+import cn.gamechanger.model.Amministratore;
+import cn.gamechanger.model.dao.AmministratoreDao;
 
 import cn.gamechanger.connection.DbCon;
 
@@ -39,34 +41,34 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("login-password");
 
             try {
-                UserDao udao = new UserDao(DbCon.getConnection());
-                User user = udao.userLogin(username, password);
+            	AmministratoreDao adao = new AmministratoreDao(DbCon.getConnection());
+            	Amministratore admin = adao.adminLogin(username, password);
+            	if (admin != null) {
+            		HttpSession session = request.getSession();
+                    session.setAttribute("adminSession", admin.getIdAmministratore());
+        			request.setAttribute("admin", admin);
+        			request.getRequestDispatcher("paginaamministratore.jsp").forward(request, response);
+            	} else {
+            		UserDao udao = new UserDao(DbCon.getConnection());
+                    User user = udao.userLogin(username, password);
 
-                if (user != null) {
-                    // Creazione della sessione per l'utente
-                    HttpSession session = request.getSession();
-                    session.setAttribute("userSession", user.getUsername());
-                    response.sendRedirect("homepage.jsp");
-                    
-                } else {
-                    request.setAttribute("loginError", "Credenziali errate o account insesistente.");
-                    request.getRequestDispatcher("login.jsp").forward(request, response);
-                    return;
-                }
+                    if (user != null) {
+                        HttpSession session = request.getSession();
+                        session.setAttribute("userSession", user.getUsername());
+                        response.sendRedirect("homepage.jsp");
+                        
+                    } else {
+                        request.setAttribute("loginError", "Credenziali errate o account insesistente.");
+                        request.getRequestDispatcher("login.jsp").forward(request, response);
+                        return;
+                    }
+            	}
 
-                // Recupero dei dati dalla sessione
-                HttpSession session = request.getSession(false);
-                if (session != null) {
-                    String sessionValue = (String) session.getAttribute("userSession");
-                    System.out.println("Session Value: " + sessionValue);
-                }
             } catch (ClassNotFoundException cnfe) {
                 cnfe.printStackTrace();
             } catch (SQLException sqle) {
                 sqle.printStackTrace();
             }
-
-            out.print(username + password);
         } catch (Exception e) {
             e.printStackTrace();
         }

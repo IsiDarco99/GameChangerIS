@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
+    <%@page import="cn.gamechanger.model.*"%>
+    <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
+    
+    <% User user = (User) request.getAttribute("user"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,74 +20,52 @@
 
 <div class="container">
 <div class="row"> 
-<div class="col-2">
+<div class="col-3">
 <div class="immagine-profilo"> 
 <img src="imgs/generale/account.png"
-						alt="Brawhalla">
+						alt="Profilo">
 
 </div>
-<button class="carrello">
-    <span> Modifica </span>
-</button>
+
+<p class="username"> <strong><%= user.getUsername() %></strong></p>
+<div class="container-2">
+<h5><strong>Modifica</strong></h5>
+
+<a href="modifica.jsp?modifica=username"> Username<br></a>
+<a href="modifica.jsp?modifica=password"> Password<br></a>
+<a href="modifica.jsp?modifica=immagine"> Immagine Profilo<br></a>
+<a href="modifica.jsp?modifica=mail"> E-mail<br></a>
+<a href="modifica.jsp?modifica=paypal"> E-mail Paypal<br></a>
+<a href="modifica.jsp?modifica=numero"> Num. Cellulare<br></a>
+<a href="modifica.jsp?modifica=indirizzo"> Indirizzo di spedizione<br></a>
+</div>
 </div>
 
-<div class="col-10">
+<div class="col-9">
 <div class="container-1">
 <div class="scritta">
-<p><strong>Informazioni di base</strong></p>
+<h5><strong>Informazioni di base</strong></h5>
 </div>
-
-
-
-
-</div>
-<div class="container-1">
-<div class="scritta">
-<p><strong>Informazioni di contatto</strong></p>
-</div>
-
-
+<p>Nome: ${user.nome} </p>
+<p>Cognome: ${user.cognome}</p>
+<p>Data di nascita: ${user.dataNascita}</p>
+<p>Codice fiscale: ${user.codFiscale}</p>
+<p>Indirizzo di spedizione: ${user.stato}, ${user.citta}, ${user.indirizzo}, ${user.cod_postale}</p>
+<a href="prodottiacquistati.jsp">Prodotti acquistati</a>
 
 </div>
 <div class="container-1">
 <div class="scritta">
-<p><strong>Indirizzi</strong></p>
+<h5><strong>Informazioni di contatto</strong></h5>
 </div>
-
-</div>
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>Cellulare: ${user.numTel}</p>
+<p>E-mail: ${user.emailPers}</p>
+<p>E-mail Paypal: ${user.emailPaypal}</p>
 
 </div>
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+</div>
 <%@include file="includes/footer.jsp"%>
 </body>
 </html>

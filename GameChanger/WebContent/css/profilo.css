@@ -17,100 +17,54 @@ body {
     background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
     box-shadow: 10px 10px black;
     margin-bottom: 20px;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-top: 50px;
+}
+.container-1 p {
+	color: white;
+}
+.container-1 a{
+	color: white;
+	text-decoration: none;
+}
+.container-1 a:hover {
+	text-decoration: underline;
+	color: #2691d9;
+}
+.container-2 {
+	padding: 20px;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
+    box-shadow: 10px 10px black;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.container-2 h5 {
+	color: white;
+}
+.container-2 a {
+	color: white;
+    text-decoration: none;
+}
+.container-2 a:hover{
+	text-decoration: underline;	
+	color: #2691d9;
+}
+.container-2 p {
+	color: white;
 }
 .scritta {
 	color: white;
 }
 .immagine-profilo {
 	padding: 24px 0px;
+	margin-left: 50px;
 }
 .immagine-profilo img {
 	height: 141px;
 }
-button {
-  height: 30px;
-  width: 79px;
-  position: relative;
-  margin-left: 30px;
-  padding: 0.8em 1em;
-  outline: none;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-  text-transform: uppercase;
-  background-color: #333;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: 300;
-  font-size: 14px;
-  font-family: inherit;
-  z-index: 0;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
-}
-
-button:hover {
-  animation: sh0 0.5s ease-in-out both;
-}
-
-@keyframes sh0 {
-  0% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
-
-  25% {
-    transform: rotate(7deg) translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: rotate(-7deg) translate3d(0, 0, 0);
-  }
-
-  75% {
-    transform: rotate(1deg) translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
-}
-
-button:hover span {
-  animation: storm 0.7s ease-in-out both;
-  animation-delay: 0.06s;
-}
-
-button::before,
-button::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0;
-  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  z-index: -1;
-  transform: translate(100%, -25%) translate3d(0, 0, 0);
-}
-
-button:hover::before,
-button:hover::after {
-  opacity: 0.15;
-  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
-}
-
-button:hover::before {
-  transform: translate3d(50%, 0, 0) scale(0.9);
-}
-
-button:hover::after {
-  transform: translate(50%, 0) scale(1.1);
+.username {
+	font-size: 24px;
+	color: white;
+	margin-left: 60px;
 }

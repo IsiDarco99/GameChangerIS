@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.model.Accessorio;
 import cn.gamechanger.model.Computer;
 
 public class ComputerDao {
@@ -70,6 +71,36 @@ public class ComputerDao {
 		}
 		
 		return computer;
+	}
+	
+	public List<Computer> getComputerByPrezzo(int min, int max) {
+	    List<Computer> computer = new ArrayList<Computer>();
+	    
+	    try {
+	        String query = "SELECT * FROM prodotto JOIN computer ON prodotto.codice = computer.codice WHERE prezzo >= ? AND prezzo <= ?";
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setInt(1, min);
+	        pst.setInt(2, max);
+	        ResultSet rs = pst.executeQuery();
+	        while (rs.next()) {
+	        	Computer row = new Computer();
+	        	row.setCodice(rs.getInt("codice"));
+	        	row.setNome(rs.getString("nome"));
+	        	row.setPrezzo(rs.getFloat("prezzo"));
+	        	row.setMarca(rs.getString("marca"));
+	        	row.setDescrizione(rs.getString("descrizione"));
+	        	row.setDataUscita(rs.getDate("data_usc"));
+	        	row.setCasa(rs.getString("casa"));
+	        	row.setUfficio(rs.getString("ufficio"));
+	        	row.setGaming(rs.getString("gaming"));
+	        	
+	        	computer.add(row);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return computer;
 	}
 	
 }

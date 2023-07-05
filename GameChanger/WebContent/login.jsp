@@ -27,7 +27,7 @@
 	<div class="container">
 	<div class="center">
 		<h1>Login</h1>
-		<form action="user-login" method="post">
+		<form action="/GameChanger/user-login" method="post">
 			<div class="txt_field">
 				<input type="text" name="login-username" required> <span></span>
 				<label>Username</label>

@@ -6,6 +6,9 @@ public class User {
 	private String emailPaypal;
 	private int numTel;
 	private String indirizzo;
+	private String stato;
+	private String citta;
+	private int cod_postale;
 	private String password;
 	private String nome;
 	private String cognome;
@@ -15,13 +18,18 @@ public class User {
 	public User() {
 	}
 
-	public User(String username, String emailPers, String emailPaypal, int numTel, String indirizzo, String password,
-			String nome, String cognome, String dataNascita, String codFiscale) {
+	public User(String username, String emailPers, String emailPaypal, int numTel, String indirizzo, String stato,
+			String citta, int cod_postale, String password, String nome, String cognome, String dataNascita,
+			String codFiscale) {
+		super();
 		this.username = username;
 		this.emailPers = emailPers;
 		this.emailPaypal = emailPaypal;
 		this.numTel = numTel;
 		this.indirizzo = indirizzo;
+		this.stato = stato;
+		this.citta = citta;
+		this.cod_postale = cod_postale;
 		this.password = password;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -69,6 +77,30 @@ public class User {
 		this.indirizzo = indirizzo;
 	}
 
+	public String getStato() {
+		return stato;
+	}
+
+	public void setStato(String stato) {
+		this.stato = stato;
+	}
+
+	public String getCitta() {
+		return citta;
+	}
+
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+
+	public int getCod_postale() {
+		return cod_postale;
+	}
+
+	public void setCod_postale(int i) {
+		this.cod_postale = i;
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -112,8 +144,10 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", emailPers=" + emailPers + ", emailPaypal=" + emailPaypal + ", numTel="
-				+ numTel + ", indirizzo=" + indirizzo + ", password=" + password + ", nome=" + nome + ", cognome="
-				+ cognome + ", dataNascita=" + dataNascita + ", codFiscale=" + codFiscale + "]";
+				+ numTel + ", indirizzo=" + indirizzo + ", stato=" + stato + ", citta=" + citta + ", cod_postale="
+				+ cod_postale + ", password=" + password + ", nome=" + nome + ", cognome=" + cognome + ", dataNascita="
+				+ dataNascita + ", codFiscale=" + codFiscale + "]";
 	}
 
+	
 }

@@ -105,5 +105,36 @@ public class CarrelloDao {
             logger.info(e.getMessage());
         }
     }
+    
+    public void cambiaQuantitaProdotto(String username, int codiceProdotto, int nuovaQuantita) {
+        try {
+            String query = "UPDATE carrello SET quant_prod = ? WHERE codice = ? AND username = ?";
+            PreparedStatement statement = this.con.prepareStatement(query);
+            statement.setInt(1, nuovaQuantita);
+            statement.setInt(2, codiceProdotto);
+            statement.setString(3, username);
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.info(e.getMessage());
+        }
+    }
+    
+    public void rimuoviProdottoDalCarrello(String username, int codiceProdotto) {
+        try {
+            String query = "DELETE FROM carrello WHERE username = ? AND codice = ?";
+            PreparedStatement statement = this.con.prepareStatement(query);
+            statement.setString(1, username);
+            statement.setInt(2, codiceProdotto);
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.info(e.getMessage());
+        }
+    }
+
+
 
 }
