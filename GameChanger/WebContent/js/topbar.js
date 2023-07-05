@@ -1,13 +1,4 @@
-function submitFormUser(event, action) {
-	event.preventDefault();
-	var form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	document.body.appendChild(form);
-	form.submit();
-}
-function submitFormCart(event, action) {
-	event.preventDefault();
+function submitForm(action) {
 	var form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;

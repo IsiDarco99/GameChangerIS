@@ -25,14 +25,13 @@
 				if (session.getAttribute("adminSession") == null) { %>
 					<a href="login.jsp"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
 				<%} else if (session.getAttribute("adminSession") != null) {%>
-					<a href="#" onclick="submitFormUser(event, '${pageContext.request.contextPath}/get-admin')"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
+					<a href="#" onclick="submitForm(event, '${pageContext.request.contextPath}/get-admin')"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
 					<a href="#" onclick="logout()"><img src="imgs/generale/logout.png" alt="Logout" height="40"></a>
 				<%}
 		  } else if (session.getAttribute("userSession") != null) {%>
-			<a href="#" onclick="submitFormUser(event, '${pageContext.request.contextPath}/dati-profilo')"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
-			<a href="#" onclick="submitFormCart(event, '${pageContext.request.contextPath}/mostra-carrello')"><img src="imgs/generale/carrello.jpg" alt="Carrello" height="40"></a>
+			<a href="#" onclick="submitForm('${pageContext.request.contextPath}/dati-profilo')"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
+			<a href="#" onclick="submitForm('${pageContext.request.contextPath}/mostra-carrello')"><img src="imgs/generale/carrello.jpg" alt="Carrello" height="40"></a>
 			<a href="#" onclick="logout()"><img src="imgs/generale/logout.png" alt="Logout" height="40"></a>
 		<%} %>
 	</div>
 </div>
-<script src="js/topbar.js" type="text/javascript"></script>

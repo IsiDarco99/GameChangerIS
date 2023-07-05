@@ -79,7 +79,7 @@ function increaseQuantity() {
 }
 
 
-function submitForm(event, prodottoId) {
+function submitFormCart(event, prodottoId) {
         event.preventDefault();
 
         document.getElementById("rimuoviProdottoForm-" + prodottoId).submit();

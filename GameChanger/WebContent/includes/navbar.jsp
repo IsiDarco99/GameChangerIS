@@ -228,7 +228,7 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 			</div><!--              ---------                 -->
 		</li>
 		<li>
-      <a href="sfogliaProdotti.jsp?categoria=allProdotti"><img src="imgs\icone\catalogoN.png" class="catalogoI" id="Cat" alt="catalogo"
+      <a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti"><img src="imgs\icone\catalogoN.png" class="catalogoI" id="Cat" alt="catalogo"
 				height="40" style="border-radius:20px" >
       </a>
       <div class="InfoNavBar" id="InNa1" > 

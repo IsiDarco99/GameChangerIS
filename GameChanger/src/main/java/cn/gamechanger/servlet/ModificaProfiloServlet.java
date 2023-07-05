@@ -1,21 +1,26 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.model.User;
+import cn.gamechanger.model.dao.UserDao;
 
-@WebServlet("/ModificaProfiloServlet")
+
+@WebServlet("/modifica-profilo")
 public class ModificaProfiloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
     public ModificaProfiloServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	
@@ -26,8 +31,45 @@ public class ModificaProfiloServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		try {
+			String categoria = (String) request.getAttribute("valore");
+            UserDao userDao = new UserDao(DbCon.getConnection());
+            String username = (String) request.getSession().getAttribute("userSession");
+            User user = userDao.getUserProfile(username);
+            switch (categoria) {
+            case "username":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            case "password":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            case "immagine":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            case "mail":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            case "paypal":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            case "numero":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            case "indirizzo":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+            }
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
 	}
 
 }
