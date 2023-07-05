@@ -19,9 +19,9 @@
             <div class="container">
                <div class="blocco">
                   <h2><strong>Modifica Username</strong></h2>
-                  <p>Vecchio Username</p>
-                  <p>Nuovo Username</p>
-                  <button>Salva modifiche</button>
+                  <p>Vecchio Username: </p>
+                  <p>Nuovo Username: <input type="text" name="nuovousername"></p>
+                  <button type="submit">Salva modifiche</button>
                </div>
             </div>
 <%
@@ -32,10 +32,10 @@
             <div class="container">
                <div class="blocco">
                   <h2><strong>Modifica Password</strong></h2>
-                  <p>Vecchia Password</p>
-                  <p>Nuova Password</p>
-                  <p>Ripeti Nuova Password</p>
-                  <button>Salva modifiche</button>
+                  <p>Vecchia Password: <input type="password" name="vecchiapassword"></p>
+                  <p>Nuova Password: <input type="password" name="nuovapassword"></p>
+                  <p>Ripeti Nuova Password: <input type="password" name="ripetipassword"></p>
+                   <button type="submit">Salva modifiche</button>
                </div>
             </div>
 <%
@@ -47,7 +47,7 @@
                <div class="blocco">
                   <h2><strong>Modifica Icona profilo</strong></h2>
                   <p>Scegli l'icona che preferisci!</p>
-                  <button>Salva modifiche</button>
+                   <button type="submit">Salva modifiche</button>
                </div>
             </div>
  <% 
@@ -58,9 +58,9 @@
         	             <div class="container">
         	                <div class="blocco">
         	                   <h2><strong>Modifica E-mail</strong></h2>
-        	                   <p>Vecchia E-mail</p>
-        	                   <p>Nuova E-mail</p>
-        	                   <button>Salva modifiche</button>
+        	                   <p>Vecchia E-mail: </p>
+        	                   <p>Nuova E-mail: <input type="text" name="nuovamail"></p>
+        	                    <button type="submit">Salva modifiche</button>
         	                </div>
         	             </div>
 <% 
@@ -70,9 +70,9 @@
         	             <div class="container">
         	                <div class="blocco">
         	                   <h2><strong>Modifica E-mail Paypal</strong></h2>
-        	                   <p>Vecchia E-mail Paypal</p>
-        	                   <p>Nuova E-mail Paypal</p>
-        	                   <button>Salva modifiche</button>
+        	                   <p>Vecchia E-mail Paypal: </p>
+        	                   <p>Nuova E-mail Paypal: <input type="text" name="nuovamailpaypal"></p>
+        	                   <button type="submit">Salva modifiche</button>
         	                </div>
         	             </div>
 <% 
@@ -82,9 +82,9 @@
         	             <div class="container">
         	                <div class="blocco">
         	                   <h2><strong>Modifica Numero di telefono</strong></h2>
-        	                   <p>Vecchio Numero di telefono</p>
-        	                   <p>Nuovo Numero di telefono</p>
-        	                   <button>Salva modifiche</button>
+        	                   <p>Vecchio Numero di telefono: </p>
+        	                   <p>Nuovo Numero di telefono: <input type="text" name="nuovonum"></p>
+        	                    <button type="submit">Salva modifiche</button>
         	                </div>
         	             </div>
 <% 
@@ -94,9 +94,9 @@
         	             <div class="container">
         	                <div class="blocco">
         	                   <h2><strong>Modifica Indirizzo di spedizione</strong></h2>
-        	                   <p>Vecchio Indirizzo di spedizione</p>
-        	                   <p>Nuovo Indirizzo di spezidione</p>
-        	                   <button>Salva modifiche</button>
+        	                   <p>Vecchio Indirizzo di spedizione: </p>
+        	                   <p>Nuovo Indirizzo di spezidione: <input type="text" name="nuovoindirizzo"></p>
+        	                  <button type="submit">Salva modifiche</button>
         	                </div>
         	             </div>
 <% 
