@@ -31,13 +31,13 @@
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
-<a href="modifica.jsp?modifica=username"> Username<br></a>
-<a href="modifica.jsp?modifica=password"> Password<br></a>
-<a href="modifica.jsp?modifica=immagine"> Immagine Profilo<br></a>
-<a href="modifica.jsp?modifica=mail"> E-mail<br></a>
-<a href="modifica.jsp?modifica=paypal"> E-mail Paypal<br></a>
-<a href="modifica.jsp?modifica=numero"> Num. Cellulare<br></a>
-<a href="modifica.jsp?modifica=indirizzo"> Indirizzo di spedizione<br></a>
+<a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/get-admin')"> Username<br></a>
+<a href="#" onclick="submitFormPassword('${pageContext.request.contextPath}/get-admin')"> Password<br></a>
+<a href="#" onclick="submitFormImg('${pageContext.request.contextPath}/get-admin')"> Immagine Profilo<br></a>
+<a href="#" onclick="submitFormEmail('${pageContext.request.contextPath}/get-admin')"> E-mail<br></a>
+<a href="#" onclick="submitFormEmailPaypal('${pageContext.request.contextPath}/get-admin')"> E-mail PayPal<br></a>
+<a href="#" onclick="submitFormNumero('${pageContext.request.contextPath}/get-admin')"> Num. Cellulare<br></a>
+<a href="#" onclick="submitFormIndirizzo('${pageContext.request.contextPath}/get-admin')"> Indirizzo di spedizione<br></a>
 </div>
 </div>
 
