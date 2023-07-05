@@ -5,7 +5,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet" %>
-
 <!DOCTYPE html>
 <html>
 <head> 
@@ -59,7 +58,7 @@
   <div id="prodotto" class="container-prodotto">
   
 				<div class="immagine">
-				<h2> gioco random fanstastico</h2>
+				
 					<img class="prod-img"
 						src="imgs/prodotti/God of War 1.jpg"
 						alt="prodotto">
@@ -67,6 +66,7 @@
 				<div class="nome-prodotto">
 					<h1>
 						<span> 
+						amo fare la cacca
 						</span>
 					</h1>
 					<div class="quantity">
@@ -79,7 +79,7 @@
 				<div class="prezzo">
 					<p>
 						<strong>Prezzo</strong><br>
-						&#x20AC
+						123 &#x20AC
 					</p>
 				</div>
 				<form action="/GameChanger/rimuovi-prodotto" method="post" id="rimuoviProdottoForm-">
@@ -91,7 +91,19 @@
 			
 			
 
-
+<div class="container-totale">
+				<div class="totale">
+					<p>
+						<strong>Totale: </strong><br>
+						150 &#x20AC
+					</p>
+				</div>
+				<form action="/GameChanger/checkout-1" method="post">
+				
+				</form>
+			</div>
+			
+			
 		</div>
 		</div>
 		<div class="col-3">
@@ -101,14 +113,16 @@
 		<p> Indirizzo </p>
 		<p> Numero di telefono: </p>
 		
-		<h2>Pagamento</h2>
+		<h2 class="pagamento">Pagamento</h2>
 		<p> Email Paypal: </p>
+		<p> Totale Ordine: </p>
 		<button class="acquista">
 		<span>Acquista</span>
 		</button>
 		</div>
 		</div>
 		</div>
+		
 	</div>
   
   
