@@ -38,8 +38,5 @@ public class profiloservlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-        
-        String redirectURL = "/GameChanger/profilo.jsp";
-        response.sendRedirect(redirectURL);
     }
 }
