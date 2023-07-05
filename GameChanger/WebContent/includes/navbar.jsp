@@ -29,21 +29,50 @@
 .navbar ul li {
 	margin: 0px 10px 30px;
 }
+.InfoNavBar{
+  justify-content: center;
+  background: #333;
+  position: absolute;
+  top: 99px;
+  left: 53px;
+  width: 125px;
+  height: 37px;
+  border-radius: 0px 50px 50px 0px;  
+  box-shadow: 6.5px 5px 2px rgba(0,0,0,0.5);
+  display: none;
+}
+p#infoName{
+  padding-top: 6px;
+}
 /*   barra ricerca   */
-.togglesearch{
-	background: #333;
+.togglesearch {
+    background: #333;
     position: absolute;
     top: 11px;
-    right: -338px;
+    left: 53px;
     width: 350px;
     height: 37px;
-    line-height: 60px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /*line-height: 60px;*/
+    box-shadow: 6.5px 5px 2px rgba(0,0,0,0.5);
     border-top: 4px solid #D80B15;
     border-radius: 0px 50px 50px 0px;
     display: none;
+    /*   animazione */
+    transition-duration: 200ms;
+
   }
-  .togglesearch:before{
+
+  .togglesearch.active {
+    position: absolute;
+    top: 28px;
+    left: 53px;
+  animation-name:  ricercaAnim;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+  display: flex;
+  
+}
+  /*.togglesearch:before{
     content: "";
     position: absolute;
     top: -32px;
@@ -52,25 +81,29 @@
     border-right: 12px solid transparent;
     border-top: 14px solid transparent;
     border-bottom: 14px solid #D80B15;
-  }
+  }*/
    
   .togglesearch input[type="text"]{
-    width: 200px;
-    padding: 5px 10px;
-    margin-left: 23px;
+    width: 264px;
+    height: 32px;
+    /*padding: 5px 10px;*/
+    margin-left: 7px;
     border: 1px solid #D80B15;
     outline: none;
   }
    
   .togglesearch input[type="button"]{
-    width: 80px;
-    padding: 5px 0;
+    width: 86px;
+    height: 32px;
+    border-radius: 0px 50px 62px 0px;
     background: #D80B15;
     color: #fff;
     margin-left: -6px;
     border: 1px solid #D80B15;
     outline: none;
     cursor: pointer;
+    display: none;
+    /*padding: 5px 0;*/
   }
 /*------    openbar nuova aggiunta     --------*/
 @keyframes animazioneAltezza {
@@ -87,6 +120,23 @@
   }
   to {
     height: 60px;
+  }
+}
+@keyframes ricercaAnim {
+  from{
+    width: 0px;
+  }
+  to{
+    width: 350px;
+  }
+  
+}
+@keyframes PopNav {
+  from{
+    width: 0px;
+  }
+  to{
+    width: 125px;
   }
 }
 
@@ -124,6 +174,10 @@
   display: flex;
   height: 40px;
 }
+img.navImg{
+  border-radius:"50px";
+ 
+}
 /* cambio per l'animazione
 .OpenNavbar{
 	background-color: #D80B15;
@@ -154,7 +208,7 @@
 }
 
   /*             --------------         */
-</style>
+</style> 
 
 <script type="text/javascript" src="
 http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -165,28 +219,44 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!--                                        -->
 <div class="navbar" id="123">
 	<ul>
-<<<<<<< HEAD
-		<li><a href="#" class="ricerca"><img src="imgs/generale/search.png" alt="search"
-				height="40"></a>
+		<li style="padding-top:13px; "><a href="#" class="ricerca"><img src="imgs\icone\ricerca.png" alt="search"
+				height="40" style="border-radius:20px" ></a>
 				<!--             tasto ricerca                -->
-			<div class="togglesearch">
+			<div class="togglesearch" id="barraRic">
 			   <input type="text" placeholder=""/>
-			   <input type="button" value="Search"/>
+			   <input type="button" value="Search" id="BRic"/>
 			</div><!--              ---------                 -->
 		</li>
-		<li><a href="#"><img src="imgs/generale/computer.png" alt="computer"
-=======
-		<li><a href="#"><img src="imgs/generale/search.png" alt="search"
-				height="40"></a></li>
-		<li><a href="sfogliaProdotti.jsp?categoria=allProdotti"><img src="imgs/generale/computer.png" alt="computer"
->>>>>>> branch 'master' of https://github.com/IsiDarco99/GameChangerRep
-				height="40"></a></li>
-		<li><a href="#"><img src="imgs/generale/console.png" alt="console"
-				height="40"></a></li>
-		<li><a href="#"><img src="imgs/generale/videogame.png" alt="videogame"
-				height="40"></a></li>
-		<li style="margin: 0px 10px 0px;"><a href="#"><img
-				src="imgs/generale/gadget.png" alt="gadget" height="40"></a></li>
+		<li>
+      <a href="sfogliaProdotti.jsp?categoria=allProdotti"><img src="imgs\icone\catalogoN.png" class="catalogoI" id="Cat" alt="catalogo"
+				height="40" style="border-radius:20px" >
+      </a>
+      <div class="InfoNavBar" id="InNa1" > 
+        <p id="infoName"> Catalogo</p>
+      </div>
+      <div class="InfoNavBar" id="InNa2" style="top: 168px;"> 
+        <p id="infoName"> Console</p>
+      </div>
+      <div class="InfoNavBar" id="InNa3" style="top: 238px;"> 
+        <p id="infoName"> videogame</p>
+      </div>
+      <div class="InfoNavBar" id="InNa4" style="top: 307px;" > 
+        <p id="infoName"> Computer</p>
+      </div>
+      <div class="InfoNavBar" id="InNa5" style="top: 378px;" > 
+        <p id="infoName"> Gadget</p>
+      </div>
+    </li>
+		<li><a href="#"><img  src="imgs\icone\console.png" class= "navImg" id="Con" alt="console"height="40" style="border-radius:20px" 
+				 ></a></li>
+		<li><a href="#"><img  src="imgs\icone\videogame.svg" class= "navImg" id="Vid" alt="videogame"height="40"style="border-radius:20px"
+				 ></a></li>
+		<li style="margin: 0px 10px 30px;"><a href="#"><img src="imgs\icone\computerNav.png"  class= "navImg" id="Com"
+      alt="Computer" height="40" style="border-radius:20px"></a>
+    </li>
+    <li style="margin-bottom: 6px;"><a href="#"><img  src="imgs\icone\gadget2.svg"  class= "navImg" id="Gad" alt="gadget" height="40" style="border-radius:20px"
+          ></a>
+    </li>
 	</ul>
 </div>
 
