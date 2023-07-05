@@ -7,7 +7,6 @@
 <%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet" %>
 <%
 List<Carrello> prodotti = (List<Carrello>) request.getAttribute("prodotti");
-System.out.println(prodotti);
 float prezzoTot;
 prezzoTot = 0;
 %>

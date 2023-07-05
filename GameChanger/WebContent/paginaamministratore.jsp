@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="cn.gamechanger.model.*"%>
+<%@page import="cn.gamechanger.servlet.getAdminServlet" %>
+<% Amministratore admin = (Amministratore) request.getAttribute("admin"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +24,8 @@
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
+<a href="#"> Nome<br></a>
+<a href="#"> Cognome<br></a>
 <a href="#"> E-mail<br></a>
 <a href="#"> Password<br></a>
 </div>
@@ -31,8 +36,9 @@
 <div class="scritta">
 <h5><strong>Informazioni amministratore</strong></h5>
 </div>
-<p>Nome: </p>
-<p>Cognome: </p>
+<p>Nome: ${admin.nome}</p>
+<p>Cognome: ${admin.cognome}</p>
+<p>E-mail: ${admin.email}</p>
 
 
 

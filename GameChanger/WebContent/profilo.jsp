@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
-    <%@page import="cn.gamechanger.connection.DbCon"%>
-    <%@page import="cn.gamechanger.model.dao.*"%>
     <%@page import="cn.gamechanger.model.*"%>
     <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
     

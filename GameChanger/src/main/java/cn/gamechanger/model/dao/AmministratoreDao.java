@@ -46,7 +46,7 @@ public class AmministratoreDao {
 		Amministratore admin = null;
 		
 		try {
-			String query = "select * from amministratore where id=?";
+			String query = "select * from amministratore where id_amministratore=?";
 			
 			PreparedStatement pst = this.con.prepareStatement(query);
 			pst.setInt(1, id);
