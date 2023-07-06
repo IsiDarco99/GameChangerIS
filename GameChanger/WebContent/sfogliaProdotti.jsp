@@ -108,7 +108,7 @@
 							if(!videogame.isEmpty()){
 								for(Videogame v:videogame){%>
 									<div class="prodotto">
-									<a href="paginaprodotto.jsp?codice=<%= v.getCodice() %>">
+									<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=<%= v.getCodice() %>">
 									<img class="prod-img" src="imgs/prodotti/<%= v.getNome() %> 1.jpg" alt="<%= v.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">
@@ -123,7 +123,7 @@
 							if(!computer.isEmpty()){
 								for(Computer c:computer){%>
 									<div class="prodotto">
-									<a href="paginaprodotto.jsp?codice=<%= c.getCodice() %>">
+									<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=<%= c.getCodice() %>">
 									<img class="prod-img" src="imgs/prodotti/<%= c.getNome() %> 1.jpg" alt="<%= c.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">
@@ -138,7 +138,7 @@
 							if(!console.isEmpty()){
 								for(Console c:console){%>
 									<div class="prodotto">
-									<a href="paginaprodotto.jsp?codice=<%= c.getCodice() %>">
+									<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=<%= c.getCodice() %>">
 									<img class="prod-img" src="imgs/prodotti/<%= c.getNome() %> 1.jpg" alt="<%= c.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">
@@ -153,7 +153,7 @@
 							if(!accessori.isEmpty()){
 								for(Accessorio a:accessori){%>
 									<div class="prodotto">
-									<a href="paginaprodotto.jsp?codice=<%= a.getCodice() %>">
+									<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=<%= a.getCodice() %>">
 									<img class="prod-img" src="imgs/prodotti/<%= a.getNome() %> 1.jpg" alt="<%= a.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">
@@ -168,7 +168,7 @@
 							if(!prodotti.isEmpty()){
 								for(Prodotto p:prodotti){%>
 									<div class="prodotto">
-									<a href="paginaprodotto.jsp?codice=<%= p.getCodice() %>">
+									<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=<%= p.getCodice() %>">
 									<img class="prod-img" src="imgs/prodotti/<%= p.getNome() %> 1.jpg" alt="<%= p.getNome() %>">
 									</a>
 									<div class="informazioni-prodotto">

@@ -25,7 +25,7 @@
 				if (session.getAttribute("adminSession") == null) { %>
 					<a href="login.jsp"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
 				<%} else if (session.getAttribute("adminSession") != null) {%>
-					<a href="#" onclick="submitForm(event, '${pageContext.request.contextPath}/get-admin')"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
+					<a href="#" onclick="submitForm('${pageContext.request.contextPath}/get-admin')"><img src="imgs/generale/account.png" alt="Account" height="40"></a>
 					<a href="#" onclick="logout()"><img src="imgs/generale/logout.png" alt="Logout" height="40"></a>
 				<%}
 		  } else if (session.getAttribute("userSession") != null) {%>

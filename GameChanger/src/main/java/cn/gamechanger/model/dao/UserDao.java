@@ -141,6 +141,150 @@ User user = null;
 	        logger.info(e.getMessage());
 	    }
 	}
+	
+	public void updateUsername(String vecchioUsername, String nuovoUsername) {
+	    try {
+	        String query = "UPDATE utente SET username = ? WHERE username = ?";
 
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoUsername);
+	        pst.setString(2, vecchioUsername);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updatePassword(String username, String nuovaPassword) {
+	    try {
+	        String query = "UPDATE utente SET password = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovaPassword);
+	        pst.setString(2, username);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateImmagine(String username, String nuovaImmagine) {
+	    try {
+	        String query = "UPDATE utente SET immagine = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovaImmagine);
+	        pst.setString(2, username);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateEmail(String username, String nuovaEmail) {
+	    try {
+	        String query = "UPDATE utente SET email_pers = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovaEmail);
+	        pst.setString(2, username);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updatePaypal(String username, String nuovaPaypal) {
+	    try {
+	        String query = "UPDATE utente SET email_paypal = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovaPaypal);
+	        pst.setString(2, username);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateNumero(String username, String nuovoNumero) {
+	    try {
+	        String query = "UPDATE utente SET num_tel = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoNumero);
+	        pst.setString(2, username);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateIndirizzo(String username, String indirizzo, String stato, String citta, int codPostale) {
+	    try {
+	        String query = "UPDATE utente SET indirizzo = ?, citta = ?, stato = ?, cod_postale = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, indirizzo);
+	        pst.setString(2, stato);
+	        pst.setString(3, citta);
+	        pst.setInt(4, codPostale);
+	        pst.setString(5, username);
+	        
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	public User getCheckoutUser(String username) {
+		User user = null;
+		
+		try {
+			String query = "select * from utente where username=?";
+			
+			PreparedStatement pst = this.con.prepareStatement(query);
+			pst.setString(1, username);
+			ResultSet rs = pst.executeQuery();
+		
+			if(rs.next()){
+				user = new User();
+				user.setNome(rs.getString("nome"));
+				user.setCognome(rs.getString("cognome"));
+				user.setIndirizzo(rs.getString("indirizzo"));
+				user.setStato(rs.getString("stato"));
+				user.setCitta(rs.getString("citta"));
+				user.setCod_postale(rs.getInt(8));
+				user.setNumTel(rs.getInt(4));
+				user.setEmailPaypal(rs.getString("email_paypal"));
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			logger.info(e.getMessage());
+	}
+		return user;
+	}
 }
     

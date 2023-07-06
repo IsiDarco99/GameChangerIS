@@ -351,3 +351,6 @@ button.acquista{
 	max-height: 145px;
 }
 }
+.acquista a {
+	color: white;
+}
