@@ -143,7 +143,7 @@ $(document).ready(function() {
           }
         });
         console.log("fine timer");
-      }, 755500);
+      }, 1500);
       
   });
   //informazioni navbar

@@ -214,7 +214,7 @@ img.navImg{
 http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!--- bottone per l'apparizione della navbar-->
 <div class="OpenNavbar" id="OpN">
-	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATdJREFUSEvtVokNwjAMvG7ABjACGwCTwCbAJjAJsAEjwAZsALLkqyzqNg5ElM9SJESdnH0+x6nQk1U94eJtgUcAZIntg+xM1e8EQJZrqYxXAJa6M+VLgKv+WAOQ/Z8FbKlm9BsAsqwtAMgSo99TVNvDuyjMLkmqbjbjnUaxbcl4rt9npcUVFHXtVkxcLwFmzwrVwzsKRUSklcFY+lmSs+lj9nYdfFuNKSSbJX2tkPjd0tq11wX2hFQKuCE4m7GXSSngBjM5wLni8vzrkvyBOYkOypNtp1yqbTtNdHOS6q7WiQbgtdhDwKl7nQF5w6TxX5u4vIy/D9gOc96t3oAXSi8AjsrtGMDAFN57MPDurx8RUfrkXHsHi+oZnBxK1Ypf6MyQk2bTG7AdbV1Uh57BORlH+zfk93vAN52uYh+h4fb9AAAAAElFTkSuQmCC" height="" />
+	<img src="imgs\icone\OpenNav.png" height="40" />
 </div>	
 <!--                                        -->
 <div class="navbar" id="123">
