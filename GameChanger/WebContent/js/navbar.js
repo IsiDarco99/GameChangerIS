@@ -6,6 +6,8 @@ var ElemNav = document.getElementById("123")
 var Open = document.getElementById("OpN")
 var Ric = document.getElementById("barraRic")
 var Bric = document.getElementById("BRic")
+var searchString = sessionStorage.getItem("searchString");
+document.getElementById("ricerca-item").value = searchString;
 
 var timer;
 
@@ -18,10 +20,14 @@ navbarElement.innerHTML = "Contenuto aggiornato";
 */
 
 console.log("ti prego");
+/* barra ricerca funzione */
+
 
 
 
 $(document).ready(function() {
+ 
+
  /*vetrina, creazione del menù */
     $(".OpenNavbar").click(function(){
       Open.classList.toggle("active");
