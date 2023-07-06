@@ -258,5 +258,33 @@ User user = null;
 	    }
 	}
 
+	public User getCheckoutUser(String username) {
+		User user = null;
+		
+		try {
+			String query = "select * from utente where username=?";
+			
+			PreparedStatement pst = this.con.prepareStatement(query);
+			pst.setString(1, username);
+			ResultSet rs = pst.executeQuery();
+		
+			if(rs.next()){
+				user = new User();
+				user.setNome(rs.getString("nome"));
+				user.setCognome(rs.getString("cognome"));
+				user.setIndirizzo(rs.getString("indirizzo"));
+				user.setStato(rs.getString("stato"));
+				user.setCitta(rs.getString("citta"));
+				user.setCod_postale(rs.getInt(8));
+				user.setNumTel(rs.getInt(4));
+				user.setEmailPaypal(rs.getString("email_paypal"));
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			logger.info(e.getMessage());
+	}
+		return user;
+	}
 }
     

@@ -48,7 +48,7 @@ public class MostraProdottoSingoloServlet extends HttpServlet {
     	    } else if (accessorio != null) {
     	        categoria = "accessorio";
     	    }
-
+    	    System.out.println(categoria);
     	    if (categoria != null) {
     	        if (categoria.equals("videogame")) {
     	            Videogame prodotto = videogame;

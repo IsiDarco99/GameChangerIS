@@ -2,9 +2,21 @@
 <%@page import="cn.gamechanger.model.dao.*"%>
 <%@page import="cn.gamechanger.model.*"%>
 <%@page import="java.util.List"%>
+<%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
+    
+    <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
+    
+    <% User user = (User) request.getAttribute("user"); %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet" %>
+
+<%
+List<Carrello> prodotti = (List<Carrello>) request.getAttribute("prodotti");
+float prezzoTot;
+prezzoTot = 0;
+%>
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -55,23 +67,27 @@
   <div class="col-9">
 		<div class="carrello">
 		
-  <div id="prodotto" class="container-prodotto">
+	<% 	for (Carrello p : prodotti) {
+				prezzoTot += (p.getPrezzo() * p.getQuantitàProdotto());
+			%>
+			
+  <div id="prodotto-<%=p.getIdProdotto()%>" class="container-prodotto">
   
 				<div class="immagine">
 				
 					<img class="prod-img"
-						src="imgs/prodotti/God of War 1.jpg"
-						alt="prodotto">
+						src="imgs/prodotti/<%=p.getNomeProdotto()%> 1.jpg"
+						alt="<%=p.getNomeProdotto()%>">
 				</div>
 				<div class="nome-prodotto">
 					<h1>
 						<span> 
-						amo fare la cacca
+						<%=p.getNomeProdotto()%>
 						</span>
 					</h1>
 					<div class="quantity">
-						<strong>Quantità: </strong><span> 
-
+						<strong>Quantità: </strong><span>
+							
 						</span>
 					</div>
 				</div>
@@ -103,21 +119,27 @@
 				</form>
 			</div>
 			
-			
+			<%
+			}
+			 %>
 		</div>
 		</div>
 		<div class="col-3">
 		<div class="informazioni">
 		<h2> Il mio indirizzo</h2>
-		<p> Nome </p>
-		<p> Indirizzo </p>
-		<p> Numero di telefono: </p>
+		<p> ${user.nome}  </p>
+		<p> ${user.cognome}  </p>
+		<p>  ${user.stato},
+		      ${user.citta},
+		       ${user.indirizzo},
+		        ${user.cod_postale} </p>
+		<p> Numero di telefono: ${user.numTel} </p>
 		
 		<h2 class="pagamento">Pagamento</h2>
-		<p> Email Paypal: </p>
+		<p> Email Paypal:${user.emailPaypal} </p>
 		<p> Totale Ordine: </p>
 		<button class="acquista">
-		<span>Acquista</span>
+		<a href="checkout4.jsp"> Acquista</a>
 		</button>
 		</div>
 		</div>
