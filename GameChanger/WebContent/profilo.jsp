@@ -31,13 +31,13 @@
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
-<a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/get-admin')"> Username<br></a>
-<a href="#" onclick="submitFormPassword('${pageContext.request.contextPath}/get-admin')"> Password<br></a>
-<a href="#" onclick="submitFormImg('${pageContext.request.contextPath}/get-admin')"> Immagine Profilo<br></a>
-<a href="#" onclick="submitFormEmail('${pageContext.request.contextPath}/get-admin')"> E-mail<br></a>
-<a href="#" onclick="submitFormEmailPaypal('${pageContext.request.contextPath}/get-admin')"> E-mail PayPal<br></a>
-<a href="#" onclick="submitFormNumero('${pageContext.request.contextPath}/get-admin')"> Num. Cellulare<br></a>
-<a href="#" onclick="submitFormIndirizzo('${pageContext.request.contextPath}/get-admin')"> Indirizzo di spedizione<br></a>
+<a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/modifica-profilo', 'username')"> Username<br></a>
+<a href="#" onclick="submitFormPassword('${pageContext.request.contextPath}/modifica-profilo')"> Password<br></a>
+<a href="#" onclick="submitFormImg('${pageContext.request.contextPath}/modifica-profilo')"> Immagine Profilo<br></a>
+<a href="#" onclick="submitFormEmail('${pageContext.request.contextPath}/modifica-profilo')"> E-mail<br></a>
+<a href="#" onclick="submitFormEmailPaypal('${pageContext.request.contextPath}/modifica-profilo')"> E-mail PayPal<br></a>
+<a href="#" onclick="submitFormNumero('${pageContext.request.contextPath}/modifica-profilo')"> Num. Cellulare<br></a>
+<a href="#" onclick="submitFormIndirizzo('${pageContext.request.contextPath}/modifica-profilo')"> Indirizzo di spedizione<br></a>
 </div>
 </div>
 
@@ -67,5 +67,6 @@
 </div>
 </div>
 <%@include file="includes/footer.jsp"%>
+<script src="js/user.js" type="text/javascript"></script>
 </body>
 </html>

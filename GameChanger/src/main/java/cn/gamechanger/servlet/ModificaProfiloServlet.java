@@ -32,7 +32,7 @@ public class ModificaProfiloServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			String categoria = (String) request.getAttribute("valore");
+			String categoria = (String) request.getParameter("valore");
             UserDao userDao = new UserDao(DbCon.getConnection());
             String username = (String) request.getSession().getAttribute("userSession");
             User user = userDao.getUserProfile(username);
@@ -41,30 +41,37 @@ public class ModificaProfiloServlet extends HttpServlet {
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "password":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "immagine":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "mail":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "paypal":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "numero":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "indirizzo":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             }
             
         } catch (ClassNotFoundException | SQLException e) {

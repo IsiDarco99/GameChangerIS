@@ -31,14 +31,11 @@ p {
 
 button {
   height: 57%;
-  width: 17%;
+  width: 90px;
   position: relative;
   padding: 0.8em 1em;
   outline: none;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   border: none;
   text-transform: uppercase;

@@ -1,11 +1,11 @@
-function submitFormUsername(action) {
+function submitFormUsername(action, valore) {
 	var form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
 	var hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'username';
+ 	hiddenInput.value = valore;
  	form.appendChild(hiddenInput)
 	document.body.appendChild(form);
 	form.submit();
