@@ -1,3 +1,4 @@
+
 <%@page import="cn.gamechanger.connection.DbCon"%>
 <%@page import="cn.gamechanger.model.dao.*"%>
 <%@page import="cn.gamechanger.model.*"%>
@@ -6,6 +7,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%
 	String categoria = request.getParameter("categoria");
+	String ricerca = request.getParameter("ricerca");
 	VideogameDao vd = new VideogameDao(DbCon.getConnection());
 	List<Videogame> videogame = vd.getAllVideogame();
 	
@@ -67,7 +69,7 @@
 						</p>
 						<div class="input-group ">
 							<input type="text" class="form-control" id="ricerca-item" iplaceholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"
-							onkeyup="ricerca()">
+							 onkeyup="ricerca()">
 							
 						  </div>
 						<div class="filtri">
@@ -188,4 +190,5 @@
 		</div>
 	</div>
 	<%@include file="includes/footer.jsp"%>
+	
 </body>

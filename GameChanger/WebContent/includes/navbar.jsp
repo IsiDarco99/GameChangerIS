@@ -223,8 +223,8 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 				height="40" style="border-radius:20px" ></a>
 				<!--             tasto ricerca                -->
 			<div class="togglesearch" id="barraRic">
-			   <input type="text" placeholder=""/>
-			   <input type="button" value="Search" id="BRic"/>
+			   <input type="text" placeholder="" id="ricerca-item" />
+			   <input type="button" value="Search" id="BRic" onclick="effettuaRicerca()"/>
 			</div><!--              ---------                 -->
 		</li>
 		<li>
@@ -247,16 +247,21 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <p id="infoName"> Gadget</p>
       </div>
     </li>
-		<li><a href="#"><img  src="imgs\icone\console.png" class= "navImg" id="Con" alt="console"height="40" style="border-radius:20px" 
+		<li><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=console"><img  src="imgs\icone\console.png" class= "navImg" id="Con" alt="console"height="40" style="border-radius:20px" 
 				 ></a></li>
-		<li><a href="#"><img  src="imgs\icone\videogame.svg" class= "navImg" id="Vid" alt="videogame"height="40"style="border-radius:20px"
+		<li><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=videogiochi"><img  src="imgs\icone\videogame.svg" class= "navImg" id="Vid" alt="videogame"height="40"style="border-radius:20px"
 				 ></a></li>
-		<li style="margin: 0px 10px 30px;"><a href="#"><img src="imgs\icone\computerNav.png"  class= "navImg" id="Com"
+		<li style="margin: 0px 10px 30px;"><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=computer"><img src="imgs\icone\computerNav.png"  class= "navImg" id="Com"
       alt="Computer" height="40" style="border-radius:20px"></a>
     </li>
-    <li style="margin-bottom: 6px;"><a href="#"><img  src="imgs\icone\gadget2.svg"  class= "navImg" id="Gad" alt="gadget" height="40" style="border-radius:20px"
+    <li style="margin-bottom: 6px;"><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=accessori"><img  src="imgs\icone\gadget2.svg"  class= "navImg" id="Gad" alt="gadget" height="40" style="border-radius:20px"
           ></a>
     </li>
 	</ul>
+  <script>function effettuaRicerca() {
+    var searchString = document.getElementById("ricerca-item").value;
+    sessionStorage.setItem("searchString", searchString);
+    window.location.href = "${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti";
+  }</script>
 </div>
 
