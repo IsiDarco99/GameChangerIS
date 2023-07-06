@@ -42,6 +42,7 @@ public class UserDao {
 				user.setCognome(rs.getString("cognome"));
 				user.setDataNascita(rs.getString("data_nascita"));
 				user.setCodFiscale(rs.getString("codfiscale"));
+				user.setImmagine(rs.getInt(14));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -98,6 +99,7 @@ User user = null;
 				user.setCognome(rs.getString("cognome"));
 				user.setDataNascita(rs.getString("data_nascita"));
 				user.setCodFiscale(rs.getString("codfiscale"));
+				user.setImmagine(rs.getInt(14));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

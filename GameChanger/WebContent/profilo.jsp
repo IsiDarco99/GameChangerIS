@@ -22,8 +22,32 @@
 <div class="row"> 
 <div class="col-3">
 <div class="immagine-profilo"> 
-<img src="imgs/generale/account.png"
-						alt="Profilo">
+<%switch(user.getImmagine()){
+case 1:%>
+<img src="imgs/profilo/mario.png" alt="Immagine Profilo">
+<%break;
+case 2:%>
+<img src="imgs/profilo/peach.jpg" alt="Immagine Profilo">
+<%break;
+case 3:%>
+<img src="imgs/profilo/hunter.png" alt="Immagine Profilo">
+<%break;
+case 4:%>
+<img src="imgs/profilo/godOfWar.jpg" alt="Immagine Profilo">
+<%break;
+case 5:%>
+<img src="imgs/profilo/cody.jpg" alt="Immagine Profilo">
+<%break;
+case 6:%>
+<img src="imgs/profilo/may.jpg" alt="Immagine Profilo">
+<%break;
+case 7:%>
+<img src="imgs/profilo/link.jpg" alt="Immagine Profilo">
+<%break;
+case 8:%>
+<img src="imgs/profilo/zoro.jpg" alt="Immagine Profilo">
+<%break;
+}System.out.println(user.getImmagine()); %>
 
 </div>
 

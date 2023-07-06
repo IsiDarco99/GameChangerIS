@@ -14,13 +14,14 @@ public class User {
 	private String cognome;
 	private String dataNascita;
 	private String codFiscale;
+	private int immagine;
 	
 	public User() {
 	}
 
 	public User(String username, String emailPers, String emailPaypal, int numTel, String indirizzo, String stato,
 			String citta, int cod_postale, String password, String nome, String cognome, String dataNascita,
-			String codFiscale) {
+			String codFiscale, int immagine) {
 		super();
 		this.username = username;
 		this.emailPers = emailPers;
@@ -35,6 +36,7 @@ public class User {
 		this.cognome = cognome;
 		this.dataNascita = dataNascita;
 		this.codFiscale = codFiscale;
+		this.immagine = immagine;
 	}
 
 	public String getUsername() {
@@ -97,8 +99,8 @@ public class User {
 		return cod_postale;
 	}
 
-	public void setCod_postale(int i) {
-		this.cod_postale = i;
+	public void setCod_postale(int cod_postale) {
+		this.cod_postale = cod_postale;
 	}
 
 	public String getPassword() {
@@ -141,12 +143,20 @@ public class User {
 		this.codFiscale = codFiscale;
 	}
 
+	public int getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(int immagine) {
+		this.immagine = immagine;
+	}
+
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", emailPers=" + emailPers + ", emailPaypal=" + emailPaypal + ", numTel="
 				+ numTel + ", indirizzo=" + indirizzo + ", stato=" + stato + ", citta=" + citta + ", cod_postale="
 				+ cod_postale + ", password=" + password + ", nome=" + nome + ", cognome=" + cognome + ", dataNascita="
-				+ dataNascita + ", codFiscale=" + codFiscale + "]";
+				+ dataNascita + ", codFiscale=" + codFiscale + ", immagine=" + immagine + "]";
 	}
 
 	

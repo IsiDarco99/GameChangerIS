@@ -35,16 +35,17 @@
          case "password":
 %>
             <div class="container">
-               <div class="blocco">
-               <form action="modifica-dati" method="post">
-                  <h2><strong>Modifica Password</strong></h2>
-                  <p>Vecchia Password: <input type="password" name="vecchiapassword"></p>
-                  <p>Nuova Password: <input type="password" name="nuovapassword"></p>
-                  <p>Ripeti Nuova Password: <input type="password" name="ripetipassword"></p>
-                   <button type="submit">Salva modifiche</button>
-               </form>
-               </div>
-            </div>
+  <div class="blocco">
+    <form action="modifica-dati" method="post" onsubmit="return validatePassword()">
+      <h2><strong>Modifica Password</strong></h2>
+      <p>Vecchia Password: <input type="password" name="vecchiapassword"></p>
+      <p>Nuova Password: <input type="password" name="nuovapassword"></p>
+      <p>Ripeti Nuova Password: <input type="password" name="ripetipassword"></p>
+      <p id="error" style="color: red;"></p>
+      <button type="submit">Salva modifiche</button>
+    </form>
+  </div>
+</div>
 <%
             break;
      
@@ -55,7 +56,36 @@
                <form action="modifica-dati" method="post">
                   <h2><strong>Modifica Icona profilo</strong></h2>
                   <p>Scegli l'icona che preferisci!</p>
-                   <button type="submit">Salva modifiche</button>
+                  <div class="container-img">
+                  <div class="container-img2">
+                  <a href="#" onclick="submitFormMario('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/mario.png" alt="Super Mario">
+                  </a>
+                  <a href="#" onclick="submitFormPeach('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/peach.jpg" alt="Principessa Peach">
+                  </a>
+                  <a href="#" onclick="submitFormHunter('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/hunter.png" alt="Monster Hunter">
+                  </a>
+                  <a href="#" onclick="submitFormKratos('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/godOfWar.jpg" alt="Kratos">
+                  </a>
+                  </div>
+                  <div class="container-img2">
+                  <a href="#" onclick="submitFormCody('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/cody.jpg" alt="Cody">
+                  </a>
+                  <a href="#" onclick="submitFormMay('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/may.jpg" alt="May">
+                  </a>
+                  <a href="#" onclick="submitFormLink('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/link.jpg" alt="Link">
+                  </a>
+                  <a href="#" onclick="submitFormZoro('${pageContext.request.contextPath}/modifica-dati')">
+                  	<img src="imgs/profilo/zoro.jpg" alt="Zoro">
+                  </a>
+                  </div>
+                  </div>
                </form>
                </div>
             </div>
@@ -128,5 +158,6 @@
 %>
 
 <%@include file="includes/footer.jsp"%>
+<script src="js/modificaImmagine.js" type="text/javascript"></script>
 </body>
 </html>
