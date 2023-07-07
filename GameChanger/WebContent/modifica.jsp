@@ -112,6 +112,23 @@ String errorUserDup = (String) request.getAttribute("error");%>
         	             </div>
 <% 
         	  break;
+         case "nome":
+        	 %>
+        	             <div class="container">
+        	                <div class="blocco">
+        	                <form action="modifica-dati" method="post" onsubmit="return validateNomeCognome()">
+        	                   <h2><strong>Modifica Nome</strong></h2>
+        	                   <p>Nome attuale: ${user.nome} ${user.cognome}</p>
+        	                   <p>Nuovo nome: <input type="text" name="nuovonome"></p>
+        	                   <p>Nuovo cognome: <input type="text" name="nuovocognome"></p>
+        	                   <p id="error" style="color: red;"></p>
+        	                    <button type="submit">Salva modifiche</button>
+        	                </form>
+        	                </div>
+        	             </div>
+<% 
+        	  break;
+
          case "paypal":
         	 %>
         	             <div class="container">
@@ -195,6 +212,6 @@ String errorUserDup = (String) request.getAttribute("error");%>
 %>
 
 <%@include file="includes/footer.jsp"%>
-<script src="js/modificaDati.js" type="text/javascript"></script>
+<script src="js/modifica.js" type="text/javascript"></script>
 </body>
 </html>

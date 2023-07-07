@@ -30,8 +30,9 @@ public class ModificaDatiServlet extends HttpServlet {
 		int cap = 0;
 		String username = (String) request.getSession().getAttribute("userSession");
 		String nuovousername = (String) request.getParameter("nuovousername");
+		String nuovoNome = (String) request.getParameter("nuovonome");
+        String nuovoCognome = (String) request.getParameter("nuovocognome");
 		String nuovapassword = (String) request.getParameter("nuovapassword");
-		String vecchiapassword = (String) request.getParameter("vecchiapassword");
 		String immagine = (String) request.getParameter("valore");
 		String mail = (String) request.getParameter("emailpers");
 		String paypal = (String) request.getParameter("emailpaypal");
@@ -141,6 +142,15 @@ public class ModificaDatiServlet extends HttpServlet {
 			} else if (indirizzo != null) {
 				userDao = new UserDao(DbCon.getConnection());
 				userDao.updateIndirizzo(username, indirizzo, stato, citta, cap);
+				User user = userDao.getUserProfile(username);
+	            request.setAttribute("user", user);
+				request.getRequestDispatcher("profilo.jsp").forward(request, response);
+			} else if (nuovoNome != null) {
+				userDao = new UserDao(DbCon.getConnection());
+				nuovoNome = Character.toUpperCase(nuovoNome.charAt(0)) + nuovoNome.substring(1);
+			    nuovoCognome = Character.toUpperCase(nuovoCognome.charAt(0)) + nuovoCognome.substring(1);
+				userDao.updateNome(username, nuovoNome);
+				userDao.updateCognome(username, nuovoCognome);
 				User user = userDao.getUserProfile(username);
 	            request.setAttribute("user", user);
 				request.getRequestDispatcher("profilo.jsp").forward(request, response);

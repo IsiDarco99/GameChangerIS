@@ -174,22 +174,19 @@ function validatePassword() {
       if (xhr.status === 200) {
         var response = JSON.parse(xhr.responseText);
         if (response.valid) {
-          // La vecchia password è corretta, esegui il submit del modulo
           document.getElementById("error").textContent = "";
           document.querySelector("form").submit();
         } else {
-          // La vecchia password non è corretta
           document.getElementById("error").textContent = "La vecchia password non è esatta.";
         }
       } else {
-        // Errore nella richiesta AJAX
         document.getElementById("error").textContent = "Si è verificato un errore. Riprova più tardi.";
       }
     }
   };
   xhr.send("password=" + encodeURIComponent(inputPassword));
 
-  return false; // Impedisce il submit del modulo finché non viene verificata la password lato server
+  return false;
   }
   
 function validateEmailPers() {
@@ -228,6 +225,40 @@ function validateNumero() {
   return true;
 }
 
+function validateNomeCognome() {
+  var nomeInput = document.getElementsByName("nuovonome")[0];
+  var cognomeInput = document.getElementsByName("nuovocognome")[0];
+
+  var nome = nomeInput.value.trim();
+  var cognome = cognomeInput.value.trim();
+
+  nome = nome.replace(/\b\w/g, function(match) {
+    return match.toUpperCase();
+  });
+
+  cognome = cognome.replace(/\b\w/g, function(match) {
+    return match.toUpperCase();
+  });
+
+  nomeInput.value = nome;
+  cognomeInput.value = cognome;
+
+  var regex = /^[A-Z][a-zA-ZÀ-ÿ\s']*$/;
+  if (!regex.test(nome) || !regex.test(cognome)) {
+    document.getElementById("error").textContent = "Inserisci un nome e un cognome validi.";
+    return false;
+  }
+
+  if (nome.length > 30 || cognome.length > 30) {
+    document.getElementById("error").textContent = "Il nome e il cognome devono contenere al massimo 30 caratteri.";
+    return false;
+  }
+
+  return true;
+}
+
+
+
 function validateIndirizzo() {
   var nuovoStato = document.getElementsByName("nuovoStato")[0].value;
   var nuovaCitta = document.getElementsByName("nuovaCitta")[0].value;
@@ -264,39 +295,33 @@ function validateIndirizzo() {
 function validateData() {
   var nuovaDataNascita = document.getElementsByName("nuovadata")[0].value;
 
-  // Verifica che la data di nascita sia nel formato corretto (YYYY-MM-DD)
   var regexData = /^(\d{4})-(\d{2})-(\d{2})$/;
   var match = nuovaDataNascita.match(regexData);
   if (!match) {
     document.getElementById("error").textContent = "Inserisci una data di nascita nel formato corretto (YYYY-MM-DD).";
-    return false; // Impedisce l'invio del modulo se la data di nascita non è nel formato corretto
+    return false;
   }
 
-  // Estrai i componenti della data
   var anno = parseInt(match[1]);
   var mese = parseInt(match[2]);
   var giorno = parseInt(match[3]);
 
-  // Verifica che l'anno non sia minore di 1900
   if (anno < 1900) {
     document.getElementById("error").textContent = "L'anno deve essere maggiore o uguale a 1900.";
     return false;
   }
 
-  // Verifica che il mese sia compreso tra 1 e 12
   if (mese < 1 || mese > 12) {
     document.getElementById("error").textContent = "Il mese deve essere compreso tra 1 e 12.";
     return false;
   }
 
-  // Verifica che il giorno sia valido per il mese selezionato
   var giorniNelMese = new Date(anno, mese, 0).getDate();
   if (giorno < 1 || giorno > giorniNelMese) {
     document.getElementById("error").textContent = "Inserire un giorno valido per il mese selezionato.";
     return false;
   }
 
-  // Verifica che la data non sia maggiore di quella corrente
   var dataCorrente = new Date();
   var dataNascita = new Date(anno, mese - 1, giorno);
   if (dataNascita > dataCorrente) {
@@ -304,31 +329,25 @@ function validateData() {
     return false;
   }
 
-  // Altri controlli specifici, se necessario...
-
   return true;
 }
 
 function validateCodiceFiscale() {
   var nuovoCodiceFiscale = document.getElementsByName("nuovocodice")[0].value;
 
-  // Verifica che il codice fiscale sia composto da 16 caratteri alfanumerici
   if (nuovoCodiceFiscale.length !== 16) {
     document.getElementById("error").textContent = "Il codice fiscale deve essere composto da esattamente 16 caratteri.";
     return false;
   }
 
-  // Verifica che il codice fiscale sia tutto in maiuscolo
   nuovoCodiceFiscale = nuovoCodiceFiscale.toUpperCase();
 
-  // Verifica che il codice fiscale sia composto solo da caratteri alfanumerici
   var regexCodiceFiscale = /^[A-Z0-9]{16}$/;
   if (!regexCodiceFiscale.test(nuovoCodiceFiscale)) {
     document.getElementById("error").textContent = "Inserisci un codice fiscale valido (16 caratteri alfanumerici).";
     return false;
   }
 
-  // Altri controlli specifici sul codice fiscale, se necessario...
 
   return true;
 }

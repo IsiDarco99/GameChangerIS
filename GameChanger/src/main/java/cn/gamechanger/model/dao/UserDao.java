@@ -255,6 +255,39 @@ User user = null;
 	        logger.info(e.getMessage());
 	    }
 	}
+	
+	public void updateNome(String username, String nuovoNome) {
+	    try {
+	        String query = "UPDATE utente SET nome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoNome);
+	        pst.setString(2, username);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	public void updateCognome(String username, String nuovoCognome) {
+	    try {
+	        String query = "UPDATE utente SET cognome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoCognome);
+	        pst.setString(2, username);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
 
 
 	

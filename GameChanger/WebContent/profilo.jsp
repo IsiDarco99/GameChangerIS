@@ -55,6 +55,7 @@ case 8:%>
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
+<a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/modifica-profilo', 'nome')"> Nome<br></a>
 <a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/modifica-profilo', 'username')"> Username<br></a>
 <a href="#" onclick="submitFormPassword('${pageContext.request.contextPath}/modifica-profilo')"> Password<br></a>
 <a href="#" onclick="submitFormImg('${pageContext.request.contextPath}/modifica-profilo')"> Immagine Profilo<br></a>
