@@ -62,6 +62,16 @@ public class ModificaProfiloServlet extends HttpServlet {
             	request.setAttribute("user", user);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
+            case "data":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
+            case "codfisc":
+            	request.setAttribute("modifica", categoria);
+            	request.setAttribute("user", user);
+                request.getRequestDispatcher("modifica.jsp").forward(request, response);
+                break;
             case "numero":
             	request.setAttribute("modifica", categoria);
             	request.setAttribute("user", user);

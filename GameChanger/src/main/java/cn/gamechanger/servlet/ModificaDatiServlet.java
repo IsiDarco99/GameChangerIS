@@ -1,6 +1,8 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
+import java.time.LocalDate;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,34 +33,39 @@ public class ModificaDatiServlet extends HttpServlet {
 		String nuovapassword = (String) request.getParameter("nuovapassword");
 		String vecchiapassword = (String) request.getParameter("vecchiapassword");
 		String immagine = (String) request.getParameter("valore");
-		String mail = (String) request.getParameter("nuovamail");
-		String paypal = (String) request.getParameter("nuovamailpaypal");
+		String mail = (String) request.getParameter("emailpers");
+		String paypal = (String) request.getParameter("emailpaypal");
 		String numero = (String) request.getParameter("nuovonum");
 		String stato = (String) request.getParameter("nuovoStato");
 		String indirizzo = (String) request.getParameter("nuovaVia");
 		String citta = (String) request.getParameter("nuovaCitta");
+		String codFisc = (String) request.getParameter("nuovocodice");
 		Integer capAttr = (Integer) request.getAttribute("nuovoCAP");
 		cap = (capAttr != null) ? capAttr.intValue() : 0;
-		System.out.println(immagine);
 		
 		UserDao userDao = null;
 		try {
 			if (nuovousername != null) {
 				userDao = new UserDao(DbCon.getConnection());
-				userDao.updateUsername(username, nuovousername);
-				User user = userDao.getUserProfile(nuovousername);
-	            request.setAttribute("user", user);
-	            HttpSession session = request.getSession();
-	            session.setAttribute("userSession", user.getUsername());
-	            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+				Boolean result = userDao.updateUsername(username, nuovousername);
+				if (result) {
+					User user = userDao.getUserProfile(nuovousername);
+		            request.setAttribute("user", user);
+		            HttpSession session = request.getSession();
+		            session.setAttribute("userSession", user.getUsername());
+		            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+				} else {
+					User user = userDao.getUserProfile(username);
+					request.setAttribute("modifica", "username");
+		            request.setAttribute("user", user);
+					request.setAttribute("error", "Username già esistente");
+					request.getRequestDispatcher("modifica.jsp").forward(request, response);
+				}
+				
 			} else if (nuovapassword != null) {
 				userDao = new UserDao(DbCon.getConnection());
 				User user = userDao.getUserProfile(username);
-				if (!vecchiapassword.equals(user.getPassword())){
-					
-				} else {
 				userDao.updatePassword(username, nuovapassword);
-				}
 	            request.setAttribute("user", user);
 				request.getRequestDispatcher("profilo.jsp").forward(request, response);
 			} else if (immagine != null) {
@@ -113,9 +120,6 @@ public class ModificaDatiServlet extends HttpServlet {
 					request.getRequestDispatcher("profilo.jsp").forward(request, response);
 					break;
 				}
-				
-				
-
 			} else if (mail != null) {
 				userDao = new UserDao(DbCon.getConnection());
 				userDao.updateEmail(username, mail);;
@@ -140,7 +144,20 @@ public class ModificaDatiServlet extends HttpServlet {
 				User user = userDao.getUserProfile(username);
 	            request.setAttribute("user", user);
 				request.getRequestDispatcher("profilo.jsp").forward(request, response);
-			} 
+			}  else if (codFisc != null) {
+                userDao = new UserDao(DbCon.getConnection());
+                userDao.updateCodiceFiscale(username, codFisc);
+                User user = userDao.getUserProfile(username);
+                request.setAttribute("user", user);
+                request.getRequestDispatcher("profilo.jsp").forward(request, response);
+			}   else if (request.getParameter("nuovadata") != null) {
+                userDao = new UserDao(DbCon.getConnection());
+                String nuovaDataNascita = request.getParameter("nuovadata");
+                userDao.updateDataNascita(username, nuovaDataNascita);
+                User user = userDao.getUserProfile(username);
+                request.setAttribute("user", user);
+                request.getRequestDispatcher("profilo.jsp").forward(request, response);
+            }
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

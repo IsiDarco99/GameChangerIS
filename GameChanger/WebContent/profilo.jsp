@@ -47,7 +47,7 @@ case 7:%>
 case 8:%>
 <img src="imgs/profilo/zoro.jpg" alt="Immagine Profilo">
 <%break;
-}System.out.println(user.getImmagine()); %>
+}%>
 
 </div>
 
@@ -60,6 +60,8 @@ case 8:%>
 <a href="#" onclick="submitFormImg('${pageContext.request.contextPath}/modifica-profilo')"> Immagine Profilo<br></a>
 <a href="#" onclick="submitFormEmail('${pageContext.request.contextPath}/modifica-profilo')"> E-mail<br></a>
 <a href="#" onclick="submitFormEmailPaypal('${pageContext.request.contextPath}/modifica-profilo')"> E-mail PayPal<br></a>
+<a href="#" onclick="submitFormData('${pageContext.request.contextPath}/modifica-profilo')"> Data di nascita<br></a>
+<a href="#" onclick="submitFormCodFisc('${pageContext.request.contextPath}/modifica-profilo')"> Codice Fiscale<br></a>
 <a href="#" onclick="submitFormNumero('${pageContext.request.contextPath}/modifica-profilo')"> Num. Cellulare<br></a>
 <a href="#" onclick="submitFormIndirizzo('${pageContext.request.contextPath}/modifica-profilo')"> Indirizzo di spedizione<br></a>
 </div>
