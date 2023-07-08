@@ -3,20 +3,16 @@
 <%@page import="cn.gamechanger.model.*"%>
 <%@page import="java.util.List"%>
 <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
-    
-    <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
-    
+ <%@ page import="cn.gamechanger.servlet.Checkout4Servlet" %>
     <% User user = (User) request.getAttribute("user"); %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet" %>
+
 
 <%
 List<Carrello> prodotti = (List<Carrello>) request.getAttribute("prodotti");
 float prezzoTot;
-prezzoTot = 0;
-%>
-
+prezzoTot = 0;%>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -62,6 +58,13 @@ prezzoTot = 0;
   
   <!-- Inizio codice carrello -->
   
+  <form action="/GameChanger/Checkout4-Servlet" method="post">
+				<input type="hidden" name="codice" value="">
+				
+				</form>
+  
+  
+  
   <div class="container">
   <div class="row">
   <div class="col-9">
@@ -86,7 +89,7 @@ prezzoTot = 0;
 						</span>
 					</h1>
 					<div class="quantity">
-						<strong>Quantità: </strong><span>
+						<strong>Quantità:<%=p.getQuantitàProdotto()%> </strong><span>
 							
 						</span>
 					</div>
@@ -94,41 +97,38 @@ prezzoTot = 0;
 
 				<div class="prezzo">
 					<p>
-						<strong>Prezzo</strong><br>
-						123 &#x20AC
+						<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitàProdotto())%>
+						 &#x20AC
 					</p>
 				</div>
-				<form action="/GameChanger/rimuovi-prodotto" method="post" id="rimuoviProdottoForm-">
-				<input type="hidden" name="codice" value="">
-				
-				</form>
-			</div>
+							</div>
 
 			
 			
 
-<div class="container-totale">
+
+			
+			<%
+			}
+			 %>
+			 <div class="container-totale">
 				<div class="totale">
 					<p>
-						<strong>Totale: </strong><br>
-						150 &#x20AC
+						<strong>Totale: <%=String.format("%.2f", prezzoTot)%> &#x20AC </strong>
+					
 					</p>
 				</div>
 				<form action="/GameChanger/checkout-1" method="post">
 				
 				</form>
 			</div>
-			
-			<%
-			}
-			 %>
 		</div>
+		
 		</div>
 		<div class="col-3">
 		<div class="informazioni">
 		<h2> Il mio indirizzo</h2>
-		<p> ${user.nome}  </p>
-		<p> ${user.cognome}  </p>
+		<p> ${user.nome} ${user.cognome} </p>
 		<p>  ${user.stato},
 		      ${user.citta},
 		       ${user.indirizzo},
@@ -137,7 +137,7 @@ prezzoTot = 0;
 		
 		<h2 class="pagamento">Pagamento</h2>
 		<p> Email Paypal:${user.emailPaypal} </p>
-		<p> Totale Ordine: </p>
+		<p> Totale Ordine:<%=String.format("%.2f", prezzoTot)%> &#x20AC </p>
 		<button class="acquista">
 		<a href="checkout4.jsp"> Acquista</a>
 		</button>
@@ -161,5 +161,6 @@ prezzoTot = 0;
   
   
  <%@ include file="includes/footer.jsp"%>
+ <script type="text/javascript" src="js/carrello.js"></script>
 </body>
 </html>
