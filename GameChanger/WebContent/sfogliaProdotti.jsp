@@ -67,7 +67,9 @@
 						<p>
 							<strong> Categoria</strong>
 						</p>
+						<p class="cerca">cerca</p>
 						<div class="input-group ">
+							
 							<input type="text" class="form-control" id="ricerca-item" iplaceholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"
 							 onkeyup="ricerca()">
 							
@@ -85,10 +87,14 @@
 								<strong> Prezzo</strong>
 							</p>
 							<div class="filtri-2">
-								<p>Da </p>
-								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="quantity" id="quantity" placeholder="0">
-								<p> a </p>
-								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="quantity" id="quantity" placeholder="0">
+								<div>
+									<p>Da </p>
+									<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="quantity" id="quantity" placeholder="0">
+								</div>
+								<div>
+									<p> a </p>
+									<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="quantity" id="quantity" placeholder="0">
+								</div>
 							</div>
 
 						</div>

@@ -141,6 +141,7 @@ p#infoName{
 }
 
 .OpenNavbar{
+  cursor: pointer;
 	background-color: #D80B15;
 	position: fixed !important;
   z-index: 9999;
