@@ -145,7 +145,23 @@ User user = null;
 	    }
 	}
 	
-	public boolean updateUsername(String vecchioUsername, String nuovoUsername) {
+	public void updateUsername(String vecchioUsername, String nuovoUsername) {
+	    try {
+	    		String query = "UPDATE utente SET username = ? WHERE username = ?";
+
+		        PreparedStatement pst = this.con.prepareStatement(query);
+		        pst.setString(1, nuovoUsername);
+		        pst.setString(2, vecchioUsername);
+		        
+		        pst.executeUpdate();
+		        pst.close();	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public boolean checkUsername(String nuovoUsername) {
 	    try {
 	    	String checkQuery = "SELECT COUNT(*) FROM utente WHERE username = ?";
 	    	PreparedStatement checkStatement = this.con.prepareStatement(checkQuery);
@@ -158,17 +174,7 @@ User user = null;
 
 	    	if (count > 0) {
 	    	    return false;
-	    	} else {
-	    		String query = "UPDATE utente SET username = ? WHERE username = ?";
-
-		        PreparedStatement pst = this.con.prepareStatement(query);
-		        pst.setString(1, nuovoUsername);
-		        pst.setString(2, vecchioUsername);
-		        
-		        pst.executeUpdate();
-		        pst.close();
-	    	}
-	        
+	    	}	        
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());

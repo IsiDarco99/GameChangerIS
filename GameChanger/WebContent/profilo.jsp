@@ -76,8 +76,8 @@ case 8:%>
 <p>Nome: ${user.nome} </p>
 <p>Cognome: ${user.cognome}</p>
 <p>Data di nascita: ${user.dataNascita}</p>
-<p>Codice fiscale: ${user.codFiscale}</p>
-<p>Indirizzo di spedizione: ${user.stato}, ${user.citta}, ${user.indirizzo}, ${user.cod_postale}</p>
+<p>Codice fiscale: <%if (user.getCodFiscale() != null) {%>${user.codFiscale} <%} else {%>Non inserito<%} %></p>
+<p>Indirizzo di spedizione: <%if (user.getCitta() == null) {%>Non inserito<%} else {%>${user.stato}, ${user.citta}, ${user.indirizzo}, ${user.cod_postale}<%} %></p>
 <a href="prodottiacquistati.jsp">Prodotti acquistati</a>
 
 </div>
@@ -85,9 +85,8 @@ case 8:%>
 <div class="scritta">
 <h5><strong>Informazioni di contatto</strong></h5>
 </div>
-<p>Cellulare: ${user.numTel}</p>
-<p>E-mail: ${user.emailPers}</p>
-<p>E-mail Paypal: ${user.emailPaypal}</p>
+<p>Cellulare: <%if (user.getNumTel() != 0) {%>${user.numTel} <%} else {%>Non inserito<%} %></p>
+<p>E-mail Paypal: <%if (user.getEmailPaypal() == null) {%>Non inserita <%} else {%>${user.emailPaypal}<%} %></p>
 
 </div>
 </div>

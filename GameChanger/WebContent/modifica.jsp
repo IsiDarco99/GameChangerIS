@@ -2,9 +2,7 @@
 <%@ page import="cn.gamechanger.model.User" %>
 <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
 
-<% User user = (User) request.getAttribute("user"); 
-String oldPassword = user.getPassword();
-String errorUserDup = (String) request.getAttribute("error");%>
+<% User user = (User) request.getAttribute("user");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +22,7 @@ String errorUserDup = (String) request.getAttribute("error");%>
             <div class="container">
                <div class="blocco">
                <form action="modifica-dati" method="post" onsubmit="return validateUsername()">
-                  <input type="hidden" id="errorUserInput" value='<%= errorUserDup != null ? errorUserDup : "null" %>'>
+                  <input type="hidden" id="oldUsername" value="${user.username}">
                   <h2><strong>Modifica Username</strong></h2>
                   <p>Vecchio Username: ${user.username}</p>
                   <p>Nuovo Username: <input type="text" name="nuovousername"></p>
@@ -41,7 +39,6 @@ String errorUserDup = (String) request.getAttribute("error");%>
             <div class="container">
   <div class="blocco">
     <form action="modifica-dati" method="post" onsubmit="return validatePassword()">
-    <input type="hidden" id="oldPassword" value="<%= oldPassword %>">
       <h2><strong>Modifica Password</strong></h2>
       <p>Vecchia Password: <input type="password" name="vecchiapassword"></p>
       <p>Nuova Password: <input type="password" name="nuovapassword"></p>
@@ -165,7 +162,7 @@ String errorUserDup = (String) request.getAttribute("error");%>
         	                <form action="modifica-dati" method="post" onsubmit="return validateData()">
         	                   <h2><strong>Modifica data di nascita</strong></h2>
         	                   <p>Vecchia data di nascita: ${user.dataNascita}</p>
-        	                   <p>Nuova data di nascita (DD-MM-YYYY): <input type="text" name="nuovadata"></p>
+        	                   <p>Nuova data di nascita (YYYY-MM-DD): <input type="text" name="nuovadata"></p>
         	                   <p id="error" style="color: red;"></p>
         	                   <button type="submit">Salva modifiche</button>
         	                </form>
