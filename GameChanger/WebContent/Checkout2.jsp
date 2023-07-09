@@ -56,7 +56,7 @@
 		<legend>Pagamento</legend>
 		<div class="col-75">
 			<div class="container">
-			<form action="/GameChanger/checkout-3" method="post">
+			<form action="/GameChanger/Checkout4-Servlet" method="post">
 				<div class="col-50">
 					<h3>
 						<b>Pagamento</b>

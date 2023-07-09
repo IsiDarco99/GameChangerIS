@@ -173,6 +173,7 @@ body{
 	
 }
 .informazioni {
+	margin-top: 8px !important;
 	padding: 20px;
     background: #394759;
 	box-shadow: 0 5px 25px rgb(5, 5, 5);
@@ -353,4 +354,7 @@ button.acquista{
 }
 .acquista a {
 	color: white;
+}
+strong {
+    font-size: 94%;
 }

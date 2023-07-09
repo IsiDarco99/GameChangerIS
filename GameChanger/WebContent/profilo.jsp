@@ -22,8 +22,32 @@
 <div class="row"> 
 <div class="col-3">
 <div class="immagine-profilo"> 
-<img src="imgs/generale/account.png"
-						alt="Profilo">
+<%switch(user.getImmagine()){
+case 1:%>
+<img src="imgs/profilo/mario.png" alt="Immagine Profilo">
+<%break;
+case 2:%>
+<img src="imgs/profilo/peach.jpg" alt="Immagine Profilo">
+<%break;
+case 3:%>
+<img src="imgs/profilo/hunter.png" alt="Immagine Profilo">
+<%break;
+case 4:%>
+<img src="imgs/profilo/godOfWar.jpg" alt="Immagine Profilo">
+<%break;
+case 5:%>
+<img src="imgs/profilo/cody.jpg" alt="Immagine Profilo">
+<%break;
+case 6:%>
+<img src="imgs/profilo/may.jpg" alt="Immagine Profilo">
+<%break;
+case 7:%>
+<img src="imgs/profilo/link.jpg" alt="Immagine Profilo">
+<%break;
+case 8:%>
+<img src="imgs/profilo/zoro.jpg" alt="Immagine Profilo">
+<%break;
+}%>
 
 </div>
 
@@ -31,11 +55,14 @@
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
+<a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/modifica-profilo', 'nome')"> Nome<br></a>
 <a href="#" onclick="submitFormUsername('${pageContext.request.contextPath}/modifica-profilo', 'username')"> Username<br></a>
 <a href="#" onclick="submitFormPassword('${pageContext.request.contextPath}/modifica-profilo')"> Password<br></a>
 <a href="#" onclick="submitFormImg('${pageContext.request.contextPath}/modifica-profilo')"> Immagine Profilo<br></a>
 <a href="#" onclick="submitFormEmail('${pageContext.request.contextPath}/modifica-profilo')"> E-mail<br></a>
 <a href="#" onclick="submitFormEmailPaypal('${pageContext.request.contextPath}/modifica-profilo')"> E-mail PayPal<br></a>
+<a href="#" onclick="submitFormData('${pageContext.request.contextPath}/modifica-profilo')"> Data di nascita<br></a>
+<a href="#" onclick="submitFormCodFisc('${pageContext.request.contextPath}/modifica-profilo')"> Codice Fiscale<br></a>
 <a href="#" onclick="submitFormNumero('${pageContext.request.contextPath}/modifica-profilo')"> Num. Cellulare<br></a>
 <a href="#" onclick="submitFormIndirizzo('${pageContext.request.contextPath}/modifica-profilo')"> Indirizzo di spedizione<br></a>
 </div>

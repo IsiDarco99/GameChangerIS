@@ -62,6 +62,8 @@ body {
 }
 .immagine-profilo img {
 	height: 141px;
+	border-radius: 50px;
+	border: 5px solid black;
 }
 .username {
 	font-size: 24px;

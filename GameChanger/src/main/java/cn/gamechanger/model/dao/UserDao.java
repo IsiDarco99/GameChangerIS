@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 
 import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.User;
@@ -42,6 +43,7 @@ public class UserDao {
 				user.setCognome(rs.getString("cognome"));
 				user.setDataNascita(rs.getString("data_nascita"));
 				user.setCodFiscale(rs.getString("codfiscale"));
+				user.setImmagine(rs.getInt(14));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -98,6 +100,7 @@ User user = null;
 				user.setCognome(rs.getString("cognome"));
 				user.setDataNascita(rs.getString("data_nascita"));
 				user.setCodFiscale(rs.getString("codfiscale"));
+				user.setImmagine(rs.getInt(14));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -142,20 +145,35 @@ User user = null;
 	    }
 	}
 	
-	public void updateUsername(String vecchioUsername, String nuovoUsername) {
+	public boolean updateUsername(String vecchioUsername, String nuovoUsername) {
 	    try {
-	        String query = "UPDATE utente SET username = ? WHERE username = ?";
+	    	String checkQuery = "SELECT COUNT(*) FROM utente WHERE username = ?";
+	    	PreparedStatement checkStatement = this.con.prepareStatement(checkQuery);
+	    	checkStatement.setString(1, nuovoUsername);
+	    	ResultSet resultSet = checkStatement.executeQuery();
+	    	resultSet.next();
+	    	int count = resultSet.getInt(1);
+	    	resultSet.close();
+	    	checkStatement.close();
 
-	        PreparedStatement pst = this.con.prepareStatement(query);
-	        pst.setString(1, nuovoUsername);
-	        pst.setString(2, vecchioUsername);
+	    	if (count > 0) {
+	    	    return false;
+	    	} else {
+	    		String query = "UPDATE utente SET username = ? WHERE username = ?";
+
+		        PreparedStatement pst = this.con.prepareStatement(query);
+		        pst.setString(1, nuovoUsername);
+		        pst.setString(2, vecchioUsername);
+		        
+		        pst.executeUpdate();
+		        pst.close();
+	    	}
 	        
-	        pst.executeUpdate();
-	        pst.close();
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
 	    }
+	    return true;
 	}
 	
 	public void updatePassword(String username, String nuovaPassword) {
@@ -222,6 +240,57 @@ User user = null;
 	    }
 	}
 	
+	public void updateDataNascita(String username, String nuovaDataNascita) {
+	    try {
+	        String query = "UPDATE utente SET data_nascita = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovaDataNascita);
+	        pst.setString(2, username);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateNome(String username, String nuovoNome) {
+	    try {
+	        String query = "UPDATE utente SET nome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoNome);
+	        pst.setString(2, username);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	public void updateCognome(String username, String nuovoCognome) {
+	    try {
+	        String query = "UPDATE utente SET cognome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoCognome);
+	        pst.setString(2, username);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+
+
+	
 	public void updateNumero(String username, String nuovoNumero) {
 	    try {
 	        String query = "UPDATE utente SET num_tel = ? WHERE username = ?";
@@ -257,6 +326,23 @@ User user = null;
 	        logger.info(e.getMessage());
 	    }
 	}
+	
+	public void updateCodiceFiscale(String username, String nuovoCodiceFiscale) {
+	    try {
+	        String query = "UPDATE utente SET codfiscale = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoCodiceFiscale);
+	        pst.setString(2, username);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
 
 	public User getCheckoutUser(String username) {
 		User user = null;

@@ -63,6 +63,32 @@ function submitFormEmailPaypal(action) {
 	form.submit();
 }
 
+function submitFormData(action) {
+	var form = document.createElement('form');
+	form.method = 'POST';
+	form.action = action;
+	var hiddenInput = document.createElement('input');
+ 	hiddenInput.type = 'hidden';
+ 	hiddenInput.name = 'valore';
+ 	hiddenInput.value = 'data';
+ 	form.appendChild(hiddenInput)
+	document.body.appendChild(form);
+	form.submit();
+}
+
+function submitFormCodFisc(action) {
+	var form = document.createElement('form');
+	form.method = 'POST';
+	form.action = action;
+	var hiddenInput = document.createElement('input');
+ 	hiddenInput.type = 'hidden';
+ 	hiddenInput.name = 'valore';
+ 	hiddenInput.value = 'codfisc';
+ 	form.appendChild(hiddenInput)
+	document.body.appendChild(form);
+	form.submit();
+}
+
 function submitFormNumero(action) {
 	var form = document.createElement('form');
 	form.method = 'POST';
