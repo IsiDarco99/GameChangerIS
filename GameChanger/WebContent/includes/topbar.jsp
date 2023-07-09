@@ -18,7 +18,7 @@
 
 <div class="top-bar">
 	<div class="logo">
-		<a href="homepage.jsp"><img src="imgs/generale/logo.png" alt="Home" height="90"></a>
+		<a href="homepage.jsp"><img src="imgs/generale/logo.png" alt="Home" height="60"></a>
 	</div>
 	<div class="icons">
 		<% if (session.getAttribute("userSession") == null) {

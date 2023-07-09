@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
  <%@ page import="cn.gamechanger.servlet.Checkout4Servlet" %>
+ <%@ page import="cn.gamechanger.servlet.Checkout5Servlet" %>
     <% User user = (User) request.getAttribute("user"); %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -138,9 +139,11 @@ prezzoTot = 0;%>
 		<h2 class="pagamento">Pagamento</h2>
 		<p> Email Paypal:${user.emailPaypal} </p>
 		<p> Totale Ordine:<%=String.format("%.2f", prezzoTot)%> &#x20AC </p>
+		<form action="/GameChanger/Checkout-5" method="post">
 		<button class="acquista">
 		<a href="checkout4.jsp"> Acquista</a>
 		</button>
+		</form>
 		</div>
 		</div>
 		</div>
