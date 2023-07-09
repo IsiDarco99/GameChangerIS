@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="css/styles.css" type="text/css">
 
 </head>
+
 <body>
 	<%@include file="includes/topbar.jsp"%>
 	<%@include file="includes/navbar.jsp"%>
@@ -23,24 +24,64 @@
 
 	<div class="container-home">
 		<div class="arrow_prev1">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next1">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		
 		<div class="row carosello-home">
 			<div class="gradient">
 			<div class="col-md-12">
-				<img src="imgs/homepage/primo-carosello/sekiro.jpg" alt="Brawhalla">
+				<div class="scrittaCopertina">
+					<div class="neon "><!--pub -->
+						<p>immergiti nell'esplorazione</p>
+					</div>
+				</div>
+				<img src="imgs\homepage\primo-carosello\minecraft.png" alt="carosello-1">
+				
+				
+				<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=4" class="LiOf">
+					<button class="botCop"><span>Clicca <br>qui
+					</span></button></a>
+				</div>
+				
+				
 			</div>
 			</div>
 			<div class="gradient">
 			<div class="col-md-12">
-				<img src="imgs/homepage/primo-carosello/fallout.jpg" alt="Computer">
+				<div class="scrittaCopertina">
+					<div class="neon"><!--pub -->
+						<p>La nuova generazione &egrave; qui</p>
+					</div>
+				</div>
+				<img src="imgs\homepage\primo-carosello\ps5.jpg" alt="carosello-2">
+				
+				<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=16" class="LiOf">
+					<button class="botCop"><span style="text-decoration:none;">Clicca qui!
+					</span></button></a>
+				</div>
 			</div>
 			</div>
-
+			<div class="gradient">
+				<div class="col-md-12">
+					<div class="scrittaCopertina">
+						<div class="neon "><!--pub -->
+							<p>Aggiornati e risparmia</p>
+						</div>
+					</div>
+					<img src="imgs\homepage\primo-carosello\macbook.jpg" alt="carosello-3">
+					
+					
+					<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=6" class="LiOf">
+						<button class="botCop"><span style="text-decoration:none;">Clicca qui!
+						</span></button></a>
+					</div>
+					
+					
+				</div>
+				</div>
 			
 		</div>
 	</div>
@@ -57,6 +98,7 @@
 		</h1>
 	</div>
 	<div class="container">
+		
 		<div class="row justify-content-center">
 			<div class="col-3">
 				<div class="border-img">
@@ -163,9 +205,9 @@
 					attraverso un mondo un tempo meraviglioso, ma che ora cade
 					lentamente a pezzi. Nel tempo, il loro rapporto si evolve man mano
 					che imparano a collaborare, aiutandosi l'un l'altra per superare
-					coraggiosamente situazioni sempre piï¿½ pericolose. Il lupo passerà
+					coraggiosamente situazioni sempre piï¿½ pericolose. Il lupo passerï¿½
 					dall'essere un cucciolo ribelle a un adulto imponente in cerca
-					della sua identità, mettendo alla prova l'affetto di Alba e il loro
+					della sua identitï¿½, mettendo alla prova l'affetto di Alba e il loro
 					impegno reciproco.</p>
 			</div>
 			<div class="col-7 video-container">
@@ -193,6 +235,7 @@
 			});
 		});
 	</script>
+	<!-- primo carosello -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('.carosello-home').slick({

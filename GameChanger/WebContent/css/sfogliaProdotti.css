@@ -33,6 +33,7 @@ a {
 .filtri-2 {
 	font-size: 15px;
 	display: flex;
+	flex-direction: row;
 }
 
 .filtri-2 form{
@@ -110,4 +111,21 @@ a {
 
 input:focus::placeholder {
   color: transparent;
+}
+
+input#quantity{
+	width: 90%;
+	text-align: center;
+	background-color: #333;
+	color: #fff;
+	border-radius: 50px;
+}
+.input-group>.form-control{
+	background-color: #333;
+	color: #fff;
+	border-radius: 50px;
+	margin-bottom: 25px;
+}
+p.cerca{
+	margin-bottom: 0px;
 }
