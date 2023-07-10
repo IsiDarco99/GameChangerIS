@@ -1,21 +1,4 @@
-<style>
-.top-bar {
-	position: relative;
-	z-index: 9999;
-	color: #fff;
-	height: 70px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
-	justify-content: space-between;
-}
-
-.icons img {
-	padding-right: 30px;
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="css\topbar.css"/>
 <div class="top-bar">
 	<div class="logo">
 		<a href="homepage.jsp"><img src="imgs/generale/logo.png" alt="Home" height="60"></a>

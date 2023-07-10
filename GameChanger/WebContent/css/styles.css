@@ -6,16 +6,15 @@
 * {
   box-sizing: border-box;
 }
-button.botCop span{
-  text-decoration:none;
+a{
+  text-decoration: none;
 }
+
 button.botCop {
   position: relative;
   margin: 0px 141px 115px 0px;
   padding: 0.8em 1em;
   outline: none;
-  background-image: none !important;
-  text-decoration: none !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +105,6 @@ button.botCop:hover::after {
 .LiOf{
   /* posizionamento bottone offerta*/
   position: absolute;
-
 }
 
 body {
@@ -494,18 +492,21 @@ overflow:hidden;
 .nuove-uscite img {
   height: 250px;
 }
+.scrittaCopertina .neon p {
+  font-size: 1.5rem;
+}
 }
 
 @media (max-width: 900px) {
 .nuove-uscite img {
   height: 200px;
 }
+.scrittaCopertina .neon p {
+  font-size: 1.5rem;
+}
 }
 
 @media (max-width: 768px) {
-  .bn632-hover.bn20{
-    /*grandezze */
-  }
   .carosello-home img {
   width: 100%;
   height: 30vh;
@@ -516,6 +517,17 @@ overflow:hidden;
 .nuove-uscite img {
   height: 150px;
 }
+.scrittaCopertina .neon{
+  padding-top: 22px;
+}
 
+.scrittaCopertina .neon p {
+  font-size: 1.0rem;
+  padding-top: 18px;
+}
+button.botCop {
+  margin: 0px 34px 30px 0px;
+  padding: 0.3em 0.5em;
+}
 
 }
