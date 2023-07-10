@@ -75,7 +75,7 @@
 					
 					
 					<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=6" class="LiOf">
-						<button class="botCop"><span style="text-decoration:none;">Clicca qui!
+						<button class="botCop"><span style="">Clicca qui!
 						</span></button></a>
 					</div>
 					
