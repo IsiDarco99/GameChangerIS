@@ -1,62 +1,59 @@
-function validateUsername(){
-	var newUsername = document.getElementsByName("nuovousername")[0].value;
-   var errorElement = document.getElementById("errorUsername");
-   
-   if (newUsername.trim() === "") {
-	   errorElement.textContent = "";
-    return false;
-  }
+function validateUsername() {
+  return new Promise(function(resolve, reject) {
+    var newUsername = document.getElementsByName("nuovousername")[0].value;
+    var errorElement = document.getElementById("errorUsername");
 
-   var regex = /^[a-zA-Z0-9]+$/;
-   if (!regex.test(newUsername)) {
-      errorElement.textContent = "Sono consentiti solo caratteri alfanumerici";
-      return false;
-   }
-
-   if (newUsername.length > 22) {
-      errorElement.textContent = "Inserire un massimo di 22 caratteri.";
-      return false;
-   }
-   
-   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "verifica-username", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
-        if (response.valid) {
-          document.getElementById("errorUsername").textContent = "";
-        } else {
-          document.getElementById("errorUsername").textContent = "Esiste gi\u00E0 un username con questo nome.";
-          return false;
-        }
-      } else {
-        document.getElementById("errorUsername").textContent = "Si è verificato un errore. Riprova più tardi.";
-        return false;
-      }
+    if (newUsername.trim() === "") {
+      errorElement.textContent = "";
+      resolve(false);
     }
-  };
-  xhr.send("nuovousername=" + encodeURIComponent(newUsername));
 
+    var regex = /^[a-zA-Z0-9]+$/;
+    if (!regex.test(newUsername)) {
+      errorElement.textContent = "Sono consentiti solo caratteri alfanumerici";
+      resolve(false);
+    }
+
+    if (newUsername.length > 22) {
+      errorElement.textContent = "Inserire un massimo di 22 caratteri.";
+      resolve(false);
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "verifica-username", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          if (response.valid) {
+            errorElement.textContent = "";
+            resolve(false);
+          } else {
+            errorElement.textContent = "Esiste gi\u00E1 un username con questo nome.";
+            console.log("cazzono");
+            resolve(false);
+          }
+        } else {
+          errorElement.textContent = "Si è verificato un errore. Riprova più tardi.";
+          resolve(false);
+        }
+      }
+    };
+    xhr.send("nuovousername=" + encodeURIComponent(newUsername));
+  });
 }
+
 
 function validatePassword(){
 	var newPassword = document.getElementsByName("password")[0].value;
-    var repeatPassword = document.getElementsByName("ripetipassword")[0].value;
-    
-    if (newPassword.trim() === "") {
-		document.getElementById("errorPassword").textContent = "";
-   		return false;
-  }
-    
-    
     
     var regex = /^[a-zA-Z0-9]+$/;
   if (!regex.test(newPassword)) {
     document.getElementById("errorPassword").textContent = "Sono consentiti solo caratteri alfanumerici";
     return false;
   }
+    
   
   if (newPassword.length > 22) {
     document.getElementById("errorPassword").textContent = "Inserire un massimo di 22 caratteri.";
@@ -72,6 +69,7 @@ function validatePassword(){
         var response = JSON.parse(xhr.responseText);
         if (response.valid) {
           document.getElementById("errorPassword").textContent = "";
+          return true;
         } else {
           document.getElementById("errorPassword").textContent = "La vecchia password non è esatta.";
           return false;
@@ -83,6 +81,11 @@ function validatePassword(){
     }
   };
 
+  
+  if (newPassword.trim() === "") {
+		document.getElementById("errorPassword").textContent = "";
+   		return true;
+  }
 }
 
 function validatePasswordRepeat(){
@@ -99,7 +102,8 @@ function validatePasswordRepeat(){
     
     if (repeatPassword.trim() === "") {
 		document.getElementById("errorPasswordRepeat").textContent = "";
-   		return false;
+  } else {
+	  return true;
   }
 }
 
@@ -129,6 +133,7 @@ function validateNome(){
     return false;
   } else {
 	  document.getElementById("errorNome").textContent = "";
+	  return true;
   }
 }
 
@@ -158,6 +163,7 @@ function validateCognome(){
     return false;
   }else {
 	  document.getElementById("errorCognome").textContent = "";
+	  return true;
   }
 }
 
@@ -173,7 +179,8 @@ function validateMail(){
     document.getElementById("errorMail").textContent = "Inserisci un'email valida.";
     return false;
   }else {
-	  document.getElementById("errorNome").textContent = "";
+	  document.getElementById("errorMail").textContent = "";
+	  return true;
   }
 }
 
@@ -219,5 +226,40 @@ if (nuovaDataNascita.trim() === "") {
     return false;
   }else {
 	  document.getElementById("errorData").textContent = "";
+	  return true;
   }
 }
+
+  function validateForm() {
+	  var privacyCheckbox = document.getElementsByName("privacy")[0];
+  var termsCheckbox = document.getElementsByName("terms")[0];
+
+  if (!privacyCheckbox.checked || !termsCheckbox.checked) {
+    document.getElementById("errorPrivacy").textContent = "Devi accettare la privacy e i termini e le condizioni per registrarti";
+    return false;
+  }
+  
+  if (privacyCheckbox.checked && termsCheckbox.checked) {
+    document.getElementById("errorPrivacy").textContent = "";
+  }
+
+    var errorFields = document.querySelectorAll("p[id^='error']");
+    var isValid = true;
+
+    errorFields.forEach(function(field) {
+      if (field.innerText !== '') {
+        isValid = false;
+      }
+    });
+
+    if (!isValid) {
+      document.getElementById("errMex").textContent = "Si prega di correggere gli errori prima di inviare il modulo.";
+      return false;
+    }
+
+    return true;
+  }
+
+
+
+

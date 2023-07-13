@@ -13,7 +13,7 @@
 <div class="cont">
 	<div class="center">
 		<h1>Registrati</h1>
-		<form action="user-register" method="post">
+		<form id="registerForm" action="user-register" method="post" onsubmit="return validateForm()">
 			<div class="txt_field">
 				<input type="text" name="nuovousername" required onblur="validateUsername()"> <span></span> <label>Username</label>
 			</div>
@@ -55,6 +55,8 @@
 								<span class="checkmark"></span> <a href="termini.jsp">Termini e condizioni</a>
 								
 							</label>
+							<p id="errorPrivacy" style="color: red;"></p>
+							<p id="errMex" style="color: red;"></p>
 							 <input type="submit" value="Registrati">
 							<div class="signup_link">
 								Già  iscritto? <a href="login.jsp">Accedi</a>
