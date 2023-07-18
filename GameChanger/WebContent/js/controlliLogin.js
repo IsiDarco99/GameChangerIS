@@ -1,14 +1,3 @@
-<% String loginError = (String) request.getAttribute("loginError");
-       if (loginError != null) { %>
-    window.addEventListener('DOMContentLoaded', function() {
-        var errorMessage = '<%= loginError %>';
-        if (errorMessage !== '') {
-            alert(errorMessage);
-        }
-    });
-    <% } %>
-
-
 function validateUsername(){
    var newUsername = document.getElementsByName("login-username")[0].value;
    var errorElement = document.getElementById("errorUsername");

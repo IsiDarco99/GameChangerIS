@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
+<% String loginError = (String) request.getAttribute("loginError");
+	if (loginError != null) { %>
+ window.addEventListener('DOMContentLoaded', function() {
+	 var errorMessage = '<%= loginError %>';
+	 if (errorMessage !== '') {
+		 alert(errorMessage);
+	 }
+ });
+ <% } %>	
 <!DOCTYPE html>
 <html lang="IT">
 <head>

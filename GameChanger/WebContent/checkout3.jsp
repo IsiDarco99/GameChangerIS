@@ -72,7 +72,7 @@ prezzoTot = 0;%>
 		<div class="carrello">
 		
 	<% 	for (Carrello p : prodotti) {
-				prezzoTot += (p.getPrezzo() * p.getQuantitï¿½Prodotto());
+				prezzoTot += (p.getPrezzo() * p.getQuantitàProdotto());
 			%>
 			
   <div id="prodotto-<%=p.getIdProdotto()%>" class="container-prodotto">
@@ -90,7 +90,7 @@ prezzoTot = 0;%>
 						</span>
 					</h1>
 					<div class="quantity">
-						<strong>Quantitï¿½:<%=p.getQuantitï¿½Prodotto()%> </strong><span>
+						<strong>Quantità:<%=p.getQuantitàProdotto()%> </strong><span>
 							
 						</span>
 					</div>
@@ -98,7 +98,7 @@ prezzoTot = 0;%>
 
 				<div class="prezzo">
 					<p>
-						<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitï¿½Prodotto())%>
+						<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitàProdotto())%>
 						 &#x20AC
 					</p>
 				</div>
