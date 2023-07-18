@@ -2,13 +2,13 @@ package cn.gamechanger.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.List;
 import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
-
+import cn.gamechanger.model.Carrello;
 import cn.gamechanger.model.Ordine;
 
 
@@ -20,28 +20,46 @@ public class OrdineDao {
 		this.con = con;
 		
 	}
-	public Ordine salvaOrdine(String username, int codice, int quant_prod, float prezzo, String stato_ord, int data_ord) {
-     Ordine ordine = null;
-		
-        try {
-            
-            String query = "INSERT INTO ordine (username, codice, quant_prod, prezzo, stato_ord, data_ord) VALUES (?, ?, ?, ?, ?, ?)";
-            PreparedStatement statement = this.con.prepareStatement(query);
-            statement.setString(1, username);
-            statement.setInt(2, codice);
-            statement.setInt(3, quant_prod);
-            statement.setFloat(4, prezzo);
-            statement.setString(5, stato_ord);
-            statement.setInt(6, data_ord);
-            statement.executeUpdate();
-            statement.close();
-        } 
-        
-        catch (SQLException e) {
-            e.printStackTrace();
-            logger.info(e.getMessage());
+	public void aggiungiOrdine(Ordine ordine, List<Carrello> prodottiOrdine) throws SQLException {
+        String queryOrdine = "INSERT INTO ordine (username, stato_ord, data_ord) VALUES (?, ?, ?)";
+        String queryProdottoOrdine = "INSERT INTO prodotto_ordine (id_ordine, codice, quant_prod, prezzo) VALUES (?, ?, ?, ?)";
+
+        try (PreparedStatement stmtOrdine = con.prepareStatement(queryOrdine, PreparedStatement.RETURN_GENERATED_KEYS);
+             PreparedStatement stmtProdottoOrdine = con.prepareStatement(queryProdottoOrdine)) {
+
+        	con.setAutoCommit(false);
+
+            stmtOrdine.setString(1, ordine.getUsername());
+            stmtOrdine.setString(2, ordine.getStato_ord());
+            stmtOrdine.setString(3, ordine.getDataOrd());
+
+            stmtOrdine.executeUpdate();
+
+            int idOrdine;
+            try (ResultSet generatedKeys = stmtOrdine.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    idOrdine = generatedKeys.getInt(1);
+                } else {
+                    throw new SQLException("Failed to retrieve auto-generated key for order insertion.");
+                }
+            }
+
+            for (Carrello prodottoOrdine : prodottiOrdine) {
+                stmtProdottoOrdine.setInt(1, idOrdine);
+                stmtProdottoOrdine.setInt(2, prodottoOrdine.getIdProdotto());
+                stmtProdottoOrdine.setInt(3, prodottoOrdine.getQuantitàProdotto());
+                stmtProdottoOrdine.setFloat(4, prodottoOrdine.getPrezzo());
+
+                stmtProdottoOrdine.addBatch();
+            }
+
+            stmtProdottoOrdine.executeBatch();
+            con.commit();
+        } catch (SQLException e) {
+        	con.rollback();
+            throw e;
+        } finally {
+        	con.setAutoCommit(true);
         }
-		return ordine;
-        
     }
 }
