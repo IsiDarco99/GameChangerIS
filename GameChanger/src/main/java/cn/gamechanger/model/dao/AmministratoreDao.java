@@ -1,10 +1,11 @@
 package cn.gamechanger.model.dao;
 
+
 import java.util.logging.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import cn.gamechanger.model.*;
 import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.Amministratore;
 public class AmministratoreDao {
@@ -83,4 +84,29 @@ public class AmministratoreDao {
 	        logger.info(e.getMessage());
 	    }
 	}
+	public void insertProdotto(int codice, float prezzo, String nome, String marca, String descrizione, String data_usc) {
+	  try {
+		  String query = "INSERT INTO prodotto (codice, prezzo, nome, marca, descrizione, data_usc) VALUES (?, ?, ?, ?, ?, ?)";
+		  
+		  PreparedStatement statement = this.con.prepareStatement(query);
+		  statement.setInt(1, codice);
+		  statement.setFloat(2, prezzo);
+		  statement.setString(3, nome);
+		  statement.setString(4, marca);
+		  statement.setString(5, descrizione);
+		  statement.setString(6,  data_usc);
+	  
+		  statement.executeUpdate();
+          statement.close();
+		  
+		
+		
+	  }	
+	  catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
 }
+
+   

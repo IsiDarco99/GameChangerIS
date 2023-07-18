@@ -32,12 +32,12 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    response.setContentType("text/html;charset=UTF-8");
 	    try (PrintWriter out = response.getWriter()){
-	        String username = request.getParameter("username");
+	        String username = request.getParameter("nuovousername");
 	        String emailPers = request.getParameter("emailPers");
 	        String password = request.getParameter("password");
 	        String nome = request.getParameter("nome");
 	        String cognome = request.getParameter("cognome");
-	        String dataNascita = request.getParameter("dataNascita");
+	        String dataNascita = request.getParameter("datanascita");
 	        
 	       
 	        User user = new User(username, emailPers, "", 0, "", "", "", 0, password, nome, cognome, dataNascita, "", 0);

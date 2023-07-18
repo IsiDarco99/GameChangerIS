@@ -11,28 +11,24 @@ import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.UserDao;
 
-@WebServlet("/verifica-password")
-public class VerificaPasswordServlet extends HttpServlet {
+@WebServlet("/verifica-username")
+public class VerificaUsernameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // Recupera la vecchia password fornita dall'utente
-    String inputPassword = request.getParameter("password");
-    String oldPassword = "";
+    String username = request.getParameter("nuovousername");
+    boolean isValid = false;
 try {
 	UserDao userDao = new UserDao(DbCon.getConnection());
-    String username = (String) request.getSession().getAttribute("userSession");
-    User user = userDao.getUserProfile(username);
-    oldPassword = user.getPassword();
+	isValid = userDao.checkUsername(username);
 } catch (Exception e) {
 	e.printStackTrace();
 }
-     boolean isValid = inputPassword.equals(oldPassword);
-    
-    // Restituisci la risposta come JSON
     response.setContentType("application/json");
     PrintWriter out = response.getWriter();
     out.println("{ \"valid\": " + isValid + " }");
   }
 }
+

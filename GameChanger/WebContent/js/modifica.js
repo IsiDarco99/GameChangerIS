@@ -102,13 +102,10 @@ function submitFormZoro(action) {
 	form.submit();
 }
 
-var isFunctionExecuted = false;
 
 function validateUsername() {
    var newUsername = document.getElementsByName("nuovousername")[0].value;
    var errorElement = document.getElementById("error");
-   var errorUser = document.getElementById("errorUserInput").value;
-   
 
    var regex = /^[a-zA-Z0-9]+$/;
    if (!regex.test(newUsername)) {
@@ -121,28 +118,28 @@ function validateUsername() {
       return false;
    }
    
-   if (isFunctionExecuted) {
-      return true;
-   }
-   
-   if (errorUser !== "null") {
-      errorElement.textContent = errorUser;
-      isFunctionExecuted = true;
-      return false;
-   }
-   
-   return true;
+   var xhr = new XMLHttpRequest();
+  xhr.open("POST", "verifica-username", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        if (response.valid) {
+          document.getElementById("error").textContent = "";
+          document.querySelector("form").submit();
+        } else {
+          document.getElementById("error").textContent = "Esiste gi\u00E0 un username con questo nome.";
+        }
+      } else {
+        document.getElementById("error").textContent = "Si è verificato un errore. Riprova più tardi.";
+      }
+    }
+  };
+  xhr.send("nuovousername=" + encodeURIComponent(newUsername));
+
+  return false;
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-	var errorElement = document.getElementById("error");
-   var errorUser = document.getElementById("errorUserInput").value;
-
-   if (errorUser !== "null") {
-      errorElement.textContent = errorUser;
-      return false;
-   }
-});
 
 function validatePassword() {
 	var oldPassword = document.getElementById("oldPassword").value;
@@ -243,7 +240,7 @@ function validateNomeCognome() {
   nomeInput.value = nome;
   cognomeInput.value = cognome;
 
-  var regex = /^[A-Z][a-zA-ZÀ-ÿ\s']*$/;
+  var regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
   if (!regex.test(nome) || !regex.test(cognome)) {
     document.getElementById("error").textContent = "Inserisci un nome e un cognome validi.";
     return false;

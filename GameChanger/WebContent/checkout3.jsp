@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
  <%@ page import="cn.gamechanger.servlet.Checkout4Servlet" %>
+ <%@ page import="cn.gamechanger.servlet.Checkout5Servlet" %>
     <% User user = (User) request.getAttribute("user"); %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -17,7 +18,7 @@ prezzoTot = 0;%>
 <html>
 <head> 
 <meta charset="ISO-8859-1">
-<title>parte 3 </title>
+<title>GameChanger </title>
 <%@ include file="includes/head.jsp"%>
 <script src="check.js"></script>
  
@@ -34,11 +35,11 @@ prezzoTot = 0;%>
         <ul class="step-wizard-list">
           <li class="step-wizard-item  ">
             <span class="progress-count">1</span>
-            <span class="progress-label">Billing Info</span>
+            <span class="progress-label">informazioni di spedizione</span>
           </li>
           <li class="step-wizard-item ">
             <span class="progress-count">2</span>
-            <span class="progress-label">Pay</span>
+            <span class="progress-label">Pagamento</span>
           </li>
         
           <li class="step-wizard-item current-item">
@@ -48,7 +49,7 @@ prezzoTot = 0;%>
     
           <li class="step-wizard-item">
             <span class="progress-count">4</span>
-            <span class="progress-label">Finish</span>
+            <span class="progress-label">Ordine confermato</span>
           </li>
         </ul>
         </section>
@@ -71,7 +72,7 @@ prezzoTot = 0;%>
 		<div class="carrello">
 		
 	<% 	for (Carrello p : prodotti) {
-				prezzoTot += (p.getPrezzo() * p.getQuantitàProdotto());
+				prezzoTot += (p.getPrezzo() * p.getQuantitï¿½Prodotto());
 			%>
 			
   <div id="prodotto-<%=p.getIdProdotto()%>" class="container-prodotto">
@@ -89,7 +90,7 @@ prezzoTot = 0;%>
 						</span>
 					</h1>
 					<div class="quantity">
-						<strong>Quantità:<%=p.getQuantitàProdotto()%> </strong><span>
+						<strong>Quantitï¿½:<%=p.getQuantitï¿½Prodotto()%> </strong><span>
 							
 						</span>
 					</div>
@@ -97,7 +98,7 @@ prezzoTot = 0;%>
 
 				<div class="prezzo">
 					<p>
-						<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitàProdotto())%>
+						<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitï¿½Prodotto())%>
 						 &#x20AC
 					</p>
 				</div>
@@ -138,9 +139,11 @@ prezzoTot = 0;%>
 		<h2 class="pagamento">Pagamento</h2>
 		<p> Email Paypal:${user.emailPaypal} </p>
 		<p> Totale Ordine:<%=String.format("%.2f", prezzoTot)%> &#x20AC </p>
+		<form action="/GameChanger/Checkout-5" method="post">
 		<button class="acquista">
 		<a href="checkout4.jsp"> Acquista</a>
 		</button>
+		</form>
 		</div>
 		</div>
 		</div>
