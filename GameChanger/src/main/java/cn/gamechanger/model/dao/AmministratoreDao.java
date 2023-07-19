@@ -169,15 +169,14 @@ public class AmministratoreDao {
 		return prodotti;
 	}
 	
-	public void insertVideogame(int codice,int pegi, String sviluppatore, String genere) {
+	public void insertVideogame(int pegi, String sviluppatore, String genere) {
 		  try {
-			  String query = "INSERT INTO videogame (codice, pegi, sviluppatore, genere) VALUES (?, ?, ?, ?)";
+			  String query = "INSERT INTO videogame (pegi, sviluppatore, genere) VALUES (?, ?, ?)";
 			  
-			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setInt(1, codice);
-			  statement.setInt(2, pegi);
-			  statement.setString(3, sviluppatore);
-			  statement.setString(4, genere);
+			  PreparedStatement statement = this.con.prepareStatement(query);			
+			  statement.setInt(1, pegi);
+			  statement.setString(2, sviluppatore);
+			  statement.setString(3, genere);
 			  
 		  
 			  statement.executeUpdate();
@@ -192,13 +191,12 @@ public class AmministratoreDao {
 		    }
 		}
 	
-	public void insertAccessorio(int codice, String tipo ) {
+	public void insertAccessorio(String tipo ) {
 		  try {
-			  String query = "INSERT INTO accessorio (codice, tipo) VALUES (?, ?)";
+			  String query = "INSERT INTO accessorio (tipo) VALUES (?)";
 			  
-			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setInt(1, codice);
-			  statement.setString(2, tipo);
+			  PreparedStatement statement = this.con.prepareStatement(query);			  
+			  statement.setString(1, tipo);
 			  
 					  
 			  statement.executeUpdate();
@@ -212,15 +210,14 @@ public class AmministratoreDao {
 		        logger.info(e.getMessage());
 		    }
 		}
-	public void insertComputer(int codice, String casa, String ufficio, String gaming) {
+	public void insertComputer(String casa, String ufficio, String gaming) {
 		  try {
-			  String query = "INSERT INTO computer (codice, casa, ufficio, gaming) VALUES (?, ?, ?, ?)";
+			  String query = "INSERT INTO computer (casa, ufficio, gaming) VALUES (?, ?, ?)";
 			  
 			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setInt(1, codice);
-			  statement.setString(2, casa);
-			  statement.setString(3, ufficio);
-			  statement.setString(4, gaming);
+			  statement.setString(1, casa);
+			  statement.setString(2, ufficio);
+			  statement.setString(3, gaming);
 			  
 		  
 			  statement.executeUpdate();
@@ -234,12 +231,11 @@ public class AmministratoreDao {
 		        logger.info(e.getMessage());
 		    }
 		}
-	public void insertConsole(int codice, int generazione) {
+	public void insertConsole(int generazione) {
 		  try {
-			  String query = "INSERT INTO console (codice, pegi, sviluppatore, genre) VALUES (?, ?)";
+			  String query = "INSERT INTO console (pegi, sviluppatore, genre) VALUES (?)";
 			  
 			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setInt(1, codice);
 			  statement.setInt(2, generazione);
 			
 		  
