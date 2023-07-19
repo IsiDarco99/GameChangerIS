@@ -49,6 +49,8 @@ public class Checkout5Servlet extends HttpServlet {
             ordine.setStato_ord(statoOrd);
             ordine.setDataOrd(dataOrdStringa);
             ordineDao.aggiungiOrdine(ordine, prodotti);
+            
+            cd.cancellaCarrello(username);
 	        
 	        request.getRequestDispatcher("checkout4.jsp").forward(request, response);
 	    } catch (Exception e) {

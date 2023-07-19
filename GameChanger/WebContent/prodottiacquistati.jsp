@@ -1,102 +1,94 @@
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
- 
-    
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Map"%>
+<%@page import="cn.gamechanger.model.*"%>
+<%@ page import="cn.gamechanger.servlet.ProdottiAcquistatiServlet" %>
+<% 
+    Map<Ordine, List<ProdottoOrdine>> ordiniEProdotti = (Map<Ordine, List<ProdottoOrdine>>) request.getAttribute("ordiniEProdotti"); 
+    boolean hasOrdini = (ordiniEProdotti != null && !ordiniEProdotti.isEmpty());
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>GameChanger</title>
-<%@ include file="includes/head.jsp"%>
-<link rel="stylesheet" href="css/prodottiacquistati.css" type="text/css">
+    <title>GameChanger</title>
+    <%@ include file="includes/head.jsp"%>
+    <link rel="stylesheet" href="css/prodottiacquistati.css" type="text/css">
 </head>
 <body>
-<%@ include file="includes/topbar.jsp"%>
-<%@ include file="includes/navbar.jsp"%>
+    <%@ include file="includes/topbar.jsp"%>
+    <%@ include file="includes/navbar.jsp"%>
 
-<div class="scritta-principale">
-		<h1>
-			<span> Prodotti Acquistati </span>
-		</h1>
-	</div>
-	
-	<div class="container">
-		<div class="prodotti">
-		
-	 <% 
-			/* if (prodotti.isEmpty()) {
-			*/%> 
-		<!--  	<div class="immagine-prodotto">
-				<img src="imgs/prodottiacquistati/prodottovuoto.png" alt="Nessun prodotto">
+    <div class="scritta-principale">
+        <h1>
+            <span> Prodotti Acquistati </span>
+        </h1>
+    </div>
 
-			</div>
-			<div class="scritta-prodotto">
-				<h1>
-					<span> Non hai acquistato nessun prodotto<br>Da un'occhiata ai
-						nostri <a href="sfogliaProdotti.jsp?categoria=allProdotti">prodotti</a>
-					</span>
-				</h1>
-			</div> -->
-	
-	<% /*
-	} else {
-	for (Carrello p : prodotti) {
-		prezzoTot += (p.getPrezzo() * p.getQuantitàProdotto());
-	*/%>
+    <div class="container">
+        <div class="prodotti">
+            <% 
+            int lastOrderId = -1;
+            if (!hasOrdini) {
+            %>
+            <div class="immagine-prodotto">
+                <img src="imgs/prodottiacquistati/prodottovuoto.png" alt="Nessun prodotto">
+            </div>
+            <div class="scritta-prodotto">
+                <h1>
+                    <span> Non hai acquistato nessun prodotto<br>Da un'occhiata ai
+                        nostri <a href="sfogliaProdotti.jsp?categoria=allProdotti">prodotti</a>
+                    </span>
+                </h1>
+            </div>
+            <% 
+            } else {
+                // Ciclo for degli ordini
+                for (java.util.Map.Entry<Ordine, java.util.List<ProdottoOrdine>> entry : ordiniEProdotti.entrySet()) {
+                    Ordine ordine = entry.getKey();
+                    java.util.List<ProdottoOrdine> prodottiOrdine = entry.getValue();
+                    
+                    // Stampa l'ID dell'ordine solo se ci sono prodotti
+                    if (!prodottiOrdine.isEmpty()) {
+                        %>
+                        <!-- INIZIO ORDINE -->
+                        <div class="container-prodotto">
+                        	<%if (ordine.getId_ordine() != lastOrderId){ %>
+                            <h1>Ordine ID: <%= ordine.getId_ordine()%></h1>
+                            <%} %>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Prodotto</th>
+                                        <th>Quantità</th>
+                                        <th>Prezzo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Ciclo for dei prodotti corrispondenti all'ordine -->
+                                    <% 
+                                    for (ProdottoOrdine prodotto : prodottiOrdine) {
+                                    %>
+                                    <tr>
+                                        <td><%= prodotto.getNome() %></td>
+                                        <td><%= prodotto.getQuantita() %></td>
+                                        <td><%= String.format("%.2f", prodotto.getPrezzo() * prodotto.getQuantita()) %>&#x20AC;</td>
+                                    </tr>
+                                    <% 
+                                    } 
+                                    %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- FINE ORDINE -->
+                        <% 
+                        lastOrderId = ordine.getId_ordine();
+                    }
+                }
+            }
+            %>
+        </div>
+    </div>
 
-
-
-	<!-- INIZIO PRODOTTO -->
-
-	<div class="container-prodotto">
-		<div class="immagine">
-			<a href="paginaprodotto.jsp?codice=<%=p.getIdProdotto()%>"> <img
-				class="prod-img" src="imgs/prodotti/<%=p.getNomeProdotto()%> 1.jpg"
-				alt="<%=p.getNomeProdotto()%>">
-			</a>
-		</div>
-		<div class="nome-prodotto">
-			<h1>
-				<span> <%=p.getNomeProdotto()%>
-				</span>
-			</h1>
-			<div class="quantity">
-				<strong>Quantità: </strong> <span> 
-				 <%=p.getQuantitàProdotto()%>
-				
-				</span>
-			</div>
-		</div>
-
-		<div class="prezzo">
-			<p>
-				<strong>Prezzo</strong><br><%=String.format("%.2f", p.getPrezzo() * p.getQuantitàProdotto())%>
-				&#x20AC
-			</p>
-		</div>
-		</div>
-		
-	
-	<% /*
-	}
-	} */
-	%>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	</div>
-	</div>
-	
-	<%@ include file="includes/footer.jsp"%>
+    <%@ include file="includes/footer.jsp"%>
 </body>
 </html>

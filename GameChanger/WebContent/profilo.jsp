@@ -78,7 +78,7 @@ case 8:%>
 <p>Data di nascita: ${user.dataNascita}</p>
 <p>Codice fiscale: <%if (user.getCodFiscale() != null) {%>${user.codFiscale} <%} else {%>Non inserito<%} %></p>
 <p>Indirizzo di spedizione: <%if (user.getCitta() == null) {%>Non inserito<%} else {%>${user.stato}, ${user.citta}, ${user.indirizzo}, ${user.cod_postale}<%} %></p>
-<a href="prodottiacquistati.jsp">Prodotti acquistati</a>
+<a href="${pageContext.request.contextPath}/prodotti-acquistati">Prodotti acquistati</a>
 
 </div>
 <div class="container-1">
