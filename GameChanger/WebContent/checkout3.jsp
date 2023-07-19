@@ -18,7 +18,7 @@ prezzoTot = 0;%>
 <html>
 <head> 
 <meta charset="ISO-8859-1">
-<title>parte 3 </title>
+<title>GameChanger </title>
 <%@ include file="includes/head.jsp"%>
 <script src="check.js"></script>
  
@@ -35,11 +35,11 @@ prezzoTot = 0;%>
         <ul class="step-wizard-list">
           <li class="step-wizard-item  ">
             <span class="progress-count">1</span>
-            <span class="progress-label">Billing Info</span>
+            <span class="progress-label">informazioni di spedizione</span>
           </li>
           <li class="step-wizard-item ">
             <span class="progress-count">2</span>
-            <span class="progress-label">Pay</span>
+            <span class="progress-label">Pagamento</span>
           </li>
         
           <li class="step-wizard-item current-item">
@@ -49,7 +49,7 @@ prezzoTot = 0;%>
     
           <li class="step-wizard-item">
             <span class="progress-count">4</span>
-            <span class="progress-label">Finish</span>
+            <span class="progress-label">Ordine confermato</span>
           </li>
         </ul>
         </section>
@@ -140,9 +140,7 @@ prezzoTot = 0;%>
 		<p> Email Paypal:${user.emailPaypal} </p>
 		<p> Totale Ordine:<%=String.format("%.2f", prezzoTot)%> &#x20AC </p>
 		<form action="/GameChanger/Checkout-5" method="post">
-		<button class="acquista">
-		<a href="checkout4.jsp"> Acquista</a>
-		</button>
+		<button class="acquista">Acquista</button>
 		</form>
 		</div>
 		</div>

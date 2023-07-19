@@ -5,9 +5,8 @@
 <head>
   <script type="text/javascript" src="
 	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js\homepage.js"></script>
 	<!-- aggiungo codice javascript per controllare funzionamento navbar!
-	<script type="text/javascript" src="
-	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/navbar.js"></script>-->
 
 <!--                          -------								 -->
@@ -42,7 +41,7 @@
 				
 				
 				<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=4" class="LiOf">
-					<button class="botCop"><span>Clicca <br>qui
+					<button class="botCop"><span>Clicca qui
 					</span></button></a>
 				</div>
 				
@@ -59,7 +58,7 @@
 				<img src="imgs\homepage\primo-carosello\ps5.jpg" alt="carosello-2">
 				
 				<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=16" class="LiOf">
-					<button class="botCop"><span style="text-decoration:none;">Clicca qui!
+					<button class="botCop"><span >Clicca qui!
 					</span></button></a>
 				</div>
 			</div>
@@ -74,8 +73,9 @@
 					<img src="imgs\homepage\primo-carosello\macbook.jpg" alt="carosello-3">
 					
 					
+					
 					<div class="bottoneCopertina" ><a href="${pageContext.request.contextPath}/mostra-prodotto?codice=6" class="LiOf">
-						<button class="botCop"><span style="">Clicca qui!
+						<button class="botCop"><span>Clicca qui!
 						</span></button></a>
 					</div>
 					
@@ -101,18 +101,22 @@
 		
 		<div class="row justify-content-center">
 			<div class="col-3">
+				<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=1">
 				<div class="border-img">
-					<img class="card-img" src="imgs/homepage/prima_vetrina/fallout.jpg"
+					<img class="card-img" src="imgs\homepage\prima_vetrina\the-legend-of-zelda.jpg"
 						alt="prima_offerta">
+						
 					<div class="overlay">
 						<div class="content">
 							<h1>Scoprilo subito</h1>
 						</div>
 					</div>
 				</div>
+			</a>
 			</div>
 			<div class="col-1"></div>
 			<div class="col-3">
+				<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=5">
 				<div class="border-img">
 					<img class="card-img" src="imgs/homepage/prima_vetrina/rdr2.jpg"
 						alt="prima_offerta">
@@ -122,12 +126,14 @@
 						</div>
 					</div>
 				</div>
+			</a>
 			</div>
 			<div class="col-1"></div>
 			<div class="col-3">
+				<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=17">
 				<div class="border-img">
 					<img class="card-img"
-						src="imgs/homepage/prima_vetrina/outer_worlds.jpg"
+						src="imgs\homepage\prima_vetrina\xboxV.jpg"
 						alt="prima_offerta">
 					<div class="overlay">
 						<div class="content">
@@ -135,6 +141,7 @@
 						</div>
 					</div>
 				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -156,38 +163,49 @@
 		<div class="row nuove-uscite">
 			<div class="col-md-12">
 				<div class="content2">
-					<a href="#"><img
-						src="imgs/homepage/secondo-carosello/brawhalla.jpg"
-						alt="Brawhalla"></a>
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
+						src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
+						alt="PC"></a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/computer.jpg"
-						alt="Computer">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
+					<img src="imgs\homepage\secondo-carosello\switch.jpg"
+						alt="Switch">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=1">
 					<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
 						alt="God Of War: Ragnarok">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/nuka-cola.jpg"
-						alt="Nuka Cola">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
+					<img src="imgs\homepage\secondo-carosello\streamD.jpg"
+						alt="Stream">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/ps5.jpg" alt="PS5">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
+					<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
+					</a>
 				</div>
+				
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/rocket-league.jpg"
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
+					<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
 						alt="Rocket League">
+					</a>
 				</div>
 			</div>
 
@@ -221,35 +239,7 @@
 
 	<%@include file="includes/footer.jsp"%>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.nuove-uscite').slick({
-				dots : true,
-				infinite : true,
-				slidesToShow : 3,
-				slidesToScroll : 1,
-				autoplay : true,
-				autoplaySpeed : 2000,
-				prevArrow : '.arrow_prev2',
-				nextArrow : '.arrow_next2'
-			});
-		});
-	</script>
-	<!-- primo carosello -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.carosello-home').slick({
-				dots : true,
-				infinite : true,
-				slidesToShow : 1,
-				slidesToScroll : 1,
-				autoplay : true,
-				autoplaySpeed : 5000,
-				prevArrow : '.arrow_prev1',
-				nextArrow : '.arrow_next1'
-			});
-		});
-	</script>
+	
 
 
 </body>

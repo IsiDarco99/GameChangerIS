@@ -8,7 +8,7 @@
 <html>
 <head> 
 <meta charset="ISO-8859-1">
-<title>bill </title>
+<title>GameChanger</title>
 <script src="check.js"></script>
 <head>
 <title>GameChanger</title>
@@ -68,7 +68,7 @@
                   <h3><b> Indirizzo</b></h3>
                   <label for="adr"><i class="fa fa-address-card-o"></i> Indirizzo</label>
                   <input type="text" id="adr" name="address" value="${user.indirizzo}">
-                  <label for="city"><i class="fa fa-institution"></i> Città</label>
+                  <label for="city"><i class="fa fa-institution"></i> Cittï¿½</label>
                   <input type="text" id="city" name="city" value="${user.citta}">
                   <div class="row">
                     <div class="col-50">

@@ -1,7 +1,16 @@
-
+function effettuaRicerca() {
+  var searchString = document.getElementById("ricerca-item").value;
+  sessionStorage.setItem("searchString", searchString);
+  window.location.href = contextPath + "/mostra-tutti-prodotti?categoria=allProdotti";
+}
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("aiutami");
-
+  
+  var ricercaItem = document.getElementById("ricerca-item");
+  ricercaItem.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      effettuaRicerca();
+    }
+  });
 var ElemNav = document.getElementById("123")
 var Open = document.getElementById("OpN")
 var Ric = document.getElementById("barraRic")
@@ -19,7 +28,7 @@ var navbarElement = document.getElementById("123");
 navbarElement.innerHTML = "Contenuto aggiornato";
 */
 
-console.log("ti prego");
+
 /* barra ricerca funzione */
 
 
@@ -28,6 +37,7 @@ console.log("ti prego");
 $(document).ready(function() {
  
 
+  
  /*vetrina, creazione del menù */
     $(".OpenNavbar").click(function(){
       Open.classList.toggle("active");
@@ -35,7 +45,7 @@ $(document).ready(function() {
         if (event.animationName === "animazioneAltezza"){ 
           ElemNav.style.display = 'flex';
 		      Open.style.display = 'none';
-          console.log("animazione fin");
+          
         }
       });
       
@@ -48,7 +58,6 @@ $(document).ready(function() {
     BRic.style.display = 'none';
     Ric.addEventListener("animationend", ()=>{
       if (event.animationName === "ricercaAnim"){ 
-        console.log("bella li");
         BRic.style.display = 'flex';
         $("input[type='text']").focus();
       }
@@ -60,7 +69,6 @@ $(document).ready(function() {
 
 //evento mouseout navbar
 	ElemNav.addEventListener("mouseenter", function () {
-    console.log("entrato");
     clearTimeout(timer);
     var mouseenterValue = this.id;
     var Cat = document.getElementById("Cat")
@@ -135,7 +143,6 @@ $(document).ready(function() {
 });
 
   ElemNav.addEventListener("mouseleave", function(){
-	  console.log("uscito");
      timer = setTimeout(function () {
         ElemNav.style.display = 'none';
         Open.style.display = 'flex';
@@ -145,15 +152,15 @@ $(document).ready(function() {
             
             Open.classList.remove("active");
             Open.classList.remove("chiusura");
-            console.log("fine animazione");
+            
           }
         });
-        console.log("fine timer");
+        
       }, 1500);
       
   });
   //informazioni navbar
   
   
-console.log("il cazzo")
+
 });

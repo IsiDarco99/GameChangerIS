@@ -13,6 +13,9 @@ body{
 	display: flex;
 	flex-direction: column;
 	
+}
+p{
+	word-wrap: break-word;
 }  
   .step-wizard {
 	width: 100%;

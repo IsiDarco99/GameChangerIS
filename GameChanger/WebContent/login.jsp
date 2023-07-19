@@ -1,18 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<script>
-    <% String loginError = (String) request.getAttribute("loginError");
-       if (loginError != null) { %>
-    window.addEventListener('DOMContentLoaded', function() {
-        var errorMessage = '<%= loginError %>';
-        if (errorMessage !== '') {
-            alert(errorMessage);
-        }
-    });
-    <% } %>
-</script>
-
-
 
 <!DOCTYPE html>
 <html lang="IT">
@@ -50,5 +37,21 @@
 	
 	<%@include file="includes/footer.jsp"%>
 	<script src="js/controlliLogin.js" type="text/javascript"></script>
+	<%
+    String loginError = (String) request.getAttribute("loginError");
+    if (loginError != null) {
+        loginError = loginError.replace("'", "\\'"); // Escaping single quotes
+%>
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var errorMessage = '<%= loginError %>';
+        if (errorMessage !== '') {
+            alert(errorMessage);
+        }
+    });
+</script>
+<%
+    }
+%>
 </body>
 </html>
