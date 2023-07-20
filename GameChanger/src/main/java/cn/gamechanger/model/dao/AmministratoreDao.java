@@ -70,6 +70,97 @@ public class AmministratoreDao {
 		return admin;
 	}
 	
+	public void updatePassword(int id, String nuovaPassword) {
+	    try {
+	        String query = "UPDATE utente SET password = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovaPassword);
+	        pst.setInt(2, id);
+	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateNome(int id, String nuovoNome) {
+	    try {
+	        String query = "UPDATE utente SET nome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoNome);
+	        pst.setInt(2, id);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	public void updateCognome(int id, String nuovoCognome) {
+	    try {
+	        String query = "UPDATE utente SET cognome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoCognome);
+	        pst.setInt(2, id);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void insertProdotto(float prezzo, String nome, String marca, String descrizione, String data_usc) {
+	  try {
+		  String query = "INSERT INTO prodotto (prezzo, nome, marca, descrizione, data_usc) VALUES (?, ?, ?, ?, ?)";
+		  
+		  PreparedStatement statement = this.con.prepareStatement(query);
+		  
+		  statement.setFloat(1, prezzo);
+		  statement.setString(2, nome);
+		  statement.setString(3, marca);
+		  statement.setString(4, descrizione);
+		  statement.setString(5,  data_usc);
+	  
+		  statement.executeUpdate();
+          statement.close();
+		  
+		
+		
+	  }	
+	  catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	public void updateProdotto(int codice, float prezzo, String nome, String marca, String descrizione, String data_usc) {
+	    try {
+	        String query = "UPDATE prodotto SET prezzo = ?, nome = ?, marca = ?, descrizione = ?, data_usc = ? WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setFloat(1, prezzo);
+	        statement.setString(2, nome);
+	        statement.setString(3, marca);
+	        statement.setString(4, descrizione);
+	        statement.setString(5, data_usc);
+	        statement.setInt(6, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	    
+	}
 	
 	
 }

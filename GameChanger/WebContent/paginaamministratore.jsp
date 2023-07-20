@@ -24,8 +24,7 @@
 <div class="container-2">
 <h5><strong>Modifica</strong></h5>
 
-<a href="#"> Nome<br></a>
-<a href="#"> Cognome<br></a>
+<a href="#" onclick="submitFormnomeAmm('${pageContext.request.contextPath}/Modifica-Admin')">Nome e Cognome<br></a>
 <a href="#"> E-mail<br></a>
 <a href="#"> Password<br></a>
 </div>
@@ -66,31 +65,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
-
-
-
-
-
-
-
-
-
 <%@include file="includes/footer.jsp"%>
+<script src="js/user.js" type="text/javascript"></script>
 </body>
 </html>

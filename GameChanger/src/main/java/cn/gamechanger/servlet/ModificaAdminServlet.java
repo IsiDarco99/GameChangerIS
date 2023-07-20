@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.User;
-import cn.gamechanger.model.dao.UserDao;
+import cn.gamechanger.model.Amministratore;
+import cn.gamechanger.model.dao.AmministratoreDao;
 
-
-@WebServlet("/modifica-profilo")
-public class ModificaProfiloServlet extends HttpServlet {
+/**
+ * Servlet implementation class ModificaAdminServlet
+ */
+@WebServlet("/modifica-admin")
+public class ModificaAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
-    public ModificaProfiloServlet() {
+    
+    public ModificaAdminServlet() {
         super();
     }
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -33,59 +33,39 @@ public class ModificaProfiloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String categoria = (String) request.getParameter("valore");
-            UserDao userDao = new UserDao(DbCon.getConnection());
-            String username = (String) request.getSession().getAttribute("userSession");
-            User user = userDao.getUserProfile(username);
+			AmministratoreDao AmministratoreDao = new AmministratoreDao(DbCon.getConnection());
+            int id = (int) request.getSession().getAttribute("adminSession");
+            Amministratore admin = AmministratoreDao.getAdmin(id);
             
             switch (categoria) {
-            case "username":
+            case "nomeamm":
             	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
-                request.getRequestDispatcher("modifica.jsp").forward(request, response);
-                break;
-            case "nome":
-            	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
+            	request.setAttribute("admin", admin);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
             case "password":
             	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
+            	request.setAttribute("admin", admin);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
             case "immagine":
             	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
+            	request.setAttribute("admin", admin);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
             case "mail":
             	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
-                request.getRequestDispatcher("modifica.jsp").forward(request, response);
-                break;
-            case "paypal":
-            	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
-                request.getRequestDispatcher("modifica.jsp").forward(request, response);
-                break;
-            case "data":
-            	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
-                request.getRequestDispatcher("modifica.jsp").forward(request, response);
-                break;
-            case "codfisc":
-            	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
+            	request.setAttribute("admin", admin);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
             case "numero":
             	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
+            	request.setAttribute("admin", admin);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
             case "indirizzo":
             	request.setAttribute("modifica", categoria);
-            	request.setAttribute("user", user);
+            	request.setAttribute("admin", admin);
                 request.getRequestDispatcher("modifica.jsp").forward(request, response);
                 break;
             }
@@ -94,5 +74,6 @@ public class ModificaProfiloServlet extends HttpServlet {
             e.printStackTrace();
         }
 	}
+	}
 
-}
+

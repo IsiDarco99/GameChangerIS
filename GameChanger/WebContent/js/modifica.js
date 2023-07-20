@@ -348,7 +348,37 @@ function validateCodiceFiscale() {
 
   return true;
 }
+function validateNomeCognomeAdmin(){
+  var nomeInput = document.getElementsByName("nuovonome")[0];
+  var cognomeInput = document.getElementsByName("nuovocognome")[0];
 
+  var nome = nomeInput.value.trim();
+  var cognome = cognomeInput.value.trim();
+
+  nome = nome.replace(/\b\w/g, function(match) {
+    return match.toUpperCase();
+  });
+
+  cognome = cognome.replace(/\b\w/g, function(match) {
+    return match.toUpperCase();
+  });
+
+  nomeInput.value = nome;
+  cognomeInput.value = cognome;
+
+  var regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
+  if (!regex.test(nome) || !regex.test(cognome)) {
+    document.getElementById("error").textContent = "Inserisci un nome e un cognome validi.";
+    return false;
+  }
+
+  if (nome.length > 30 || cognome.length > 30) {
+    document.getElementById("error").textContent = "Il nome e il cognome devono contenere al massimo 30 caratteri.";
+    return false;
+  }
+
+  return true;
+}
 
 
 
