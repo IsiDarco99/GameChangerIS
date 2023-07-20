@@ -4,7 +4,7 @@
 <%@page import="cn.gamechanger.servlet.getAdminServlet" %>
 <% Amministratore admin = (Amministratore) request.getAttribute("admin"); %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
@@ -18,19 +18,7 @@
 
 <div class="container">
 <div class="row"> 
-<div class="col-3">
-
-<p class="username"> <strong></strong></p>
-<div class="container-2">
-<h5><strong>Modifica</strong></h5>
-
-<a href="#" onclick="submitFormnomeAmm('${pageContext.request.contextPath}/Modifica-Admin')">Nome e Cognome<br></a>
-<a href="#"> E-mail<br></a>
-<a href="#"> Password<br></a>
-</div>
-</div>
-
-<div class="col-9">
+<div class="col-12">
 <div class="container-1">
 <div class="scritta">
 <h5><strong>Informazioni amministratore</strong></h5>

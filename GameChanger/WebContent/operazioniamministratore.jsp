@@ -4,7 +4,7 @@
 <%@page import="cn.gamechanger.servlet.getAdminServlet" %>
 <% Amministratore admin = (Amministratore) request.getAttribute("admin"); %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
 <title>GameChanger</title>
