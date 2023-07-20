@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.dao.AmministratoreDao;
+import cn.gamechanger.model.dao.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,24 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Inserisci-Prodotto")
 public class InserisciProdottoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-	
-	    private AmministratoreDao amministratoreDao;
 
-	    public void init() throws ServletException {
-	        // Inizializza il DAO all'interno del metodo init()
-	        try {
-				amministratoreDao = new AmministratoreDao(DbCon.getConnection());
-			} catch (ClassNotFoundException | SQLException e) {
-				
-				e.printStackTrace();
-			}
-	    }
-       
-    
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -52,8 +35,13 @@ public class InserisciProdottoServlet extends HttpServlet {
         String descrizione = request.getParameter("descrizioneprodotto");
         String dataUscita = request.getParameter("data_usc");
 
-        // Chiama il metodo DAO per inserire il prodotto nel database
-        amministratoreDao.insertProdotto(prezzo, nome, marca, descrizione, dataUscita);
+        ProdottoDao prodottoDao = null;
+		try {
+			prodottoDao = new ProdottoDao(DbCon.getConnection());
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+        prodottoDao.insertProdotto(prezzo, nome, marca, descrizione, dataUscita);
 		doGet(request, response);
 		
 		switch (categoria) {

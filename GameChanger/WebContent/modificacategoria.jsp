@@ -30,7 +30,14 @@
                   
                   <h2><strong>Videogioco</strong></h2>
                   <form action="Inserisci-Categoria" method="post">
-                    <p>Pegi:<br> <input type="number" name="pegi"></p>
+                    <p>Pegi:</p>
+                    <div class="radio">
+					  <label><input type="radio" name="pegi" value="3"> 3</label><br>
+					  <label><input type="radio" name="pegi" value="7"> 7</label><br>
+					  <label><input type="radio" name="pegi" value="12"> 12</label><br>
+					  <label><input type="radio" name="pegi" value="16"> 16</label><br>
+					  <label><input type="radio" name="pegi" value="18"> 18</label><br>
+					</div>
                     <p>Sviluppatore:<br> <input type="text" name="sviluppatore"></p>
                     <p>Genere:<br> <input type="text" name="genere"></p>                
                   <button type="submit">Inserisci prodotto</button>

@@ -49,6 +49,16 @@ p {
 	color: white;
 }
 
+.radio {
+	display: flex;
+    justify-content: center;
+}
+
+.radio label {
+	color: white;
+	margin: 0 10px;
+}
+
 button {
   height: 57%;
   width: 90px;

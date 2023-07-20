@@ -103,4 +103,26 @@ public class ComputerDao {
 	    return computer;
 	}
 	
+	public void insertComputer(String casa, String ufficio, String gaming) {
+		  try {
+			  String query = "INSERT INTO computer (casa, ufficio, gaming) VALUES (?, ?, ?)";
+			  
+			  PreparedStatement statement = this.con.prepareStatement(query);
+			  statement.setString(1, casa);
+			  statement.setString(2, ufficio);
+			  statement.setString(3, gaming);
+			  
+		  
+			  statement.executeUpdate();
+	          statement.close();
+			  
+			
+			
+		  }	
+		  catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		}
+	
 }

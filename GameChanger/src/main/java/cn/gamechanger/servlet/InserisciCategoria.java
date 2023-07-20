@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.dao.AmministratoreDao;
+import cn.gamechanger.model.dao.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,19 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 public class InserisciCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
-	private AmministratoreDao amministratoreDao;
-
-    public void init() throws ServletException {
-        // Inizializza il DAO all'interno del metodo init()
-        try {
-			amministratoreDao = new AmministratoreDao(DbCon.getConnection());
-		} catch (ClassNotFoundException | SQLException e) {
-			
-			e.printStackTrace();
-		}
-    }
-        
     
 
 	
@@ -47,8 +34,15 @@ public class InserisciCategoria extends HttpServlet {
 		String sviluppatore = request.getParameter("sviluppatore");
 		String genere = request.getParameter("genere");
 		
+		VideogameDao vDao;
+		try {
+			vDao = new VideogameDao(DbCon.getConnection());
+			vDao.insertVideogame(pegi, sviluppatore, genere);
+			response.sendRedirect("prodottoAggiunto.jsp");
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 		
-		amministratoreDao.insertVideogame(pegi, sviluppatore, genere);
 		
 		
 		

@@ -103,4 +103,26 @@ public class VideogameDao {
 	    return videogame;
 	}
 	
+	public void insertVideogame(int pegi, String sviluppatore, String genere) {
+		  try {
+			  String query = "INSERT INTO videogame (pegi, sviluppatore, genere) VALUES (?, ?, ?)";
+			  
+			  PreparedStatement statement = this.con.prepareStatement(query);			
+			  statement.setInt(1, pegi);
+			  statement.setString(2, sviluppatore);
+			  statement.setString(3, genere);
+			  
+		  
+			  statement.executeUpdate();
+	          statement.close();
+			  
+			
+			
+		  }	
+		  catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		}
+	
 }

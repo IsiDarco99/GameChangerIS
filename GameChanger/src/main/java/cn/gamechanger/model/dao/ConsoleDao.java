@@ -98,4 +98,23 @@ public class ConsoleDao {
 	    return console;
 	}
 	
+	public void insertConsole(int generazione) {
+		  try {
+			  String query = "INSERT INTO console (pegi, sviluppatore, genre) VALUES (?)";
+			  
+			  PreparedStatement statement = this.con.prepareStatement(query);
+			  statement.setInt(2, generazione);
+			
+		  
+			  statement.executeUpdate();
+	          statement.close();
+			  
+			
+			
+		  }	
+		  catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		}
 }

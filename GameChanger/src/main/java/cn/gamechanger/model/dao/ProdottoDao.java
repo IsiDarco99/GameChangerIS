@@ -98,5 +98,64 @@ public class ProdottoDao {
 	    
 	    return prodotti;
 	}
+	
+	public void insertProdotto(float prezzo, String nome, String marca, String descrizione, String data_usc) {
+		  try {
+			  String query = "INSERT INTO prodotto (prezzo, nome, marca, descrizione, data_usc) VALUES (?, ?, ?, ?, ?)";
+			  
+			  PreparedStatement statement = this.con.prepareStatement(query);
+			  
+			  statement.setFloat(1, prezzo);
+			  statement.setString(2, nome);
+			  statement.setString(3, marca);
+			  statement.setString(4, descrizione);
+			  statement.setString(5,  data_usc);
+		  
+			  statement.executeUpdate();
+	          statement.close();
+			  
+			
+			
+		  }	
+		  catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		}
+		public void updateProdotto(int codice, float prezzo, String nome, String marca, String descrizione, String data_usc) {
+		    try {
+		        String query = "UPDATE prodotto SET prezzo = ?, nome = ?, marca = ?, descrizione = ?, data_usc = ? WHERE codice = ?";
+		        
+		        PreparedStatement statement = this.con.prepareStatement(query);
+		        statement.setFloat(1, prezzo);
+		        statement.setString(2, nome);
+		        statement.setString(3, marca);
+		        statement.setString(4, descrizione);
+		        statement.setString(5, data_usc);
+		        statement.setInt(6, codice);
+		        
+		        statement.executeUpdate();
+		        statement.close();
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		    
+		}
+		
+		public void deleteProdotto(int codice) {
+		    try {
+		        String query = "DELETE FROM prodotto WHERE codice = ?";
+		        
+		        PreparedStatement statement = this.con.prepareStatement(query);
+		        statement.setInt(1, codice);
+		        
+		        statement.executeUpdate();
+		        statement.close();
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		}
 
 }

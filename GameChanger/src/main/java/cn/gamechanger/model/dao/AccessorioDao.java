@@ -95,4 +95,24 @@ public class AccessorioDao {
 	    return accessori;
 	}
 	
+	public void insertAccessorio(String tipo ) {
+		  try {
+			  String query = "INSERT INTO accessorio (tipo) VALUES (?)";
+			  
+			  PreparedStatement statement = this.con.prepareStatement(query);			  
+			  statement.setString(1, tipo);
+			  
+					  
+			  statement.executeUpdate();
+	          statement.close();
+			  
+			
+			
+		  }	
+		  catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+		}
+	
 }
