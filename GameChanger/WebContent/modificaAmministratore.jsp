@@ -2,9 +2,7 @@
 <%@ page import="cn.gamechanger.model.User" %>
 <%@ page import="cn.gamechanger.model.Amministratore" %>
 <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
-<% User user = (User) request.getAttribute("user");%>
 <% Amministratore admin = (Amministratore) request.getAttribute("admin");%>
-
 
 <!DOCTYPE html>
 <html>
@@ -212,7 +210,7 @@
 				<form action="Modifica-Admin" method="post" onsubmit="return validateNomeCognomeAdmin()">
 					<input type="hidden" name="idAmministratore" value="${admin.idAmministratore}">
 					<h2><strong>Modifica Nome Amministratore</strong></h2>
-					<p>Nome attuale: ${admin.nome} ${admin.cognome}</p>
+					<p>Nome attuale: ${admin.nome}</p>
 					<p>Nuovo nome: <input type="text" name="nuovonome"></p>
 					<p>Nuovo cognome: <input type="text" name="nuovocognome"></p>
 					<p id="error" style="color: red;"></p>

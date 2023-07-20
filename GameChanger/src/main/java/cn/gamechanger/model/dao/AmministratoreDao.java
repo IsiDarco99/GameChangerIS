@@ -69,14 +69,46 @@ public class AmministratoreDao {
 		return admin;
 	}
 	
-	public void updateUsername(String username, String nuovaPassword) {
+	public void updatePassword(int id, String nuovaPassword) {
 	    try {
 	        String query = "UPDATE utente SET password = ? WHERE username = ?";
 
 	        PreparedStatement pst = this.con.prepareStatement(query);
 	        pst.setString(1, nuovaPassword);
-	        pst.setString(2, username);
+	        pst.setInt(2, id);
 	        
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+	
+	public void updateNome(int id, String nuovoNome) {
+	    try {
+	        String query = "UPDATE utente SET nome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoNome);
+	        pst.setInt(2, id);
+
+	        pst.executeUpdate();
+	        pst.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	public void updateCognome(int id, String nuovoCognome) {
+	    try {
+	        String query = "UPDATE utente SET cognome = ? WHERE username = ?";
+
+	        PreparedStatement pst = this.con.prepareStatement(query);
+	        pst.setString(1, nuovoCognome);
+	        pst.setInt(2, id);
+
 	        pst.executeUpdate();
 	        pst.close();
 	    } catch (Exception e) {

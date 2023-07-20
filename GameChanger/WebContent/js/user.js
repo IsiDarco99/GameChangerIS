@@ -114,3 +114,15 @@ function submitFormIndirizzo(action) {
 	document.body.appendChild(form);
 	form.submit();
 }
+function submitFormnomeAmm(action){
+	var form = document.createElement('form');
+	form.method = 'POST';
+	form.action = action;
+	var hiddenInput = document.createElement('input');
+ 	hiddenInput.type = 'hidden';
+ 	hiddenInput.name = 'valore';
+ 	hiddenInput.value = 'nomeamm';
+ 	form.appendChild(hiddenInput)
+	document.body.appendChild(form);
+	form.submit();
+}
