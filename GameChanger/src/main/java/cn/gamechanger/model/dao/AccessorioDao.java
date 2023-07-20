@@ -95,14 +95,13 @@ public class AccessorioDao {
 	    return accessori;
 	}
 	
-	public void insertAccessorio(String tipo ) {
+	public void insertAccessorio(int codice, String tipo ) {
 		  try {
-			  String query = "INSERT INTO accessorio (tipo) VALUES (?)";
+			  String query = "INSERT INTO accessorio (codice, tipo) VALUES (?, ?)";
 			  
 			  PreparedStatement statement = this.con.prepareStatement(query);			  
-			  statement.setString(1, tipo);
-			  
-					  
+			  statement.setInt(1, codice);
+			  statement.setString(2, tipo);
 			  statement.executeUpdate();
 	          statement.close();
 			  

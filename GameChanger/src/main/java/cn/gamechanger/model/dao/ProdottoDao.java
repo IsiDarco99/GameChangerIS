@@ -144,19 +144,22 @@ public class ProdottoDao {
 		    
 		}
 		
-		public void deleteProdotto(int codice) {
+		public boolean deleteProdotto(String codice) {
 		    try {
 		        String query = "DELETE FROM prodotto WHERE codice = ?";
 		        
 		        PreparedStatement statement = this.con.prepareStatement(query);
-		        statement.setInt(1, codice);
+		        statement.setString(1, codice);
 		        
 		        statement.executeUpdate();
 		        statement.close();
+		        return true;
 		    } catch (Exception e) {
 		        e.printStackTrace();
 		        logger.info(e.getMessage());
+		        return false;
 		    }
+		    
 		}
 		
 		public Prodotto getUltimoProdotto() {

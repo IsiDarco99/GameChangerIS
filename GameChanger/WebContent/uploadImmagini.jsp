@@ -13,7 +13,7 @@
 <div class="container">
     <div class="blocco">
         <h2><strong>Inserisci immagini prodotto</strong></h2>
-        <form action="upload-immagini" method="post" enctype="multipart/form-data">
+        <form action="upload-immagini" method="post" enctype="multipart/form-data" onsubmit="return validateUploadImmagini()">
             
             <p>Immagine 1:<br>
                 <input type="file" name="immagine1">
@@ -24,10 +24,12 @@
             <p>Immagine 3:<br>
                 <input type="file" name="immagine3">
             </p>
+            <p id="errorMessaggio" style="color: red;"></p>
             <button type="submit">Avanti</button>
         </form>
     </div>
 </div>
 <%@ include file="includes/footer.jsp"%>
+<script src="js/controlliUpload.js" type="text/javascript"></script>
 </body>
 </html>

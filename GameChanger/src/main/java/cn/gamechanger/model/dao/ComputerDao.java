@@ -74,7 +74,7 @@ public class ComputerDao {
 	}
 	
 	public List<Computer> getComputerByPrezzo(int min, int max) {
-	    List<Computer> computer = new ArrayList<Computer>();
+	    List<Computer> computer = new ArrayList<>();
 	    
 	    try {
 	        String query = "SELECT * FROM prodotto JOIN computer ON prodotto.codice = computer.codice WHERE prezzo >= ? AND prezzo <= ?";
@@ -103,14 +103,15 @@ public class ComputerDao {
 	    return computer;
 	}
 	
-	public void insertComputer(String casa, String ufficio, String gaming) {
+	public void insertComputer(int codice, String casa, String ufficio, String gaming) {
 		  try {
-			  String query = "INSERT INTO computer (casa, ufficio, gaming) VALUES (?, ?, ?)";
+			  String query = "INSERT INTO computer (codice, casa, ufficio, gaming) VALUES (?, ?, ?, ?)";
 			  
 			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setString(1, casa);
-			  statement.setString(2, ufficio);
-			  statement.setString(3, gaming);
+			  statement.setInt(1, codice);
+			  statement.setString(2, casa);
+			  statement.setString(3, ufficio);
+			  statement.setString(4, gaming);
 			  
 		  
 			  statement.executeUpdate();

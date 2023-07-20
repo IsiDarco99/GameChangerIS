@@ -39,7 +39,6 @@ public class InserisciProdottoServlet extends HttpServlet {
 		try {
 			prodottoDao = new ProdottoDao(DbCon.getConnection());
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         prodottoDao.insertProdotto(prezzo, nome, marca, descrizione, dataUscita);
