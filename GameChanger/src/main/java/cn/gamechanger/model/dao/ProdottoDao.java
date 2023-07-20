@@ -9,6 +9,7 @@ import javax.servlet.jsp.tagext.TryCatchFinally;
 import com.mysql.cj.Query;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -157,5 +158,34 @@ public class ProdottoDao {
 		        logger.info(e.getMessage());
 		    }
 		}
+		
+		public Prodotto getUltimoProdotto() {
+		    Prodotto prodotto = null;
+		    try {
+		        String query = "SELECT * FROM prodotto WHERE codice = (SELECT MAX(codice) FROM prodotto)";
+		        PreparedStatement statement = this.con.prepareStatement(query);
+		        ResultSet resultSet = statement.executeQuery();
+
+		        if (resultSet.next()) {
+		            int codice = resultSet.getInt("codice");
+		            float prezzo = resultSet.getFloat("prezzo");
+		            String nome = resultSet.getString("nome");
+		            String marca = resultSet.getString("marca");
+		            String descrizione = resultSet.getString("descrizione");
+		            Date data_usc = resultSet.getDate("data_usc");
+
+		            prodotto = new Prodotto(codice, prezzo, nome, marca, descrizione, data_usc);
+		        }
+
+		        resultSet.close();
+		        statement.close();
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		    }
+
+		    return prodotto;
+		}
+
 
 }
