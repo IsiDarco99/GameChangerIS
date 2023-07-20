@@ -27,7 +27,7 @@ body {
 	color: white;
 }
 .immagine-prodotto img {
-	width: 60%;
+	width: 10%;
 }
 .quantity {
   display: flex;
@@ -65,10 +65,91 @@ body {
 	
 	
 }
+th{
+	font-family: Georgia, serif;
+}
+.nm{
+	width: 40%;
+}
+.prz{
+	width: 15%;
+}
+
+.qnt{
+	width: 15%;
+}
+
+.prg{
+	width: 30%;
+}
+
+table{
+	width: 100%;
+}
+
 .prezzo {
 	font-size: 30px;
 	width: 20%;
 }
+.dvdOrd{
+	height: 10px;
+    background: thistle;
+    border: none;
+    border-radius: 100px;
+	font-family: Georgia, serif;
+}
+.idOrdInf{
+	text-align: initial;
+}
+
+.container-prodotto {
+    color: whitesmoke;
+}
+.ordineCnt{
+	background-color: red;
+}
+/* Base Divider class */
+.divider {
+	display: flex;
+	
+	&:before,
+	&:after {
+	  content: "";
+	  flex: 1;
+	}
+  }
+  
+  /* Base line */
+  .line {
+	align-items: center;
+	margin: 1em -1em;
+	
+	&:before,
+	&:after {
+	  height: 1px;
+	  margin: 0 1em;
+	}
+  }
+  
+  /* Linea Glow */
+  .glow {
+	color: whitesmoke;
+	&:before,
+	&:after {
+	  height: 6px;
+	  -webkit-filter: blur(5px);
+	  border-radius: 5px;
+	}
+	  
+	&:before {
+	  background: linear-gradient(to right, blue, hotpink);
+	}
+	  
+	&:after {
+	  background: linear-gradient(to left, blue, hotpink);
+	}
+  }
+
 @media (max-width: 768px) {
 .immagine img {
 	max-width: 200px;

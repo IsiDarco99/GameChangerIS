@@ -26,12 +26,14 @@
 
     <div class="container">
         <div class="prodotti">
+            
+
             <% 
             int lastOrderId = -1;
             if (!hasOrdini) {
             %>
             <div class="immagine-prodotto">
-                <img src="imgs/prodottiacquistati/prodottovuoto.png" alt="Nessun prodotto">
+                <img src="imgs\prodottiacquistati\noOrdini.png" alt="Nessun prodotto">
             </div>
             <div class="scritta-prodotto">
                 <h1>
@@ -42,7 +44,9 @@
             </div>
             <% 
             } else {
+                
                 // Ciclo for degli ordini
+                
                 for (java.util.Map.Entry<Ordine, java.util.List<ProdottoOrdine>> entry : ordiniEProdotti.entrySet()) {
                     Ordine ordine = entry.getKey();
                     java.util.List<ProdottoOrdine> prodottiOrdine = entry.getValue();
@@ -50,17 +54,23 @@
                     // Stampa l'ID dell'ordine solo se ci sono prodotti
                     if (!prodottiOrdine.isEmpty()) {
                         %>
+                        
                         <!-- INIZIO ORDINE -->
+                        
                         <div class="container-prodotto">
                         	<%if (ordine.getId_ordine() != lastOrderId){ %>
-                            <h1>Ordine ID: <%= ordine.getId_ordine()%></h1>
+                                <div >
+                                    <hr class="dvdOrd">
+                                    <h5 class="idOrdInf">Id ordine: <%= ordine.getId_ordine()%> </h5>
+                                </div>
                             <%} %>
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Prodotto</th>
-                                        <th>Quantità</th>
-                                        <th>Prezzo</th>
+                                        <th class="nm">Prodotto</th>
+                                        <th class="qnt">Quantit&aacute;</th>
+                                        <th class="prz">Prezzo</th>
+                                        <th class="prg">Stato:</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,16 +79,19 @@
                                     for (ProdottoOrdine prodotto : prodottiOrdine) {
                                     %>
                                     <tr>
-                                        <td><%= prodotto.getNome() %></td>
-                                        <td><%= prodotto.getQuantita() %></td>
-                                        <td><%= String.format("%.2f", prodotto.getPrezzo() * prodotto.getQuantita()) %>&#x20AC;</td>
+                                        <td class="nm"><%= prodotto.getNome() %></td>
+                                        <td class="qnt"><%= prodotto.getQuantita() %></td>
+                                        <td class="prz"><%= String.format("%.2f", prodotto.getPrezzo() * prodotto.getQuantita()) %>&#x20AC;</td>
+                                        <td class="prg"><%= ordine.getStato_ord()%></th>
                                     </tr>
                                     <% 
                                     } 
                                     %>
                                 </tbody>
                             </table>
+                            <hr>
                         </div>
+                    
                         <!-- FINE ORDINE -->
                         <% 
                         lastOrderId = ordine.getId_ordine();
