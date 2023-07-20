@@ -1,6 +1,9 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -25,33 +28,31 @@ public class Checkout5Servlet extends HttpServlet {
         super();
         
     }
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    String username = (String) request.getSession().getAttribute("userSession");
+	    String statoOrd = "Ordine confermato, in attesa di spedizione";
+	    LocalDate dataOrd = LocalDate.now();
+	    String dataOrdStringa = dataOrd.toString();
 	    
 	    try {
 	        CarrelloDao cd = new CarrelloDao(DbCon.getConnection());
 	        List<Carrello> prodotti = cd.getCarrelloByUsername(username);
-	        request.setAttribute("prodotti", prodotti);
 	        
-	        float prezzo = Float.parseFloat(request.getParameter("prezzo"));
-	        int codice = Integer.parseInt(request.getParameter("codice"));
-	        int quant_prod = Integer.parseInt(request.getParameter("quantita"));
-	        String stato_ord = "confermato";
-	        int data_ord = 0;
+	        OrdineDao ordineDao = new OrdineDao(DbCon.getConnection());
+            Ordine ordine = new Ordine();
+            ordine.setUsername(username);
+            ordine.setStato_ord(statoOrd);
+            ordine.setDataOrd(dataOrdStringa);
+            ordineDao.aggiungiOrdine(ordine, prodotti);
+            
+            cd.cancellaCarrello(username);
 	        
-	        OrdineDao od = new OrdineDao(DbCon.getConnection());
-	        Ordine ordine = od.salvaOrdine(username, codice, quant_prod, prezzo, stato_ord, data_ord);
-	        
-	        request.setAttribute("ordine", ordine);
-	        request.getRequestDispatcher("checkout3.jsp").forward(request, response);
+	        request.getRequestDispatcher("checkout4.jsp").forward(request, response);
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }

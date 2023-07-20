@@ -134,6 +134,19 @@ public class CarrelloDao {
             logger.info(e.getMessage());
         }
     }
+    
+    public void cancellaCarrello(String username) {
+        try {
+            String query = "DELETE FROM carrello WHERE username = ?";
+            PreparedStatement statement = this.con.prepareStatement(query);
+            statement.setString(1, username);
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.info(e.getMessage());
+        }
+    }
 
 
 

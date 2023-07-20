@@ -140,9 +140,7 @@ prezzoTot = 0;%>
 		<p> Email Paypal:${user.emailPaypal} </p>
 		<p> Totale Ordine:<%=String.format("%.2f", prezzoTot)%> &#x20AC </p>
 		<form action="/GameChanger/Checkout-5" method="post">
-		<button class="acquista">
-		<a href="checkout4.jsp"> Acquista</a>
-		</button>
+		<button class="acquista">Acquista</button>
 		</form>
 		</div>
 		</div>

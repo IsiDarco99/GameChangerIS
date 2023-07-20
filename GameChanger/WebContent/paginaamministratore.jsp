@@ -47,6 +47,11 @@
 <div class="container-1">
 <div class="scritta">
 <h5><strong>Operazioni amministratore</strong></h5>
+<a href="operazioniamministratore.jsp?modifica=inserisci">  Aggiungi nuovo prodotto<br></a>
+<a href="operazioniamministratore.jsp?modifica=modifica">  Modifica prodotto<br></a>
+<p>Elimina prodotto</p>
+<p>Visualizza prodotti</p>
+<p>Visualizza ordini</p>
 </div>
 
 
