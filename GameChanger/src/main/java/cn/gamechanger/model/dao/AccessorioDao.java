@@ -113,6 +113,7 @@ public class AccessorioDao {
 		        e.printStackTrace();
 		        logger.info(e.getMessage());
 		    }
+		 
 		}
 	
 }

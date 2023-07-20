@@ -11,7 +11,7 @@ float prezzoTot;
 prezzoTot = 0;
 %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <title>GameChanger</title>
 <%@ include file="includes/head.jsp"%>

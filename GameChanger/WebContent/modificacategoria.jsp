@@ -3,7 +3,7 @@
     <%@page import="cn.gamechanger.model.*"%>
 <%@page import="cn.gamechanger.servlet.InserisciCategoria" %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
 <title>GameChanger</title>

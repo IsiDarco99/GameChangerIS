@@ -15,7 +15,7 @@ List<Carrello> prodotti = (List<Carrello>) request.getAttribute("prodotti");
 float prezzoTot;
 prezzoTot = 0;%>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head> 
 <meta charset="ISO-8859-1">
 <title>GameChanger </title>
