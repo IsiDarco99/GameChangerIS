@@ -1,18 +1,6 @@
-/**
- * 
- */
-/*var searchString = sessionStorage.getItem("searchString");
-	console.log(searchString);
-	document.getElementById("ricerca-item").value = searchString;
-	const barraricerca = document.getElementById("ricerca-item").value.toUpperCase();
-  barraricerca.value= searchString;*/
-
-
-
-
-  document.addEventListener("DOMContentLoaded", function() {
-    var searchString = sessionStorage.getItem("searchString");
-    var ricercaItem = document.getElementById("ricerca-item");
+ document.addEventListener("DOMContentLoaded", function() {
+    let   searchString = sessionStorage.getItem("searchString");
+    let   ricercaItem = document.getElementById("ricerca-item");
 	  document.getElementById("ricerca-item").value = searchString;
 	  if (searchString && searchString.trim() !== ""){
       ricercaItem.value = searchString;
@@ -28,7 +16,7 @@ const ricerca = () => {
   const prodotti = document.querySelectorAll(".prodotto");
   const pnome = document.querySelectorAll(".prodotto strong");
 
-  for (var i = 0; i < prodotti.length; i++) {
+  for (let   i = 0; i < prodotti.length; i++) {
     let match = pnome[i];
     if (match) {
       let textvalue = match.textContent || match.innerHTML;

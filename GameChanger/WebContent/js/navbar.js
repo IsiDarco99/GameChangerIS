@@ -1,26 +1,26 @@
 function effettuaRicerca() {
-  var searchString = document.getElementById("ricerca-item").value;
+  let   searchString = document.getElementById("ricerca-item").value;
   sessionStorage.setItem("searchString", searchString);
   window.location.href = contextPath + "/mostra-tutti-prodotti?categoria=allProdotti";
 }
 document.addEventListener("DOMContentLoaded", function() {
   
-  var ricercaItem = document.getElementById("ricerca-item");
+  let   ricercaItem = document.getElementById("ricerca-item");
   ricercaItem.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
       effettuaRicerca();
     }
   });
-var ElemNav = document.getElementById("123")
-var Open = document.getElementById("OpN")
-var Ric = document.getElementById("barraRic")
-var Bric = document.getElementById("BRic")
-var searchString = sessionStorage.getItem("searchString");
+let   ElemNav = document.getElementById("123")
+let   Open = document.getElementById("OpN")
+let   Ric = document.getElementById("barraRic")
+let   Bric = document.getElementById("BRic")
+let   searchString = sessionStorage.getItem("searchString");
 document.getElementById("ricerca-item").value = searchString;
 
-var timer;
+let   timer;
 
-var navbarElement = document.getElementById("123");
+let   navbarElement = document.getElementById("123");
 
 
 // Ora puoi accedere all'elemento navbar e manipolarlo come desideri
@@ -70,17 +70,17 @@ $(document).ready(function() {
 //evento mouseout navbar
 	ElemNav.addEventListener("mouseenter", function () {
     clearTimeout(timer);
-    var mouseenterValue = this.id;
-    var Cat = document.getElementById("Cat")
-    var InfCat= document.getElementById("InNa1")
-    var Con = document.getElementById("Con")
-    var InfCon = document.getElementById("InNa2")
-    var Vid = document.getElementById("Vid")
-    var InfVid = document.getElementById("InNa3")
-    var Com = document.getElementById("Com")
-    var InfCom = document.getElementById("InNa4")
-    var Gad = document.getElementById("Gad")
-    var InfGad = document.getElementById("InNa5")
+    let   mouseenterValue = this.id;
+    let   Cat = document.getElementById("Cat")
+    let   InfCat= document.getElementById("InNa1")
+    let   Con = document.getElementById("Con")
+    let   InfCon = document.getElementById("InNa2")
+    let   Vid = document.getElementById("Vid")
+    let   InfVid = document.getElementById("InNa3")
+    let   Com = document.getElementById("Com")
+    let   InfCom = document.getElementById("InNa4")
+    let   Gad = document.getElementById("Gad")
+    let   InfGad = document.getElementById("InNa5")
     //ElemNav.style.display = 'inline-block';
     Cat.addEventListener("mouseenter", function () {
       

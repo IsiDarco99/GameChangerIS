@@ -1,14 +1,14 @@
 function validateUsername() {
   return new Promise(function(resolve, reject) {
-    var newUsername = document.getElementsByName("nuovousername")[0].value;
-    var errorElement = document.getElementById("errorUsername");
+    let   newUsername = document.getElementsByName("nuovousername")[0].value;
+    let   errorElement = document.getElementById("errorUsername");
 
     if (newUsername.trim() === "") {
       errorElement.textContent = "";
       resolve(false);
     }
 
-    var regex = /^[a-zA-Z0-9]+$/;
+    let   regex = /^[a-zA-Z0-9]+$/;
     if (!regex.test(newUsername)) {
       errorElement.textContent = "Sono consentiti solo caratteri alfanumerici";
       resolve(false);
@@ -19,13 +19,13 @@ function validateUsername() {
       resolve(false);
     }
 
-    var xhr = new XMLHttpRequest();
+    let   xhr = new XMLHttpRequest();
     xhr.open("POST", "verifica-username", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
-          var response = JSON.parse(xhr.responseText);
+          let   response = JSON.parse(xhr.responseText);
           if (response.valid) {
             errorElement.textContent = "";
             resolve(false);
@@ -46,9 +46,9 @@ function validateUsername() {
 
 
 function validatePassword(){
-	var newPassword = document.getElementsByName("password")[0].value;
+	let   newPassword = document.getElementsByName("password")[0].value;
     
-    var regex = /^[a-zA-Z0-9]+$/;
+    let   regex = /^[a-zA-Z0-9]+$/;
   if (!regex.test(newPassword)) {
     document.getElementById("errorPassword").textContent = "Sono consentiti solo caratteri alfanumerici";
     return false;
@@ -60,13 +60,13 @@ function validatePassword(){
     return false;
   }
 
-    var xhr = new XMLHttpRequest();
+    let   xhr = new XMLHttpRequest();
   xhr.open("POST", "verifica-password", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
+        let   response = JSON.parse(xhr.responseText);
         if (response.valid) {
           document.getElementById("errorPassword").textContent = "";
           return true;
@@ -89,8 +89,8 @@ function validatePassword(){
 }
 
 function validatePasswordRepeat(){
-	var newPassword = document.getElementsByName("password")[0].value;
-    var repeatPassword = document.getElementsByName("ripetipassword")[0].value;
+	let   newPassword = document.getElementsByName("password")[0].value;
+    let   repeatPassword = document.getElementsByName("ripetipassword")[0].value;
   
 	if (newPassword !== repeatPassword) {
       document.getElementById("errorPasswordRepeat").textContent = "Le password non corrispondono.";
@@ -108,8 +108,8 @@ function validatePasswordRepeat(){
 }
 
 function validateNome(){
-  var nomeInput = document.getElementsByName("nome")[0];
-  var nome = nomeInput.value.trim();
+  let   nomeInput = document.getElementsByName("nome")[0];
+  let   nome = nomeInput.value.trim();
 
   nome = nome.replace(/\b\w/g, function(match) {
     return match.toUpperCase();
@@ -122,7 +122,7 @@ function validateNome(){
     return false;
   }
 
-  var regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
+  let   regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
   if (!regex.test(nome)) {
     document.getElementById("errorNome").textContent = "Il nome pu\u00F2 contenere solo caratteri da A-Z e i caratteri accentati.";
     return false;
@@ -138,8 +138,8 @@ function validateNome(){
 }
 
 function validateCognome(){
-  var cognomeInput = document.getElementsByName("cognome")[0];
-  var cognome = cognomeInput.value.trim();
+  let   cognomeInput = document.getElementsByName("cognome")[0];
+  let   cognome = cognomeInput.value.trim();
 
   cognome = cognome.replace(/\b\w/g, function(match) {
     return match.toUpperCase();
@@ -152,7 +152,7 @@ function validateCognome(){
    		return false;
   }
 
-  var regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
+  let   regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
   if (!regex.test(cognome)) {
     document.getElementById("errorCognome").textContent = "Il cognome pu\u00F2 contenere solo caratteri da A-Z e i caratteri accentati.";
     return false;
@@ -168,13 +168,13 @@ function validateCognome(){
 }
 
 function validateMail(){
-	var email = document.getElementsByName("emailPers")[0].value;
+	let   email = document.getElementsByName("emailPers")[0].value;
 
 	if (email.trim() === "") {
 		document.getElementById("errorMail").textContent = "";
    		return false;
   }
-  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let   regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!regex.test(email)) {
     document.getElementById("errorMail").textContent = "Inserisci un'email valida.";
     return false;
@@ -185,23 +185,23 @@ function validateMail(){
 }
 
 function validateData(){
-	var nuovaDataNascita = document.getElementsByName("datanascita")[0].value;
+	let   nuovaDataNascita = document.getElementsByName("datanascita")[0].value;
 
 
 if (nuovaDataNascita.trim() === "") {
 		document.getElementById("errorData").textContent = "";
    		return false;
   }
-  var regexData = /^(\d{4})-(\d{2})-(\d{2})$/;
-  var match = nuovaDataNascita.match(regexData);
+  let   regexData = /^(\d{4})-(\d{2})-(\d{2})$/;
+  let   match = nuovaDataNascita.match(regexData);
   if (!match) {
     document.getElementById("errorData").textContent = "Inserisci una data di nascita nel formato corretto (YYYY-MM-DD).";
     return false;
   }
 
-  var anno = parseInt(match[1]);
-  var mese = parseInt(match[2]);
-  var giorno = parseInt(match[3]);
+  let   anno = parseInt(match[1]);
+  let   mese = parseInt(match[2]);
+  let   giorno = parseInt(match[3]);
 
   if (anno < 1900) {
     document.getElementById("errorData").textContent = "L'anno deve essere maggiore o uguale a 1900.";
@@ -213,14 +213,14 @@ if (nuovaDataNascita.trim() === "") {
     return false;
   }
 
-  var giorniNelMese = new Date(anno, mese, 0).getDate();
+  let   giorniNelMese = new Date(anno, mese, 0).getDate();
   if (giorno < 1 || giorno > giorniNelMese) {
     document.getElementById("errorData").textContent = "Inserire un giorno valido per il mese selezionato.";
     return false;
   }
 
-  var dataCorrente = new Date();
-  var dataNascita = new Date(anno, mese - 1, giorno);
+  let   dataCorrente = new Date();
+  let   dataNascita = new Date(anno, mese - 1, giorno);
   if (dataNascita > dataCorrente) {
     document.getElementById("errorData").textContent = "Sei nato nel futuro?";
     return false;
@@ -231,8 +231,8 @@ if (nuovaDataNascita.trim() === "") {
 }
 
   function validateForm() {
-	  var privacyCheckbox = document.getElementsByName("privacy")[0];
-  var termsCheckbox = document.getElementsByName("terms")[0];
+	  let   privacyCheckbox = document.getElementsByName("privacy")[0];
+  let   termsCheckbox = document.getElementsByName("terms")[0];
 
   if (!privacyCheckbox.checked || !termsCheckbox.checked) {
     document.getElementById("errorPrivacy").textContent = "Devi accettare la privacy e i termini e le condizioni per registrarti";
@@ -243,8 +243,8 @@ if (nuovaDataNascita.trim() === "") {
     document.getElementById("errorPrivacy").textContent = "";
   }
 
-    var errorFields = document.querySelectorAll("p[id^='error']");
-    var isValid = true;
+    let   errorFields = document.querySelectorAll("p[id^='error']");
+    let   isValid = true;
 
     errorFields.forEach(function(field) {
       if (field.innerText !== '') {

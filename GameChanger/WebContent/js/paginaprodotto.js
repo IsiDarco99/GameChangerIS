@@ -1,7 +1,7 @@
 
 function decreaseQuantity() {
-	  var quantityInput = document.getElementById("quantity");
-	  var quantity = parseInt(quantityInput.value);
+	  let   quantityInput = document.getElementById("quantity");
+	  let   quantity = parseInt(quantityInput.value);
 
 	  if (quantity > 1) {
 	    quantityInput.value = quantity - 1;
@@ -9,8 +9,8 @@ function decreaseQuantity() {
 	}
 
 	function increaseQuantity() {
-	  var quantityInput = document.getElementById("quantity");
-	  var quantity = parseInt(quantityInput.value);
+	  let   quantityInput = document.getElementById("quantity");
+	  let   quantity = parseInt(quantityInput.value);
 
 	  if (quantity < 99) {
 	    quantityInput.value = quantity + 1;
@@ -18,11 +18,11 @@ function decreaseQuantity() {
 	}
 
 	function validateInput(event) {
-	  var input = event.target;
-	  var value = input.value;
+	  let   input = event.target;
+	  let   value = input.value;
 
 	  // Rimuovi i caratteri non numerici
-	  var filteredValue = value.replace(/[^0-9]/g, '');
+	  let   filteredValue = value.replace(/[^0-9]/g, '');
 
 	  // Limita il valore massimo a 99
 	  if (filteredValue > 99) {
@@ -34,7 +34,7 @@ function decreaseQuantity() {
 	}
 
 	// Aggiungi un listener per l'evento "input" all'input della quantità
-	var quantityInput = document.getElementById("quantity");
+	let   quantityInput = document.getElementById("quantity");
 	quantityInput.addEventListener("input", validateInput);
 
 	

@@ -8,6 +8,15 @@ a {
 	text-decoration: none;
 	color: white;
 }
+.BtnPrz{
+	align-items: center;
+	cursor: pointer;
+	border: none;
+	text-transform: uppercase;
+	background-color: #333;
+	border-radius: 10px;
+	color: #fff;
+}
 
 .prodotti{ 
 	border-left: solid 1px #d8d8d8;
@@ -44,17 +53,25 @@ a {
 
 
 #prezzoMin {
-	width: 40px;
+	width: 70%;
     height: 30px;
     text-align: center;
     margin: 0 10px;
+	background-color: #333;
+    color: #fff;
+    border-radius: 50px;
+    
 }
 
 #prezzoMax {
-	width: 40px;
+	width: 70%;
     height: 30px;
     text-align: center;
     margin: 0 10px;
+	background-color: #333;
+    color: #fff;
+    border-radius: 50px;
+    
 }
 
 

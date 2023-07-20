@@ -5,6 +5,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="cn.gamechanger.servlet.MostraTuttiProdottiServlet" %>
 <%
+	String ricerca = request.getParameter("ricerca");
 	String categoria = request.getParameter("categoria");
 	if (categoria == null) {
 		categoria = "allProdotti";
@@ -28,6 +29,7 @@
     }
   </script>
 <%@include file="includes/head.jsp"%>
+<script src="js\sfogliaProdotti.js" type="text/javascript"></script>
 <link rel="stylesheet" href="css/sfogliaProdotti.css" type="text/css">
 </head>
 <body>
@@ -51,6 +53,11 @@
 							<strong> Categoria</strong>
 						</p>
 
+						<div class="input-group ">
+							<input type="text" class="form-control" id="ricerca-item" iplaceholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"
+							onkeyup="ricerca()">
+
+						  </div>
 						<div class="filtri">
 							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">Tutti i prodotti</a></p>
 							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=videogiochi">Videogiochi</a></p>
@@ -67,14 +74,14 @@
 							<form action="${pageContext.request.contextPath}/filtra-prezzo" method="get">
 							<input type="hidden" name="categoria" value="<%= categoria %>">
 								<div class="filtri-2">
-								<p>Da </p>
+								<p>Da</p>
 								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="min" id="prezzoMin" placeholder="0">
 								</div>
 								<div class="filtri-2">
-								<p> a </p>
+								<p> A</p>
 								<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="4" name="max" id="prezzoMax" placeholder="0">
 								</div>
-								<input type="submit" value="Invia" >
+								<input type="submit" value="Invia" class="BtnPrz">
 							</form>
 							</div>
 							

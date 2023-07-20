@@ -1,6 +1,6 @@
 function submitFormUsername(event, action) {
 	event.preventDefault();
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
 	document.body.appendChild(form);
@@ -8,7 +8,7 @@ function submitFormUsername(event, action) {
 }
 function submitFormPassword(event, action) {
 	event.preventDefault();
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
 	document.body.appendChild(form);

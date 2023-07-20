@@ -1,8 +1,8 @@
 function submitFormUsername(action, valore) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = valore;
@@ -12,10 +12,10 @@ function submitFormUsername(action, valore) {
 }
 
 function submitFormPassword(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'password';
@@ -25,10 +25,10 @@ function submitFormPassword(action) {
 }
 
 function submitFormImg(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'immagine';
@@ -38,10 +38,10 @@ function submitFormImg(action) {
 }
 
 function submitFormEmail(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'mail';
@@ -51,10 +51,10 @@ function submitFormEmail(action) {
 }
 
 function submitFormEmailPaypal(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'paypal';
@@ -64,10 +64,10 @@ function submitFormEmailPaypal(action) {
 }
 
 function submitFormData(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'data';
@@ -77,10 +77,10 @@ function submitFormData(action) {
 }
 
 function submitFormCodFisc(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'codfisc';
@@ -90,10 +90,10 @@ function submitFormCodFisc(action) {
 }
 
 function submitFormNumero(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'numero';
@@ -103,10 +103,10 @@ function submitFormNumero(action) {
 }
 
 function submitFormIndirizzo(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'indirizzo';
@@ -115,10 +115,10 @@ function submitFormIndirizzo(action) {
 	form.submit();
 }
 function submitFormnomeAmm(action){
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'nomeamm';

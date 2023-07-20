@@ -1,8 +1,8 @@
 function submitFormMario(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'mario';
@@ -12,10 +12,10 @@ function submitFormMario(action) {
 }
 
 function submitFormPeach(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'peach';
@@ -25,10 +25,10 @@ function submitFormPeach(action) {
 }
 
 function submitFormHunter(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'hunter';
@@ -38,10 +38,10 @@ function submitFormHunter(action) {
 }
 
 function submitFormKratos(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'kratos';
@@ -51,10 +51,10 @@ function submitFormKratos(action) {
 }
 
 function submitFormCody(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'cody';
@@ -64,10 +64,10 @@ function submitFormCody(action) {
 }
 
 function submitFormMay(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'may';
@@ -77,10 +77,10 @@ function submitFormMay(action) {
 }
 
 function submitFormLink(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'link';
@@ -90,10 +90,10 @@ function submitFormLink(action) {
 }
 
 function submitFormZoro(action) {
-	var form = document.createElement('form');
+	let   form = document.createElement('form');
 	form.method = 'POST';
 	form.action = action;
-	var hiddenInput = document.createElement('input');
+	let   hiddenInput = document.createElement('input');
  	hiddenInput.type = 'hidden';
  	hiddenInput.name = 'valore';
  	hiddenInput.value = 'zoro';
@@ -104,10 +104,10 @@ function submitFormZoro(action) {
 
 
 function validateUsername() {
-   var newUsername = document.getElementsByName("nuovousername")[0].value;
-   var errorElement = document.getElementById("error");
+   let   newUsername = document.getElementsByName("nuovousername")[0].value;
+   let   errorElement = document.getElementById("error");
 
-   var regex = /^[a-zA-Z0-9]+$/;
+   let   regex = /^[a-zA-Z0-9]+$/;
    if (!regex.test(newUsername)) {
       errorElement.textContent = "Sono consentiti solo caratteri alfanumerici";
       return false;
@@ -118,13 +118,13 @@ function validateUsername() {
       return false;
    }
    
-   var xhr = new XMLHttpRequest();
+   let   xhr = new XMLHttpRequest();
   xhr.open("POST", "verifica-username", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
+        let   response = JSON.parse(xhr.responseText);
         if (response.valid) {
           document.getElementById("error").textContent = "";
           document.querySelector("form").submit();
@@ -142,17 +142,17 @@ function validateUsername() {
 }
 
 function validatePassword() {
-	var oldPassword = document.getElementById("oldPassword").value;
-	var inputPassword = document.getElementsByName("vecchiapassword")[0].value;
-    var newPassword = document.getElementsByName("nuovapassword")[0].value;
-    var repeatPassword = document.getElementsByName("ripetipassword")[0].value;
+	let   oldPassword = document.getElementById("oldPassword").value;
+	let   inputPassword = document.getElementsByName("vecchiapassword")[0].value;
+    let   newPassword = document.getElementsByName("nuovapassword")[0].value;
+    let   repeatPassword = document.getElementsByName("ripetipassword")[0].value;
 	console.log(oldPassword);
     if (newPassword !== repeatPassword) {
       document.getElementById("error").textContent = "Le nuove password non corrispondono.";
       return false;
     }
     
-    var regex = /^[a-zA-Z0-9]+$/;
+    let   regex = /^[a-zA-Z0-9]+$/;
   if (!regex.test(inputPassword) || !regex.test(newPassword) || !regex.test(repeatPassword)) {
     document.getElementById("error").textContent = "Sono consentiti solo caratteri alfanumerici";
     return false;
@@ -163,13 +163,13 @@ function validatePassword() {
     return false;
   }
 
-    var xhr = new XMLHttpRequest();
+    let   xhr = new XMLHttpRequest();
   xhr.open("POST", "verifica-password", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
+        let   response = JSON.parse(xhr.responseText);
         if (response.valid) {
           document.getElementById("error").textContent = "";
           document.querySelector("form").submit();
@@ -187,9 +187,9 @@ function validatePassword() {
   }
   
 function validateEmailPers() {
-  var email = document.getElementsByName("emailpers")[0].value;
+  let   email = document.getElementsByName("emailpers")[0].value;
 
-  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let   regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!regex.test(email)) {
     document.getElementById("error").textContent = "Inserisci un'email valida.";
     return false;
@@ -199,9 +199,9 @@ function validateEmailPers() {
 }
 
 function validateEmailPaypal() {
-  var email = document.getElementsByName("emailpaypal")[0].value;
+  let   email = document.getElementsByName("emailpaypal")[0].value;
 
-  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let   regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!regex.test(email)) {
     document.getElementById("error").textContent = "Inserisci un'email valida.";
     return false;
@@ -211,9 +211,9 @@ function validateEmailPaypal() {
 }
 
 function validateNumero() {
-  var phoneNumber = document.getElementsByName("nuovonum")[0].value;
+  let   phoneNumber = document.getElementsByName("nuovonum")[0].value;
 
-  var regex = /^\d{9}$/;
+  let   regex = /^\d{9}$/;
   if (!regex.test(phoneNumber)) {
     document.getElementById("error").textContent = "Inserisci un numero di telefono valido (9 cifre).";
     return false;
@@ -223,11 +223,11 @@ function validateNumero() {
 }
 
 function validateNomeCognome() {
-  var nomeInput = document.getElementsByName("nuovonome")[0];
-  var cognomeInput = document.getElementsByName("nuovocognome")[0];
+  let   nomeInput = document.getElementsByName("nuovonome")[0];
+  let   cognomeInput = document.getElementsByName("nuovocognome")[0];
 
-  var nome = nomeInput.value.trim();
-  var cognome = cognomeInput.value.trim();
+  let   nome = nomeInput.value.trim();
+  let   cognome = cognomeInput.value.trim();
 
   nome = nome.replace(/\b\w/g, function(match) {
     return match.toUpperCase();
@@ -240,7 +240,7 @@ function validateNomeCognome() {
   nomeInput.value = nome;
   cognomeInput.value = cognome;
 
-  var regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
+  let   regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
   if (!regex.test(nome) || !regex.test(cognome)) {
     document.getElementById("error").textContent = "Inserisci un nome e un cognome validi.";
     return false;
@@ -257,12 +257,12 @@ function validateNomeCognome() {
 
 
 function validateIndirizzo() {
-  var nuovoStato = document.getElementsByName("nuovoStato")[0].value;
-  var nuovaCitta = document.getElementsByName("nuovaCitta")[0].value;
-  var nuovaVia = document.getElementsByName("nuovaVia")[0].value;
-  var nuovoCAP = document.getElementsByName("nuovoCAP")[0].value;
+  let   nuovoStato = document.getElementsByName("nuovoStato")[0].value;
+  let   nuovaCitta = document.getElementsByName("nuovaCitta")[0].value;
+  let   nuovaVia = document.getElementsByName("nuovaVia")[0].value;
+  let   nuovoCAP = document.getElementsByName("nuovoCAP")[0].value;
 
-  var regexLettere = /^[A-Za-z]+$/;
+  let   regexLettere = /^[A-Za-z]+$/;
   if (!regexLettere.test(nuovoStato) || !regexLettere.test(nuovaCitta)) {
      document.getElementById("error").textContent = ("Stato e città devono essere composti solo da lettere.");
     return false;
@@ -280,7 +280,7 @@ function validateIndirizzo() {
     return false;
   }
 
-  var regexCAP = /^\d{5}$/;
+  let   regexCAP = /^\d{5}$/;
   if (!regexCAP.test(nuovoCAP)) {
      document.getElementById("error").textContent = ("Il CAP deve essere composto da 5 cifre numeriche.");
     return false;
@@ -290,18 +290,18 @@ function validateIndirizzo() {
 }
 
 function validateData() {
-  var nuovaDataNascita = document.getElementsByName("nuovadata")[0].value;
+  let   nuovaDataNascita = document.getElementsByName("nuovadata")[0].value;
 
-  var regexData = /^(\d{4})-(\d{2})-(\d{2})$/;
-  var match = nuovaDataNascita.match(regexData);
+  let   regexData = /^(\d{4})-(\d{2})-(\d{2})$/;
+  let   match = nuovaDataNascita.match(regexData);
   if (!match) {
     document.getElementById("error").textContent = "Inserisci una data di nascita nel formato corretto (YYYY-MM-DD).";
     return false;
   }
 
-  var anno = parseInt(match[1]);
-  var mese = parseInt(match[2]);
-  var giorno = parseInt(match[3]);
+  let   anno = parseInt(match[1]);
+  let   mese = parseInt(match[2]);
+  let   giorno = parseInt(match[3]);
 
   if (anno < 1900) {
     document.getElementById("error").textContent = "L'anno deve essere maggiore o uguale a 1900.";
@@ -313,14 +313,14 @@ function validateData() {
     return false;
   }
 
-  var giorniNelMese = new Date(anno, mese, 0).getDate();
+  let   giorniNelMese = new Date(anno, mese, 0).getDate();
   if (giorno < 1 || giorno > giorniNelMese) {
     document.getElementById("error").textContent = "Inserire un giorno valido per il mese selezionato.";
     return false;
   }
 
-  var dataCorrente = new Date();
-  var dataNascita = new Date(anno, mese - 1, giorno);
+  let   dataCorrente = new Date();
+  let   dataNascita = new Date(anno, mese - 1, giorno);
   if (dataNascita > dataCorrente) {
     document.getElementById("error").textContent = "Sei nato nel futuro?";
     return false;
@@ -330,7 +330,7 @@ function validateData() {
 }
 
 function validateCodiceFiscale() {
-  var nuovoCodiceFiscale = document.getElementsByName("nuovocodice")[0].value;
+  let   nuovoCodiceFiscale = document.getElementsByName("nuovocodice")[0].value;
 
   if (nuovoCodiceFiscale.length !== 16) {
     document.getElementById("error").textContent = "Il codice fiscale deve essere composto da esattamente 16 caratteri.";
@@ -339,7 +339,7 @@ function validateCodiceFiscale() {
 
   nuovoCodiceFiscale = nuovoCodiceFiscale.toUpperCase();
 
-  var regexCodiceFiscale = /^[A-Z0-9]{16}$/;
+  let   regexCodiceFiscale = /^[A-Z0-9]{16}$/;
   if (!regexCodiceFiscale.test(nuovoCodiceFiscale)) {
     document.getElementById("error").textContent = "Inserisci un codice fiscale valido (16 caratteri alfanumerici).";
     return false;
@@ -349,11 +349,11 @@ function validateCodiceFiscale() {
   return true;
 }
 function validateNomeCognomeAdmin(){
-  var nomeInput = document.getElementsByName("nuovonome")[0];
-  var cognomeInput = document.getElementsByName("nuovocognome")[0];
+  let   nomeInput = document.getElementsByName("nuovonome")[0];
+  let   cognomeInput = document.getElementsByName("nuovocognome")[0];
 
-  var nome = nomeInput.value.trim();
-  var cognome = cognomeInput.value.trim();
+  let   nome = nomeInput.value.trim();
+  let   cognome = cognomeInput.value.trim();
 
   nome = nome.replace(/\b\w/g, function(match) {
     return match.toUpperCase();
@@ -366,7 +366,7 @@ function validateNomeCognomeAdmin(){
   nomeInput.value = nome;
   cognomeInput.value = cognome;
 
-  var regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
+  let   regex = /^[A-Z][a-zA-Z\u00C0-\u00FF\s']*$/;
   if (!regex.test(nome) || !regex.test(cognome)) {
     document.getElementById("error").textContent = "Inserisci un nome e un cognome validi.";
     return false;
