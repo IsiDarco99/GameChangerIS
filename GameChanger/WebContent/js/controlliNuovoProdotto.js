@@ -109,3 +109,72 @@ function validateForm() {
 
   return isNomeValid && isPrezzoValid && isMarcaValid && isDataValid && isDescValid;
 }
+
+function checkProductExists(event) {
+  return new Promise(function(resolve, reject) {
+	event.preventDefault();
+    let newCodiceProdotto = document.getElementsByName("codice")[0].value;
+    let errorElement = document.getElementById("errorCodice"); // Assuming you have an element to display error messages
+
+    if (newCodiceProdotto.trim() === "") {
+      errorElement.textContent = "";
+      resolve(false);
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "verifica-prodotto", true); // Replace "verifica-prodotto" with the actual server endpoint to check the product
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          let response = JSON.parse(xhr.responseText);
+          if (response.exists) {
+            resolve(true);
+          } else {
+            errorElement.textContent = "Il prodotto non esiste nel database.";
+            resolve(false);
+          }
+        } else {
+          errorElement.textContent = "Si è verificato un errore. Riprova più tardi.";
+          resolve(false);
+        }
+      }
+    };
+    xhr.send("codice=" + encodeURIComponent(newCodiceProdotto));
+  });
+}
+
+function submitForm() {
+    checkProductExists(event)
+        .then(function(result) {
+            if (result) {
+                document.getElementById("deleteProductForm").submit();
+            }
+        })
+        .catch(function(error) {
+            console.error("Error:", error);
+        });
+}
+
+function validateCodice(inputElement) {
+    const inputRegex = /^[1-9]\d{0,8}$/; // Regex per controllare i numeri da 1 a 9 con massimo 9 cifre
+    const maxNumber = 2147483647;
+
+    const value = inputElement.value.trim();
+    const errorElement = document.getElementById("errorCodice");
+
+    if (!inputRegex.test(value)) {
+        errorElement.textContent = "Inserisci un numero da 1 a 9 con un massimo di 2147483647.";
+        inputElement.setCustomValidity("Invalid");
+    } else {
+        const numberValue = parseInt(value, 10);
+        if (numberValue > maxNumber) {
+            errorElement.textContent = "Il numero deve essere minore o uguale a 2147483647.";
+            inputElement.setCustomValidity("Invalid");
+        } else {
+            errorElement.textContent = "";
+            inputElement.setCustomValidity("");
+        }
+    }
+}
+

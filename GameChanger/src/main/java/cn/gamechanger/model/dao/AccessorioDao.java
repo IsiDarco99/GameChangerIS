@@ -115,4 +115,20 @@ public class AccessorioDao {
 		 
 		}
 	
+	public void deleteAccessorio(String codice) {
+	    try {
+	        String query = "DELETE FROM accessorio WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	    
+	}
+	
 }

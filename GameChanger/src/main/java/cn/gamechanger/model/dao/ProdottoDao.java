@@ -151,9 +151,9 @@ public class ProdottoDao {
 		        PreparedStatement statement = this.con.prepareStatement(query);
 		        statement.setString(1, codice);
 		        
-		        statement.executeUpdate();
+		        int i = statement.executeUpdate();
 		        statement.close();
-		        return true;
+		        return i > 0;
 		    } catch (Exception e) {
 		        e.printStackTrace();
 		        logger.info(e.getMessage());
@@ -189,6 +189,27 @@ public class ProdottoDao {
 
 		    return prodotto;
 		}
+		
+		public boolean controllaEsistenza(String codice) {
+		    try {
+		        String query = "SELECT * FROM prodotto WHERE codice = ?";
+		        PreparedStatement statement = this.con.prepareStatement(query);
+		        statement.setString(1, codice);
+
+		        ResultSet resultSet = statement.executeQuery();
+		        boolean exists = resultSet.next();
+
+		        resultSet.close();
+		        statement.close();
+
+		        return exists;
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        logger.info(e.getMessage());
+		        return false;
+		    }
+		}
+
 
 
 }
