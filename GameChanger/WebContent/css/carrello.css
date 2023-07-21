@@ -10,6 +10,8 @@ body {
 .container-prodotto {
 	 border-bottom: solid 1px #d8d8d8;
 	 padding: 20px 0;
+	 display: flex;
+    justify-content: space-evenly;
 }
 .container-totale {
     display: flex;
@@ -26,10 +28,6 @@ body {
 	position: relative;
 	padding-left: 100px;
 	color: white;
-}
-.container-prodotto {
-	display: flex;
-    justify-content: space-evenly;
 }
 .carrello{
 	padding: 20px;
@@ -84,6 +82,9 @@ body {
 .prezzo {
 	font-size: 30px;
 	width: 20%;
+	display: flex;
+    align-items: flex-end;
+    color: white;
 }
 button {
   padding: 5px 10px !important;
@@ -169,11 +170,6 @@ button:hover::before {
 
 button:hover::after {
   transform: translate(50%, 0) scale(1.1);
-}
-.prezzo {
-	display: flex;
-    align-items: flex-end;
-    color: white;
 }
 button.carrello{
 	height: 34px;

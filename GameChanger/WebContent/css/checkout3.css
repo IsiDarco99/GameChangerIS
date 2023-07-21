@@ -224,6 +224,11 @@ p{
 .prezzo {
 	font-size: 30px;
 	width: 20%;
+	display: flex;
+    align-items: flex-end;
+    color: white;
+    margin-left: 30px;
+    
 }
 button {
   padding: 5px 10px !important;
@@ -309,13 +314,6 @@ button:hover::before {
 
 button:hover::after {
   transform: translate(50%, 0) scale(1.1);
-}
-.prezzo {
-	display: flex;
-    align-items: flex-end;
-    color: white;
-    font-size: 136%;
-    margin-left: 30px;
 }
 .totale{
 	display: flex;
