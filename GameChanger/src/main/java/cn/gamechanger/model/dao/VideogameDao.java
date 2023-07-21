@@ -103,13 +103,13 @@ public class VideogameDao {
 	    return videogame;
 	}
 	
-	public void insertVideogame(int codice, int pegi, String sviluppatore, String genere) {
+	public void insertVideogame(int codice, String pegi, String sviluppatore, String genere) {
 		  try {
 			  String query = "INSERT INTO videogame (codice, pegi, sviluppatore, genere) VALUES (?, ?, ?, ?)";
 			  
 			  PreparedStatement statement = this.con.prepareStatement(query);			
 			  statement.setInt(1, codice);
-			  statement.setInt(2, pegi);
+			  statement.setString(2, pegi);
 			  statement.setString(3, sviluppatore);
 			  statement.setString(4, genere);
 			  

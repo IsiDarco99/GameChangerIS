@@ -4,7 +4,7 @@
 <%@page import="cn.gamechanger.servlet.getAdminServlet" %>
 <% Amministratore admin = (Amministratore) request.getAttribute("admin"); %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
@@ -35,11 +35,11 @@
 <div class="container-1">
 <div class="scritta">
 <h5><strong>Operazioni amministratore</strong></h5>
-<a href="operazioniamministratore.jsp?modifica=inserisci">  Aggiungi nuovo prodotto<br></a>
-<a href="operazioniamministratore.jsp?modifica=modifica">  Modifica prodotto<br></a>
-<p>Elimina prodotto</p>
-<p>Visualizza prodotti</p>
-<p>Visualizza ordini</p>
+<a href="operazioniamministratore.jsp?modifica=inserisci">Aggiungi nuovo prodotto<br></a>
+<a href="operazioniamministratore.jsp?modifica=modifica">Modifica prodotto<br></a>
+<a href="operazioniamministratore.jsp?modifica=elimina">Elimina prodotto<br></a>
+<a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">Visualizza prodotti</a>
+<a href="operazioniamministratore.jsp?modifica=ordini">Visualizza ordini<br></a>
 </div>
 
 

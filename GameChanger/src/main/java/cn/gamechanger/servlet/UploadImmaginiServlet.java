@@ -64,7 +64,7 @@ public class UploadImmaginiServlet extends HttpServlet {
             imageNumber++;
         }
 
-        response.getWriter().println("Caricamento immagini completato.");
+        request.getRequestDispatcher("prodottoAggiunto.jsp").forward(request, response);
     }
 
     // Metodo per ottenere l'estensione del file da un nome di file completo

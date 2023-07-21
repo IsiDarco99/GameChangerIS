@@ -8,7 +8,7 @@
     boolean hasOrdini = (ordiniEProdotti != null && !ordiniEProdotti.isEmpty());
 %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <title>GameChanger</title>
     <%@ include file="includes/head.jsp"%>

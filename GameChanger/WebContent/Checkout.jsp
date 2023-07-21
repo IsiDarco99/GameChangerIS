@@ -5,7 +5,7 @@
 
 <% User user = (User) request.getAttribute("user"); %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head> 
 <meta charset="ISO-8859-1">
 <title>GameChanger</title>
@@ -53,8 +53,9 @@
       
     </div> 
   </div>
-  <!--informazioni di spedizione-->
+  
   <fieldset>
+  <legend>Informazioni di spedizione</legend>
       <div class="row">
         <div class="col-75">
           <div class="container">

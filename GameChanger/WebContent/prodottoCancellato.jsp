@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
 <title>GameChanger</title>
 <%@include file="includes/head.jsp"%>
@@ -12,7 +12,7 @@
 <body>
  <div class="container">
                <div class="blocco">
-                  <h2><strong>Prodotto aggiunto al database</strong></h2>
+                  <h2><strong>Prodotto eliminato</strong></h2>
                   <img class="pagamento" src="imgs/generale/ordineconfermato.png">
                   <p>Torna alla <a href="#" onclick="submitForm('${pageContext.request.contextPath}/get-admin')">pagina amministratore</a></p>
                   
