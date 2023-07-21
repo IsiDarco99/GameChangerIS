@@ -178,7 +178,7 @@
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=1">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=2">
 					<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
 						alt="God Of War: Ragnarok">
 					</a>
