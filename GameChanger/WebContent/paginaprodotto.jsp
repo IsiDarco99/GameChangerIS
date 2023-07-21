@@ -52,7 +52,7 @@ if (categoria.equals("videogame")){
 	  input.value = filteredValue;
 	}
 
-	// Aggiungi un listener per l'evento "input" all'input della quantità
+	// Aggiungi un listener per l'evento "input" all'input della quantitï¿½
 	var quantityInput = document.getElementById("quantity");
 	quantityInput.addEventListener("input", validateInput);
 
@@ -83,10 +83,10 @@ if (categoria.equals("videogame")){
 		<div class="row">
 			<div class="col-6 box">
 				<div class="arrow_prev">
-					<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+					<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 				</div>
 				<div class="arrow_next">
-					<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+					<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 				</div>
 				<div class="carosello">
 					<img src="imgs/prodotti/<%=v.getNome()%> 1.jpg" alt="<%=v.getNome()%>"> <img
@@ -155,10 +155,10 @@ if (categoria.equals("videogame")){
 			</div>
 			<div class="container-consigliati">
 				<div class="arrow_prev2">
-					<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+					<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 				</div>
 				<div class="arrow_next2">
-					<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+					<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 				</div>
 				<div class="row nuove-uscite">
 
@@ -225,10 +225,10 @@ if (categoria.equals("videogame")){
 	<div class="row">
 		<div class="col-6 box">
 			<div class="arrow_prev">
-				<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+				<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 			</div>
 			<div class="arrow_next">
-				<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+				<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 			</div>
 			<div class="carosello">
 				<img src="imgs/prodotti/<%=cm.getNome()%> 1.jpg" alt="<%=cm.getNome()%>"> <img
@@ -311,10 +311,10 @@ if (categoria.equals("videogame")){
 		</div>
 		<div class="container-consigliati">
 			<div class="arrow_prev2">
-				<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+				<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 			</div>
 			<div class="arrow_next2">
-				<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+				<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 			</div>
 			<div class="row nuove-uscite">
 
@@ -381,10 +381,10 @@ if (categoria.equals("videogame")){
 <div class="row">
 	<div class="col-6 box">
 		<div class="arrow_prev">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="carosello">
 			<img src="imgs/prodotti/<%=a.getNome()%> 1.jpg" alt="<%=a.getNome()%>"> <img
@@ -451,10 +451,10 @@ if (categoria.equals("videogame")){
 	</div>
 	<div class="container-consigliati">
 		<div class="arrow_prev2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="row nuove-uscite">
 
@@ -521,10 +521,10 @@ if (categoria.equals("videogame")){
 <div class="row">
 	<div class="col-6 box">
 		<div class="arrow_prev">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="carosello">
 			<img src="imgs/prodotti/<%=cs.getNome()%> 1.jpg" alt="<%=cs.getNome()%>"> <img
@@ -591,10 +591,10 @@ if (categoria.equals("videogame")){
 	</div>
 	<div class="container-consigliati">
 		<div class="arrow_prev2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="arrow_next2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
 		</div>
 		<div class="row nuove-uscite">
 
@@ -641,7 +641,7 @@ if (categoria.equals("videogame")){
 <%} %>
 
 	<%@ include file="includes/footer.jsp"%>
-	<script src="js/paginaprodotto.js" type="text/javascript"></script>
+	<script src="js\paginaprodotto.js" type="text/javascript"></script>
 	<script src="js/carrello.js" type="text/javascript"></script>
 </body>
 </html>

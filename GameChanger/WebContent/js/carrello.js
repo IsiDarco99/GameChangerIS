@@ -47,7 +47,7 @@ function increaseQuantity() {
     let   qntityInput = document.getElementById("quantity-" + prodottoId);
     let   qntityValue = qntityInput.value.trim();
 
-    if (quantityValue === "" || isNaN(quantityValue)) {
+    if (qntityValue === "" || isNaN(qntityValue)) {
         qntityInput.value = qntityInput.getAttribute("data-previous-value");
         return;
     }
