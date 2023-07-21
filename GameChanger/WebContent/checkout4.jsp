@@ -13,7 +13,7 @@
  <div class="container">
                <div class="blocco">
                   <h2><strong>Pagamento Confermato</strong></h2>
-                  <img class="pagamento" src="imgs/generale/ordineconfermato.png">
+                  <img class="pagamento" src="imgs/generale/ordineconfermato.png" alt="pagamento">
                   <a class="homepage" href="homepage.jsp">Torna all'Homepage </a>
                   
                </div>
