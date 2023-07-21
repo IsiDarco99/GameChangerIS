@@ -12,7 +12,7 @@
 http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <!--- bottone per l'apparizione della navbar-->
 <div class="OpenNavbar" id="OpN">
-	<img src="imgs\icone\OpenNav.png" height="40" />
+	<img src="imgs\icone\OpenNav.png" height="40" alt="icone" />
 </div>	
 <!--                                        -->
 <div class="navbar" id="123">
