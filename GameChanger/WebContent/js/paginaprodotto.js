@@ -1,7 +1,8 @@
 
+
 function decreaseQuantity() {
-	  let   quantityInput = document.getElementById("quantity");
-	  let   quantity = parseInt(quantityInput.value);
+	  let  quantityInput = document.getElementById("quantity");
+	  let  quantity = parseInt(quantityInput.value);
 
 	  if (quantity > 1) {
 	    quantityInput.value = quantity - 1;
@@ -16,7 +17,7 @@ function decreaseQuantity() {
 	    quantityInput.value = quantity + 1;
 	  }
 	}
-
+	
 	function validateInput(event) {
 	  let   input = event.target;
 	  let   value = input.value;
@@ -32,10 +33,10 @@ function decreaseQuantity() {
 	  // Imposta il valore filtrato nell'input
 	  input.value = filteredValue;
 	}
-
+	
 	// Aggiungi un listener per l'evento "input" all'input della quantità
-	let   quantityInput = document.getElementById("quantity");
-	quantityInput.addEventListener("input", validateInput);
+	const   qntityInput = document.getElementById("quantity");
+	qntityInput.addEventListener("input", validateInput);
 
 	
 			$(document).ready(function() {
@@ -63,3 +64,4 @@ function decreaseQuantity() {
 				nextArrow : '.arrow_next2'
 			});
 		});
+		console.log("aiutatemi");
