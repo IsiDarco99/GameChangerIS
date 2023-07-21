@@ -114,4 +114,20 @@ public class ConsoleDao {
 		        logger.info(e.getMessage());
 		    }
 		}
+	
+	public void deleteConsole(String codice) {
+	    try {
+	        String query = "DELETE FROM console WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	    
+	}
 }

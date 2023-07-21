@@ -126,4 +126,20 @@ public class VideogameDao {
 		    }
 		}
 	
+	public void deleteVideogame(String codice) {
+	    try {
+	        String query = "DELETE FROM videogame WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	    
+	}
+	
 }

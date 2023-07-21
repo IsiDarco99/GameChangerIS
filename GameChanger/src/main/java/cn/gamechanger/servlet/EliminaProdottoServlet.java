@@ -14,7 +14,7 @@ import cn.gamechanger.model.Prodotto;
 import cn.gamechanger.model.User;
 import cn.gamechanger.model.dao.*;
 
-@WebServlet("/elimina-servlet")
+@WebServlet("/elimina-prodotto")
 public class EliminaProdottoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public EliminaProdottoServlet() {
@@ -31,13 +31,32 @@ public class EliminaProdottoServlet extends HttpServlet {
 		String codice = request.getParameter("codice");
 		Boolean b = false;
 		
-		ProdottoDao pDao;
+		ProdottoDao prodottoDao;
+		VideogameDao videogameDao;
+		ComputerDao computerDao;
+		ConsoleDao consoleDao;
+		AccessorioDao accessorioDao;
 		try {
-			pDao = new ProdottoDao(DbCon.getConnection());
-			b = pDao.deleteProdotto(codice);
+			prodottoDao = new ProdottoDao(DbCon.getConnection());
+			b = prodottoDao.deleteProdotto(codice);
 			
-			if (b) {
-				response.sendRedirect("uploadImmagini.jsp");
+			if (Boolean.TRUE.equals(b)) {
+				videogameDao = new VideogameDao(DbCon.getConnection());
+				videogameDao.deleteVideogame(codice);
+				
+				computerDao = new ComputerDao(DbCon.getConnection());
+				computerDao.deleteComputer(codice);
+				
+				consoleDao = new ConsoleDao(DbCon.getConnection());
+				consoleDao.deleteConsole(codice);
+				
+				accessorioDao = new AccessorioDao(DbCon.getConnection());
+				accessorioDao.deleteAccessorio(codice);
+				
+				response.sendRedirect("prodottoCancellato.jsp");
+			} else {
+				request.setAttribute("errore", "Il prodotto non esiste nel catalogo");
+				response.sendRedirect("operazioniamministratore.jsp?modifica=elimina");
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
