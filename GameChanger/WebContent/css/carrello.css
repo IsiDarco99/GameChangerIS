@@ -89,8 +89,7 @@ button {
   padding: 5px 10px !important;
   margin: 0 5px !important;
   position: relative;
-  margin-left: 30px;
-  padding: 0.8em 1em;
+  margin-left: 30px;  
   outline: none;
   text-decoration: none;
   display: flex;

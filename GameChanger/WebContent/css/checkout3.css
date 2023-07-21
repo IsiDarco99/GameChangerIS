@@ -158,12 +158,11 @@ p{
 	color: white;
 }
 .carrello{
-	padding: 20px;
+	padding: 20px 10px;
     background: #394759;
 	box-shadow: 0 5px 25px rgb(5, 5, 5);
 	color: #ffffffb5;
 	border-radius: 10px;
-	padding: 20px 10px;
 	margin: 1%;
     margin-bottom: 20px;
     text-align: center;
@@ -177,14 +176,12 @@ p{
 }
 .informazioni {
 	
-	padding: 20px;
+	padding: 20px 10px;
     background: #394759;
 	box-shadow: 0 5px 25px rgb(5, 5, 5);
 	color: #ffffffb5;
 	border-radius: 10px;
-	padding: 20px 10px;
-	margin: 8% 1% 20% 1% !important; 
-    
+	margin: 8% 1% 20% 1% !important;     
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -233,7 +230,6 @@ button {
   margin: 0 5px !important;
   position: relative;
   margin-left: 30px;
-  padding: 0.8em 1em;
   outline: none;
   text-decoration: none;
   display: flex;
