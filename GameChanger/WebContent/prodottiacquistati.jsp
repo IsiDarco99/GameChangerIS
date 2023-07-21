@@ -65,6 +65,7 @@
                                 </div>
                             <%} %>
                             <table>
+                            <caption>Tabella ordini</caption>
                                 <thead>
                                     <tr>
                                         <th class="nm">Prodotto</th>
