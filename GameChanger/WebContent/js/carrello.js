@@ -25,16 +25,10 @@ function increaseQuantity() {
       input.value = filteredValue;
     }
 
-    function decreaseQuantity() {
-	  let   quantityInput = document.getElementById("quantity");
-	  let   quantity = parseInt(quantityInput.value);
+     
+	  
 
-	  if (quantity > 1) {
-	    quantityInput.value = quantity - 1;
-	  }
-	}
-
-	function increaseQuantity() {
+	 {
 	  let   quantityInput = document.getElementById("quantity");
 	  let   quantity = parseInt(quantityInput.value);
 

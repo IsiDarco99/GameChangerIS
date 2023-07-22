@@ -1,6 +1,6 @@
 package cn.gamechanger.model;
 
-import java.sql.Date;
+
 
 public class Ordine {
 	private int id_ordine;
