@@ -232,6 +232,9 @@ label {
 .btn:hover {
   background-color: #F22E2E;
 }
+legend{
+	display: none;
+}
 
 span.price {
   float: right;

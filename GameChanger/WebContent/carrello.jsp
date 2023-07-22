@@ -36,12 +36,12 @@ prezzoTot = 0;
 			if (prodotti.isEmpty()) {
 			%>
 			<div class="immagine-carrello">
-				<img src="imgs/carrello/carrellovuoto1.png" alt="Carrello vuoto">
+				<img src="imgs\carrello\cartcompra.svg" alt="Carrello vuoto">
 
 			</div>
 			<div class="scritta-carrello">
 				<h1>
-					<span> Il tuo carrello Ë vuoto<br>Da un'occhiata ai
+					<span> Il tuo carrello &eacute; vuoto<br>Da un'occhiata ai
 						nostri <a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">prodotti</a>
 					</span>
 				</h1>
@@ -68,7 +68,7 @@ prezzoTot = 0;
 						</span>
 					</h1>
 					<div class="quantity">
-						<strong>Quantit‡: </strong><span> <input
+						<strong>Quantit√†: </strong><span> <input
 							class="quantity-input" type="text" oninput="validateInput(event)"
 							data-previous-value="<%=p.getQuantit‡Prodotto()%>"
 							pattern="[1-9][0-9]{0,3}" maxlength="2" name="quantity"
