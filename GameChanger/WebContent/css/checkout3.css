@@ -185,6 +185,7 @@ p{
     text-align: center;
     display: flex;
     flex-direction: column;
+	text-align: -webkit-center;
 }
 .quantity {
   display: flex;
@@ -335,10 +336,8 @@ button.acquista{
 	max-width: 200px;
 	max-height: 170px;
 }
-.informazioni {
-	max-width: 70%;
-	max-height: 70%;
-	font-size: 40%;
+.informazioni{
+	align-items: center;
 }
 
 }
@@ -354,4 +353,36 @@ button.acquista{
 }
 strong {
     font-size: 94%;
+}
+@media (max-width: 800px) {
+	.step-wizard-list{
+		width: 190px;
+	}
+	.step-wizard-item:not(.current-item){
+		display:none;
+	}
+	.step-wizard-item + .step-wizard-item:after {
+		display:none;
+	}
+	
+	.quantity{
+		margin-top: 0px;
+	  }
+	  .immagine {
+        display: flex; /* Imposta il layout a riga per avere nome-prodotto e prezzo affiancati */
+        align-items: flex-start; /* Allinea gli elementi in alto della riga */
+        justify-content: space-between; /* Distribuisci gli elementi lungo la riga con spazio tra loro */
+        margin-bottom: 10px; /* Aggiungi un margine inferiore per separare i div */
+    }
+
+    .nome-prodotto {
+        width: 70%; /* Imposta la larghezza del nome-prodotto */
+    }
+
+    .prezzo {
+        width: 40%; /* Imposta la larghezza del prezzo */
+		align-items: flex-end;
+		flex-direction: column;
+    }
+	
 }
