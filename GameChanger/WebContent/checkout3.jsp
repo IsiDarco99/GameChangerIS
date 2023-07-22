@@ -68,7 +68,7 @@ prezzoTot = 0;%>
   
   <div class="container">
   <div class="row">
-  <div class="col-9">
+  <div class="col-md-9">
 		<div class="carrello">
 		
 	<% 	for (Carrello p : prodotti) {
@@ -126,7 +126,7 @@ prezzoTot = 0;%>
 		</div>
 		
 		</div>
-		<div class="col-3">
+		<div class="col-md-3">
 		<div class="informazioni">
 		<h2> Il mio indirizzo</h2>
 		<p> ${user.nome} ${user.cognome} </p>

@@ -43,7 +43,7 @@ function validateTipo() {
 function validateGen() {
   const genInput = document.querySelector('input[name="generazione"]');
   const errorGen = document.getElementById('errorGen');
-  const regex = /^(?:[1-9]|[1-9][0-9])$/; // Numeri interi da 1 a 99
+  const regex = /^(?:[1-9]|\d\d)$/; // Numeri interi da 1 a 99
 
   if (!regex.test(genInput.value)) {
     errorGen.textContent = 'Inserire un numero intero da 1 a 99.';

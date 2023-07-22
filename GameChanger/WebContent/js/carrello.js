@@ -19,22 +19,16 @@ function increaseQuantity() {
       const value = input.value;
 
       // Rimuovi i caratteri non numerici
-      const filteredValue = value.replace(/[^0-9]/g, '');
+      const filteredValue = value.replace(/\D/g, '');
 
       // Imposta il valore filtrato nell'input
       input.value = filteredValue;
     }
 
-    function decreaseQuantity() {
-	  let   quantityInput = document.getElementById("quantity");
-	  let   quantity = parseInt(quantityInput.value);
+     
+	  
 
-	  if (quantity > 1) {
-	    quantityInput.value = quantity - 1;
-	  }
-	}
-
-	function increaseQuantity() {
+	 {
 	  let   quantityInput = document.getElementById("quantity");
 	  let   quantity = parseInt(quantityInput.value);
 

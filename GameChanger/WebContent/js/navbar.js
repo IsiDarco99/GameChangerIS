@@ -14,22 +14,16 @@ document.addEventListener("DOMContentLoaded", function() {
 let   ElemNav = document.getElementById("123")
 let   Open = document.getElementById("OpN")
 let   Ric = document.getElementById("barraRic")
-let   Bric = document.getElementById("BRic")
 let   searchString = sessionStorage.getItem("searchString");
 document.getElementById("ricerca-item").value = searchString;
 
 let   timer;
 
-let   navbarElement = document.getElementById("123");
+
 
 
 // Ora puoi accedere all'elemento navbar e manipolarlo come desideri
-/*navbarElement.style.backgroundColor = "red";
-navbarElement.innerHTML = "Contenuto aggiornato";
-*/
 
-
-/* barra ricerca funzione */
 
 
 
@@ -70,7 +64,7 @@ $(document).ready(function() {
 //evento mouseout navbar
 	ElemNav.addEventListener("mouseenter", function () {
     clearTimeout(timer);
-    let   mouseenterValue = this.id;
+    
     let   Cat = document.getElementById("Cat")
     let   InfCat= document.getElementById("InNa1")
     let   Con = document.getElementById("Con")
@@ -81,7 +75,7 @@ $(document).ready(function() {
     let   InfCom = document.getElementById("InNa4")
     let   Gad = document.getElementById("Gad")
     let   InfGad = document.getElementById("InNa5")
-    //ElemNav.style.display = 'inline-block';
+    
     Cat.addEventListener("mouseenter", function () {
       
       InfCat.style.display='flex';
@@ -123,22 +117,7 @@ $(document).ready(function() {
       InfGad.style.display='none';
     })
     
-    /*switch (mouseenterValue) {
-      case 'Cat':
-        console.log('Oranges are $0.59 a pound.');
-        break;
-      case 'icona2':
-        console.log('Apples are $0.32 a pound.');
-        break;
-      case 'icona3':
-        console.log('Bananas are $0.48 a pound.');
-        break;
-      case 'Cat':
-        console.log('Cats are adorable!');
-        break;
-      default:
-        console.log('No icon selected.');
-    }*/
+    
   
 });
 
