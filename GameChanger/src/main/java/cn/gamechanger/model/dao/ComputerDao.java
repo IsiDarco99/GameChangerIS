@@ -142,4 +142,23 @@ public class ComputerDao {
 	    
 	}
 	
+	public void updateComputer(int codice, String casa, String ufficio, String gaming) {
+	    try {
+	        String query = "UPDATE computer SET casa = ?, ufficio = ?, gaming = ? WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, casa);
+	        statement.setString(2, ufficio);
+	        statement.setString(3, gaming);
+	        statement.setInt(4, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	
 }

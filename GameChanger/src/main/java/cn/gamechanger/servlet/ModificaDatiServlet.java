@@ -50,6 +50,8 @@ public class ModificaDatiServlet extends HttpServlet {
 				userDao = new UserDao(DbCon.getConnection());
 				userDao.updateUsername(username, nuovousername);
 				User user = userDao.getUserProfile(nuovousername);
+				HttpSession session = request.getSession();
+                session.setAttribute("userSession", user.getUsername());
 	            request.setAttribute("user", user);
 				request.getRequestDispatcher("profilo.jsp").forward(request, response);
 			} else if (nuovapassword != null) {

@@ -131,4 +131,21 @@ public class AccessorioDao {
 	    
 	}
 	
+	public void updateAccessorio(int codice, String tipo) {
+	    try {
+	        String query = "UPDATE accessorio SET tipo = ? WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, tipo);
+	        statement.setInt(2, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	
 }
