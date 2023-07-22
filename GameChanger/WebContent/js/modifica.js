@@ -1,107 +1,47 @@
+function submitForm(valore, action) {
+  let form = document.createElement('form');
+  form.method = 'POST';
+  form.action = action;
+  let hiddenInput = document.createElement('input');
+  hiddenInput.type = 'hidden';
+  hiddenInput.name = 'valore';
+  hiddenInput.value = valore;
+  form.appendChild(hiddenInput);
+  document.body.appendChild(form);
+  form.submit();
+}
+
 function submitFormMario(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'mario';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('mario', action);
 }
 
 function submitFormPeach(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'peach';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('peach', action);
 }
 
 function submitFormHunter(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'hunter';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('hunter', action);
 }
 
 function submitFormKratos(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'kratos';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('kratos', action);
 }
 
 function submitFormCody(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'cody';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('cody', action);
 }
 
 function submitFormMay(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'may';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('may', action);
 }
 
 function submitFormLink(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'link';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('link', action);
 }
 
 function submitFormZoro(action) {
-	let   form = document.createElement('form');
-	form.method = 'POST';
-	form.action = action;
-	let   hiddenInput = document.createElement('input');
- 	hiddenInput.type = 'hidden';
- 	hiddenInput.name = 'valore';
- 	hiddenInput.value = 'zoro';
- 	form.appendChild(hiddenInput)
-	document.body.appendChild(form);
-	form.submit();
+  submitForm('zoro', action);
 }
-
 
 function validateUsername() {
    let   newUsername = document.getElementsByName("nuovousername")[0].value;

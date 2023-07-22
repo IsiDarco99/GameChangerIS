@@ -15,7 +15,7 @@ function validateNome() {
 function validatePrezzo() {
   const prezzoInput = document.querySelector('input[name="prezzoprodotto"]');
   const errorPrezzo = document.getElementById('errorPrezzo');
-  const regex = /^[0-9]+(?:\.[0-9]{1,2})?$/; // Numeri positivi o decimali fino a 2 cifre decimali
+  const regex = /^\d+(?:\.\d{1,2})?$/; // Numeri positivi o decimali fino a 2 cifre decimali
 
   if (!regex.test(prezzoInput.value)) {
     errorPrezzo.textContent = 'Inserire un prezzo valido.';
