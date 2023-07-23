@@ -471,8 +471,8 @@ overflow:hidden;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;
-  text-shadow: 
-						8px 8px #8c031c;
+  text-shadow: 8px 8px #8c031c;
+  text-align: center;
 }
 
 .box {
@@ -529,6 +529,11 @@ overflow:hidden;
 button.botCop {
   margin: 0px 34px 30px 0px;
   padding: 0.3em 0.5em;
+}
+
+#video {
+	flex-direction: column;
+	align-items: center;
 }
 
 }
