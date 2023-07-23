@@ -185,7 +185,7 @@ p{
     text-align: center;
     display: flex;
     flex-direction: column;
-	text-align: -webkit-center;
+	
 }
 .quantity {
   display: flex;
