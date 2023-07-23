@@ -142,4 +142,23 @@ public class VideogameDao {
 	    
 	}
 	
+	public void updateVideogame(int codice, String pegi, String sviluppatore, String genere) {
+	    try {
+	        String query = "UPDATE videogame SET pegi = ?, sviluppatore = ?, genere = ? WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, pegi);
+	        statement.setString(2, sviluppatore);
+	        statement.setString(3, genere);
+	        statement.setInt(4, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
+	
 }

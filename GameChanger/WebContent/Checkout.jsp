@@ -69,7 +69,7 @@
                   <h3><b> Indirizzo</b></h3>
                   <label for="adr"><i class="fa fa-address-card-o"></i> Indirizzo</label>
                   <input type="text" id="adr" name="address" value="${user.indirizzo}">
-                  <label for="city"><i class="fa fa-institution"></i> Cittï¿½</label>
+                  <label for="city"><i class="fa fa-institution"></i> Città</label>
                   <input type="text" id="city" name="city" value="${user.citta}">
                   <div class="row">
                     <div class="col-50">

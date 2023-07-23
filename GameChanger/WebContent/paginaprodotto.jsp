@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="cn.gamechanger.connection.DbCon"%>
-<%@page import="cn.gamechanger.model.dao.*"%>
 <%@page import="cn.gamechanger.model.*"%>
-<%@ page import="java.text.DateFormat"%>
-<%@ page import="java.text.SimpleDateFormat"%>
-<%@ page import="java.util.Date"%>
 <%@ page import="cn.gamechanger.servlet.MostraProdottoSingoloServlet" %>
-<%@page import="java.util.List"%>
 <%
 String categoria = (String) request.getAttribute("categoria");
 Videogame v = null;

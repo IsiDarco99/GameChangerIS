@@ -85,29 +85,11 @@ Amministratore admin = (Amministratore) request.getAttribute("admin");
 			<h2>
 				<strong>Modifica prodotto</strong>
 			</h2>
-
-			<p>Nome attuale:</p>
-			<p>
-				Nome:<br> <input type="text" name="nomeprodotto">
-			</p>
-			<p>Prezzo attuale:</p>
-			<p>
-				Prezzo:<br> <input type="text" name="prezzoprodotto">
-			</p>
-			<p>Marca attuale:</p>
-			<p>
-				Marca:<br> <input type="text" name="marcaprodotto">
-			</p>
-			<p>Data di uscita attuale:</p>
-			<p>
-				Data di uscita:<br> <input type="text" name="data_usc">
-			</p>
-			<p>Descrizione attuale:</p>
-			<p>
-				Descrizione:<br> <input type="text" name="descrizioneprodotto">
-			</p>
-			<button type="submit">Aggiungi prodotto</button>
-
+			<form action="modifica-prodotto" method="post">
+			<p>ID del prodotto:</p>
+			<input type="text" name="codice">
+			<button type="submit">Avanti</button>
+			</form>
 		</div>
 	</div>
 
