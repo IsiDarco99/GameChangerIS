@@ -62,9 +62,12 @@ body {
 .immagine img {
 	height: 218px;
 	max-width: 100%;
-	
-	
 }
+
+caption {
+	display: none;
+}
+
 th{
 	font-family: Georgia, serif;
 }
@@ -108,47 +111,7 @@ table{
 .ordineCnt{
 	background-color: red;
 }
-/* Base Divider class */
-.divider {
-	display: flex;
-	
-	&:before,
-	&:after {
-	  content: "";
-	  flex: 1;
-	}
-  }
-  
-  /* Base line */
-  .line {
-	align-items: center;
-	margin: 1em -1em;
-	
-	&:before,
-	&:after {
-	  height: 1px;
-	  margin: 0 1em;
-	}
-  }
-  
-  /* Linea Glow */
-  .glow {
-	color: whitesmoke;
-	&:before,
-	&:after {
-	  height: 6px;
-	  -webkit-filter: blur(5px);
-	  border-radius: 5px;
-	}
-	  
-	&:before {
-	  background: linear-gradient(to right, blue, hotpink);
-	}
-	  
-	&:after {
-	  background: linear-gradient(to left, blue, hotpink);
-	}
-  }
+
 
 @media (max-width: 768px) {
 .immagine img {

@@ -34,7 +34,7 @@ Amministratore admin = (Amministratore) request.getAttribute("admin");
 				<strong>Inserisci nuovo prodotto</strong>
 			</h2>
 			<form action="Inserisci-Prodotto" method="post"
-				onsubmit="return validateForm()">
+				onsubmit="return validateFormNuovo()">
 				<p>
 					Categoria:<br> <select name="categoria">
 						<option value="videogame">Videogame</option>
@@ -85,9 +85,11 @@ Amministratore admin = (Amministratore) request.getAttribute("admin");
 			<h2>
 				<strong>Modifica prodotto</strong>
 			</h2>
-			<form action="modifica-prodotto" method="post">
-			<p>ID del prodotto:</p>
-			<input type="text" name="codice">
+			<form action="modifica-prodotto" method="post" onsubmit="return validateFormModifica()">
+			<p>Codice del prodotto:</p>
+			<input type="text" name="codice" required
+					oninput="validateCodice(this)"> <br>
+			<p id="errorCodice" style="color: red;"></p>
 			<button type="submit">Avanti</button>
 			</form>
 		</div>
@@ -103,7 +105,7 @@ Amministratore admin = (Amministratore) request.getAttribute("admin");
 			<h2>
 				<strong>Elimina prodotto</strong>
 			</h2>
-			<form id="deleteProductForm" action="elimina-prodotto" method="post">
+			<form id="deleteProductForm" action="elimina-prodotto" method="post" onsubmit="return validateFormElimina()">
 				<p>Codice del prodotto:</p>
 				<br> <input type="text" name="codice" required
 					oninput="validateCodice(this)"> <br>
@@ -118,8 +120,45 @@ Amministratore admin = (Amministratore) request.getAttribute("admin");
 	<%
 	break;
 
-	case "altro":
+	case "ordiniData":
 	%>
+	<div class="container">
+		<div class="blocco">
+			<h2>
+				<strong>Visualizza ordini per data</strong>
+			</h2>
+			<form action="visualizza-ordini-data" method="post" onsubmit="return validateFormOrdiniData()">
+				<p>Data iniziale:</p>
+				<input type="text" name="dataIniz" required onblur="validateDataIniz()"> <br>
+				<p id="errorDataIniz" style="color: red;"></p>
+				<p>Data finale:</p>
+				<input type="text" name="dataFin" required onblur="validateDataFin()"> <br>
+				<p id="errorDataFin" style="color: red;"></p>
+				<button type="submit">Avanti</button>
+			</form>
+		</div>
+	</div>
+
+
+	<%
+	break;
+
+	case "ordiniUser":
+	%>
+	<div class="container">
+		<div class="blocco">
+			<h2>
+				<strong>Visualizza ordini per User</strong>
+			</h2>
+			<form action="visualizza-ordini-user" method="post" onsubmit="return validateFormOrdiniUser()">
+				<p>Username:</p>
+				<input type="text" name="username" required onblur="validateUsername()"> <br>
+				<p id="errorUsername" style="color: red;"></p>
+				<button type="submit">Avanti</button>
+			</form>
+		</div>
+	</div>
+
 
 	<%
 	}

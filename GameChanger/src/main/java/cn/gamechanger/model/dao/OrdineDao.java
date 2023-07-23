@@ -106,5 +106,82 @@ public class OrdineDao {
 	    }
 	    return ordiniEProdotti;
 	}
+	
+	public Map<Ordine, List<ProdottoOrdine>> getAllOrdini() throws SQLException {
+	    Map<Ordine, List<ProdottoOrdine>> ordiniEProdotti = new LinkedHashMap<>();
+
+	    String query = "SELECT * FROM ordine o " +
+	                   "JOIN prodotto_ordine po ON o.id_ordine = po.id_ordine " +
+	                   "ORDER BY o.id_ordine";
+
+	    try (PreparedStatement stmt = con.prepareStatement(query)) {
+
+	        try (ResultSet rs = stmt.executeQuery()) {
+	            while (rs.next()) {
+	                int idOrdine = rs.getInt("id_ordine");
+	                String username = rs.getString("username");
+	                String statoOrd = rs.getString("stato_ord");
+	                String dataOrd = rs.getString("data_ord");
+
+	                int codiceProdotto = rs.getInt("codice");
+	                int quantitaProdotto = rs.getInt("quant_prod");
+	                float prezzoProdotto = rs.getFloat("prezzo");
+	                String nomeProdotto = rs.getString("nome");
+
+	                Ordine ordine = new Ordine(idOrdine, username, statoOrd, dataOrd);
+	                ProdottoOrdine prodottoOrdine = new ProdottoOrdine(idOrdine, codiceProdotto, nomeProdotto, prezzoProdotto, quantitaProdotto);
+
+	                // Aggiungi il prodotto all'ordine corrispondente nella mappa
+	                List<ProdottoOrdine> prodottiOrdine = ordiniEProdotti.get(ordine);
+	                if (prodottiOrdine == null) {
+	                    prodottiOrdine = new ArrayList<>();
+	                    ordiniEProdotti.put(ordine, prodottiOrdine);
+	                }
+	                prodottiOrdine.add(prodottoOrdine);
+	            }
+	        }
+	    }
+	    return ordiniEProdotti;
+	}
+	
+	public Map<Ordine, List<ProdottoOrdine>> getOrdiniByDateRange(String startDate, String endDate) throws SQLException {
+        Map<Ordine, List<ProdottoOrdine>> ordiniEProdotti = new LinkedHashMap<>();
+
+        String query = "SELECT * FROM ordine o " +
+                       "JOIN prodotto_ordine po ON o.id_ordine = po.id_ordine " +
+                       "WHERE o.data_ord >= ? AND o.data_ord <= ? " +
+                       "ORDER BY o.id_ordine";
+
+        try (PreparedStatement stmt = con.prepareStatement(query)) {
+            stmt.setString(1, startDate);
+            stmt.setString(2, endDate);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    String username = rs.getString("username");
+                    int idOrdine = rs.getInt("id_ordine");
+                    String statoOrd = rs.getString("stato_ord");
+                    String dataOrd = rs.getString("data_ord");
+
+                    int codiceProdotto = rs.getInt("codice");
+                    int quantitaProdotto = rs.getInt("quant_prod");
+                    float prezzoProdotto = rs.getFloat("prezzo");
+                    String nomeProdotto = rs.getString("nome");
+
+                    Ordine ordine = new Ordine(idOrdine, username, statoOrd, dataOrd);
+                    ProdottoOrdine prodottoOrdine = new ProdottoOrdine(idOrdine, codiceProdotto, nomeProdotto, prezzoProdotto, quantitaProdotto);
+
+                    // Aggiungi il prodotto all'ordine corrispondente nella mappa
+                    List<ProdottoOrdine> prodottiOrdine = ordiniEProdotti.get(ordine);
+                    if (prodottiOrdine == null) {
+                        prodottiOrdine = new ArrayList<>();
+                        ordiniEProdotti.put(ordine, prodottiOrdine);
+                    }
+                    prodottiOrdine.add(prodottoOrdine);
+                }
+            }
+        }
+        return ordiniEProdotti;
+    }
 
 }

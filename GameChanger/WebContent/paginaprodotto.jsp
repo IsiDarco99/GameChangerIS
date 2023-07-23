@@ -145,61 +145,70 @@ if (categoria.equals("videogame")){
 				</div>
 			</div>
 			<div class="scritta-prodotti">
-				<h3>Prodotti Consigliati</h3>
-			</div>
-			<div class="row nuove-uscite">
-				<div class="col-md-12">
-					<div class="content2">
-						<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
-							src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
-							alt="PC"></a>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="content2">
-						<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
-						<img src="imgs\homepage\secondo-carosello\switch.jpg"
-							alt="Switch">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="content2">
-						<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=1">
-						<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
-							alt="God Of War: Ragnarok">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="content2">
-						<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
-						<img src="imgs\homepage\secondo-carosello\streamD.jpg"
-							alt="Stream">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="content2">
-						<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
-						<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
-						</a>
-					</div>
-					
-				</div>
-				<div class="col-md-12">
-					<div class="content2">
-						<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
-						<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
-							alt="Rocket League">
-						</a>
-					</div>
-				</div>
-	
-			</div>
-			</div>
+			<h3>Prodotti Consigliati</h3>
 		</div>
+		<div class="container-consigliati">
+			<div class="arrow_prev2">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		<div class="arrow_next2">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		<div class="row nuove-uscite">
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
+						src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
+						alt="PC"></a>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
+					<img src="imgs\homepage\secondo-carosello\switch.jpg"
+						alt="Switch">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=2">
+					<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
+						alt="God Of War: Ragnarok">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
+					<img src="imgs\homepage\secondo-carosello\streamD.jpg"
+						alt="Stream">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
+					<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
+					</a>
+				</div>
+				
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
+					<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
+						alt="Rocket League">
+					</a>
+				</div>
+			</div>
+
+		</div>
+		
+				
+			</div>
 	</div>
+</div>
 	
 	
 	<!-- COMPUTER -->
@@ -309,68 +318,61 @@ if (categoria.equals("videogame")){
 		</div>
 		<div class="container-consigliati">
 			<div class="arrow_prev2">
-				<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		<div class="arrow_next2">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
+		</div>
+		<div class="row nuove-uscite">
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
+						src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
+						alt="PC"></a>
+				</div>
 			</div>
-			<div class="arrow_next2">
-				<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
+					<img src="imgs\homepage\secondo-carosello\switch.jpg"
+						alt="Switch">
+					</a>
+				</div>
 			</div>
-			<div class="container">
-				<div class="arrow_prev2">
-					<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=2">
+					<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
+						alt="God Of War: Ragnarok">
+					</a>
 				</div>
-				<div class="arrow_next2">
-					<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
+					<img src="imgs\homepage\secondo-carosello\streamD.jpg"
+						alt="Stream">
+					</a>
 				</div>
-				<div class="row nuove-uscite">
-					<div class="col-md-12">
-						<div class="content2">
-							<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
-								src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
-								alt="PC"></a>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="content2">
-							<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
-							<img src="imgs\homepage\secondo-carosello\switch.jpg"
-								alt="Switch">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="content2">
-							<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=1">
-							<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
-								alt="God Of War: Ragnarok">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="content2">
-							<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
-							<img src="imgs\homepage\secondo-carosello\streamD.jpg"
-								alt="Stream">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="content2">
-							<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
-							<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
-							</a>
-						</div>
-						
-					</div>
-					<div class="col-md-12">
-						<div class="content2">
-							<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
-							<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
-								alt="Rocket League">
-							</a>
-						</div>
-					</div>
-		
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
+					<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
+					</a>
 				</div>
+				
+			</div>
+			<div class="col-md-12">
+				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
+					<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
+						alt="Rocket League">
+					</a>
+				</div>
+			</div>
+
+		</div>
 		
 				
 			</div>
@@ -469,49 +471,60 @@ if (categoria.equals("videogame")){
 	</div>
 	<div class="container-consigliati">
 		<div class="arrow_prev2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="arrow_next2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="row nuove-uscite">
-
 			<div class="col-md-12">
 				<div class="content2">
-					<a href="#"><img
-						src="imgs/homepage/secondo-carosello/brawhalla.jpg"
-						alt="Brawhalla"></a>
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
+						src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
+						alt="PC"></a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/computer.jpg"
-						alt="Computer">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
+					<img src="imgs\homepage\secondo-carosello\switch.jpg"
+						alt="Switch">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=2">
 					<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
 						alt="God Of War: Ragnarok">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/nuka-cola.jpg"
-						alt="Nuka Cola">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
+					<img src="imgs\homepage\secondo-carosello\streamD.jpg"
+						alt="Stream">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/ps5.jpg" alt="PS5">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
+					<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
+					</a>
 				</div>
+				
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/rocket-league.jpg"
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
+					<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
 						alt="Rocket League">
+					</a>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -609,49 +622,60 @@ if (categoria.equals("videogame")){
 	</div>
 	<div class="container-consigliati">
 		<div class="arrow_prev2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="arrow_next2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="row nuove-uscite">
-
 			<div class="col-md-12">
 				<div class="content2">
-					<a href="#"><img
-						src="imgs/homepage/secondo-carosello/brawhalla.jpg"
-						alt="Brawhalla"></a>
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=7"><img
+						src="imgs\homepage\secondo-carosello\9320plusoled.jpg"
+						alt="PC"></a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/computer.jpg"
-						alt="Computer">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=18">
+					<img src="imgs\homepage\secondo-carosello\switch.jpg"
+						alt="Switch">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=2">
 					<img src="imgs/homepage/secondo-carosello/gowr.jpeg"
 						alt="God Of War: Ragnarok">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/nuka-cola.jpg"
-						alt="Nuka Cola">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=15">
+					<img src="imgs\homepage\secondo-carosello\streamD.jpg"
+						alt="Stream">
+					</a>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/ps5.jpg" alt="PS5">
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=19">
+					<img src="imgs\homepage\secondo-carosello\wp3025447-ps4-hd-wallpapers.jpg" alt="PS4">
+					</a>
 				</div>
+				
 			</div>
 			<div class="col-md-12">
 				<div class="content2">
-					<img src="imgs/homepage/secondo-carosello/rocket-league.jpg"
+					<a href="${pageContext.request.contextPath}/mostra-prodotto?codice=10">
+					<img src="imgs\homepage\secondo-carosello\asuRogG14.jpg"
 						alt="Rocket League">
+					</a>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -659,7 +683,7 @@ if (categoria.equals("videogame")){
 <%} %>
 
 	<%@ include file="includes/footer.jsp"%>
-	<script src="js\paginaprodotto.js" type="text/javascript"></script>
+	<script src="js/paginaprodotto.js" type="text/javascript"></script>
 	<script src="js/carrello.js" type="text/javascript"></script>
 </body>
 </html>

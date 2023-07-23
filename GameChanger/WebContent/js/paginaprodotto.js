@@ -64,4 +64,3 @@ function decreaseQuantity() {
 				nextArrow : '.arrow_next2'
 			});
 		});
-		console.log("aiutatemi");
