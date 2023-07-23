@@ -5,27 +5,13 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="cn.gamechanger.servlet.MostraTuttiProdottiServlet" %>
 <%
-    
-    String ricerca = request.getParameter("ricerca");
-    if (ricerca == null) {
-        ricerca = "";
-    } else {
-        ricerca = ricerca.trim(); // Rimuove spazi iniziali e finali
-        ricerca = ricerca.replaceAll("[^\\p{L}\\p{N}]", ""); // Rimuove caratteri non letterali e non numerici
-    }
-
-    
-    String categoria = request.getParameter("categoria");
-    if (categoria == null || categoria.isEmpty()) {
-        categoria = "allProdotti";
-    } else {
-        categoria = categoria.trim(); // Rimuove spazi iniziali e finali
-        
-    }
-
-    List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodotti");
+	String ricerca = request.getParameter("ricerca");
+	String categoria = request.getParameter("categoria");
+	if (categoria == null) {
+		categoria = "allProdotti";
+  }
+	List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodotti");
 %>
-
 <!DOCTYPE html>
 <html lang="IT">
 <head>
