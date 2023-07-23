@@ -56,29 +56,30 @@
 		<legend>Pagamento</legend>
 		<div class="col-75">
 			<div class="container">
-			<form action="/GameChanger/Checkout4-Servlet" method="post">
-				<div class="col-50">
-					<h3>
-						<b>Pagamento</b>
-					</h3>
-					<label for="fname">Pagamenti accettati</label>
-					<div class="icon-container">
-						<i class='fa fa-paypal'></i>
-					</div>
-					<label for="cname">E -mail PayPal</label> 
-					<input type="text"
-						id="cname" name="emailPayPal" value="${user.emailPaypal}">
-				</div>
-				<label>
-                <input type="checkbox" checked="checked" name="salva-dati"> Salva e-mail PayPal per i prossimi acquisti
-              </label>
-             <input type="submit" id="submitBtn" value="Continua" class="btn">
-            </form> 
+			<form id="myForm" action="/GameChanger/Checkout4-Servlet" method="post">
+  <div class="col-50">
+    <h3><b>Pagamento</b></h3>
+    <label for="fname">Pagamenti accettati</label>
+    <div class="icon-container">
+      <i class='fa fa-paypal'></i>
+    </div>
+    <label for="cname">E-mail PayPal</label>
+    <input type="text" id="cname" name="emailPayPal" value="${user.emailPaypal}" onblur="validateEmailPayPal()">
+    <span id="errorEmailPayPal" style="color: red;" class="error"></span>
+  </div>
+
+  <label>
+    <input type="checkbox" checked="checked" name="salva-dati"> Salva e-mail PayPal per i prossimi acquisti
+  </label>
+  <input type="submit" id="submitBtn" value="Continua" class="btn">
+</form>
+
 			</div>
 		</div>
 	</fieldset>
 
 
 	<%@include file="includes/footer.jsp"%>
+	<script src="js/checkout2.js" type="text/javascript"></script>
 </body>
 </html>
