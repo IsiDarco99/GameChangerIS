@@ -22,13 +22,9 @@ public class ProdottoDao {
 	
 	public List<Prodotto> getAllProdotto() {
 	    List<Prodotto> prodotti = new ArrayList<Prodotto>();
-	    PreparedStatement pst = null;
-	    ResultSet rs = null;
 
-	    try {
-	        String query = "SELECT * FROM prodotto";
-	        pst = this.con.prepareStatement(query);
-	        rs = pst.executeQuery();
+	    try (PreparedStatement pst = this.con.prepareStatement("SELECT * FROM prodotto");
+	         ResultSet rs = pst.executeQuery()) {
 
 	        while (rs.next()) {
 	            Prodotto row = new Prodotto();
@@ -43,102 +39,66 @@ public class ProdottoDao {
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (rs != null) {
-	                rs.close();
-	            }
-	            if (pst != null) {
-	                pst.close();
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
 	    }
 
 	    return prodotti;
 	}
 
+
 	
 	public Prodotto getProdottoByCodice(int codice) {
 	    Prodotto prodotto = null;
-	    PreparedStatement pst = null;
-	    ResultSet rs = null;
 
-	    try {
-	        String query = "SELECT * FROM prodotto WHERE codice = ?";
-	        pst = this.con.prepareStatement(query);
+	    try (PreparedStatement pst = this.con.prepareStatement("SELECT * FROM prodotto WHERE codice = ?")) {
 	        pst.setInt(1, codice);
-	        rs = pst.executeQuery();
 
-	        if (rs.next()) {
-	            prodotto = new Prodotto();
-	            prodotto.setCodice(rs.getInt("codice"));
-	            prodotto.setNome(rs.getString("nome"));
-	            prodotto.setPrezzo(rs.getFloat("prezzo"));
-	            prodotto.setMarca(rs.getString("marca"));
-	            prodotto.setDescrizione(rs.getString("descrizione"));
-	            prodotto.setDataUscita(rs.getDate("data_usc"));
+	        try (ResultSet rs = pst.executeQuery()) {
+	            if (rs.next()) {
+	                prodotto = new Prodotto();
+	                prodotto.setCodice(rs.getInt("codice"));
+	                prodotto.setNome(rs.getString("nome"));
+	                prodotto.setPrezzo(rs.getFloat("prezzo"));
+	                prodotto.setMarca(rs.getString("marca"));
+	                prodotto.setDescrizione(rs.getString("descrizione"));
+	                prodotto.setDataUscita(rs.getDate("data_usc"));
+	            }
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (rs != null) {
-	                rs.close();
-	            }
-	            if (pst != null) {
-	                pst.close();
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
 	    }
 
 	    return prodotto;
 	}
 
+
 	
 	public List<Prodotto> getProdottoByPrezzo(int min, int max) {
 	    List<Prodotto> prodotti = new ArrayList<Prodotto>();
-	    PreparedStatement pst = null;
-	    ResultSet rs = null;
 
-	    try {
-	        String query = "SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?";
-	        pst = this.con.prepareStatement(query);
+	    try (PreparedStatement pst = this.con.prepareStatement("SELECT * FROM prodotto WHERE prezzo >= ? AND prezzo <= ?")) {
 	        pst.setInt(1, min);
 	        pst.setInt(2, max);
-	        rs = pst.executeQuery();
 
-	        while (rs.next()) {
-	            Prodotto row = new Prodotto();
-	            row.setCodice(rs.getInt("codice"));
-	            row.setNome(rs.getString("nome"));
-	            row.setPrezzo(rs.getFloat("prezzo"));
-	            row.setMarca(rs.getString("marca"));
-	            row.setDescrizione(rs.getString("descrizione"));
-	            row.setDataUscita(rs.getDate("data_usc"));
+	        try (ResultSet rs = pst.executeQuery()) {
+	            while (rs.next()) {
+	                Prodotto row = new Prodotto();
+	                row.setCodice(rs.getInt("codice"));
+	                row.setNome(rs.getString("nome"));
+	                row.setPrezzo(rs.getFloat("prezzo"));
+	                row.setMarca(rs.getString("marca"));
+	                row.setDescrizione(rs.getString("descrizione"));
+	                row.setDataUscita(rs.getDate("data_usc"));
 
-	            prodotti.add(row);
+	                prodotti.add(row);
+	            }
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (rs != null) {
-	                rs.close();
-	            }
-	            if (pst != null) {
-	                pst.close();
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
 	    }
 
 	    return prodotti;
 	}
+
 
 	
 	public void insertProdotto(float prezzo, String nome, String marca, String descrizione, String data_usc) {
@@ -229,13 +189,9 @@ public class ProdottoDao {
 		
 	public Prodotto getUltimoProdotto() {
 	    Prodotto prodotto = null;
-	    PreparedStatement statement = null;
-	    ResultSet resultSet = null;
 
-	    try {
-	        String query = "SELECT * FROM prodotto WHERE codice = (SELECT MAX(codice) FROM prodotto)";
-	        statement = this.con.prepareStatement(query);
-	        resultSet = statement.executeQuery();
+	    try (PreparedStatement statement = this.con.prepareStatement("SELECT * FROM prodotto WHERE codice = (SELECT MAX(codice) FROM prodotto)");
+	         ResultSet resultSet = statement.executeQuery()) {
 
 	        if (resultSet.next()) {
 	            int codice = resultSet.getInt("codice");
@@ -250,55 +206,26 @@ public class ProdottoDao {
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
-	    } finally {
-	        try {
-	            if (resultSet != null) {
-	                resultSet.close();
-	            }
-	            if (statement != null) {
-	                statement.close();
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	            logger.info(e.getMessage());
-	        }
 	    }
 
 	    return prodotto;
 	}
 
+
 		
 	public boolean controllaEsistenza(String codice) {
-	    PreparedStatement statement = null;
-	    ResultSet resultSet = null;
-
-	    try {
-	        String query = "SELECT * FROM prodotto WHERE codice = ?";
-	        statement = this.con.prepareStatement(query);
+	    try (PreparedStatement statement = this.con.prepareStatement("SELECT * FROM prodotto WHERE codice = ?")) {
 	        statement.setString(1, codice);
-
-	        resultSet = statement.executeQuery();
-	        boolean exists = resultSet.next();
-
-	        return exists;
+	        try (ResultSet resultSet = statement.executeQuery()) {
+	            return resultSet.next();
+	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
 	        return false;
-	    } finally {
-	        try {
-	            if (resultSet != null) {
-	                resultSet.close();
-	            }
-	            if (statement != null) {
-	                statement.close();
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	            logger.info(e.getMessage());
-	        }
 	    }
 	}
+
 
 
 

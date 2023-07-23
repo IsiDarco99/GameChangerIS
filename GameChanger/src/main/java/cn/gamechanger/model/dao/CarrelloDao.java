@@ -128,7 +128,6 @@ public class CarrelloDao {
         }
     }
 
-
     
     public void cambiaQuantitaProdotto(String username, int codiceProdotto, int nuovaQuantita) {
         PreparedStatement statement = null;
