@@ -29,6 +29,8 @@ public class Checkout4Servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	String username = (String) request.getSession().getAttribute("userSession");
+    	String checkboxValue = request.getParameter("salva-dati");
+		boolean isChecked = "on".equals(checkboxValue);
     	
         	try {
         		
@@ -41,8 +43,16 @@ public class Checkout4Servlet extends HttpServlet {
                 UserDao userDao = new UserDao(DbCon.getConnection());
                 User user = userDao.getUserProfile(username);
                 request.setAttribute("user", user);
-                request.getRequestDispatcher("checkout3.jsp").forward(request, response);
-                
+                if (isChecked) {
+    				String emailPaypalString = request.getParameter("emailPayPal");
+
+    	            user.setEmailPaypal(emailPaypalString);
+
+    	            userDao.updateUserPayPal(user);;
+    	            request.getRequestDispatcher("checkout3.jsp").forward(request, response);
+    			} else {
+    				request.getRequestDispatcher("checkout3.jsp").forward(request, response);
+    			}                
         	} catch (Exception e) {
     			e.getStackTrace();
     		}
