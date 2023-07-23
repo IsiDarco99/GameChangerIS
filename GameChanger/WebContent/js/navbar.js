@@ -1,3 +1,4 @@
+
 function effettuaRicerca() {
   let   searchString = document.getElementById("ricerca-item").value;
   sessionStorage.setItem("searchString", searchString);
@@ -18,21 +19,9 @@ let   searchString = sessionStorage.getItem("searchString");
 document.getElementById("ricerca-item").value = searchString;
 
 let   timer;
-
-
-
-
-// Ora puoi accedere all'elemento navbar e manipolarlo come desideri
-
-
-
-
-
+console.log("ti prego");
 $(document).ready(function() {
  
-
-  
- /*vetrina, creazione del menù */
     $(".OpenNavbar").click(function(){
       Open.classList.toggle("active");
       Open.addEventListener("animationend", ()=> { 
@@ -143,3 +132,4 @@ $(document).ready(function() {
   
 
 });
+console.log("cazzo");
