@@ -66,5 +66,3 @@ public class AmministratoreDao {
 		return admin;
 	}
 }
-
-   
