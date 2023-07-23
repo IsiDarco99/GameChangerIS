@@ -5,11 +5,7 @@
 <head>
   <script type="text/javascript" src="
 	http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/javascript" src="js\homepage.js"></script>
-	
-	<script type="text/javascript" src="js/navbar.js"></script>-->
-
-<!--                          -------								 -->
+	<script type="text/javascript" src="js\homepage.js"></script>	
 	<title>GameChanger</title>
 	<%@include file="includes/head.jsp"%>
 	<link rel="stylesheet" href="css/styles.css" type="text/css">
