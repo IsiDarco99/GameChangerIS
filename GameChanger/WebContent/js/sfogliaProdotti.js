@@ -1,15 +1,31 @@
- document.addEventListener("DOMContentLoaded", function() {
-    let   searchString = sessionStorage.getItem("searchString");
-    let   ricercaItem = document.getElementById("ricerca-item");
-	  document.getElementById("ricerca-item").value = searchString;
-	  if (searchString && searchString.trim() !== ""){
-      ricercaItem.value = searchString;
-      ricerca();
-     }
-    
-    
-   
-  })
+let searchString = null;
+
+document.addEventListener("DOMContentLoaded", function() {
+  let urlParams = new URLSearchParams(window.location.search);
+  let searchString = urlParams.get("searchString");
+  let ricercaItem = document.getElementById("ricerca-item");
+  ricercaItem.value = searchString;
+
+  if (searchString && searchString.trim() !== "") {
+    ricerca();
+  }
+
+  // Aggiungi un listener per l'evento beforeunload
+  window.addEventListener("beforeunload", function() {
+    cleanUpVariables();
+  });
+
+  // Aggiungi un listener per l'evento pageshow
+  window.addEventListener("pageshow", function(event) {
+    // Verifica se l'utente torna alla pagina utilizzando il tasto "Back" del browser
+    if (event.persisted) {
+      cleanUpVariables();
+    }
+  });
+});
+const cleanUpVariables = () => {
+  searchString = null;
+};
 
 const ricerca = () => {
   const barraricerca = document.getElementById("ricerca-item").value.toUpperCase();
@@ -29,3 +45,10 @@ const ricerca = () => {
     }
   }
 };
+
+
+
+
+
+
+

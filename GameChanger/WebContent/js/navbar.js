@@ -1,8 +1,8 @@
 
 function effettuaRicerca() {
-  let   searchString = document.getElementById("ricerca-item").value;
+  let searchString = document.getElementById("ricerca-item").value;
   sessionStorage.setItem("searchString", searchString);
-  window.location.href = contextPath + "/mostra-tutti-prodotti?categoria=allProdotti";
+  window.location.href = contextPath + "/mostra-tutti-prodotti?categoria=allProdotti&searchString=" + encodeURIComponent(searchString);
 }
 document.addEventListener("DOMContentLoaded", function() {
   
@@ -19,7 +19,7 @@ let   searchString = sessionStorage.getItem("searchString");
 document.getElementById("ricerca-item").value = searchString;
 
 let   timer;
-console.log("ti prego");
+
 $(document).ready(function() {
  
     $(".OpenNavbar").click(function(){
@@ -132,4 +132,3 @@ $(document).ready(function() {
   
 
 });
-console.log("cazzo");
