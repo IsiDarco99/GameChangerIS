@@ -280,8 +280,7 @@ function validateFormModifica() {
 }
 
 function validateFormElimina() {
-  let isCodiceValid = validateCodice();
-
+  let isCodiceValid = validateCodice(document.querySelector('input[name="codice"]'));
   return isCodiceValid;
 }
 
@@ -345,26 +344,30 @@ function submitForm() {
 }
 
 function validateCodice(inputElement) {
-    const inputRegex = /^[1-9]\d{0,8}$/; // Regex per controllare i numeri da 1 a 9 con massimo 9 cifre
-    const maxNumber = 2147483647;
+  const inputRegex = /^[1-9]\d{0,8}$/; // Regex per controllare i numeri da 1 a 9 con massimo 9 cifre
+  const maxNumber = 2147483647;
 
-    const value = inputElement.value.trim();
-    const errorElement = document.getElementById("errorCodice");
+  const value = inputElement.value.trim();
+  const errorElement = document.getElementById("errorCodice");
 
-    if (!inputRegex.test(value)) {
-        errorElement.textContent = "Inserisci un numero da 1 a 9 con un massimo di 2147483647.";
-        inputElement.setCustomValidity("Invalid");
+  if (!inputRegex.test(value)) {
+    errorElement.textContent = "Inserisci un numero da 1 a 9 con un massimo di 2147483647.";
+    inputElement.setCustomValidity("Invalid");
+    return false; // Return false if validation fails
+  } else {
+    const numberValue = parseInt(value, 10);
+    if (numberValue > maxNumber) {
+      errorElement.textContent = "Il numero deve essere minore o uguale a 2147483647.";
+      inputElement.setCustomValidity("Invalid");
+      return false; // Return false if validation fails
     } else {
-        const numberValue = parseInt(value, 10);
-        if (numberValue > maxNumber) {
-            errorElement.textContent = "Il numero deve essere minore o uguale a 2147483647.";
-            inputElement.setCustomValidity("Invalid");
-        } else {
-            errorElement.textContent = "";
-            inputElement.setCustomValidity("");
-        }
+      errorElement.textContent = "";
+      inputElement.setCustomValidity("");
+      return true; // Return true if validation passes
     }
+  }
 }
+
 
 function validateUsername() {
    let   newUsername = document.getElementsByName("username")[0].value;
