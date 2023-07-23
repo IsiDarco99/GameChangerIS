@@ -10,13 +10,16 @@ function decreaseQuantity() {
 	}
 
 	function increaseQuantity() {
-	  let   quantityInput = document.getElementById("quantity");
-	  let   quantity = parseInt(quantityInput.value);
+  let quantityInput = document.getElementById("quantity");
+  let quantity = parseInt(quantityInput.value, 10);
+  console.log(quantity); // Aggiunto per il debug
 
-	  if (quantity < 99) {
-	    quantityInput.value = quantity + 1;
-	  }
-	}
+  if (isNaN(quantity) || quantity < 1) {
+    quantityInput.value = 1;
+  } else if (quantity < 99) {
+    quantityInput.value = quantity + 1;
+  }
+}
 	
 	function validateInput(event) {
 	  let   input = event.target;
@@ -35,7 +38,7 @@ function decreaseQuantity() {
 	}
 	
 	// Aggiungi un listener per l'evento "input" all'input della quantità
-	const   qntityInput = document.getElementById("quantity");
+	let   qntityInput = document.getElementById("quantity");
 	qntityInput.addEventListener("input", validateInput);
 
 	
@@ -64,3 +67,26 @@ function decreaseQuantity() {
 				nextArrow : '.arrow_next2'
 			});
 		});
+		
+	document.addEventListener("DOMContentLoaded", function () {
+  const inputQuantity = document.getElementById("quantity");
+  let previousValue = inputQuantity.value;
+
+  inputQuantity.addEventListener("input", function () {
+    // Controlla se l'input è vuoto
+    if (inputQuantity.value === "") {
+      // Imposta il valore a 1
+      inputQuantity.value = 1;
+    }
+
+    // Controlla se il nuovo valore è un numero
+    const newValue = parseInt(inputQuantity.value);
+    if (!isNaN(newValue)) {
+      // Salva il nuovo valore come previousValue
+      previousValue = newValue;
+    } else {
+      // Se il nuovo valore non è un numero, ripristina il valore precedente
+      inputQuantity.value = previousValue;
+    }
+  });
+});

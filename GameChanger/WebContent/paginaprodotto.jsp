@@ -126,7 +126,7 @@ if (categoria.equals("videogame")){
 								</button>
 								<div class="quantity">
 									<button type="button" onclick="decreaseQuantity()">-</button>
-									<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="2" name="quantity" id="quantity" value="1">
+									<input type="text" oninput="validateInput(event)" pattern="[1-9][0-9]{0,3}" maxlength="2" name="quantity" id="quantity" min="1" max="99" value="0">
 									<button type="button" onclick="increaseQuantity()">+</button>
 								</div>
 							</div>
