@@ -1,7 +1,8 @@
+
 function effettuaRicerca() {
-  let   searchString = document.getElementById("ricerca-item").value;
+  let searchString = document.getElementById("ricerca-item").value;
   sessionStorage.setItem("searchString", searchString);
-  window.location.href = contextPath + "/mostra-tutti-prodotti?categoria=allProdotti";
+  window.location.href = contextPath + "/mostra-tutti-prodotti?categoria=allProdotti&searchString=" + encodeURIComponent(searchString);
 }
 document.addEventListener("DOMContentLoaded", function() {
   
@@ -19,20 +20,8 @@ document.getElementById("ricerca-item").value = searchString;
 
 let   timer;
 
-
-
-
-// Ora puoi accedere all'elemento navbar e manipolarlo come desideri
-
-
-
-
-
 $(document).ready(function() {
  
-
-  
- /*vetrina, creazione del menù */
     $(".OpenNavbar").click(function(){
       Open.classList.toggle("active");
       Open.addEventListener("animationend", ()=> { 

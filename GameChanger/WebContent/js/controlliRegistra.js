@@ -31,7 +31,6 @@ function validateUsername() {
             resolve(false);
           } else {
             errorElement.textContent = "Esiste gi\u00E1 un username con questo nome.";
-            console.log("cazzono");
             resolve(false);
           }
         } else {
