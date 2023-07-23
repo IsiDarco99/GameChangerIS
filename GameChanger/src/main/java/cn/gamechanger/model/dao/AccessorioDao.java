@@ -3,6 +3,7 @@ package cn.gamechanger.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -95,41 +96,53 @@ public class AccessorioDao {
 	    return accessori;
 	}
 	
-	public void insertAccessorio(int codice, String tipo ) {
-		  try {
-			  String query = "INSERT INTO accessorio (codice, tipo) VALUES (?, ?)";
-			  
-			  PreparedStatement statement = this.con.prepareStatement(query);			  
-			  statement.setInt(1, codice);
-			  statement.setString(2, tipo);
-			  statement.executeUpdate();
-	          statement.close();
-			  
-			
-			
-		  }	
-		  catch (Exception e) {
-		        e.printStackTrace();
-		        logger.info(e.getMessage());
-		    }
-		 
-		}
-	
-	public void deleteAccessorio(String codice) {
+	public void insertAccessorio(int codice, String tipo) {
+	    String query = "INSERT INTO accessorio (codice, tipo) VALUES (?, ?)";
+	    PreparedStatement statement = null;
+
 	    try {
-	        String query = "DELETE FROM accessorio WHERE codice = ?";
-	        
-	        PreparedStatement statement = this.con.prepareStatement(query);
-	        statement.setString(1, codice);
-	        
+	        statement = this.con.prepareStatement(query);
+	        statement.setInt(1, codice);
+	        statement.setString(2, tipo);
 	        statement.executeUpdate();
-	        statement.close();
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
+	    } finally {
+	        if (statement != null) {
+	            try {
+	                statement.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	                logger.info(se.getMessage());
+	            }
+	        }
 	    }
-	    
 	}
+	
+	public void deleteAccessorio(String codice) {
+	    String query = "DELETE FROM accessorio WHERE codice = ?";
+	    PreparedStatement statement = null;
+	    
+	    try {
+	        statement = this.con.prepareStatement(query);
+	        statement.setString(1, codice);
+	        statement.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    } finally {
+	        if (statement != null) {
+	            try {
+	                statement.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	                logger.info(se.getMessage());
+	            }
+	        }
+	    }
+	}
+
 	
 
 
@@ -145,6 +158,16 @@ public class AccessorioDao {
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
-	    } 
+	    } finally {
+	       
+	        if (statement != null) {
+	            try {
+	                statement.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	                logger.info(se.getMessage());
+	            }
+	        }
+	    }
 	}
 }

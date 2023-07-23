@@ -3,14 +3,12 @@ package cn.gamechanger.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.Computer;
 import cn.gamechanger.model.Console;
-import cn.gamechanger.model.Prodotto;
 
 public class ConsoleDao {
 	private Connection con;
@@ -99,52 +97,78 @@ public class ConsoleDao {
 	}
 	
 	public void insertConsole(int codice, String generazione) {
-		  try {
-			  String query = "INSERT INTO console (codice, generazione) VALUES (?, ?)";
-			  
-			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setInt(1, codice);
-			  statement.setString(2, generazione);
-			  statement.executeUpdate();
-	          statement.close();
-			
-		  }	
-		  catch (Exception e) {
-		        e.printStackTrace();
-		        logger.info(e.getMessage());
-		    }
-		}
+	    PreparedStatement statement = null;
+
+	    try {
+	        String query = "INSERT INTO console (codice, generazione) VALUES (?, ?)";
+
+	        statement = this.con.prepareStatement(query);
+	        statement.setInt(1, codice);
+	        statement.setString(2, generazione);
+	        statement.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    } finally {
+	        try {
+	            if (statement != null) {
+	                statement.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            logger.info(e.getMessage());
+	        }
+	    }
+	}
+
 	
 	public void deleteConsole(String codice) {
+	    PreparedStatement statement = null;
+
 	    try {
 	        String query = "DELETE FROM console WHERE codice = ?";
-	        
-	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement = this.con.prepareStatement(query);
 	        statement.setString(1, codice);
-	        
 	        statement.executeUpdate();
-	        statement.close();
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
+	    } finally {
+	        try {
+	            if (statement != null) {
+	                statement.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            logger.info(e.getMessage());
+	        }
 	    }
-	    
 	}
+
 	
 	public void updateConsole(int codice, String generazione) {
+	    PreparedStatement statement = null;
+
 	    try {
 	        String query = "UPDATE console SET generazione = ? WHERE codice = ?";
-	        
-	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement = this.con.prepareStatement(query);
 	        statement.setString(1, generazione);
 	        statement.setInt(2, codice);
-	        
 	        statement.executeUpdate();
-	        statement.close();
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
+	    } finally {
+	        try {
+	            if (statement != null) {
+	                statement.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            logger.info(e.getMessage());
+	        }
 	    }
 	}
+
 
 }

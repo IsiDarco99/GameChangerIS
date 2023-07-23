@@ -3,12 +3,12 @@ package cn.gamechanger.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.Accessorio;
 import cn.gamechanger.model.Computer;
 
 public class ComputerDao {
@@ -104,61 +104,84 @@ public class ComputerDao {
 	}
 	
 	public void insertComputer(int codice, String casa, String ufficio, String gaming) {
-		  try {
-			  String query = "INSERT INTO computer (codice, casa, ufficio, gaming) VALUES (?, ?, ?, ?)";
-			  
-			  PreparedStatement statement = this.con.prepareStatement(query);
-			  statement.setInt(1, codice);
-			  statement.setString(2, casa);
-			  statement.setString(3, ufficio);
-			  statement.setString(4, gaming);
-			  
-		  
-			  statement.executeUpdate();
-	          statement.close();
-			  
-			
-			
-		  }	
-		  catch (Exception e) {
-		        e.printStackTrace();
-		        logger.info(e.getMessage());
-		    }
-		}
-	
-	public void deleteComputer(String codice) {
+	    PreparedStatement statement = null;
+
 	    try {
-	        String query = "DELETE FROM computer WHERE codice = ?";
-	        
-	        PreparedStatement statement = this.con.prepareStatement(query);
-	        statement.setString(1, codice);
-	        
+	        String query = "INSERT INTO computer (codice, casa, ufficio, gaming) VALUES (?, ?, ?, ?)";
+
+	        statement = this.con.prepareStatement(query);
+	        statement.setInt(1, codice);
+	        statement.setString(2, casa);
+	        statement.setString(3, ufficio);
+	        statement.setString(4, gaming);
+
 	        statement.executeUpdate();
-	        statement.close();
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
+	    } finally {
+	        try {
+	            if (statement != null) {
+	                statement.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            logger.info(e.getMessage());
+	        }
 	    }
-	    
 	}
+
+	
+	public void deleteComputer(String codice) {
+	    PreparedStatement statement = null;
+
+	    try {
+	        String query = "DELETE FROM computer WHERE codice = ?";
+	        statement = this.con.prepareStatement(query);
+	        statement.setString(1, codice);
+	        statement.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    } finally {
+	        try {
+	            if (statement != null) {
+	                statement.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            logger.info(e.getMessage());
+	        }
+	    }
+	}
+
 	
 	public void updateComputer(int codice, String casa, String ufficio, String gaming) {
+	    PreparedStatement statement = null;
+
 	    try {
 	        String query = "UPDATE computer SET casa = ?, ufficio = ?, gaming = ? WHERE codice = ?";
-	        
-	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement = this.con.prepareStatement(query);
 	        statement.setString(1, casa);
 	        statement.setString(2, ufficio);
 	        statement.setString(3, gaming);
 	        statement.setInt(4, codice);
-	        
 	        statement.executeUpdate();
-	        statement.close();
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        logger.info(e.getMessage());
+	    } finally {
+	        try {
+	            if (statement != null) {
+	                statement.close();
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            logger.info(e.getMessage());
+	        }
 	    }
 	}
+
 
 	
 }
