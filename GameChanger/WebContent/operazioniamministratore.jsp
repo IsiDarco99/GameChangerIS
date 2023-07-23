@@ -65,7 +65,7 @@ Amministratore admin = (Amministratore) request.getAttribute("admin");
 				<p id="errorData" style="color: red;"></p>
 				<p>
 					Descrizione:<br>
-					<textarea name="descrizioneprodotto" rows="10" cols="50" required
+					<textarea name="descrizioneprodotto" rows="10" cols="27" required
 						onblur="validateDescr()"></textarea>
 				</p>
 				<p id="errorDescrizione" style="color: red;"></p>

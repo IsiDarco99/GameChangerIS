@@ -210,7 +210,7 @@
 		
 	</div>
 	<div class="container box" style="margin-top: 100px;">
-		<div class="row">
+		<div id="video" class="row">
 			<div class="col-5 video-info">
 				<span class="head">IN ARRIVO</span>
 				<p>Neva segue la storia di Alba, una giovane donna legata a un
