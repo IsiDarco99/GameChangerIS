@@ -55,7 +55,6 @@ public class EliminaProdottoServlet extends HttpServlet {
 				
 				response.sendRedirect("prodottoCancellato.jsp");
 			} else {
-				request.setAttribute("errore", "Il prodotto non esiste nel catalogo");
 				response.sendRedirect("operazioniamministratore.jsp?modifica=elimina");
 			}
 		} catch (ClassNotFoundException | SQLException e) {

@@ -38,8 +38,10 @@
 <a href="operazioniamministratore.jsp?modifica=inserisci">Aggiungi nuovo prodotto<br></a>
 <a href="operazioniamministratore.jsp?modifica=modifica">Modifica prodotto<br></a>
 <a href="operazioniamministratore.jsp?modifica=elimina">Elimina prodotto<br></a>
-<a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">Visualizza prodotti</a>
-<a href="operazioniamministratore.jsp?modifica=ordini">Visualizza ordini<br></a>
+<a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">Visualizza tutti i prodotti<br></a>
+<a href="${pageContext.request.contextPath}/visualizza-all-ordini">Visualizza tutti gli ordini<br></a>
+<a href="operazioniamministratore.jsp?modifica=ordiniData">Visualizza ordini per data<br></a>
+<a href="operazioniamministratore.jsp?modifica=ordiniUser">Visualizza ordini per utente<br></a>
 </div>
 
 

@@ -19,7 +19,7 @@ function increaseQuantity() {
       const value = input.value;
 
       // Rimuovi i caratteri non numerici
-      const filteredValue = value.replace(/[^0-9]/g, '');
+      const filteredValue = value.replace(/\D/g, '');
 
       // Imposta il valore filtrato nell'input
       input.value = filteredValue;

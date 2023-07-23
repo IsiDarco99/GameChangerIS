@@ -130,4 +130,21 @@ public class ConsoleDao {
 	    }
 	    
 	}
+	
+	public void updateConsole(int codice, String generazione) {
+	    try {
+	        String query = "UPDATE console SET generazione = ? WHERE codice = ?";
+	        
+	        PreparedStatement statement = this.con.prepareStatement(query);
+	        statement.setString(1, generazione);
+	        statement.setInt(2, codice);
+	        
+	        statement.executeUpdate();
+	        statement.close();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        logger.info(e.getMessage());
+	    }
+	}
+
 }

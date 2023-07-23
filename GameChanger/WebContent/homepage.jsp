@@ -151,10 +151,10 @@
 	</div>
 	<div class="container">
 		<div class="arrow_prev2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="arrow_next2">
-			<img src="imgs/generale/arrow.png" alt="Freccia giï¿½" height="25">
+			<img src="imgs/generale/arrow.png" alt="Freccia giù" height="25">
 		</div>
 		<div class="row nuove-uscite">
 			<div class="col-md-12">

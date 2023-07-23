@@ -17,7 +17,6 @@ public class VerificaUsernameServlet extends HttpServlet {
 
 @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // Recupera la vecchia password fornita dall'utente
     String username = request.getParameter("nuovousername");
     boolean isValid = false;
 try {

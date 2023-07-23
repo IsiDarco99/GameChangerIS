@@ -70,6 +70,7 @@
                                     <tr>
                                         <th class="nm">Prodotto</th>
                                         <th class="qnt">Quantit&aacute;</th>
+                                        <th class="qnt">Data acquisto</th>
                                         <th class="prz">Prezzo</th>
                                         <th class="prg">Stato:</th>
                                     </tr>
@@ -82,6 +83,7 @@
                                     <tr>
                                         <td class="nm"><%= prodotto.getNome() %></td>
                                         <td class="qnt"><%= prodotto.getQuantita() %></td>
+                                        <td class="qnt"><%= ordine.getDataOrd() %></td>                                        
                                         <td class="prz"><%= String.format("%.2f", prodotto.getPrezzo() * prodotto.getQuantita()) %>&#x20AC;</td>
                                         <td class="prg"><%= ordine.getStato_ord()%></th>
                                     </tr>
