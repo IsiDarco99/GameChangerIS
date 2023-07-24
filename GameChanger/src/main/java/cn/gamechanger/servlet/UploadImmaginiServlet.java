@@ -23,7 +23,7 @@ import cn.gamechanger.model.dao.*;
 @MultipartConfig
 public class UploadImmaginiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String UPLOAD_DIRECTORY = "C:/Users/Ruben/git/GameChangerRep/GameChanger/WebContent/imgs/prodotti";
+	private static final String UPLOAD_DIRECTORY = "C:/Users/Isidoro/git/GameChangerRep/GameChanger/WebContent/imgs/prodotti";
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {

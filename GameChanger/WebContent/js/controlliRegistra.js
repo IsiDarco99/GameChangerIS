@@ -27,7 +27,6 @@ function validateUsername() {
         if (xhr.status === 200) {
           let   response = JSON.parse(xhr.responseText);
           if (response.valid) {
-            errorElement.textContent = "";
             resolve(false);
           } else {
             errorElement.textContent = "Esiste gi\u00E1 un username con questo nome.";
