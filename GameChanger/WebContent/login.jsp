@@ -14,7 +14,7 @@
 	<div class="container">
 	<div class="center">
 		<h1>Login</h1>
-		<form id="loginForm" action="/GameChanger/user-login" method="post" onsubmit="return validateForm()">
+		<form id="loginForm" action="user-login" method="post" onsubmit="return validateForm()">
 			<div class="txt_field">
 				<input type="text" name="login-username" required onblur="validateUsername()"> <span></span>
 				<label>Username</label>

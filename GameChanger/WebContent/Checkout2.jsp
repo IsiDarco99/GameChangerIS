@@ -56,7 +56,7 @@
 		<legend>Pagamento</legend>
 		<div class="col-75">
 			<div class="container">
-			<form id="myForm" action="/GameChanger/Checkout4-Servlet" method="post">
+			<form id="myForm" action="Checkout4-Servlet" method="post">
   <div class="col-50">
     <h3><b>Pagamento</b></h3>
     <label for="fname">Pagamenti accettati</label>

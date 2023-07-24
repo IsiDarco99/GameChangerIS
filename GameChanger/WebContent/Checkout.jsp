@@ -59,7 +59,7 @@
       <div class="row">
         <div class="col-75">
           <div class="container">
-            <form id="myForm" action="/GameChanger/checkout-2" method="post">
+            <form id="myForm" action="checkout-2" method="post">
   <div class="row">
     <div class="col-50">
       <label for="fname"><i class="fa fa-user"></i> Nome Completo</label>

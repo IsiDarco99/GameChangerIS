@@ -86,7 +86,7 @@ prezzoTot = 0;
 						&#x20AC
 					</p>
 				</div>
-				<form action="/GameChanger/rimuovi-prodotto" method="post" id="rimuoviProdottoForm-<%=p.getIdProdotto()%>">
+				<form action="rimuovi-prodotto" method="post" id="rimuoviProdottoForm-<%=p.getIdProdotto()%>">
 				<input type="hidden" name="codice" value="<%= p.getIdProdotto()%>">
 				<button class="carrello" onclick="submitFormCart(event, <%= p.getIdProdotto()%>)">
 					<span>X </span>

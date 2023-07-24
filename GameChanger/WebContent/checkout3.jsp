@@ -59,7 +59,7 @@ prezzoTot = 0;%>
   
   <!-- Inizio codice carrello -->
   
-  <form action="/GameChanger/Checkout4-Servlet" method="post">
+  <form action="Checkout4-Servlet" method="post">
 				<input type="hidden" name="codice" value="">
 				
 				</form>
@@ -119,7 +119,7 @@ prezzoTot = 0;%>
 					
 					</p>
 				</div>
-				<form action="/GameChanger/checkout-1" method="post">
+				<form action="checkout-1" method="post">
 				
 				</form>
 			</div>
@@ -139,7 +139,7 @@ prezzoTot = 0;%>
 		<h2 class="pagamento">Pagamento</h2>
 		<p> Email Paypal:${user.emailPaypal} </p>
 		<p> Totale Ordine:<%=String.format("%.2f", prezzoTot)%> &#x20AC </p>
-		<form action="/GameChanger/Checkout-5" method="post">
+		<form action="Checkout-5" method="post">
 		<button class="acquista">Acquista</button>
 		</form>
 		</div>
