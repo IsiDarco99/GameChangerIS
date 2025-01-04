@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
-    <%@page import="cn.gamechanger.model.*"%>
-    <%@ page import="cn.gamechanger.servlet.profiloservlet" %>
+    <%@page import="cn.gamechanger.bean.*"%>
+    <%@ page import="cn.gamechanger.servlet.RecuperaProfiloServlet" %>
     
     <% User user = (User) request.getAttribute("user"); %>
 <!DOCTYPE html>

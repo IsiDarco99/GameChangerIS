@@ -1,10 +1,10 @@
 <%@page import="cn.gamechanger.connection.DbCon"%>
-<%@page import="cn.gamechanger.model.dao.*"%>
-<%@page import="cn.gamechanger.model.*"%>
+<%@page import="cn.gamechanger.dao.*"%>
+<%@page import="cn.gamechanger.bean.*"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet" %>
+<%@ page import="cn.gamechanger.servlet.MostraCarrelloServlet"%>
 <%
 List<Carrello> prodotti = (List<Carrello>) request.getAttribute("prodotti");
 float prezzoTot;
@@ -41,8 +41,7 @@ prezzoTot = 0;
 			</div>
 			<div class="scritta-carrello">
 				<h1>
-					<span> Il tuo carrello &eacute; vuoto<br>Da un'occhiata ai
-						nostri <a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">prodotti</a>
+					<span> Il tuo carrello &eacute; vuoto<br>
 					</span>
 				</h1>
 			</div>
@@ -86,11 +85,13 @@ prezzoTot = 0;
 						&#x20AC
 					</p>
 				</div>
-				<form action="rimuovi-prodotto" method="post" id="rimuoviProdottoForm-<%=p.getIdProdotto()%>">
-				<input type="hidden" name="codice" value="<%= p.getIdProdotto()%>">
-				<button class="carrello" onclick="submitFormCart(event, <%= p.getIdProdotto()%>)">
-					<span>X </span>
-				</button>
+				<form action="rimuovi-prodotto" method="post"
+					id="rimuoviProdottoForm-<%=p.getIdProdotto()%>">
+					<input type="hidden" name="codice" value="<%=p.getIdProdotto()%>">
+					<button class="carrello"
+						onclick="submitFormCart(event, <%=p.getIdProdotto()%>)">
+						<span>X </span>
+					</button>
 				</form>
 			</div>
 
@@ -109,9 +110,10 @@ prezzoTot = 0;
 					</p>
 				</div>
 				<form action="/GameChanger/checkout-1" method="post">
-				<button class="acquista">
-					<span>Acquista </span>
-				</button>
+					<input type="hidden" name="step" value="1">
+					<button class="acquista">
+						<span>Acquista </span>
+					</button>
 				</form>
 			</div>
 			<%

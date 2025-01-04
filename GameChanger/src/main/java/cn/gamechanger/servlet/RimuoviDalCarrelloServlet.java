@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cn.gamechanger.bean.Carrello;
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.Carrello;
-import cn.gamechanger.model.dao.CarrelloDao;
+import cn.gamechanger.dao.CarrelloDao;
 
 @WebServlet("/rimuovi-prodotto")
 public class RimuoviDalCarrelloServlet extends HttpServlet {

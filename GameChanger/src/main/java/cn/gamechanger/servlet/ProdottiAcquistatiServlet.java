@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.gamechanger.bean.*;
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.*;
-import cn.gamechanger.model.dao.*;
+import cn.gamechanger.dao.*;
 
 @WebServlet("/prodotti-acquistati")
 public class ProdottiAcquistatiServlet extends HttpServlet {
@@ -33,7 +33,7 @@ public class ProdottiAcquistatiServlet extends HttpServlet {
             OrdineDao ordineDAO = new OrdineDao(DbCon.getConnection());
             Map<Ordine, List<ProdottoOrdine>> ordiniEProdotti = ordineDAO.getOrdiniUtente(username);
             request.setAttribute("ordiniEProdotti", ordiniEProdotti);
-            request.getRequestDispatcher("prodottiacquistati.jsp").forward(request, response);
+            request.getRequestDispatcher("prodottiAcquistati.jsp").forward(request, response);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

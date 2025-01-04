@@ -7,9 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cn.gamechanger.bean.User;
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.model.User;
-import cn.gamechanger.model.dao.UserDao;
+import cn.gamechanger.dao.UserDao;
 
 @WebServlet("/verifica-username")
 public class VerificaUsernameServlet extends HttpServlet {

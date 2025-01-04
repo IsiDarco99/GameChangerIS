@@ -11,12 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import cn.gamechanger.model.User;
-import cn.gamechanger.model.dao.UserDao;
-import cn.gamechanger.model.Amministratore;
-import cn.gamechanger.model.dao.AmministratoreDao;
-
+import cn.gamechanger.bean.Amministratore;
+import cn.gamechanger.bean.User;
 import cn.gamechanger.connection.DbCon;
+import cn.gamechanger.dao.AmministratoreDao;
+import cn.gamechanger.dao.UserDao;
 
 @WebServlet("/user-login")
 public class LoginServlet extends HttpServlet {

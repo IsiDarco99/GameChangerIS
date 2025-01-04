@@ -1,42 +1,40 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.gamechanger.bean.Prodotto;
-import cn.gamechanger.bean.User;
+import cn.gamechanger.bean.Amministratore;
 import cn.gamechanger.connection.DbCon;
-import cn.gamechanger.dao.*;
+import cn.gamechanger.dao.AmministratoreDao;
 
-@WebServlet("/elimina-prodotto")
-public class EliminaProdottoServlet extends HttpServlet {
+@WebServlet("/get-admin")
+public class GetAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public EliminaProdottoServlet() {
+       
+    public GetAdminServlet() {
         super();
     }
 
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String codice = request.getParameter("codice");
 		try {
-			ProdottoDao prodottoDao = new ProdottoDao(DbCon.getConnection());
-			prodottoDao.deleteProdotto(codice);
-			response.sendRedirect("prodottoCancellato.jsp");
-		} catch (ClassNotFoundException | SQLException e) {
+			AmministratoreDao adminDao = new AmministratoreDao(DbCon.getConnection());
+			int id = (int) request.getSession().getAttribute("adminSession");
+			Amministratore admin = adminDao.getAdmin(id);
+			request.setAttribute("admin", admin);
+			request.getRequestDispatcher("paginaAmministratore.jsp").forward(request, response);
+			return;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

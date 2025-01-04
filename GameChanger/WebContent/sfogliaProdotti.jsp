@@ -1,9 +1,9 @@
 <%@page import="com.google.protobuf.TextFormatParseInfoTree"%>
-<%@page import="cn.gamechanger.model.*"%>
+<%@page import="cn.gamechanger.bean.*"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="cn.gamechanger.servlet.MostraTuttiProdottiServlet" %>
+<%@ page import="cn.gamechanger.servlet.MostraCatalogoServlet" %>
 <%
 	String ricerca = request.getParameter("ricerca");
 	String categoria = request.getParameter("categoria");
@@ -50,7 +50,7 @@
 
 					<div class="categoria">
 						<p>
-							<strong> Categoria</strong>
+							<strong> Filtri: </strong>
 						</p>
 
 						<div class="input-group ">
@@ -59,7 +59,6 @@
 
 						  </div>
 						<div class="filtri">
-							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti">Tutti i prodotti</a></p>
 							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=videogiochi">Videogiochi</a></p>
 							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=accessori">Accessori</a></p>
 							<p><a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=computer">Computer</a></p>

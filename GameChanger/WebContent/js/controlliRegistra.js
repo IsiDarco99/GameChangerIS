@@ -53,8 +53,8 @@ function validatePassword(){
   }
     
   
-  if (newPassword.length > 22) {
-    document.getElementById("errorPassword").textContent = "Inserire un massimo di 22 caratteri.";
+  if (newPassword.length < 8) {
+    document.getElementById("errorPassword").textContent = "Inserire un minimo di 8 caratteri.";
     return false;
   }
 

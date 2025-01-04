@@ -12,77 +12,6 @@ function validateNome() {
   return true;
 }
 
-function validateTipo() {
-  const nomeInput = document.querySelector('input[name="tipo"]');
-  const errorNome = document.getElementById('errorTipo');
-  const regex = /^[a-zA-Z0-9\s]+$/; // Solo lettere, numeri e spazi consentiti
-
-  if (!regex.test(nomeInput.value)) {
-    errorNome.textContent = 'Caratteri non validi nel nome del tipo di accessorio.';
-    return false;
-  }
-
-  errorNome.textContent = '';
-  return true;
-}
-
-function validateGen() {
-  const consoleInput = document.querySelector('input[name="gen"]');
-  const errorConsole = document.getElementById('errorGen');
-  const regex = /^\d{1,2}$/; // Numeri da 1 a 99
-
-  if (!regex.test(consoleInput.value) || parseInt(consoleInput.value) < 1 || parseInt(consoleInput.value) > 99) {
-    errorConsole.textContent = 'Inserire un valore valido per la generazione (da 1 a 99).';
-    return false;
-  }
-
-  errorConsole.textContent = '';
-  return true;
-}
-
-
-function validatePEGI() {
-  const pegiInput = document.querySelector('input[name="pegi"]');
-  const errorPEGI = document.getElementById('errorPEGI');
-  const allowedPEGI = ["3", "7", "12", "16", "18"];
-
-  if (!allowedPEGI.includes(pegiInput.value)) {
-    errorPEGI.textContent = 'Il PEGI deve essere "3", "7", "12", "16" o "18".';
-    return false;
-  }
-
-  errorPEGI.textContent = '';
-  return true;
-}
-
-function validateSvilup() {
-  const nomeInput = document.querySelector('input[name="sviluppatore"]');
-  const errorNome = document.getElementById('errorSvilupp');
-  const regex = /^[a-zA-Z0-9\s]+$/; // Solo lettere, numeri e spazi consentiti
-
-  if (!regex.test(nomeInput.value)) {
-    errorNome.textContent = 'Caratteri non validi nel nome dello sviluppatore.';
-    return false;
-  }
-
-  errorNome.textContent = '';
-  return true;
-}
-
-function validateGenere() {
-  const nomeInput = document.querySelector('input[name="genere"]');
-  const errorNome = document.getElementById('errorGenere');
-  const regex = /^[a-zA-Z0-9\s]+$/; // Solo lettere, numeri e spazi consentiti
-
-  if (!regex.test(nomeInput.value)) {
-    errorNome.textContent = 'Caratteri non validi nel nome del genere.';
-    return false;
-  }
-
-  errorNome.textContent = '';
-  return true;
-}
-
 function validatePrezzo() {
   const prezzoInput = document.querySelector('input[name="prezzoprodotto"]');
   const errorPrezzo = document.getElementById('errorPrezzo');
@@ -263,11 +192,46 @@ function validateDescr() {
   return true;
 }
 
-function validateFormNuovo() {
-  let isCodiceValid = validateCodice();
+function validateUploadImmagini() {
+  const immagine1Input = document.querySelector('input[name="immagine1"]');
+  const immagine2Input = document.querySelector('input[name="immagine2"]');
+  const immagine3Input = document.querySelector('input[name="immagine3"]');
+  const errorMessaggio = document.getElementById('errorMessaggio');
 
-  return isCodiceValid;
+  if (!immagine1Input.files.length || !immagine2Input.files.length || !immagine3Input.files.length) {
+    errorMessaggio.textContent = 'Caricare tutte e tre le immagini prima di procedere.';
+    return false; // Bloccando l'invio del form
+  }
+
+  errorMessaggio.textContent = ''; // Cancella il messaggio di errore se tutto è valido
+  return true;
 }
+
+
+function validateFormNuovo() {
+  let isCodiceValid = validateCodice(); // Supponendo che questa funzione esista
+
+  if (!isCodiceValid) {
+    return false; // Bloccando l'invio del form
+  }
+
+  return true;
+}
+
+function validateAll() {
+  // Esegui entrambe le validazioni
+  const isUploadValid = validateUploadImmagini();
+  const isFormValid = validateFormNuovo();
+
+  // Restituisci false se una delle due validazioni fallisce
+  if (!isUploadValid || !isFormValid) {
+    return false;
+  }
+
+  return true; // Procedi solo se entrambe le validazioni sono valide
+}
+
+
 
 function validateFormModifica() {
   let isNomeValid = validateNome();

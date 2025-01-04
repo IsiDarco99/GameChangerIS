@@ -16,8 +16,8 @@ import cn.gamechanger.connection.DbCon;
 import cn.gamechanger.dao.CarrelloDao;
 import cn.gamechanger.dao.UserDao;
 
-@WebServlet("/aggiungi-prodotto")
-public class AggiungiAlCarrelloServlet extends HttpServlet {
+@WebServlet("/modifica-quantita")
+public class ModQuantitàCarrelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CarrelloDao carrelloDao;
 
@@ -39,14 +39,17 @@ public class AggiungiAlCarrelloServlet extends HttpServlet {
         } else {
         	try {
             	CarrelloDao cdao = new CarrelloDao(DbCon.getConnection());
-            	cdao.aggiungiProdottoAlCarrello(username, codiceProdotto, quantita);
-            	List<Carrello> prodotti = cdao.getCarrelloByUsername(username);
+            	cdao.cambiaQuantitaProdotto(username, codiceProdotto, quantita);
+            	CarrelloDao cd = new CarrelloDao(DbCon.getConnection());
+    			List<Carrello> prodotti = cd.getCarrelloByUsername(username);
     			String redirectURL = "/carrello.jsp";
                 request.setAttribute("prodotti", prodotti);
                 request.getRequestDispatcher(redirectURL).forward(request, response);
     		} catch (Exception e) {
     			e.getStackTrace();
     		}
+        	
+
         }
     }
 }

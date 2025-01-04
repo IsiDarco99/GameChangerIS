@@ -54,8 +54,6 @@ $(document).ready(function() {
 	ElemNav.addEventListener("mouseenter", function () {
     clearTimeout(timer);
     
-    let   Cat = document.getElementById("Cat")
-    let   InfCat= document.getElementById("InNa1")
     let   Con = document.getElementById("Con")
     let   InfCon = document.getElementById("InNa2")
     let   Vid = document.getElementById("Vid")
@@ -65,14 +63,6 @@ $(document).ready(function() {
     let   Gad = document.getElementById("Gad")
     let   InfGad = document.getElementById("InNa5")
     
-    Cat.addEventListener("mouseenter", function () {
-      
-      InfCat.style.display='flex';
-    })
-    Cat.addEventListener("mouseleave", function () {
-      
-      InfCat.style.display='none';
-    })
     Con.addEventListener("mouseenter", function () {
       
       InfCon.style.display='flex';

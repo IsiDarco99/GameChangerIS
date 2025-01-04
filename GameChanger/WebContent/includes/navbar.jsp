@@ -1,6 +1,5 @@
 <head>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/navbar.js"></script>
   <link rel="stylesheet" href="css/navbar.css" type="text/css">
   <script>
     var contextPath = "${pageContext.request.contextPath}";
@@ -26,22 +25,16 @@ http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 			</div><!--              ---------                 -->
 		</li>
 		<li>
-      <a href="${pageContext.request.contextPath}/mostra-tutti-prodotti?categoria=allProdotti"><img src="imgs\icone\catalogoN.png" class="catalogoI" id="Cat" alt="catalogo"
-				height="40" style="border-radius:20px" >
-      </a>
-      <div class="InfoNavBar" id="InNa1" > 
-        <p id="infoName"> Catalogo</p>
-      </div>
-      <div class="InfoNavBar" id="InNa2" style="top: 168px;"> 
+      <div class="InfoNavBar" id="InNa2" style="top: 98px;"> 
         <p id="infoName"> Console</p>
       </div>
-      <div class="InfoNavBar" id="InNa3" style="top: 238px;"> 
-        <p id="infoName"> videogame</p>
+      <div class="InfoNavBar" id="InNa3" style="top: 168px;"> 
+        <p id="infoName"> Videogame</p>
       </div>
-      <div class="InfoNavBar" id="InNa4" style="top: 307px;" > 
+      <div class="InfoNavBar" id="InNa4" style="top: 238px;" > 
         <p id="infoName"> Computer</p>
       </div>
-      <div class="InfoNavBar" id="InNa5" style="top: 378px;" > 
+      <div class="InfoNavBar" id="InNa5" style="top: 307px;" > 
         <p id="infoName"> Gadget</p>
       </div>
     </li>

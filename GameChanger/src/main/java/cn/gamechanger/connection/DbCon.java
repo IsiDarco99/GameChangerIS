@@ -17,7 +17,7 @@ public class DbCon {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		if (connection==null) {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamechanger","root","password");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gamechanger","root","0000");
 			logger.info("Connected");
 		}
 		return connection;
