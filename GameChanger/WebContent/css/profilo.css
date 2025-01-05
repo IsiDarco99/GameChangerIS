@@ -1,0 +1,72 @@
+body {
+	background: rgb(54,20,57);
+	background: linear-gradient(90deg, rgba(54,20,57,1) 0%, rgba(3,3,64,1) 25%, rgba(3,3,64,1) 75%, rgba(54,20,57,1) 100%);
+	font-family: Arial, Helvetica, sans-serif;
+}
+.scritta-principale {
+	color: white;
+	border-bottom: solid 1px #d8d8d8;
+	margin-top: 10px;
+}
+.scritta-principale h1{
+	margin-left: 50px;
+}
+.container-1 {
+	padding: 20px;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
+    box-shadow: 10px 10px black;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+.container-1 p {
+	color: white;
+}
+.container-1 a{
+	color: white;
+	text-decoration: none;
+}
+.container-1 a:hover {
+	text-decoration: underline;
+	color: #2691d9;
+}
+.container-2 {
+	padding: 20px;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom right, #6B0F75, #340F75);
+    box-shadow: 10px 10px black;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.container-2 h5 {
+	color: white;
+}
+.container-2 a {
+	color: white;
+    text-decoration: none;
+}
+.container-2 a:hover{
+	text-decoration: underline;	
+	color: #2691d9;
+}
+.container-2 p {
+	color: white;
+}
+.scritta {
+	color: white;
+}
+.immagine-profilo {
+	padding: 24px 0px;
+	margin-left: 50px;
+}
+.immagine-profilo img {
+	height: 141px;
+	border-radius: 50px;
+	border: 5px solid black;
+}
+.username {
+	font-size: 24px;
+	color: white;
+	margin-left: 60px;
+}

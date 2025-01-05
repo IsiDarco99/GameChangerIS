@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+.top-bar {
+	position: relative;
+	z-index: 9999;
+	color: #fff;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	
+}
+
+.icons img {
+	padding-right: 30px;
+}
