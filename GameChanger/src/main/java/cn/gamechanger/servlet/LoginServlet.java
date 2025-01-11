@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             		HttpSession session = request.getSession();
                     session.setAttribute("adminSession", admin.getIdAmministratore());
         			request.setAttribute("admin", admin);
-        			request.getRequestDispatcher("paginaamministratore.jsp").forward(request, response);
+        			request.getRequestDispatcher("paginaAmministratore.jsp").forward(request, response);
             	} else {
             		UserDao udao = new UserDao(DbCon.getConnection());
                     User user = udao.userLogin(username, password);

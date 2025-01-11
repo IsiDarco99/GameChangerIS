@@ -1,6 +1,7 @@
 package cn.gamechanger.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -40,10 +41,49 @@ public class CheckoutServlet extends HttpServlet {
 			}
 			break;
 		case "2":
-			try {
+			try (PrintWriter out = response.getWriter()){
 				String checkboxValue = request.getParameter("salva-dati");
 				boolean isChecked = "on".equals(checkboxValue);
-
+				
+				String nome = request.getParameter("firstname");
+				String email = request.getParameter("email");
+				String indirizzo = request.getParameter("address");
+				String citta = request.getParameter("city");
+				String stato = request.getParameter("state");
+				int codicePostale = Integer.parseInt(request.getParameter("zip"));
+				
+				if (!nome.matches("^[a-zA-Z0-9 ]+$")) {
+		            out.print("Il nome può contenere solo caratteri da A-Z e caratteri accentati.");
+		            return;
+		        }
+				
+				if (!email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")) {
+		        	out.print("Formato email non valido.");
+		            return;
+		        }
+				
+				if (!indirizzo.matches("^[A-Za-z0-9\u00C0-\u00FF\\s,.'-]+$")) {
+				    out.print("L'indirizzo può contenere solo lettere, numeri, spazi, virgole, punti e trattini.");
+				    return;
+				}
+				
+				if (!stato.matches("^[A-Za-z\u00C0-\u00FF\\s]+$")) {
+				    out.print("Lo stato può contenere solo lettere e spazi.");
+				    return;
+				}
+				
+				if (!citta.matches("^[A-Za-z\u00C0-\u00FF\\s']+$")) {
+				    out.print("La città può contenere solo lettere, spazi e apostrofi.");
+				    return;
+				}
+				
+				String codicePostaleStr = String.valueOf(codicePostale);
+				if (!codicePostaleStr.matches("^\\d{5}$")) {
+				    out.print("Il codice postale deve contenere esattamente 5 cifre.");
+				    return;
+				}
+				
+				
 				UserDao userDao = null;
 				userDao = new UserDao(DbCon.getConnection());
 				String username = (String) request.getSession().getAttribute("userSession");
@@ -51,11 +91,7 @@ public class CheckoutServlet extends HttpServlet {
 				request.setAttribute("user", user);
 
 				if (isChecked) {
-					String indirizzo = request.getParameter("address");
-					String citta = request.getParameter("city");
-					String stato = request.getParameter("state");
-					int codicePostale = Integer.parseInt(request.getParameter("zip"));
-
+					
 					user.setIndirizzo(indirizzo);
 					user.setCitta(citta);
 					user.setStato(stato);
@@ -71,7 +107,14 @@ public class CheckoutServlet extends HttpServlet {
 			}
 			break;
 		case "3":
-			try {
+			try (PrintWriter out = response.getWriter()){
+				String emailPaypalString = request.getParameter("emailPayPal");
+				
+				if (!emailPaypalString.matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
+		            out.print("Inserisci un'email valida.");
+		            return;
+		        }
+				
 				String username = (String) request.getSession().getAttribute("userSession");
 				String checkboxValue = request.getParameter("salva-dati");
 				boolean isChecked = "on".equals(checkboxValue);
@@ -83,7 +126,7 @@ public class CheckoutServlet extends HttpServlet {
 				User user = userDao.getUserProfile(username);
 				request.setAttribute("user", user);
 				if (isChecked) {
-					String emailPaypalString = request.getParameter("emailPayPal");
+					
 
 					user.setEmailPaypal(emailPaypalString);
 
@@ -113,7 +156,6 @@ public class CheckoutServlet extends HttpServlet {
 				ordineDao.aggiungiOrdine(ordine, prodotti);
 
 				cd.cancellaCarrello(username);
-
 				request.getRequestDispatcher("checkout4.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();

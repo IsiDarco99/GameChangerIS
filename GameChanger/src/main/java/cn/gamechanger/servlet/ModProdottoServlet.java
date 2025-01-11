@@ -38,8 +38,6 @@ public class ModProdottoServlet extends HttpServlet {
 			String data = (String) request.getParameter("data");
 			String descrizione = (String) request.getParameter("descrizioneprodotto");
 			String categoria = (String) request.getParameter("categoria");
-			
-			System.out.println("Categoria " + categoria);
 
 			ProdottoDao prodottoDao = new ProdottoDao(DbCon.getConnection());
 			prodottoDao.updateProdotto(codice, prezzo, nome, marca, descrizione, data, categoria);
